@@ -22,19 +22,32 @@
         <symbol id="search" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
             <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
         </symbol>
-          
+        <symbol id="bars-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+        </symbol>
+        <symbol id="user" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+        </symbol>
+           
     </svg>
 
     <header>
-        <div class="flex items-center justify-between px-12 bg-white h-28">
+        <div class="flex items-center justify-between px-9 md:px-16 lg:px-4 2xl:px-12 bg-white h-20 md:h-28">
+            <!-- NavBar Icon -->
+            <span class="lg:hidden">
+                <svg class="w-9 h-9">
+                        <use xlink:href="#bars-3"></use>
+                    </svg>
+            </span>
             <!-- NavBar -->
-            <div class="flex items-center gap-x-16">
+            <div class="flex items-center gap-x-9 xl:gap-x-16">
+                
                 <!-- Logo -->
                 <a href="#" class="">
                     <img src="images/logo/Logo.png" alt="Logo" class="">
                 </a>
-                <!-- NavBar Icon -->
-                <div class="flex items-center gap-x-5 text-zinc-700 text-lg child:gap-x-1.5 child:flex child:items-center">
+                <!-- NavBar Menu -->
+                <div class="hidden lg:flex items-center gap-x-5 child:gap-x-1.5 child:flex child:items-center">
                     <a href="#" class="sub-menu--active">
                         صفحه اصلی
                         <svg class="w-4 h-4">
@@ -58,6 +71,7 @@
                     </a>
                 </div>
             </div>
+            <!-- SearchBar & LogIn -->
             <div class="flex gap-x-8">
                 <!-- SearchBar -->
                 <div class="relative group hidden lg:block" id="searchbox">
@@ -73,11 +87,17 @@
                     </form>
                 </div>
                 <!-- LogIn Btn -->
-                <a href="#" class="flex-center gap-x-2 h-14 px-6 bg-primary text-white rounded-2xl">
+                <a href="#" class="hidden md:flex-center gap-x-2 h-14 px-4 lg:px-6 bg-primary text-white rounded-2xl">
                     <svg class="w-6 h-6">
                         <use xlink:href="#arrow-right-rectangle"></use>
                     </svg>
                     ورود یا ثبت نام
+                </a>
+                <!-- LogIn Icon Btn -->
+                <a href="#" class="md:hidden flex-center w-12 h-12 rounded-full bg-gray-100 text-slate-500">
+                    <svg class="w-6 h-6">
+                        <use xlink:href="#user"></use>
+                    </svg>
                 </a>
             </div>
         </div>
