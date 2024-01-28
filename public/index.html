@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,71 @@
     <link rel="icon" href="images/fav-icon.png">
     <title> تک لرن | صفحه اصلی </title>
 </head>
-<body class="font-IRANSans">
-    <h1 class="bg-blue-500"> متن تستی </h1> 
+
+<body dir="rtl" class="font-IRANSans bg-gray-100">
+
+    <svg class="hidden">
+        <symbol id="chevron-down" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+        </symbol>
+        <symbol id="arrow-right-rectangle" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0 0 13.5 3h-6a2.25 2.25 0 0 0-2.25 2.25v13.5A2.25 2.25 0 0 0 7.5 21h6a2.25 2.25 0 0 0 2.25-2.25V15m3 0 3-3m0 0-3-3m3 3H9" />
+        </symbol>
+          
+    </svg>
+
+    <header>
+        <div class="flex items-center justify-between px-12 bg-white h-28">
+            <!-- NavBar -->
+            <div class="flex items-center gap-x-16">
+                <!-- Logo -->
+                <div class="">
+                    <img src="images/logo/Logo.png" alt="Logo" class="">
+                </div>
+                <!-- NavBar Icon -->
+                <div class="flex items-center gap-x-5 child:gap-x-1.5 child:flex child:items-center">
+                    <a href="#" class="">
+                        صفحه اصلی
+                        <svg class="w-4 h-4">
+                            <use xlink:href="#chevron-down"></use>
+                        </svg>
+                    </a>
+                    <a href="#" class="">
+                        همه دوره ها
+                        <svg class="w-4 h-4">
+                            <use xlink:href="#chevron-down"></use>
+                        </svg>
+                    </a>
+                    <a href="#" class="">
+                        مقالات
+                        <svg class="w-4 h-4">
+                            <use xlink:href="#chevron-down"></use>
+                        </svg>
+                    </a>
+                    <a href="#" class="">
+                        درباره ما
+                        <svg class="w-4 h-4">
+                            <use xlink:href="#chevron-down"></use>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="">
+                <!-- LogIn Btn -->
+                <div class="flex-center gap-x-2 h-14 px-6 bg-primary text-white rounded-2xl">
+                    <svg class="w-6 h-6">
+                        <use xlink:href="#arrow-right-rectangle"></use>
+                    </svg>
+                    ورود یا ثبت نام
+                </div>
+                <!-- SearchBar -->
+                <div class=""></div>
+            </div>
+        </div>
+    </header>
+
+    <script src="js/script.js"></script>
 </body>
-</html> 
+
+</html>
