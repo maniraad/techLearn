@@ -44,8 +44,14 @@
     }
 }
 
+@layer components{
+    .sub-menu--active{
+        @apply text-primary font-EstedadMedium ;
+    }
+}
+
 @layer utilities{
     .flex-center{
-       @apply flex items-center justify-center
+       @apply flex items-center justify-center;
     }
 }
