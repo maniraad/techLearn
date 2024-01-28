@@ -4,42 +4,42 @@
 
 @layer base {
     @font-face {
-        font-family: "IRANSans";
-        src: local("IRANSans"),
-            url("/public/fonts/IRANSans/IRANSans.woff2");
+        font-family: "Estedad";
+        src: local("Estedad"),
+            url("/public/fonts/Estedad/Estedad-Regular.woff2");
         font-display: swap;
     }
 
     @font-face {
-        font-family: "IRANSansBlack";
-        src: local("IRANSansBlack"),
-            url("/public/fonts/IRANSans/IRANSans_Black.woff2");
+        font-family: "EstedadBlack";
+        src: local("EstedadBlack"),
+            url("/public/fonts/Estedad/Estedad-Black.woff2");
         font-display: swap;
     }
 
     @font-face {
-        font-family: "IRANSansBold";
-        src: local("IRANSansBold"),
-            url("/public/fonts/IRANSans/IRANSans_Bold.woff2");
+        font-family: "EstedadBold";
+        src: local("EstedadBold"),
+            url("/public/fonts/Estedad/Estedad-Bold.woff2");
         font-display: swap;
     }
 
     @font-face {
-        font-family: "IRANSansMedium";
-        src: local("IRANSansMedium"),
-            url("/public/fonts/IRANSans/IRANSans_Medium.woff2");
+        font-family: "EstedadMedium";
+        src: local("EstedadMedium"),
+            url("/public/fonts/Estedad/Estedad-Medium.woff2");
         font-display: swap;
     }
     @font-face {
-        font-family: "IRANSansLight";
-        src: local("IRANSansLight"),
-            url("/public/fonts/IRANSans/IRANSans_Light.woff2");
+        font-family: "EstedadLight";
+        src: local("EstedadLight"),
+            url("/public/fonts/Estedad/Estedad-Light.woff2");
         font-display: swap;
     }
     @font-face {
-        font-family: "IRANSansUltraLight";
-        src: local("IRANSansUltraLight"),
-            url("/public/fonts/IRANSans/IRANSans_UltraLight.woff2");
+        font-family: "EstedadThin";
+        src: local("EstedadThin"),
+            url("/public/fonts/Estedad/Estedad-Thin.woff2");
         font-display: swap;
     }
 }

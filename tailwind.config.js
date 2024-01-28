@@ -7,12 +7,12 @@ module.exports = {
         "primary":"#00806C"
       },
       fontFamily: {
-        "IRANSans": "IRANSans",
-        "IRANSansBlack": "IRANSansBlack",
-        "IRANSansBold": "IRANSansBold",
-        "IRANSansMedium": "IRANSansMedium",
-        "IRANSansLight": "IRANSansLight",
-        "IRANSansUltraLight": "IRANSansUltraLight",
+        "Estedad": "Estedad",
+        "EstedadBlack": "EstedadBlack",
+        "EstedadBold": "EstedadBold",
+        "EstedadMedium": "EstedadMedium",
+        "EstedadLight": "EstedadLight",
+        "EstedadThin": "EstedadThin",
       },
     },
   },
