@@ -30,12 +30,14 @@
             url("/public/fonts/Estedad/Estedad-Medium.woff2");
         font-display: swap;
     }
+
     @font-face {
         font-family: "EstedadLight";
         src: local("EstedadLight"),
             url("/public/fonts/Estedad/Estedad-Light.woff2");
         font-display: swap;
     }
+
     @font-face {
         font-family: "EstedadThin";
         src: local("EstedadThin"),
@@ -44,20 +46,47 @@
     }
 }
 
-@layer components{
-    .sub-menu--active{
-        @apply text-primary font-EstedadMedium ;
+@layer components {
+    .sub-menu--active {
+        @apply text-primary font-EstedadMedium;
     }
-    .hide{
+
+    .hide {
         @apply invisible opacity-0;
     }
-    .show{
+
+    .show {
         @apply visible opacity-100;
+    }
+
+    .sub-menu::before {
+        content: "";
+        position: absolute;
+        top: 30px;
+        left: 50%;
+        width: 0;
+        height: 2px;
+        border-radius: 20px;
+        background-color: #00806C;
+        transform: translateX(-50%);
+        transition: all cubic-bezier(0.4, 0, 0.2, 1) 200ms;
+        -webkit-transition: all cubic-bezier(0.4, 0, 0.2, 1) 200ms;
+        -moz-transition: all cubic-bezier(0.4, 0, 0.2, 1) 200ms;
+        -ms-transition: all cubic-bezier(0.4, 0, 0.2, 1) 200ms;
+        -o-transition: all cubic-bezier(0.4, 0, 0.2, 1) 200ms;
+    }
+
+    .sub-menu:hover::before {
+        width: 90%;
+    }
+
+    .sub-menu:hover {
+        color: #00806C;
     }
 }
 
-@layer utilities{
-    .flex-center{
-       @apply flex items-center justify-center;
+@layer utilities {
+    .flex-center {
+        @apply flex items-center justify-center;
     }
 }
