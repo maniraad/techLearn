@@ -85,7 +85,7 @@
     }
 
     .section-tittle{
-        @apply relative flex font-EstedadBold text-[32px] text-right pr-[116px] font-bold;
+        @apply relative inline-flex font-EstedadBold text-[32px] text-right pr-[116px] font-bold;
     }
     .section-tittle::before{
         content: '';

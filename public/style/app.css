@@ -651,7 +651,7 @@ video {
 
 .section-tittle {
   position: relative;
-  display: flex;
+  display: inline-flex;
   padding-right: 116px;
   text-align: right;
   font-family: EstedadBold;
@@ -1082,6 +1082,16 @@ video {
 .hover\:bg-gray-200:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(229 231 235 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-white:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-teal-700:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(15 118 110 / var(--tw-bg-opacity));
 }
 
 .focus\:w-64:focus {
