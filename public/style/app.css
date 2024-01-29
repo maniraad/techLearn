@@ -649,6 +649,27 @@ video {
   opacity: 0;
 }
 
+.section-tittle {
+  position: relative;
+  display: flex;
+  padding-right: 116px;
+  text-align: right;
+  font-family: EstedadBold;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.section-tittle::before{
+  content: '';
+  position: absolute;
+  background-image: url("/public/images/logo/svg/tittle-icon.svg");
+  background-repeat: no-repeat;
+  width: 100px;
+  height: 100px;
+  top: -27px;
+  right: 0;
+}
+
 .fixed {
   position: fixed;
 }
@@ -711,8 +732,20 @@ video {
   margin-left: 0.5rem;
 }
 
+.ml-\[1px\] {
+  margin-left: 1px;
+}
+
+.mr-1 {
+  margin-right: 0.25rem;
+}
+
 .mt-14 {
   margin-top: 3.5rem;
+}
+
+.mt-36 {
+  margin-top: 9rem;
 }
 
 .block {
@@ -977,6 +1010,11 @@ video {
 .text-slate-500 {
   --tw-text-opacity: 1;
   color: rgb(100 116 139 / var(--tw-text-opacity));
+}
+
+.text-teal-600 {
+  --tw-text-opacity: 1;
+  color: rgb(13 148 136 / var(--tw-text-opacity));
 }
 
 .text-white {

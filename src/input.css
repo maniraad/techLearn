@@ -83,6 +83,20 @@
     .sub-menu:hover {
         color: #00806C;
     }
+
+    .section-tittle{
+        @apply relative flex font-EstedadBold text-[32px] text-right pr-[116px] font-bold;
+    }
+    .section-tittle::before{
+        content: '';
+        position: absolute;
+        background-image: url("/public/images/logo/svg/tittle-icon.svg");
+        background-repeat: no-repeat;
+        width: 100px;
+        height: 100px;
+        top: -27px;
+        right: 0;
+    }
 }
 
 @layer utilities {
