@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     extend: {
       colors:{
-        "primary":"#00806C"
+        "secondary":"#8C0014"
       },
       fontFamily: {
         "Estedad": "Estedad",
@@ -13,6 +13,13 @@ module.exports = {
         "EstedadMedium": "EstedadMedium",
         "EstedadLight": "EstedadLight",
         "EstedadThin": "EstedadThin",
+      },
+      container: {
+        center: true,
+        padding: {
+          DEFAULT: "1rem",
+          lg: "0.625rem",
+        }
       },
     },
   },

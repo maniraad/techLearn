@@ -42,8 +42,8 @@
     </svg>
 
     
-    <header>
-        <div class="flex items-center justify-between px-9 md:px-16 lg:px-4 2xl:px-12 bg-white h-20 md:h-28">
+    <header class="">
+        <div class="flex items-center justify-between px-9 md:px-16 lg:px-4 2xl:px-12 bg-white h-20 md:h-28 fixed w-full">
             <!-- NavBar Icon -->
             <span id="nav-bar-icon" class="lg:hidden">
                 <svg class="w-9 h-9">
@@ -104,7 +104,7 @@
                 <!-- SearchBar Mobile -->
                     <div class="xl:hidden">
                         <div class="searchbox flex-center w-14 h-14 rounded-full bg-gray-100 transition-colors cursor-pointer">
-                            <svg class="w-6 h-6 text-slate-500 dark:text-gray-600">
+                            <svg class="w-6 h-6 text-slate-500">
                                 <use xlink:href="#search"></use>
                             </svg>
                         </div>
@@ -123,14 +123,15 @@
                         </div> 
                     </div>
                 </div>
-                <!-- Cart -->
+                <!-- Cart Icon -->
                 <span id="shopping-cart" class="flex-center w-14 h-14 rounded-full bg-gray-100 text-slate-500 border border-transparent hover:border-gray-200 cursor-pointer transition-all">
                     <svg class="w-6 h-6">
                         <use xlink:href="#shopping-cart"></use>
                     </svg>
                 </span>
+              
                 <!-- LogIn Btn -->
-                <a href="#" class="hidden md:flex-center gap-x-2 h-14 px-4 lg:px-6 bg-primary text-white rounded-2xl">
+                <a href="#" class="hidden md:flex-center gap-x-2 h-14 px-4 lg:px-6 bg-teal-600 text-white rounded-2xl">
                     <svg class="w-6 h-6">
                         <use xlink:href="#arrow-right-rectangle"></use>
                     </svg>
@@ -145,6 +146,46 @@
             </div>
         </div>
     </header>
+
+    <main>
+        <section class="head pt-28">
+            <div class="container">
+                <div class="flex justify-between">
+                    <div class="">
+                        <h2 class="font-EstedadBold text-right text-[64px]/[90px]">اینجا <span class="text-red-700">متخصص</span> میشی!</h2>
+                        <div class="flex items-center">
+                            <div class="">
+                                <span>
+                                    <svg></svg>
+                                    ۳۲ دوره آموزشی
+                                </span>
+                                <span>
+                                    <svg></svg>
+                                    تضمین بازگشت وجه
+                                </span>
+                            </div>
+                            <div class="">
+                                <span>
+                                    <svg></svg>
+                                    ۱۳۴۹۸۷  دانشجو
+                                </span>
+                                <span>
+                                    <svg></svg>
+                                    ۴۵۳ مقاله رایگان
+                                </span>
+                            </div>
+                        </div>
+                        <a href="#"></a>
+                    </div>
+                    <div class="">
+                        <img class="w-full" src="images/header.png" alt="header">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <br><br><br><br> <br><br><br><br> <br><br><br><br> <br><br><br><br> <br><br><br><br> <br><br><br><br> <br><br><br><br> <br><br><br><br> <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
 
     <div class="app-overlay fixed w-full h-full top-0 left-0 bg-black/40 z-40 md:backdrop-blur transition-all hide"></div>

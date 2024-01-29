@@ -48,7 +48,7 @@
 
 @layer components {
     .sub-menu--active {
-        @apply text-primary font-EstedadMedium;
+        @apply text-teal-600 font-EstedadMedium;
     }
 
     .hide {
