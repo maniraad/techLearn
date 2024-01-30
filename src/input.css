@@ -97,6 +97,10 @@
         top: -27px;
         right: 0;
     }
+    .section-btn{
+        @apply flex-center gap-3 relative max-w-[174px] mx-auto mt-8 py-3 pr-6 pl-5 bg-transparent border-2 border-teal-600 text-teal-800 rounded-2xl;
+    }
+
 }
 
 @layer utilities {
