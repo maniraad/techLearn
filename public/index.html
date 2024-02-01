@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
     <link href="./style/app.css" rel="stylesheet">
     <link rel="icon" href="images/fav-icon.png">
     <title> تک لرن | صفحه اصلی </title>
@@ -260,8 +261,8 @@
         <section class="courses mt-36">
             <div class="container">
                 <!-- Tittle -->
-                <a href="#" class="section-tittle"> آخرین دوره های <span
-                        class="text-teal-600 mr-1 ml-[1px]">تک</span><span class="text-red-800">لرن</span> </a>
+                <h3 class="section-tittle"> آخرین دوره های <span class="text-teal-600 mr-1 ml-[1px]">تک</span><span
+                        class="text-red-800">لرن</span> </h3>
                 <!-- Courses -->
                 <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 justify-items-center gap-5">
                     <div
@@ -571,8 +572,8 @@
         </section>
         <section class="about-techLearn mt-36">
             <div class="container">
-                <a href="#" class="section-tittle"> چرا باید از <span class="text-teal-600 mr-1 ml-[1px]">تک</span><span
-                        class="text-red-800  ml-1">لرن</span> یاد بگیرم؟ </a>
+                <h3 class="section-tittle"> چرا باید از <span class="text-teal-600 mr-1 ml-[1px]">تک</span><span
+                        class="text-red-800  ml-1">لرن</span> یاد بگیرم؟ </h3>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-items-center gap-5">
                     <div class="flex-center flex-col gap-4 w-72">
                         <img src="images/logo/svg/teacher.svg" alt="teacher">
@@ -611,13 +612,262 @@
         </section>
         <section class="new-cours mt-36">
             <div class="container">
-                <a href="#" class="section-tittle"> دوره های در حال پیش فروش </a>
+                <h3 class="section-tittle"> دوره های در حال پیش فروش </h3>
+                <div>
+                    <!-- Slider main container -->
+                    <div class="swiper">
+                        <!-- Additional required wrapper -->
+                        <div class="swiper-wrapper">
+                            <!-- Slides -->
+                            <div class="swiper-slide">
+                                <div
+                                    class="inline-flex flex-col items-center gap-y-4 py-3 px-4 bg-white w-[340px] rounded-3xl shadow-sm">
+                                    <!-- Image -->
+                                    <div class="">
+                                        <img src="images/courses/tailwind.png" js-course"="" class="">
+                                    </div>
+                                    <!-- Box Body -->
+                                    <div class="flex flex-col justify-center items-start self-baseline gap-y-4">
+                                        <!-- Topic -->
+                                        <h4
+                                            class="text-2xl text-right font-EstedadMedium font-bold overflow-hidden line-clamp-1">
+                                            صفر تا صد جاوااسکریپت</h4>
+                                        <!-- Teacher & Time -->
+                                        <div class="flex flex-wrap text-sm">
+                                            <div class="flex-center gap-x-1 py-1 px-2">
+                                                <svg class="w-4 h-4">
+                                                    <use href="#user"></use>
+                                                </svg>
+                                                <a href="#">احمد حسینی</a>
+                                            </div>
+                                            <div class="flex-center gap-x-1 py-1 px-2">
+                                                <svg class="w-4 h-4">
+                                                    <use href="#clock"></use>
+                                                </svg>
+                                                <span>۲۰:۴۳</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Price -->
+                                    <div class="self-end text-2xl text-right font-EstedadMedium font-bold">
+                                        ۲٬۷۰۰٬۰۰۰
+                                        <span>تومان</span>
+                                    </div>
+                                    <!-- Button -->
+                                    <a href="#"
+                                        class="self-stretch py-3 text-white text-center font-EstedadMedium bg-teal-600 hover:bg-teal-700 rounded-2xl transition-all">
+                                        مشاهده و ثبت نام </a>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div
+                                    class="inline-flex flex-col items-center gap-y-4 py-3 px-4 bg-white w-[340px] rounded-3xl shadow-sm">
+                                    <!-- Image -->
+                                    <div class="">
+                                        <img src="images/courses/tailwind.png" js-course"="" class="">
+                                    </div>
+                                    <!-- Box Body -->
+                                    <div class="flex flex-col justify-center items-start self-baseline gap-y-4">
+                                        <!-- Topic -->
+                                        <h4
+                                            class="text-2xl text-right font-EstedadMedium font-bold overflow-hidden line-clamp-1">
+                                            صفر تا صد جاوااسکریپت</h4>
+                                        <!-- Teacher & Time -->
+                                        <div class="flex flex-wrap text-sm">
+                                            <div class="flex-center gap-x-1 py-1 px-2">
+                                                <svg class="w-4 h-4">
+                                                    <use href="#user"></use>
+                                                </svg>
+                                                <a href="#">احمد حسینی</a>
+                                            </div>
+                                            <div class="flex-center gap-x-1 py-1 px-2">
+                                                <svg class="w-4 h-4">
+                                                    <use href="#clock"></use>
+                                                </svg>
+                                                <span>۲۰:۴۳</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Price -->
+                                    <div class="self-end text-2xl text-right font-EstedadMedium font-bold">
+                                        ۲٬۷۰۰٬۰۰۰
+                                        <span>تومان</span>
+                                    </div>
+                                    <!-- Button -->
+                                    <a href="#"
+                                        class="self-stretch py-3 text-white text-center font-EstedadMedium bg-teal-600 hover:bg-teal-700 rounded-2xl transition-all">
+                                        مشاهده و ثبت نام </a>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div
+                                    class="inline-flex flex-col items-center gap-y-4 py-3 px-4 bg-white w-[340px] rounded-3xl shadow-sm">
+                                    <!-- Image -->
+                                    <div class="">
+                                        <img src="images/courses/tailwind.png" js-course"="" class="">
+                                    </div>
+                                    <!-- Box Body -->
+                                    <div class="flex flex-col justify-center items-start self-baseline gap-y-4">
+                                        <!-- Topic -->
+                                        <h4
+                                            class="text-2xl text-right font-EstedadMedium font-bold overflow-hidden line-clamp-1">
+                                            صفر تا صد جاوااسکریپت</h4>
+                                        <!-- Teacher & Time -->
+                                        <div class="flex flex-wrap text-sm">
+                                            <div class="flex-center gap-x-1 py-1 px-2">
+                                                <svg class="w-4 h-4">
+                                                    <use href="#user"></use>
+                                                </svg>
+                                                <a href="#">احمد حسینی</a>
+                                            </div>
+                                            <div class="flex-center gap-x-1 py-1 px-2">
+                                                <svg class="w-4 h-4">
+                                                    <use href="#clock"></use>
+                                                </svg>
+                                                <span>۲۰:۴۳</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Price -->
+                                    <div class="self-end text-2xl text-right font-EstedadMedium font-bold">
+                                        ۲٬۷۰۰٬۰۰۰
+                                        <span>تومان</span>
+                                    </div>
+                                    <!-- Button -->
+                                    <a href="#"
+                                        class="self-stretch py-3 text-white text-center font-EstedadMedium bg-teal-600 hover:bg-teal-700 rounded-2xl transition-all">
+                                        مشاهده و ثبت نام </a>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div
+                                    class="inline-flex flex-col items-center gap-y-4 py-3 px-4 bg-white w-[340px] rounded-3xl shadow-sm">
+                                    <!-- Image -->
+                                    <div class="">
+                                        <img src="images/courses/tailwind.png" js-course"="" class="">
+                                    </div>
+                                    <!-- Box Body -->
+                                    <div class="flex flex-col justify-center items-start self-baseline gap-y-4">
+                                        <!-- Topic -->
+                                        <h4
+                                            class="text-2xl text-right font-EstedadMedium font-bold overflow-hidden line-clamp-1">
+                                            صفر تا صد جاوااسکریپت</h4>
+                                        <!-- Teacher & Time -->
+                                        <div class="flex flex-wrap text-sm">
+                                            <div class="flex-center gap-x-1 py-1 px-2">
+                                                <svg class="w-4 h-4">
+                                                    <use href="#user"></use>
+                                                </svg>
+                                                <a href="#">احمد حسینی</a>
+                                            </div>
+                                            <div class="flex-center gap-x-1 py-1 px-2">
+                                                <svg class="w-4 h-4">
+                                                    <use href="#clock"></use>
+                                                </svg>
+                                                <span>۲۰:۴۳</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Price -->
+                                    <div class="self-end text-2xl text-right font-EstedadMedium font-bold">
+                                        ۲٬۷۰۰٬۰۰۰
+                                        <span>تومان</span>
+                                    </div>
+                                    <!-- Button -->
+                                    <a href="#"
+                                        class="self-stretch py-3 text-white text-center font-EstedadMedium bg-teal-600 hover:bg-teal-700 rounded-2xl transition-all">
+                                        مشاهده و ثبت نام </a>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div
+                                    class="inline-flex flex-col items-center gap-y-4 py-3 px-4 bg-white w-[340px] rounded-3xl shadow-sm">
+                                    <!-- Image -->
+                                    <div class="">
+                                        <img src="images/courses/tailwind.png" js-course"="" class="">
+                                    </div>
+                                    <!-- Box Body -->
+                                    <div class="flex flex-col justify-center items-start self-baseline gap-y-4">
+                                        <!-- Topic -->
+                                        <h4
+                                            class="text-2xl text-right font-EstedadMedium font-bold overflow-hidden line-clamp-1">
+                                            صفر تا صد جاوااسکریپت</h4>
+                                        <!-- Teacher & Time -->
+                                        <div class="flex flex-wrap text-sm">
+                                            <div class="flex-center gap-x-1 py-1 px-2">
+                                                <svg class="w-4 h-4">
+                                                    <use href="#user"></use>
+                                                </svg>
+                                                <a href="#">احمد حسینی</a>
+                                            </div>
+                                            <div class="flex-center gap-x-1 py-1 px-2">
+                                                <svg class="w-4 h-4">
+                                                    <use href="#clock"></use>
+                                                </svg>
+                                                <span>۲۰:۴۳</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Price -->
+                                    <div class="self-end text-2xl text-right font-EstedadMedium font-bold">
+                                        ۲٬۷۰۰٬۰۰۰
+                                        <span>تومان</span>
+                                    </div>
+                                    <!-- Button -->
+                                    <a href="#"
+                                        class="self-stretch py-3 text-white text-center font-EstedadMedium bg-teal-600 hover:bg-teal-700 rounded-2xl transition-all">
+                                        مشاهده و ثبت نام </a>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div
+                                    class="inline-flex flex-col items-center gap-y-4 py-3 px-4 bg-white w-[340px] rounded-3xl shadow-sm">
+                                    <!-- Image -->
+                                    <div class="">
+                                        <img src="images/courses/tailwind.png" js-course"="" class="">
+                                    </div>
+                                    <!-- Box Body -->
+                                    <div class="flex flex-col justify-center items-start self-baseline gap-y-4">
+                                        <!-- Topic -->
+                                        <h4
+                                            class="text-2xl text-right font-EstedadMedium font-bold overflow-hidden line-clamp-1">
+                                            صفر تا صد جاوااسکریپت</h4>
+                                        <!-- Teacher & Time -->
+                                        <div class="flex flex-wrap text-sm">
+                                            <div class="flex-center gap-x-1 py-1 px-2">
+                                                <svg class="w-4 h-4">
+                                                    <use href="#user"></use>
+                                                </svg>
+                                                <a href="#">احمد حسینی</a>
+                                            </div>
+                                            <div class="flex-center gap-x-1 py-1 px-2">
+                                                <svg class="w-4 h-4">
+                                                    <use href="#clock"></use>
+                                                </svg>
+                                                <span>۲۰:۴۳</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Price -->
+                                    <div class="self-end text-2xl text-right font-EstedadMedium font-bold">
+                                        ۲٬۷۰۰٬۰۰۰
+                                        <span>تومان</span>
+                                    </div>
+                                    <!-- Button -->
+                                    <a href="#"
+                                        class="self-stretch py-3 text-white text-center font-EstedadMedium bg-teal-600 hover:bg-teal-700 rounded-2xl transition-all">
+                                        مشاهده و ثبت نام </a>
+                                </div>
+                            </div>
+                        </div>
 
+                    </div>
+                </div>
             </div>
         </section>
         <section class="blog mt-36">
             <div class="container">
-                <a href="#" class="section-tittle"> جدیدترین مقالات تک‌لرن </a>
+                <h3 class="section-tittle"> جدیدترین مقالات تک‌لرن </h3>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
                     <div class="flex sm:block gap-x-2.5 group p-2.5 md:pb-2 bg-white shadow-sm rounded-2xl">
                         <div
@@ -752,6 +1002,10 @@
         </section>
     </main>
 
+    <footer>
+
+    </footer>
+
     <br><br><br><br> <br><br><br><br> <br><br><br><br> <br><br><br><br> <br><br><br><br> <br><br><br><br>
     <br><br><br><br> <br><br><br><br>
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
@@ -759,8 +1013,34 @@
 
     <div class="app-overlay fixed w-full h-full top-0 left-0 bg-black/40 z-40 md:backdrop-blur transition-all hide">
     </div>
-
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
     <script src="js/script.js"></script>
+    <script>
+        let swiper = new Swiper(".swiper", {
+            slidesPerView: 1,
+            spaceBetween: 14,
+            loop: true,
+            breakpoints: {
+                640: {
+                    slidesPerView: 2,
+                    
+                },
+                768: {
+                    slidesPerView: 2,
+                   
+                },
+                1024: {
+                    slidesPerView: 3,
+                    
+                },
+                1280: {
+                    slidesPerView: 4,
+                    
+                },
+            },
+        });
+    </script>
+
 </body>
 
 </html>
