@@ -84,21 +84,6 @@
         color: #00806C;
     }
 
-    .section-tittle {
-        @apply relative inline-flex mb-12 font-EstedadBold text-[32px] text-right pr-[116px] font-bold;
-    }
-
-    .section-tittle::before {
-        content: '';
-        position: absolute;
-        background-image: url("/public/images/logo/svg/tittle-icon.svg");
-        background-repeat: no-repeat;
-        width: 100px;
-        height: 100px;
-        top: -27px;
-        right: 0;
-    }
-
     .section-btn {
         @apply flex-center gap-3 relative max-w-[174px] mx-auto mt-10 py-3 pr-6 pl-5 bg-transparent border-2 border-teal-600 text-teal-800 rounded-2xl;
     }

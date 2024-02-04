@@ -649,28 +649,6 @@ video {
   opacity: 0;
 }
 
-.section-tittle {
-  position: relative;
-  margin-bottom: 3rem;
-  display: inline-flex;
-  padding-right: 116px;
-  text-align: right;
-  font-family: EstedadBold;
-  font-size: 32px;
-  font-weight: 700;
-}
-
-.section-tittle::before {
-  content: '';
-  position: absolute;
-  background-image: url("/public/images/logo/svg/tittle-icon.svg");
-  background-repeat: no-repeat;
-  width: 100px;
-  height: 100px;
-  top: -27px;
-  right: 0;
-}
-
 .section-btn {
   position: relative;
   margin-left: auto;
@@ -752,17 +730,16 @@ video {
   margin-bottom: auto;
 }
 
-.mx-auto {
-  margin-left: auto;
-  margin-right: auto;
-}
-
 .-mt-1 {
   margin-top: -0.25rem;
 }
 
-.mb-8 {
-  margin-bottom: 2rem;
+.mb-12 {
+  margin-bottom: 3rem;
+}
+
+.mb-4 {
+  margin-bottom: 1rem;
 }
 
 .ml-1 {
@@ -947,12 +924,12 @@ video {
   width: 2.25rem;
 }
 
-.w-\[130px\] {
-  width: 130px;
+.w-\[100px\] {
+  width: 100px;
 }
 
-.w-\[340px\] {
-  width: 340px;
+.w-\[130px\] {
+  width: 130px;
 }
 
 .w-\[405px\] {
@@ -969,6 +946,14 @@ video {
 
 .max-w-\[193px\] {
   max-width: 193px;
+}
+
+.max-w-\[340px\] {
+  max-width: 340px;
+}
+
+.max-w-\[405px\] {
+  max-width: 405px;
 }
 
 .shrink-0 {
@@ -1069,14 +1054,14 @@ video {
        column-gap: 1.25rem;
 }
 
+.gap-x-7 {
+  -moz-column-gap: 1.75rem;
+       column-gap: 1.75rem;
+}
+
 .gap-x-8 {
   -moz-column-gap: 2rem;
        column-gap: 2rem;
-}
-
-.gap-x-9 {
-  -moz-column-gap: 2.25rem;
-       column-gap: 2.25rem;
 }
 
 .gap-y-10 {
@@ -1101,26 +1086,6 @@ video {
 
 .gap-y-6 {
   row-gap: 1.5rem;
-}
-
-.gap-x-10 {
-  -moz-column-gap: 2.5rem;
-       column-gap: 2.5rem;
-}
-
-.gap-x-24 {
-  -moz-column-gap: 6rem;
-       column-gap: 6rem;
-}
-
-.gap-x-32 {
-  -moz-column-gap: 8rem;
-       column-gap: 8rem;
-}
-
-.gap-x-28 {
-  -moz-column-gap: 7rem;
-       column-gap: 7rem;
 }
 
 .self-end {
@@ -1574,6 +1539,16 @@ video {
     justify-content: space-between;
   }
 
+  .sm\:gap-x-2 {
+    -moz-column-gap: 0.5rem;
+         column-gap: 0.5rem;
+  }
+
+  .sm\:gap-x-2\.5 {
+    -moz-column-gap: 0.625rem;
+         column-gap: 0.625rem;
+  }
+
   .sm\:text-5xl {
     font-size: 3rem;
     line-height: 1;
@@ -1587,6 +1562,14 @@ video {
 }
 
 @media (min-width: 768px) {
+  .md\:mb-8 {
+    margin-bottom: 2rem;
+  }
+
+  .md\:block {
+    display: block;
+  }
+
   .md\:hidden {
     display: none;
   }
@@ -1627,6 +1610,11 @@ video {
 
   .md\:font-Estedad {
     font-family: Estedad;
+  }
+
+  .md\:text-3xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
   }
 
   .md\:text-lg {
