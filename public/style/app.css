@@ -660,7 +660,7 @@ video {
   font-weight: 700;
 }
 
-.section-tittle::before{
+.section-tittle::before {
   content: '';
   position: absolute;
   background-image: url("/public/images/logo/svg/tittle-icon.svg");
@@ -1245,6 +1245,14 @@ video {
   padding-right: 0.625rem;
 }
 
+.pr-3 {
+  padding-right: 0.75rem;
+}
+
+.pr-3\.5 {
+  padding-right: 0.875rem;
+}
+
 .pr-5 {
   padding-right: 1.25rem;
 }
@@ -1404,6 +1412,25 @@ video {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.child\:footer-items > * {
+  position: relative;
+}
+
+.child\:footer-items > *::before {
+  content: "";
+  position: absolute;
+  background: #3f3f46;
+  width: 6px;
+  height: 6px;
+  right: -14px;
+  top: 12px;
+  border-radius: 100%;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  -ms-border-radius: 100%;
+  -o-border-radius: 100%;
 }
 
 .placeholder\:text-lg::-moz-placeholder {
