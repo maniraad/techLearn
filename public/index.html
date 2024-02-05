@@ -61,6 +61,11 @@
             stroke="currentColor" class="w-6 h-6">
             <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
         </symbol>
+        <symbol id="x-mark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+            <path
+                d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z" />
+        </symbol>
+
     </svg>
 
 
@@ -106,6 +111,66 @@
                         </a>
                     </li>
                 </ul>
+
+                <!-- NavBar Menu Mobile -->
+                <div
+                    class="navigation lg:hidden bg-white w-64 h-screen overflow-y-auto fixed top-0 bottom-0 z-50 px-7 pb-16 transition-all -right-64">
+                    <div
+                        class="flex items-center justify-between pb-5 mt-5 relative border-b border-b-gray-200">
+                        <div class="flex items-center">
+                            <img src="images/logo/Logo.png" alt="logo">
+                        </div>
+                        <div class="navigation__close-btn flex items-center justify-center w-9 h-9">
+                            <svg class="w-7 h-7 text-slate-500">
+                                <use xlink:href="#x-mark"></use>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <form class="block mt-7" action="" method="get">
+                        <label class="relative w-full h-12 block transition-all">
+                            <input
+                                class="rounded-xl bg-gray-100 text-slate-500 placeholder:text-slate-500 w-full h-full text-base pl-12 pr-5 block outline-none transition-all"
+                                name="s" type="text" placeholder="جستجو">
+                            <button
+                                class="absolute left-4 top-0 bottom-0 w-6 h-6 my-auto text-slate-500"
+                                type="submit" role="button">
+                                <svg class="w-6 h-6">
+                                    <use xlink:href="#search"></use>
+                                </svg>
+                            </button>
+                        </label>
+                    </form>
+                    <div class="mt-5">
+                        <ul class="flex flex-col gap-5 w-full text-slate-500 text-lg">
+                            <li class="relative">
+                                <a href="#">
+                                    صفحه اصلی
+                                </a>
+                            </li>
+                            <li class="relative">
+                                <a href="#" class="">
+                                    همه دوره ها
+                                </a>
+                            </li>
+                            <li class="relative flex items-center justify-between">
+                                <a href="#" class="">
+                                    مقالات
+                                </a>
+                                <svg class="w-4 h-4">
+                                    <use xlink:href="#chevron-down"></use>
+                                </svg>
+                            </li>
+                            <li class="relative">
+                                <a href="#" class="">
+                                    درباره ما
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+
             </nav>
             <!-- SearchBar & Cart & LogIn -->
             <div class="flex gap-x-4 md:gap-x-8">
@@ -1108,6 +1173,7 @@
     </div>
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
     <script src="js/script.js"></script>
+    <script src="js/style.js"></script>
     <script>
         var swiper = new Swiper(".mySwiper", {
             slidesPerView: 1,
