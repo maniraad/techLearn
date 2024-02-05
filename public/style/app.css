@@ -1399,6 +1399,10 @@ video {
   transition-delay: 75ms;
 }
 
+.delay-100 {
+  transition-delay: 100ms;
+}
+
 .flex-center {
   display: flex;
   align-items: center;
