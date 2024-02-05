@@ -720,6 +720,10 @@ video {
   z-index: 50;
 }
 
+.m-auto {
+  margin: auto;
+}
+
 .my-10 {
   margin-top: 2.5rem;
   margin-bottom: 2.5rem;
@@ -920,10 +924,6 @@ video {
   width: 2.25rem;
 }
 
-.w-\[100px\] {
-  width: 100px;
-}
-
 .w-\[130px\] {
   width: 130px;
 }
@@ -934,6 +934,10 @@ video {
 
 .w-px {
   width: 1px;
+}
+
+.min-w-40 {
+  min-width: 10rem;
 }
 
 .max-w-\[193px\] {
@@ -1563,6 +1567,10 @@ video {
 }
 
 @media (min-width: 768px) {
+  .md\:m-\[unset\] {
+    margin: unset;
+  }
+
   .md\:mb-8 {
     margin-bottom: 2rem;
   }
@@ -1587,6 +1595,10 @@ video {
     width: 3.5rem;
   }
 
+  .md\:max-w-none {
+    max-width: none;
+  }
+
   .md\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -1598,6 +1610,10 @@ video {
   .md\:gap-x-8 {
     -moz-column-gap: 2rem;
          column-gap: 2rem;
+  }
+
+  .md\:gap-y-7 {
+    row-gap: 1.75rem;
   }
 
   .md\:px-16 {
@@ -1621,11 +1637,6 @@ video {
   .md\:text-lg {
     font-size: 1.125rem;
     line-height: 1.75rem;
-  }
-
-  .md\:text-2xl {
-    font-size: 1.5rem;
-    line-height: 2rem;
   }
 
   .md\:text-xl {
@@ -1673,8 +1684,9 @@ video {
     padding-right: 1.5rem;
   }
 
-  .lg\:font-EstedadMedium {
-    font-family: EstedadMedium;
+  .lg\:text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
   }
 
   .lg\:text-6xl {
@@ -1685,11 +1697,6 @@ video {
   .lg\:text-base {
     font-size: 1rem;
     line-height: 1.5rem;
-  }
-
-  .lg\:text-2xl {
-    font-size: 1.5rem;
-    line-height: 2rem;
   }
 
   .lg\:font-bold {
