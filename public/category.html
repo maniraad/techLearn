@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="./style/app.css" rel="stylesheet">
     <link rel="icon" href="images/fav-icon.png">
-    <title> تک لرن |  دوره ها </title>
+    <title> تک لرن | دوره ها </title>
 </head>
 
 <body dir="rtl" class="font-Estedad bg-gray-100">
@@ -64,10 +64,16 @@
             <path
                 d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z" />
         </symbol>
+        <symbol id="sort" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                d="M3 4.5h14.25M3 9h9.75M3 13.5h9.75m4.5-4.5v12m0 0-3.75-3.75M17.25 21 21 17.25" />
+        </symbol>
     </svg>
 
     <header class="">
-        <div class="flex items-center justify-between px-9 md:px-16 lg:px-4 2xl:px-12 bg-white h-20 md:h-28 fixed top-0 w-full z-30">
+        <div
+            class="flex items-center justify-between px-9 md:px-16 lg:px-4 2xl:px-12 bg-white h-20 md:h-28 fixed top-0 w-full z-30">
             <!-- NavBar Icon -->
             <span id="nav-bar-icon" class="lg:hidden">
                 <svg class="w-9 h-9">
@@ -237,7 +243,336 @@
         </div>
     </header>
 
-    <footer class="pt-8 fixed bottom-0 w-full mt-36 bg-white">
+    <main id="posts-archive">
+        <div class="container pt-28">
+            <!-- Section Name -->
+            <h2
+                class="flex items-center flex-col-reverse gap-y-5 w-min mx-auto mt-14 font-EstedadBold text-4xl sm:text-6xl whitespace-nowrap">
+                <span class="block w-7 sm:w-full h-2.5 bg-rose-500 shrink-0 rounded-sm"></span>
+                دوره ها
+            </h2>
+            <!-- Section -->
+            <section class="grid items-center grid-rows-1 gap-3.5 sm:gap-5 mt-9 sm:mt-25">
+                <!-- Content -->
+                <section class="col-span-1 lg:col-span-2 xl:col-span-3 order-1 lg:order-2">
+                    <!-- Sort in Mobile Size -->
+                    <div class="flex sm:hidden items-center gap-3.5 mb-7">
+                        <div class="flex-center gap-x-2 w-1/2 mx-auto py-2 px-4 text-sm text-zinc-700 bg-white rounded-xl select-none"
+                            id="sort-btn">
+                            <svg class="w-6 h-6 text-gray-500">
+                                <use xlink:href="#sort"></use>
+                            </svg>
+                            <span class="active_sort_title">همه دوره ها</span>
+                        </div>
+                    </div>
+                    <!-- Course Sort -->
+                    <div
+                        class="hidden sm:flex items-center px-7 mb-5 h-16 shadow-sm bg-white border-gray-700 rounded-2xl">
+                        <div class="flex-center lg:justify-start gap-4 text-sm">
+                            <span class="flex items-center shrink-0 gap-x-2.5">
+                                <svg class="w-5 h-5">
+                                    <use xlink:href="#sort"></use>
+                                </svg>
+                                مرتب سازی :
+                            </span>
+                            <div class="flex items-center flex-wrap">
+                                <a href="" data-id="" class="sort-btn sort-btn--active" role="button">همه دوره ها</a>
+                                <a href="" data-id="" class="sort-btn" role="button">ارزان ترین</a>
+                                <a href="" data-id="" class="sort-btn" role="button">گران ترین</a>
+                                <a href="" data-id="" class="sort-btn" role="button">پرمخاطب ها</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Course List -->
+                    <div class="posts_wrap grid grid-rows-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-items-center gap-5">
+                        <div class="inline-flex flex-col items-center gap-y-4 py-3 px-4 bg-white max-w-[340px] rounded-3xl shadow-sm">
+                            <!-- Image -->
+                            <div class="">
+                                <img src="images/courses/C-sharp.png" alt="Js-course" class="">
+                            </div>
+                            <!-- Box Body -->
+                            <div class="flex flex-col justify-center items-start self-baseline gap-y-4">
+                                <!-- Topic -->
+                                <h4 class="text-2xl text-right font-EstedadMedium font-bold overflow-hidden line-clamp-1">
+                                    صفر تا صد جاوااسکریپت</h4>
+                                <!-- Teacher & Time -->
+                                <div class="flex flex-wrap text-sm">
+                                    <div class="flex-center gap-x-1 py-1 px-2">
+                                        <svg class="w-4 h-4">
+                                            <use href="#user"></use>
+                                        </svg>
+                                        <a href="#">احمد حسینی</a>
+                                    </div>
+                                    <div class="flex-center gap-x-1 py-1 px-2">
+                                        <svg class="w-4 h-4">
+                                            <use href="#clock"></use>
+                                        </svg>
+                                        <span>۲۰:۴۳</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Price -->
+                            <div class="self-end text-2xl text-right font-EstedadMedium font-bold">
+                                ۲٬۷۰۰٬۰۰۰
+                                <span>تومان</span>
+                            </div>
+                            <!-- Button -->
+                            <a href="#" class="self-stretch py-3 text-white text-center font-EstedadMedium bg-teal-600 hover:bg-teal-700 rounded-2xl delay-100 transition-all">
+                                مشاهده و ثبت نام </a>
+                        </div>
+                        <div class="inline-flex flex-col items-center gap-y-4 py-3 px-4 bg-white max-w-[340px] rounded-3xl shadow-sm">
+                            <!-- Image -->
+                            <div class="">
+                                <img src="images/courses/C-sharp.png" alt="Js-course" class="">
+                            </div>
+                            <!-- Box Body -->
+                            <div class="flex flex-col justify-center items-start self-baseline gap-y-4">
+                                <!-- Topic -->
+                                <h4 class="text-2xl text-right font-EstedadMedium font-bold overflow-hidden line-clamp-1">
+                                    صفر تا صد جاوااسکریپت</h4>
+                                <!-- Teacher & Time -->
+                                <div class="flex flex-wrap text-sm">
+                                    <div class="flex-center gap-x-1 py-1 px-2">
+                                        <svg class="w-4 h-4">
+                                            <use href="#user"></use>
+                                        </svg>
+                                        <a href="#">احمد حسینی</a>
+                                    </div>
+                                    <div class="flex-center gap-x-1 py-1 px-2">
+                                        <svg class="w-4 h-4">
+                                            <use href="#clock"></use>
+                                        </svg>
+                                        <span>۲۰:۴۳</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Price -->
+                            <div class="self-end text-2xl text-right font-EstedadMedium font-bold">
+                                ۲٬۷۰۰٬۰۰۰
+                                <span>تومان</span>
+                            </div>
+                            <!-- Button -->
+                            <a href="#" class="self-stretch py-3 text-white text-center font-EstedadMedium bg-teal-600 hover:bg-teal-700 rounded-2xl delay-100 transition-all">
+                                مشاهده و ثبت نام </a>
+                        </div>
+                        <div class="inline-flex flex-col items-center gap-y-4 py-3 px-4 bg-white max-w-[340px] rounded-3xl shadow-sm">
+                            <!-- Image -->
+                            <div class="">
+                                <img src="images/courses/C-sharp.png" alt="Js-course" class="">
+                            </div>
+                            <!-- Box Body -->
+                            <div class="flex flex-col justify-center items-start self-baseline gap-y-4">
+                                <!-- Topic -->
+                                <h4 class="text-2xl text-right font-EstedadMedium font-bold overflow-hidden line-clamp-1">
+                                    صفر تا صد جاوااسکریپت</h4>
+                                <!-- Teacher & Time -->
+                                <div class="flex flex-wrap text-sm">
+                                    <div class="flex-center gap-x-1 py-1 px-2">
+                                        <svg class="w-4 h-4">
+                                            <use href="#user"></use>
+                                        </svg>
+                                        <a href="#">احمد حسینی</a>
+                                    </div>
+                                    <div class="flex-center gap-x-1 py-1 px-2">
+                                        <svg class="w-4 h-4">
+                                            <use href="#clock"></use>
+                                        </svg>
+                                        <span>۲۰:۴۳</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Price -->
+                            <div class="self-end text-2xl text-right font-EstedadMedium font-bold">
+                                ۲٬۷۰۰٬۰۰۰
+                                <span>تومان</span>
+                            </div>
+                            <!-- Button -->
+                            <a href="#" class="self-stretch py-3 text-white text-center font-EstedadMedium bg-teal-600 hover:bg-teal-700 rounded-2xl delay-100 transition-all">
+                                مشاهده و ثبت نام </a>
+                        </div>
+                        <div class="inline-flex flex-col items-center gap-y-4 py-3 px-4 bg-white max-w-[340px] rounded-3xl shadow-sm">
+                            <!-- Image -->
+                            <div class="">
+                                <img src="images/courses/C-sharp.png" alt="Js-course" class="">
+                            </div>
+                            <!-- Box Body -->
+                            <div class="flex flex-col justify-center items-start self-baseline gap-y-4">
+                                <!-- Topic -->
+                                <h4 class="text-2xl text-right font-EstedadMedium font-bold overflow-hidden line-clamp-1">
+                                    صفر تا صد جاوااسکریپت</h4>
+                                <!-- Teacher & Time -->
+                                <div class="flex flex-wrap text-sm">
+                                    <div class="flex-center gap-x-1 py-1 px-2">
+                                        <svg class="w-4 h-4">
+                                            <use href="#user"></use>
+                                        </svg>
+                                        <a href="#">احمد حسینی</a>
+                                    </div>
+                                    <div class="flex-center gap-x-1 py-1 px-2">
+                                        <svg class="w-4 h-4">
+                                            <use href="#clock"></use>
+                                        </svg>
+                                        <span>۲۰:۴۳</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Price -->
+                            <div class="self-end text-2xl text-right font-EstedadMedium font-bold">
+                                ۲٬۷۰۰٬۰۰۰
+                                <span>تومان</span>
+                            </div>
+                            <!-- Button -->
+                            <a href="#" class="self-stretch py-3 text-white text-center font-EstedadMedium bg-teal-600 hover:bg-teal-700 rounded-2xl delay-100 transition-all">
+                                مشاهده و ثبت نام </a>
+                        </div>
+                        <div class="inline-flex flex-col items-center gap-y-4 py-3 px-4 bg-white max-w-[340px] rounded-3xl shadow-sm">
+                            <!-- Image -->
+                            <div class="">
+                                <img src="images/courses/C-sharp.png" alt="Js-course" class="">
+                            </div>
+                            <!-- Box Body -->
+                            <div class="flex flex-col justify-center items-start self-baseline gap-y-4">
+                                <!-- Topic -->
+                                <h4 class="text-2xl text-right font-EstedadMedium font-bold overflow-hidden line-clamp-1">
+                                    صفر تا صد جاوااسکریپت</h4>
+                                <!-- Teacher & Time -->
+                                <div class="flex flex-wrap text-sm">
+                                    <div class="flex-center gap-x-1 py-1 px-2">
+                                        <svg class="w-4 h-4">
+                                            <use href="#user"></use>
+                                        </svg>
+                                        <a href="#">احمد حسینی</a>
+                                    </div>
+                                    <div class="flex-center gap-x-1 py-1 px-2">
+                                        <svg class="w-4 h-4">
+                                            <use href="#clock"></use>
+                                        </svg>
+                                        <span>۲۰:۴۳</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Price -->
+                            <div class="self-end text-2xl text-right font-EstedadMedium font-bold">
+                                ۲٬۷۰۰٬۰۰۰
+                                <span>تومان</span>
+                            </div>
+                            <!-- Button -->
+                            <a href="#" class="self-stretch py-3 text-white text-center font-EstedadMedium bg-teal-600 hover:bg-teal-700 rounded-2xl delay-100 transition-all">
+                                مشاهده و ثبت نام </a>
+                        </div>
+                        <div class="inline-flex flex-col items-center gap-y-4 py-3 px-4 bg-white max-w-[340px] rounded-3xl shadow-sm">
+                            <!-- Image -->
+                            <div class="">
+                                <img src="images/courses/C-sharp.png" alt="Js-course" class="">
+                            </div>
+                            <!-- Box Body -->
+                            <div class="flex flex-col justify-center items-start self-baseline gap-y-4">
+                                <!-- Topic -->
+                                <h4 class="text-2xl text-right font-EstedadMedium font-bold overflow-hidden line-clamp-1">
+                                    صفر تا صد جاوااسکریپت</h4>
+                                <!-- Teacher & Time -->
+                                <div class="flex flex-wrap text-sm">
+                                    <div class="flex-center gap-x-1 py-1 px-2">
+                                        <svg class="w-4 h-4">
+                                            <use href="#user"></use>
+                                        </svg>
+                                        <a href="#">احمد حسینی</a>
+                                    </div>
+                                    <div class="flex-center gap-x-1 py-1 px-2">
+                                        <svg class="w-4 h-4">
+                                            <use href="#clock"></use>
+                                        </svg>
+                                        <span>۲۰:۴۳</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Price -->
+                            <div class="self-end text-2xl text-right font-EstedadMedium font-bold">
+                                ۲٬۷۰۰٬۰۰۰
+                                <span>تومان</span>
+                            </div>
+                            <!-- Button -->
+                            <a href="#" class="self-stretch py-3 text-white text-center font-EstedadMedium bg-teal-600 hover:bg-teal-700 rounded-2xl delay-100 transition-all">
+                                مشاهده و ثبت نام </a>
+                        </div>
+                        <div class="inline-flex flex-col items-center gap-y-4 py-3 px-4 bg-white max-w-[340px] rounded-3xl shadow-sm">
+                            <!-- Image -->
+                            <div class="">
+                                <img src="images/courses/C-sharp.png" alt="Js-course" class="">
+                            </div>
+                            <!-- Box Body -->
+                            <div class="flex flex-col justify-center items-start self-baseline gap-y-4">
+                                <!-- Topic -->
+                                <h4 class="text-2xl text-right font-EstedadMedium font-bold overflow-hidden line-clamp-1">
+                                    صفر تا صد جاوااسکریپت</h4>
+                                <!-- Teacher & Time -->
+                                <div class="flex flex-wrap text-sm">
+                                    <div class="flex-center gap-x-1 py-1 px-2">
+                                        <svg class="w-4 h-4">
+                                            <use href="#user"></use>
+                                        </svg>
+                                        <a href="#">احمد حسینی</a>
+                                    </div>
+                                    <div class="flex-center gap-x-1 py-1 px-2">
+                                        <svg class="w-4 h-4">
+                                            <use href="#clock"></use>
+                                        </svg>
+                                        <span>۲۰:۴۳</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Price -->
+                            <div class="self-end text-2xl text-right font-EstedadMedium font-bold">
+                                ۲٬۷۰۰٬۰۰۰
+                                <span>تومان</span>
+                            </div>
+                            <!-- Button -->
+                            <a href="#" class="self-stretch py-3 text-white text-center font-EstedadMedium bg-teal-600 hover:bg-teal-700 rounded-2xl delay-100 transition-all">
+                                مشاهده و ثبت نام </a>
+                        </div>
+                        <div class="inline-flex flex-col items-center gap-y-4 py-3 px-4 bg-white max-w-[340px] rounded-3xl shadow-sm">
+                            <!-- Image -->
+                            <div class="">
+                                <img src="images/courses/C-sharp.png" alt="Js-course" class="">
+                            </div>
+                            <!-- Box Body -->
+                            <div class="flex flex-col justify-center items-start self-baseline gap-y-4">
+                                <!-- Topic -->
+                                <h4 class="text-2xl text-right font-EstedadMedium font-bold overflow-hidden line-clamp-1">
+                                    صفر تا صد جاوااسکریپت</h4>
+                                <!-- Teacher & Time -->
+                                <div class="flex flex-wrap text-sm">
+                                    <div class="flex-center gap-x-1 py-1 px-2">
+                                        <svg class="w-4 h-4">
+                                            <use href="#user"></use>
+                                        </svg>
+                                        <a href="#">احمد حسینی</a>
+                                    </div>
+                                    <div class="flex-center gap-x-1 py-1 px-2">
+                                        <svg class="w-4 h-4">
+                                            <use href="#clock"></use>
+                                        </svg>
+                                        <span>۲۰:۴۳</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Price -->
+                            <div class="self-end text-2xl text-right font-EstedadMedium font-bold">
+                                ۲٬۷۰۰٬۰۰۰
+                                <span>تومان</span>
+                            </div>
+                            <!-- Button -->
+                            <a href="#" class="self-stretch py-3 text-white text-center font-EstedadMedium bg-teal-600 hover:bg-teal-700 rounded-2xl delay-100 transition-all">
+                                مشاهده و ثبت نام </a>
+                        </div>
+                    </div>
+                    
+                </section>
+            </section>
+        </div>
+    </main>
+
+    <footer class="pt-8 w-full mt-36 bg-white">
         <div class="container">
             <div class="mb-12 md:mb-8 flex-center md:block">
                 <a href="#">

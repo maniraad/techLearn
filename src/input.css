@@ -107,6 +107,12 @@
         -o-border-radius: 100%;
     }
 
+    .sort-btn{
+        @apply inline-block text-slate-500 py-3 px-4 rounded-lg transition-all
+    }
+    .sort-btn--active{
+        @apply font-EstedadMedium text-zinc-700 bg-gray-100
+    }
 }
 
 @layer utilities {
