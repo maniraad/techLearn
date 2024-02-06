@@ -107,11 +107,24 @@
         -o-border-radius: 100%;
     }
 
-    .sort-btn{
+    .sort-btn {
         @apply inline-block text-slate-500 py-3 px-4 rounded-lg transition-all
     }
-    .sort-btn--active{
+
+    .sort-btn--active {
         @apply font-EstedadMedium text-zinc-700 bg-gray-100
+    }
+
+    .breadcrumb {
+        @apply flex items-center gap-x-3 bg-white w-full py-4 px-7 mt-6 rounded-xl;
+    }
+
+    .breadcrumb__item {
+        @apply flex items-center gap-1.5 text-lg child:text-zinc-700/80;
+    }
+
+    .breadcrumb__item--acive {
+        @apply font-EstedadMedium child:text-zinc-700;
     }
 }
 
