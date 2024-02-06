@@ -991,6 +991,10 @@ video {
   height: 100vh;
 }
 
+.h-1 {
+  height: 0.25rem;
+}
+
 .max-h-12 {
   max-height: 3rem;
 }
@@ -1641,6 +1645,10 @@ video {
 
 .font-EstedadMedium {
   font-family: EstedadMedium;
+}
+
+.font-EstedadLight {
+  font-family: EstedadLight;
 }
 
 .text-2xl {
