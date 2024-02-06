@@ -116,7 +116,7 @@
     }
 
     .breadcrumb {
-        @apply hidden md:flex items-center gap-x-3 bg-white w-full py-4 px-7 mt-6 rounded-xl;
+        @apply hidden md:flex items-center gap-x-3 bg-white w-full py-4 px-7 mt-7 rounded-xl;
     }
 
     .breadcrumb__item {
