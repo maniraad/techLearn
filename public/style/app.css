@@ -696,7 +696,7 @@ video {
 
 .breadcrumb {
   margin-top: 1.5rem;
-  display: flex;
+  display: none;
   width: 100%;
   align-items: center;
   -moz-column-gap: 0.75rem;
@@ -708,6 +708,12 @@ video {
   padding-bottom: 1rem;
   padding-left: 1.75rem;
   padding-right: 1.75rem;
+}
+
+@media (min-width: 768px) {
+  .breadcrumb {
+    display: flex;
+  }
 }
 
 .breadcrumb__item {
