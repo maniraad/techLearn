@@ -3,8 +3,8 @@ module.exports = {
   content: ["./public/**/*.{html,js}"],
   theme: {
     extend: {
-      colors:{
-        "secondary":"#8C0014"
+      colors: {
+        "secondary": "#8C0014"
       },
       fontFamily: {
         "Estedad": "Estedad",
@@ -18,7 +18,10 @@ module.exports = {
         center: true,
         padding: {
           DEFAULT: "1rem",
-          lg: "0.625rem",
+          sm: '2rem',
+          lg: '4rem',
+          xl: '5rem',
+          '2xl': '6rem',
         }
       },
     },

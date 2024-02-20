@@ -2,8 +2,11 @@
 
 const topicLesson = document.querySelector('.topic__name');
 const topicBody = document.querySelector('.topic__body');
+const topicName = document.querySelector('.topic__name');
+const topicNameArrow = document.querySelector('.topic__name--arrow');
 
 topicLesson.addEventListener('click', () => {
-
-    topicBody.classList.toggle('max-h-full')
+    topicName.classList.toggle('topic__name--active');
+    topicBody.classList.toggle('max-h-full');
+    topicNameArrow.classList.toggle('rotate-180');
 })
