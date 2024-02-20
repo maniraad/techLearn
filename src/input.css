@@ -126,6 +126,27 @@
     .breadcrumb__item--acive {
         @apply font-EstedadMedium child:text-zinc-700;
     }
+
+    .topic {
+        @apply overflow-hidden rounded-2xl bg-gray-100
+    }
+
+    .topic__name {
+        @apply flex items-center justify-between h-12 md:h-[75px] px-3 md:px-5 bg-gray-100 cursor-pointer transition-all
+    }
+
+    .topic__name:hover {
+        @apply bg-gray-200
+    }
+
+    .topic__name--active {
+        @apply bg-gray-200
+    }
+
+    
+    .topic__body {
+        @apply overflow-hidden child:border-b child:border-b-gray-200 transition-all
+    }
 }
 
 @layer utilities {
