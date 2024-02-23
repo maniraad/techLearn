@@ -812,10 +812,6 @@ video {
   position: relative;
 }
 
-.sticky {
-  position: sticky;
-}
-
 .-left-24 {
   left: -6rem;
 }
@@ -850,10 +846,6 @@ video {
 
 .top-full {
   top: 100%;
-}
-
-.top-5 {
-  top: 1.25rem;
 }
 
 .z-10 {
@@ -1086,10 +1078,6 @@ video {
   height: 2.25rem;
 }
 
-.h-96 {
-  height: 24rem;
-}
-
 .h-\[130px\] {
   height: 130px;
 }
@@ -1116,10 +1104,6 @@ video {
 
 .max-h-0 {
   max-height: 0px;
-}
-
-.max-h-\[360px\] {
-  max-height: 360px;
 }
 
 .max-h-full {
@@ -1190,6 +1174,10 @@ video {
   width: 18rem;
 }
 
+.w-80 {
+  width: 20rem;
+}
+
 .w-9 {
   width: 2.25rem;
 }
@@ -1198,8 +1186,8 @@ video {
   width: 130px;
 }
 
-.w-\[640px\] {
-  width: 640px;
+.w-\[80\%\] {
+  width: 80%;
 }
 
 .w-\[85\%\] {
@@ -1219,38 +1207,6 @@ video {
   width: 1px;
 }
 
-.w-\[30\%\] {
-  width: 30%;
-}
-
-.w-\[full\] {
-  width: full;
-}
-
-.w-\[70\] {
-  width: 70;
-}
-
-.w-\[70\%\] {
-  width: 70%;
-}
-
-.w-80 {
-  width: 20rem;
-}
-
-.w-\[40\%\] {
-  width: 40%;
-}
-
-.w-\[60\%\] {
-  width: 60%;
-}
-
-.w-\[80\%\] {
-  width: 80%;
-}
-
 .min-w-40 {
   min-width: 10rem;
 }
@@ -1267,10 +1223,6 @@ video {
   max-width: 405px;
 }
 
-.max-w-\[610px\] {
-  max-width: 610px;
-}
-
 .max-w-\[640px\] {
   max-width: 640px;
 }
@@ -1281,10 +1233,6 @@ video {
 
 .shrink-0 {
   flex-shrink: 0;
-}
-
-.shrink {
-  flex-shrink: 1;
 }
 
 .flex-grow {
@@ -1358,10 +1306,6 @@ video {
 
 .justify-between {
   justify-content: space-between;
-}
-
-.justify-evenly {
-  justify-content: space-evenly;
 }
 
 .justify-items-center {
@@ -1497,18 +1441,6 @@ video {
   --tw-space-y-reverse: 0;
   margin-top: calc(0.875rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(0.875rem * var(--tw-space-y-reverse));
-}
-
-.space-y-5 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-y-reverse: 0;
-  margin-top: calc(1.25rem * calc(1 - var(--tw-space-y-reverse)));
-  margin-bottom: calc(1.25rem * var(--tw-space-y-reverse));
-}
-
-.space-y-6 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-y-reverse: 0;
-  margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
-  margin-bottom: calc(1.5rem * var(--tw-space-y-reverse));
 }
 
 .self-end {
@@ -1674,11 +1606,6 @@ video {
 .px-2\.5 {
   padding-left: 0.625rem;
   padding-right: 0.625rem;
-}
-
-.px-20 {
-  padding-left: 5rem;
-  padding-right: 5rem;
 }
 
 .px-3 {
@@ -1910,10 +1837,6 @@ video {
 
 .leading-\[56px\] {
   line-height: 56px;
-}
-
-.leading-5 {
-  line-height: 1.25rem;
 }
 
 .text-gray-500 {
@@ -2222,15 +2145,6 @@ video {
     line-height: 1;
   }
 
-  .sm\:text-2xl {
-    font-size: 1.5rem;
-    line-height: 2rem;
-  }
-
-  .sm\:leading-5 {
-    line-height: 1.25rem;
-  }
-
   .sm\:flex-center {
     display: flex;
     align-items: center;
@@ -2289,14 +2203,6 @@ video {
 
   .md\:w-7 {
     width: 1.75rem;
-  }
-
-  .md\:w-\[40\%\] {
-    width: 40%;
-  }
-
-  .md\:w-\[60\%\] {
-    width: 60%;
   }
 
   .md\:grid-cols-2 {
@@ -2383,10 +2289,6 @@ video {
     line-height: 1.75rem;
   }
 
-  .md\:leading-7 {
-    line-height: 1.75rem;
-  }
-
   .md\:leading-9 {
     line-height: 2.25rem;
   }
@@ -2467,6 +2369,11 @@ video {
     line-height: 2.25rem;
   }
 
+  .lg\:text-4xl {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+
   .lg\:text-6xl {
     font-size: 3.75rem;
     line-height: 1;
@@ -2480,11 +2387,6 @@ video {
   .lg\:text-xl {
     font-size: 1.25rem;
     line-height: 1.75rem;
-  }
-
-  .lg\:text-4xl {
-    font-size: 2.25rem;
-    line-height: 2.5rem;
   }
 
   .lg\:font-bold {
