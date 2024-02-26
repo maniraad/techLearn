@@ -880,6 +880,22 @@ video {
   top: 1rem;
 }
 
+.top-52 {
+  top: 13rem;
+}
+
+.top-5 {
+  top: 1.25rem;
+}
+
+.top-48 {
+  top: 12rem;
+}
+
+.top-32 {
+  top: 8rem;
+}
+
 .z-10 {
   z-index: 10;
 }
