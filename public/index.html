@@ -69,7 +69,8 @@
 
 
     <header class="">
-        <div class="flex items-center justify-between px-9 md:px-16 lg:px-4 2xl:px-12 bg-white h-20 md:h-28 fixed top-0 w-full z-30">
+        <div
+            class="flex items-center justify-between px-9 md:px-16 lg:px-4 2xl:px-12 bg-white h-20 md:h-28 fixed top-0 w-full z-30">
             <!-- NavBar Icon -->
             <span id="nav-bar-icon" class="lg:hidden">
                 <svg class="w-9 h-9">
@@ -249,8 +250,8 @@
                                 class="text-red-800">متخصص</span>
                             میشی!</h2>
                         <div class="flex items-center gap-x-8 my-10 font-EstedadMedium text-sm lg:text-base xl:text-lg">
-                            <div class="flex flex-col gap-y-6">
-                                <span class="flex items-center gap-x-2">
+                            <div class="flex flex-col gap-y-6 w-40 lg:w-48">
+                                <div class="flex items-center gap-x-2">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="41" height="41" viewBox="0 0 41 41"
                                         fill="none">
                                         <path fill-rule="evenodd" clip-rule="evenodd"
@@ -260,9 +261,11 @@
                                             d="M18.5681 31.3092C18.5681 31.9149 17.9392 32.3336 17.3711 32.1239C15.3031 31.3603 10.6671 29.8922 4.33929 29.3306C3.90501 29.292 3.56809 28.9407 3.56809 28.5047C3.56809 25.3532 3.56809 13.3724 3.56809 10.0984C3.56809 9.63821 3.93723 9.27093 4.39692 9.29345C6.488 9.39592 12.229 9.90044 18.0706 12.3844C18.3737 12.5133 18.5681 12.8105 18.5681 13.1398C18.5681 15.7835 18.5681 27.3972 18.5681 31.3092Z"
                                             fill="#8C0014" />
                                     </svg>
-                                    ۳۲ دوره آموزشی
-                                </span>
-                                <span class="flex items-center gap-x-2">
+                                    <span class="course-status">
+                                        ۳۲ دوره آموزشی
+                                    </span>
+                                </div>
+                                <div class="flex items-center gap-x-2">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="41" height="41" viewBox="0 0 41 41"
                                         fill="none">
                                         <path opacity="0.3"
@@ -272,11 +275,13 @@
                                             d="M5.23595 34.5993C5.88196 26.6449 12.3381 22.6007 20.2071 22.6007C28.1869 22.6007 34.743 26.4227 35.2314 34.6007C35.2508 34.9265 35.2314 35.934 33.9794 35.934C27.8034 35.934 18.6261 35.934 6.44737 35.934C6.02938 35.934 5.20076 35.0326 5.23595 34.5993Z"
                                             fill="#2B8679" />
                                     </svg>
-                                    ۱۳۴۹۸۷ دانشجو
-                                </span>
+                                    <span class="student">
+                                        ۱۳۴۹۸۷ دانشجو
+                                    </span>
+                                </div>
                             </div>
                             <div class="flex flex-col gap-y-6">
-                                <span class="flex items-center gap-x-2">
+                                <div class="flex items-center gap-x-2">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="41" height="41" viewBox="0 0 41 41"
                                         fill="none">
                                         <rect opacity="0.3" x="5.08594" y="6.74541" width="35" height="20" rx="1.66667"
@@ -288,9 +293,11 @@
                                             fill="white" />
                                         <circle cx="19.4014" cy="20.934" r="3.33333" fill="#2B8679" />
                                     </svg>
-                                    تضمین بازگشت وجه
-                                </span>
-                                <span class="flex items-center gap-x-2">
+                                    <span class="">
+                                        تضمین بازگشت وجه
+                                    </span>
+                                </div>
+                                <div class="flex items-center gap-x-2">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="41" height="41" viewBox="0 0 41 41"
                                         fill="none">
                                         <path opacity="0.3"
@@ -301,8 +308,10 @@
                                         <rect x="10.2349" y="25.934" width="8.33333" height="3.33333" rx="1.66667"
                                             fill="#2B8679" />
                                     </svg>
-                                    ۴۵۳ مقاله رایگان
-                                </span>
+                                    <span class="blogs">
+                                        ۴۵۳ مقاله رایگان
+                                    </span>
+                                </div>
                             </div>
                         </div>
                         <a href="#"
@@ -1170,8 +1179,8 @@
     <div class="overlay fixed w-full h-full top-0 left-0 bg-black/40 z-30 transition-all invisible opacity-0"></div>
 
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
-    <script src="js/script.js"></script>
     <script src="js/style.js"></script>
+    <script src="js/index.js"></script>
     <script>
         var swiper = new Swiper(".mySwiper", {
             slidesPerView: 1,
