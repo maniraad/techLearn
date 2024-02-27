@@ -448,7 +448,7 @@ video {
   font-family: "Estedad";
 
   src: local("Estedad"),
-            url("/public/fonts/Estedad/Estedad-Regular.woff2");
+            url("/frontend/public/fonts/Estedad/Estedad-Regular.woff2");
 
   font-display: swap;
 }
@@ -457,7 +457,7 @@ video {
   font-family: "EstedadBlack";
 
   src: local("EstedadBlack"),
-            url("/public/fonts/Estedad/Estedad-Black.woff2");
+            url("/frontend/public/fonts/Estedad/Estedad-Black.woff2");
 
   font-display: swap;
 }
@@ -466,7 +466,7 @@ video {
   font-family: "EstedadBold";
 
   src: local("EstedadBold"),
-            url("/public/fonts/Estedad/Estedad-Bold.woff2");
+            url("/frontend/public/fonts/Estedad/Estedad-Bold.woff2");
 
   font-display: swap;
 }
@@ -475,7 +475,7 @@ video {
   font-family: "EstedadMedium";
 
   src: local("EstedadMedium"),
-            url("/public/fonts/Estedad/Estedad-Medium.woff2");
+            url("/frontend/public/fonts/Estedad/Estedad-Medium.woff2");
 
   font-display: swap;
 }
@@ -484,7 +484,7 @@ video {
   font-family: "EstedadLight";
 
   src: local("EstedadLight"),
-            url("/public/fonts/Estedad/Estedad-Light.woff2");
+            url("/frontend/public/fonts/Estedad/Estedad-Light.woff2");
 
   font-display: swap;
 }
@@ -493,7 +493,7 @@ video {
   font-family: "EstedadThin";
 
   src: local("EstedadThin"),
-            url("/public/fonts/Estedad/Estedad-Thin.woff2");
+            url("/frontend/public/fonts/Estedad/Estedad-Thin.woff2");
 
   font-display: swap;
 }
