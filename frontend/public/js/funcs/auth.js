@@ -6,20 +6,20 @@ const register = () => {
     const passwordInput = document.querySelector('#password');
 
     const newUserInfo = {
-        name: nameInput.value.trim(),
-        userName: userNameInput.value.trim(),
-        email: emailInput.value.trim(),
-        phone: phoneInput.value.trim(),
-        password: passwordInput.value.trim(),
-        confirmPassword: passwordInput.value.trim(),
+        name: nameInput.value,
+        userName: userNameInput.value,
+        email: emailInput.value,
+        phone: phoneInput.value,
+        password: passwordInput.value,
+        confirmPassword: passwordInput.value,
     }
 
     fetch(`http://localhost:4000/v1/auth/register`, {
         method: 'POST',
         headers: {
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
         },
-        body: JSON.stringify(newUserInfo)
+        body: JSON.stringify(newUserInfo),
     }).then(res => res.json())
         .then(result => console.log(result))
 
