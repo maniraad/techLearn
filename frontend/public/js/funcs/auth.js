@@ -21,7 +21,40 @@ const register = () => {
     },
     body: JSON.stringify(newUserInfos),
   })
-    .then((res) => res.json())
+    .then((res) => {
+
+      const Toast = Swal.mixin({
+        position: "top-end",
+        icon: "success",
+        title: "ثبت نام با موفقیت انجام شد",
+        showConfirmButton: false,
+        timer: 1500,
+        toast: true,
+        position: 'top-end',
+        timer: 3000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+          toast.onmouseenter = Swal.stopTimer;
+          toast.onmouseleave = Swal.resumeTimer;
+        }
+      });
+
+      if (res.status === 201) {
+        Toast.fire({
+          icon: "success",
+          title: "ثبت نام با موفقیت انجام شد",
+        });
+        setTimeout(function () {
+          location.href = "index.html"
+        }, 3000);
+      } else if (res.status === 409) {
+        Toast.fire({
+          icon: "error",
+          title: "نام کاربری یا ایمیل قبلا استفاده شده",
+        });
+      };
+      res.json()
+    })
     .then((result) => console.log(result));
 };
 
