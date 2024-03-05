@@ -30,9 +30,9 @@ const register = () => {
           icon: "success",
           title: "ثبت نام با موفقیت انجام شد",
         });
-        // setTimeout(function () {
-        //   location.href = "index.html"
-        // }, 3000000);
+        setTimeout(function () {
+          location.href = "index.html"
+        }, 3000000);
       } else if (res.status === 409) {
         Toast.fire({
           icon: "error",
@@ -43,9 +43,48 @@ const register = () => {
       return res.json();
     })
     .then((result) => {
-      console.log(result);
       saveIntoLocalStorage('user', { token: result.accessToken })
     });
 };
 
-export { register };
+const login = () => {
+  const identifierInput = document.querySelector('#email');
+  const passwordInput = document.querySelector('#password');
+
+  const userInfos = {
+    identifier: identifierInput.value.trim(),
+    password: passwordInput.value.trim(),
+  };
+
+  fetch(`http://localhost:4000/v1/auth/login`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(userInfos),
+  })
+    .then(res => {
+
+      if (res.status === 200) {
+        Toast.fire({
+          icon: "success",
+          title: "ورود با موفقیت انجام شد",
+        });
+        setTimeout(function () {
+          location.href = "index.html"
+        }, 3000000);
+      } else if (res.status === 401) {
+        Toast.fire({
+          icon: "error",
+          title: "کاربری با این ایمیل و رمز عبور یافت نشد.",
+        });
+      };
+
+      return res.json()
+    })
+    .then((result) => {
+      saveIntoLocalStorage('user', { token: result.accessToken })
+    });
+};
+
+export { register, login };

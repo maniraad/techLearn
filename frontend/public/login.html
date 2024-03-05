@@ -112,17 +112,17 @@
                     حساب گوگل</a>
                 <span class="text-zinc-900 font-EstedadMedium">یا</span>
                 <div class="relative w-full">
-                    <input
+                    <input id="email"
                         class="flex justify-end items-center self-stretch w-full text-zink-700 text-lg h-[52px] py-2.5 px-4  border outline-none rounded-2xl"
-                        type="text" placeholder="آدرس ایمیل" autofocus>
+                        type="email" placeholder="آدرس ایمیل" autofocus>
                     <svg class="absolute my-auto text-slate-500 top-0 bottom-0 left-3 sm:left-4 w-5 h-5">
                         <use xlink:href="#envelope"></use>
                     </svg>
                 </div>
                 <div class="relative w-full">
-                    <input
+                    <input id="password"
                         class="flex justify-end items-center self-stretch w-full text-zink-700 text-lg h-[52px] py-2.5 px-4  border outline-none rounded-2xl"
-                        type="text" placeholder="رمز عبور" autofocus>
+                        type="password" placeholder="رمز عبور" autofocus>
                     <svg class="absolute my-auto text-slate-500 top-0 bottom-0 left-3 sm:left-4 w-5 h-5">
                         <use xlink:href="#lock"></use>
                     </svg>
@@ -132,7 +132,7 @@
                        >رمز عبور
                         خود را فراموش کردید؟</a>
                 </div>
-                <button type="submit"
+                <button type="submit" id="login-btn"
                     class="flex-center gap-3 self-stretch bg-teal-600 hover:bg-teal-700 font-EstedadMedium text-white text-base h-[52px] py-3 px-6 overflow-hidden rounded-2xl transition-all">ورود</button>
                 <a href="register.html"
                     class="flex-center gap-3 self-stretch font-EstedadMedium text-teal-700 text-base h-[52px] py-3 px-6 overflow-hidden rounded-2xl">ثبت
@@ -141,10 +141,8 @@
         </div>
     </div>
 
-
-    <div class="overlay fixed w-full h-full top-0 left-0 bg-black/40 z-30 transition-all invisible opacity-0"></div>
-    <script src="js/style.js"></script>
-    <script src="js/login.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="module" src="js/login.js"></script>
 </body>
 
 </html>
