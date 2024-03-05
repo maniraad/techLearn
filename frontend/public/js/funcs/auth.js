@@ -1,3 +1,5 @@
+import { Toast } from "./utils.js";
+
 const register = () => {
   const nameInput = document.querySelector("#name");
   const usernameInput = document.querySelector("#username");
@@ -22,23 +24,7 @@ const register = () => {
     body: JSON.stringify(newUserInfos),
   })
     .then((res) => {
-
-      const Toast = Swal.mixin({
-        position: "top-end",
-        icon: "success",
-        title: "ثبت نام با موفقیت انجام شد",
-        showConfirmButton: false,
-        timer: 1500,
-        toast: true,
-        position: 'top-end',
-        timer: 3000,
-        timerProgressBar: true,
-        didOpen: (toast) => {
-          toast.onmouseenter = Swal.stopTimer;
-          toast.onmouseleave = Swal.resumeTimer;
-        }
-      });
-
+      
       if (res.status === 201) {
         Toast.fire({
           icon: "success",
@@ -53,6 +39,7 @@ const register = () => {
           title: "نام کاربری یا ایمیل قبلا استفاده شده",
         });
       };
+
       res.json()
     })
     .then((result) => console.log(result));
