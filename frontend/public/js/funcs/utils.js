@@ -11,7 +11,7 @@ const Toast = Swal.mixin({
 });
 
 const saveIntoLocalStorage = (key, value) => {
-    return localStorage.setItem(key, value);
+    return localStorage.setItem(key, JSON.stringify(value));
 };
 
 const getFromLocalStorage = (key) => {

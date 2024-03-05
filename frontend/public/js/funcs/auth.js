@@ -1,4 +1,4 @@
-import { Toast } from "./utils.js";
+import { Toast, saveIntoLocalStorage } from "./utils.js";
 
 const register = () => {
   const nameInput = document.querySelector("#name");
@@ -30,9 +30,9 @@ const register = () => {
           icon: "success",
           title: "ثبت نام با موفقیت انجام شد",
         });
-        setTimeout(function () {
-          location.href = "index.html"
-        }, 3000);
+        // setTimeout(function () {
+        //   location.href = "index.html"
+        // }, 3000000);
       } else if (res.status === 409) {
         Toast.fire({
           icon: "error",
@@ -40,9 +40,12 @@ const register = () => {
         });
       };
 
-      res.json();
+      return res.json();
     })
-    .then((result) => console.log(result));
+    .then((result) => {
+      console.log(result);
+      saveIntoLocalStorage('user', { token: result.accessToken })
+    });
 };
 
 export { register };
