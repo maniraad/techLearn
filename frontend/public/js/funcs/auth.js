@@ -2,7 +2,7 @@ const register = () => {
   const nameInput = document.querySelector("#name");
   const usernameInput = document.querySelector("#username");
   const emailInput = document.querySelector("#email");
-  const phoneInput = document.querySelector(".phone");
+  const phoneInput = document.querySelector("#phone-number");
   const passwordInput = document.querySelector("#password");
 
   const newUserInfos = {
