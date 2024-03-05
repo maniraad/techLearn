@@ -1,11 +1,7 @@
 const Toast = Swal.mixin({
     position: "top-end",
-    icon: "success",
-    title: "ثبت نام با موفقیت انجام شد",
     showConfirmButton: false,
-    timer: 1500,
     toast: true,
-    position: 'top-end',
     timer: 3000,
     timerProgressBar: true,
     didOpen: (toast) => {
@@ -14,4 +10,16 @@ const Toast = Swal.mixin({
     }
 });
 
-export { Toast };
+const saveIntoLocalStorage = (key, value) => {
+    return localStorage.setItem(key, value);
+};
+
+const getFromLocalStorage = (key) => {
+    return JSON.stringify(localStorage.getItem(key));
+};
+
+const getToken = () => {
+    return JSON.parse(localStorage.getItem("user")).token;
+};
+
+export { Toast, saveIntoLocalStorage, getFromLocalStorage, getToken };

@@ -24,7 +24,7 @@ const register = () => {
     body: JSON.stringify(newUserInfos),
   })
     .then((res) => {
-      
+
       if (res.status === 201) {
         Toast.fire({
           icon: "success",
@@ -40,7 +40,7 @@ const register = () => {
         });
       };
 
-      res.json()
+      res.json();
     })
     .then((result) => console.log(result));
 };
