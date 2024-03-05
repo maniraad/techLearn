@@ -1,8 +1,10 @@
 import { register } from "./funcs/auth.js";
 
-const registerBtn = document.querySelector('#registerbtn');
+const registerBtn = document.querySelector("#registerbtn");
 
-registerBtn.addEventListener('click', (event) => {
-    event.preventDefault();
-    register();
-}); 
+console.log('Register.js');
+
+registerBtn.addEventListener("click", (event) => {
+  event.preventDefault();
+  register();
+});
