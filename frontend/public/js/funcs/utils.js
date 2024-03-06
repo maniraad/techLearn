@@ -23,4 +23,9 @@ const getToken = () => {
     return userInfos ? userInfos : null;
 };
 
-export { Toast, saveIntoLocalStorage, getFromLocalStorage, getToken };
+const isLogin = () => {
+    const userInfos = localStorage.getItem('user');
+    return userInfos ? true : false
+}
+
+export { Toast, saveIntoLocalStorage, getFromLocalStorage, getToken, isLogin };

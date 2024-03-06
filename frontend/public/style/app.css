@@ -655,6 +655,11 @@ video {
   opacity: 0;
 }
 
+.show {
+  visibility: visible;
+  opacity: 1;
+}
+
 .section-btn {
   position: relative;
   margin-left: auto;
