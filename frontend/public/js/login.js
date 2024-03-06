@@ -1,8 +1,8 @@
-import { login } from "./funcs/auth.js";
+import { login, getMe } from "./funcs/auth.js";
 
 const loginBtn = document.querySelector("#login-btn");
 
-console.log('login');
+getMe()
 
 loginBtn.addEventListener("click", (event) => {
     event.preventDefault();

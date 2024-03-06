@@ -19,7 +19,8 @@ const getFromLocalStorage = (key) => {
 };
 
 const getToken = () => {
-    return JSON.parse(localStorage.getItem("user")).token;
+    const userInfos = JSON.parse(localStorage.getItem("user")).token;
+    return userInfos ? userInfos : null;
 };
 
 export { Toast, saveIntoLocalStorage, getFromLocalStorage, getToken };

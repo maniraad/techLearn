@@ -1,4 +1,4 @@
-import { Toast, saveIntoLocalStorage } from "./utils.js";
+import { Toast, saveIntoLocalStorage, getToken } from "./utils.js";
 
 const register = () => {
   const nameInput = document.querySelector("#name");
@@ -32,7 +32,7 @@ const register = () => {
         });
         setTimeout(function () {
           location.href = "index.html"
-        }, 3000000);
+        }, 3000);
       } else if (res.status === 409) {
         Toast.fire({
           icon: "error",
@@ -72,7 +72,7 @@ const login = () => {
         });
         setTimeout(function () {
           location.href = "index.html"
-        }, 3000000);
+        }, 3000);
       } else if (res.status === 401) {
         Toast.fire({
           icon: "error",
@@ -87,4 +87,21 @@ const login = () => {
     });
 };
 
-export { register, login };
+const getMe = async () => {
+  const token = getToken();
+
+  if (!token) {
+    return false;
+  }
+
+  const res = await fetch(`http://localhost:4000/v1/auth/me`, {
+    headers: {
+      Authorization: `Bearer ${token}`
+    },
+  });
+  const data = await res.json();
+  
+  return data;
+};
+
+export { register, login, getMe };
