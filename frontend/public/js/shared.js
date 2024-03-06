@@ -1,4 +1,6 @@
-import { showUserNameInNavbar } from "./funcs/shared.js";
+import { showUserNameInNavbar, headerResponsive } from "./funcs/shared.js";
+
+headerResponsive()
 
 window.addEventListener('load', () => {
     showUserNameInNavbar()
