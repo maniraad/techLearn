@@ -152,6 +152,50 @@ const getAndShowPreSellCourses = async () => {
     });
 };
 
+const getAndShowArticles = async () => {
 
+    const articlesContainer = document.querySelector('#articles-wrapper');
+
+    const res = await fetch(`http://localhost:4000/v1/articles`);
+
+    const articles = await res.json();
+
+    articles.slice(0, 4).forEach(article => {
+        articlesContainer.insertAdjacentHTML('beforeend',
+            `
+                    <div class="flex sm:block gap-x-2.5 group p-2.5 md:pb-2 bg-white shadow-sm rounded-2xl">
+                        <div
+                            class=" sm:mb-4 shrink-0 rounded-2xl rounded-bl-4xl overflow-hidden w-[130px] h-[130px] sm:w-auto sm:h-auto">
+                            <img src="images/blogs/Figma-breack-point-plugin.png" alt=""
+                                class="h-full sm:h-auto object-cover">
+                        </div>
+                        <div class="sm:flex items-start justify-between w-full">
+                            <a href="#"
+                                class="font-EstedadMedium md:font-Estedad ml-1.5 sm:ml-0 text-sm md:text-lg mt-2.5 sm:mt-0 line-clamp-2 leading-7 max-w-[193px] text-zinc-700">
+                                ${article.title}</a>
+                            <div class="hidden sm:flex items-center gap-x-5">
+                                <span class="block w-px h-[61px] bg-gray-100 "></span>
+                                <div class="flex flex-col ml-[18px] -mt-1 text-left text-teal-600 text-sm">
+                                    <span class="font-EstedadBold text-2xl">21</span>
+                                    <span class="">مرداد</span>
+                                    <span class="">1402</span>
+                                </div>
+                            </div>
+                            <div
+                                class="flex sm:hidden justify-between items-end border-t border-t-gray-100 pt-[18px] mt-5">
+                                <span class="text-xs text-teal-600">21 مرداد 1402</span>
+                                <a href="#"
+                                    class="flex items-center gap-x-1 ml-1.5 font-EstedadMedium text-xs h-5 rounded-md pr-2.5 pl-2 text-teal-600 bg-teal-400/20">
+                                    مطالعه
+                                    <svg class="w-3.5 h-3.5">
+                                        <use href="#arrow-left-mini"></use>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+        `)
+    });
+};
 
 export { showUserNameInNavbar, headerResponsive, getAndShowAllCourses, getAndShowPreSellCourses, getAndShowArticles };
