@@ -1,4 +1,4 @@
-import { showAllCourses } from "./funcs/shared.js";
+import { getAndShowAllCourses, getAndShowPreSellCourses, getAndShowArticles } from "./funcs/shared.js";
 
 const landingStatusCourse = document.querySelector('.course-status');
 const landingStudents = document.querySelector('.student');
@@ -11,8 +11,9 @@ window.addEventListener('load', () => {
     makeCounter(1293, landingStudents, 'دانشجو');
     makeCounter(453, landingBlogs, 'مقاله رایگان');
 
-    showAllCourses()
-
+    getAndShowAllCourses();
+    getAndShowPreSellCourses();
+    getAndShowArticles();
 });
 
 function makeCounter(max, elemCounter, elemName) {

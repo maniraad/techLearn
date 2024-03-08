@@ -49,7 +49,7 @@ const showUserNameInNavbar = () => {
     }
 };
 
-const showAllCourses = async () => {
+const getAndShowAllCourses = async () => {
 
     const courseContainer = document.querySelector('#course-container');
 
@@ -57,11 +57,9 @@ const showAllCourses = async () => {
 
     const courses = await res.json();
 
-    console.log(courses);
-
-    courses.slice(0,8).map(course => {
+    courses.slice(0, 8).map(course => {
         courseContainer.insertAdjacentHTML('beforeend',
-        `
+            `
         <div class="inline-flex flex-col items-center gap-y-4 py-3 px-4 bg-white max-w-[340px] rounded-3xl shadow-sm">
         
             <div class="">
@@ -91,7 +89,7 @@ const showAllCourses = async () => {
             </div>
             <!-- Price -->
             <div class="self-end text-2xl text-right font-EstedadMedium font-bold">
-                ${course.price === 0 ? "رایگان" : course.price.toLocaleString() +"تومان"} 
+                ${course.price === 0 ? "رایگان" : course.price.toLocaleString() + "تومان"} 
             </div>
             <!-- Button -->
             <a href="#"
@@ -99,8 +97,61 @@ const showAllCourses = async () => {
                 مشاهده و ثبت نام </a>
         </div>
 `)
-           
+
     })
 };
 
-export { showUserNameInNavbar, headerResponsive, showAllCourses }
+const getAndShowPreSellCourses = async () => {
+
+    const preSellCoursesContainer = document.querySelector('#presell-courses-wrapper');
+
+    const res = await fetch(`http://localhost:4000/v1/courses/presell`);
+
+    const presellCourses = await res.json();
+
+    presellCourses.forEach(presellCourse => {
+        preSellCoursesContainer.insertAdjacentHTML('beforeend',
+            `
+                        <div class="swiper-slide">
+                            <div
+                                class="inline-flex flex-col flex-grow items-center gap-y-4 py-3 px-4 bg-white max-w-[340px] rounded-3xl shadow-sm">
+                                <!-- Image -->
+                                <div class="">
+                                    <a href="#"><img src="images/courses/laravel.png" alt="Js-course" class=""></a>
+                                </div>
+                                <!-- Box Body -->
+                                <div class="flex flex-col justify-center items-start self-baseline gap-y-4">
+                                    <!-- Topic -->
+                                    <h4
+                                        class="text-xl lg:text-2xl text-right font-EstedadMedium lg:font-bold overflow-hidden line-clamp-1">
+                                          ${presellCourse.name} </h4>
+                                    <!-- Teacher & Time -->
+                                    <div class="flex flex-wrap text-sm">
+                                        <div class="flex-center gap-x-1 py-1 px-2">
+                                            <svg class="w-4 h-4">
+                                                <use href="#user"></use>
+                                            </svg>
+                                            <a href="#">${presellCourse.creator}</a>
+                                        </div>
+                                        <div class="flex-center gap-x-1 py-1 px-2">
+                                            <svg class="w-4 h-4">
+                                                <use href="#clock"></use>
+                                            </svg>
+                                            <span>۲۰:۴۳</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Price -->
+                                <div
+                                    class="self-end text-lg md:text-xl lg:text-2xl text-right font-EstedadMedium font-bold">
+                                    ${presellCourse.price === 0 ? "رایگان" : presellCourse.price.toLocaleString() + "تومان"}
+                                </div>
+                            </div>
+                        </div>
+        `)
+    });
+};
+
+
+
+export { showUserNameInNavbar, headerResponsive, getAndShowAllCourses, getAndShowPreSellCourses, getAndShowArticles };
