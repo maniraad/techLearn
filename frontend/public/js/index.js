@@ -1,4 +1,4 @@
-import { getAndShowAllCourses, getAndShowPreSellCourses, getAndShowArticles } from "./funcs/shared.js";
+import { getAndShowAllCourses, getAndShowPreSellCourses, getAndShowArticles, getAndShowMenus } from "./funcs/shared.js";
 
 const landingStatusCourse = document.querySelector('.course-status');
 const landingStudents = document.querySelector('.student');
@@ -14,6 +14,7 @@ window.addEventListener('load', () => {
     getAndShowAllCourses();
     getAndShowPreSellCourses();
     getAndShowArticles();
+    getAndShowMenus();
 });
 
 function makeCounter(max, elemCounter, elemName) {

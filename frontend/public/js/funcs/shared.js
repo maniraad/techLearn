@@ -198,4 +198,47 @@ const getAndShowArticles = async () => {
     });
 };
 
-export { showUserNameInNavbar, headerResponsive, getAndShowAllCourses, getAndShowPreSellCourses, getAndShowArticles };
+const getAndShowMenus = async () => {
+
+    const menusContainer = document.querySelector('#menus-wrapper');
+
+    const res = await fetch(`http://localhost:4000/v1/menus`);
+
+    const menus = await res.json();
+
+    console.log(menus);
+
+    menus.forEach(menu => {
+        menusContainer.insertAdjacentHTML('beforeend',
+            `
+            <li class="relative group">
+                <a href="http://127.0.0.1:5500/frontend/public/${menu.href}" class="flex items-center gap-x-1.5 h-full text-zinc-700">
+                    ${menu.title}
+                </a>
+                    ${menu.submenus.length !== 0 ?
+                    `   
+                    <svg class="w-4 h-4">
+                        <use xlink:href="#chevron-down"></use>
+                    </svg>
+
+                    <div class="invisible opacity-0 group-hover:visible group-hover:opacity-100 absolute right-0 top-full pt-1 xl:pt-4 transition-all z-10">
+                        <div class="flex flex-col gap-y-5 w-64 bg-white shadow-sm py-5 px-6 rounded-2xl text-base">
+                            ${menu.submenus.map((submenu) => (
+                            ` 
+                            <a href="http://127.0.0.1:5500/frontend/public/${menu.href}" class="overflow-hidden text-ellipsis whitespace-nowrap text-zinc-700 transition-all">
+                            ${submenu.title}
+                            </a>
+                          `
+                        )).join('')}
+                      `
+                        : ''}
+                        </div>
+                    </div>
+                
+            </li>         
+        `
+        )
+    });
+};
+
+export { showUserNameInNavbar, headerResponsive, getAndShowAllCourses, getAndShowPreSellCourses, getAndShowArticles, getAndShowMenus };
