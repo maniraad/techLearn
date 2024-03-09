@@ -69,6 +69,11 @@
             <path stroke-linecap="round" stroke-linejoin="round"
                 d="M3 4.5h14.25M3 9h9.75M3 13.5h9.75m4.5-4.5v12m0 0-3.75-3.75M17.25 21 21 17.25" />
         </symbol>
+        <symbol id="squares-2x2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                d="M3.75 6A2.25 2.25 0 0 1 6 3.75h2.25A2.25 2.25 0 0 1 10.5 6v2.25a2.25 2.25 0 0 1-2.25 2.25H6a2.25 2.25 0 0 1-2.25-2.25V6ZM3.75 15.75A2.25 2.25 0 0 1 6 13.5h2.25a2.25 2.25 0 0 1 2.25 2.25V18a2.25 2.25 0 0 1-2.25 2.25H6A2.25 2.25 0 0 1 3.75 18v-2.25ZM13.5 6a2.25 2.25 0 0 1 2.25-2.25H18A2.25 2.25 0 0 1 20.25 6v2.25A2.25 2.25 0 0 1 18 10.5h-2.25a2.25 2.25 0 0 1-2.25-2.25V6ZM13.5 15.75a2.25 2.25 0 0 1 2.25-2.25H18a2.25 2.25 0 0 1 2.25 2.25V18A2.25 2.25 0 0 1 18 20.25h-2.25A2.25 2.25 0 0 1 13.5 18v-2.25Z" />
+        </symbol>
     </svg>
 
     <header class="">
@@ -90,7 +95,7 @@
                 <!-- NavBar Menu -->
                 <ul id="menus-wrapper"
                     class="hidden lg:flex items-center gap-x-5  child:gap-x-1.5 child:flex child:items-center">
-                    
+
                 </ul>
 
             </nav>
@@ -248,34 +253,99 @@
                     <!-- Course Sort -->
                     <div
                         class="hidden sm:flex items-center justify-between px-7 mb-5 h-16 shadow-sm bg-white border-gray-700 rounded-2xl">
-                        <div class="flex-center lg:justify-start gap-4 text-sm">
-                            <span class="flex items-center shrink-0 gap-x-2.5">
-                                <svg class="w-5 h-5">
-                                    <use xlink:href="#sort"></use>
-                                </svg>
-                                مرتب سازی :
-                            </span>
-                            <div class="flex items-center flex-wrap">
-                                <a href="" data-id="" class="sort-btn sort-btn--active" role="button">همه دوره ها</a>
-                                <a href="" data-id="" class="sort-btn" role="button">ارزان ترین</a>
-                                <a href="" data-id="" class="sort-btn" role="button">گران ترین</a>
-                                <a href="" data-id="" class="sort-btn" role="button">پرمخاطب ها</a>
+                        <div class="flex gap-4 text-sm">
+
+                            <div class="relative transition-all w-full text-sm md:w-fit md:text-base ">
+                                <div
+                                    class="bg-white border-2 border-solid border-white transition-all rounded-xl p-3 md:p-3.5 flex justify-center items-center gap-1 cursor-pointer h-full">
+                                    <span class="flex items-center shrink-0 gap-x-2.5 cursor-pointer">
+                                        <svg class="w-5 h-5">
+                                            <use xlink:href="#sort"></use>
+                                        </svg>
+                                        مرتب سازی
+                                    </span>
+                                    <div class="absolute left-0 w-full pt-2 z-10 transition-all">
+                                        <div class="bg-white transition-all rounded-xl shadow-sm opacity-0 invisible">
+                                            <ul>
+                                                <li class="border-b border-solid border-gray-300 last:border-b-0 transition-colors">
+                                                    <a class="text-zinc-700 cursor-pointer px-3 md:px-3.5 py-2.5 inline-block text-center w-full text-xs md:text-sm"
+                                                        href="">همه دوره ها
+                                                    </a>
+                                                </li>
+                                                <li class="border-b border-solid border-gray-300 last:border-b-0 transition-colors">
+                                                    <a class="text-zinc-700 cursor-pointer px-3 md:px-3.5 py-2.5 inline-block text-center w-full text-xs md:text-sm"
+                                                        href="">ارزان ترین</a>
+                                                </li>
+                                                <li class="border-b border-solid border-gray-300 last:border-b-0 transition-colors">
+                                                    <a class="text-zinc-700 cursor-pointer px-3 md:px-3.5 py-2.5 inline-block text-center w-full text-xs md:text-sm"
+                                                        href="">گران ترین</a>
+                                                </li>
+                                                <li class="border-b border-solid border-gray-300 last:border-b-0 transition-colors">
+                                                    <a class="text-zinc-700 cursor-pointer px-3 md:px-3.5 py-2.5 inline-block text-center w-full text-xs md:text-sm"
+                                                        href="">پرمخاطب ها</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
+                            <div class="relative transition-all w-full text-sm md:w-fit md:text-base ">
+                                <div
+                                    class="bg-white border-2 border-solid border-white transition-all rounded-xl p-3 md:p-3.5 flex justify-center items-center gap-1 cursor-pointer h-full">
+                                    <span class="flex items-center shrink-0 gap-x-2.5 cursor-pointer">
+                                        <svg class="w-5 h-5">
+                                            <use xlink:href="#squares-2x2"></use>
+                                        </svg>
+                                        دسته بندی ها
+                                    </span>
+                                </div>
+                                <div class="absolute left-0 w-full pt-2 z-10 transition-all">
+                                    <div class="bg-white transition-all rounded-xl shadow-sm opacity-0 invisible">
+                                        <ul>
+                                            <li class="border-b border-solid border-gray-300 last:border-b-0 transition-colors">
+                                                <a class="text-zinc-700 cursor-pointer px-3 md:px-3.5 py-2.5 inline-block text-center w-full text-xs md:text-sm"
+                                                    href="">همه</a>
+                                            </li>
+                                            <li class="border-b border-solid border-gray-300 last:border-b-0 transition-colors">
+                                                <a class="text-zinc-700 cursor-pointer px-3 md:px-3.5 py-2.5 inline-block text-center w-full text-xs md:text-sm"
+                                                    href="">فرانت اند</a>
+                                            </li>
+                                            <li class="border-b border-solid border-gray-300 last:border-b-0 transition-colors">
+                                                <a class="text-zinc-700 cursor-pointer px-3 md:px-3.5 py-2.5 inline-block text-center w-full text-xs md:text-sm"
+                                                    href="">بک اند</a>
+                                            </li>
+                                            <li class="border-b border-solid border-gray-300 last:border-b-0 transition-colors">
+                                                <a class="text-zinc-700 cursor-pointer px-3 md:px-3.5 py-2.5 inline-block text-center w-full text-xs md:text-sm"
+                                                    href="">پایتون</a>
+                                            </li>
+                                            <li class="border-b border-solid border-gray-300 last:border-b-0 transition-colors">
+                                                <a class="text-zinc-700 cursor-pointer px-3 md:px-3.5 py-2.5 inline-block text-center w-full text-xs md:text-sm"
+                                                    href="">مهارت های نرم</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
                         <div class="h-16  bg-white border-gray-700 rounded-2xl">
                             <div class="h-full flex items-center justify-between text-slate-500">
-                                <input type="text" name="s" class="w-full bg-transparent text-sm pr-7 border-none outline-none" placeholder="در بین دوره ها جستجو کنید">
+                                <input type="text" name="s"
+                                    class="w-full bg-transparent text-sm pr-7 border-none outline-none"
+                                    placeholder="در بین دوره ها جستجو کنید">
                                 <button class="mr-4 ml-6" type="submit">
                                     <svg class="w-5 h-5">
                                         <use xlink:href="#search"></use>
                                     </svg>
                                 </button>
                             </div>
-                            </div>
+                        </div>
                     </div>
                     <!-- Course List -->
-                    <div class="posts_wrap grid grid-rows-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-items-center gap-5">
-                        <div class="inline-flex flex-col items-center gap-y-4 py-3 px-4 bg-white max-w-[340px] rounded-3xl shadow-sm">
+                    <div
+                        class="posts_wrap grid grid-rows-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-items-center gap-5">
+                        <div
+                            class="inline-flex flex-col items-center gap-y-4 py-3 px-4 bg-white max-w-[340px] rounded-3xl shadow-sm">
                             <!-- Image -->
                             <div class="">
                                 <img src="images/courses/C-sharp.png" alt="Js-course" class="">
@@ -283,7 +353,8 @@
                             <!-- Box Body -->
                             <div class="flex flex-col justify-center items-start self-baseline gap-y-4">
                                 <!-- Topic -->
-                                <h4 class="text-2xl text-right font-EstedadMedium font-bold overflow-hidden line-clamp-1">
+                                <h4
+                                    class="text-2xl text-right font-EstedadMedium font-bold overflow-hidden line-clamp-1">
                                     صفر تا صد جاوااسکریپت</h4>
                                 <!-- Teacher & Time -->
                                 <div class="flex flex-wrap text-sm">
@@ -307,10 +378,12 @@
                                 <span>تومان</span>
                             </div>
                             <!-- Button -->
-                            <a href="#" class="self-stretch py-3 text-white text-center font-EstedadMedium bg-teal-600 hover:bg-teal-700 rounded-2xl delay-100 transition-all">
+                            <a href="#"
+                                class="self-stretch py-3 text-white text-center font-EstedadMedium bg-teal-600 hover:bg-teal-700 rounded-2xl delay-100 transition-all">
                                 مشاهده و ثبت نام </a>
                         </div>
-                        <div class="inline-flex flex-col items-center gap-y-4 py-3 px-4 bg-white max-w-[340px] rounded-3xl shadow-sm">
+                        <div
+                            class="inline-flex flex-col items-center gap-y-4 py-3 px-4 bg-white max-w-[340px] rounded-3xl shadow-sm">
                             <!-- Image -->
                             <div class="">
                                 <img src="images/courses/C-sharp.png" alt="Js-course" class="">
@@ -318,7 +391,8 @@
                             <!-- Box Body -->
                             <div class="flex flex-col justify-center items-start self-baseline gap-y-4">
                                 <!-- Topic -->
-                                <h4 class="text-2xl text-right font-EstedadMedium font-bold overflow-hidden line-clamp-1">
+                                <h4
+                                    class="text-2xl text-right font-EstedadMedium font-bold overflow-hidden line-clamp-1">
                                     صفر تا صد جاوااسکریپت</h4>
                                 <!-- Teacher & Time -->
                                 <div class="flex flex-wrap text-sm">
@@ -342,10 +416,12 @@
                                 <span>تومان</span>
                             </div>
                             <!-- Button -->
-                            <a href="#" class="self-stretch py-3 text-white text-center font-EstedadMedium bg-teal-600 hover:bg-teal-700 rounded-2xl delay-100 transition-all">
+                            <a href="#"
+                                class="self-stretch py-3 text-white text-center font-EstedadMedium bg-teal-600 hover:bg-teal-700 rounded-2xl delay-100 transition-all">
                                 مشاهده و ثبت نام </a>
                         </div>
-                        <div class="inline-flex flex-col items-center gap-y-4 py-3 px-4 bg-white max-w-[340px] rounded-3xl shadow-sm">
+                        <div
+                            class="inline-flex flex-col items-center gap-y-4 py-3 px-4 bg-white max-w-[340px] rounded-3xl shadow-sm">
                             <!-- Image -->
                             <div class="">
                                 <img src="images/courses/C-sharp.png" alt="Js-course" class="">
@@ -353,7 +429,8 @@
                             <!-- Box Body -->
                             <div class="flex flex-col justify-center items-start self-baseline gap-y-4">
                                 <!-- Topic -->
-                                <h4 class="text-2xl text-right font-EstedadMedium font-bold overflow-hidden line-clamp-1">
+                                <h4
+                                    class="text-2xl text-right font-EstedadMedium font-bold overflow-hidden line-clamp-1">
                                     صفر تا صد جاوااسکریپت</h4>
                                 <!-- Teacher & Time -->
                                 <div class="flex flex-wrap text-sm">
@@ -377,10 +454,12 @@
                                 <span>تومان</span>
                             </div>
                             <!-- Button -->
-                            <a href="#" class="self-stretch py-3 text-white text-center font-EstedadMedium bg-teal-600 hover:bg-teal-700 rounded-2xl delay-100 transition-all">
+                            <a href="#"
+                                class="self-stretch py-3 text-white text-center font-EstedadMedium bg-teal-600 hover:bg-teal-700 rounded-2xl delay-100 transition-all">
                                 مشاهده و ثبت نام </a>
                         </div>
-                        <div class="inline-flex flex-col items-center gap-y-4 py-3 px-4 bg-white max-w-[340px] rounded-3xl shadow-sm">
+                        <div
+                            class="inline-flex flex-col items-center gap-y-4 py-3 px-4 bg-white max-w-[340px] rounded-3xl shadow-sm">
                             <!-- Image -->
                             <div class="">
                                 <img src="images/courses/C-sharp.png" alt="Js-course" class="">
@@ -388,7 +467,8 @@
                             <!-- Box Body -->
                             <div class="flex flex-col justify-center items-start self-baseline gap-y-4">
                                 <!-- Topic -->
-                                <h4 class="text-2xl text-right font-EstedadMedium font-bold overflow-hidden line-clamp-1">
+                                <h4
+                                    class="text-2xl text-right font-EstedadMedium font-bold overflow-hidden line-clamp-1">
                                     صفر تا صد جاوااسکریپت</h4>
                                 <!-- Teacher & Time -->
                                 <div class="flex flex-wrap text-sm">
@@ -412,10 +492,12 @@
                                 <span>تومان</span>
                             </div>
                             <!-- Button -->
-                            <a href="#" class="self-stretch py-3 text-white text-center font-EstedadMedium bg-teal-600 hover:bg-teal-700 rounded-2xl delay-100 transition-all">
+                            <a href="#"
+                                class="self-stretch py-3 text-white text-center font-EstedadMedium bg-teal-600 hover:bg-teal-700 rounded-2xl delay-100 transition-all">
                                 مشاهده و ثبت نام </a>
                         </div>
-                        <div class="inline-flex flex-col items-center gap-y-4 py-3 px-4 bg-white max-w-[340px] rounded-3xl shadow-sm">
+                        <div
+                            class="inline-flex flex-col items-center gap-y-4 py-3 px-4 bg-white max-w-[340px] rounded-3xl shadow-sm">
                             <!-- Image -->
                             <div class="">
                                 <img src="images/courses/C-sharp.png" alt="Js-course" class="">
@@ -423,7 +505,8 @@
                             <!-- Box Body -->
                             <div class="flex flex-col justify-center items-start self-baseline gap-y-4">
                                 <!-- Topic -->
-                                <h4 class="text-2xl text-right font-EstedadMedium font-bold overflow-hidden line-clamp-1">
+                                <h4
+                                    class="text-2xl text-right font-EstedadMedium font-bold overflow-hidden line-clamp-1">
                                     صفر تا صد جاوااسکریپت</h4>
                                 <!-- Teacher & Time -->
                                 <div class="flex flex-wrap text-sm">
@@ -447,10 +530,12 @@
                                 <span>تومان</span>
                             </div>
                             <!-- Button -->
-                            <a href="#" class="self-stretch py-3 text-white text-center font-EstedadMedium bg-teal-600 hover:bg-teal-700 rounded-2xl delay-100 transition-all">
+                            <a href="#"
+                                class="self-stretch py-3 text-white text-center font-EstedadMedium bg-teal-600 hover:bg-teal-700 rounded-2xl delay-100 transition-all">
                                 مشاهده و ثبت نام </a>
                         </div>
-                        <div class="inline-flex flex-col items-center gap-y-4 py-3 px-4 bg-white max-w-[340px] rounded-3xl shadow-sm">
+                        <div
+                            class="inline-flex flex-col items-center gap-y-4 py-3 px-4 bg-white max-w-[340px] rounded-3xl shadow-sm">
                             <!-- Image -->
                             <div class="">
                                 <img src="images/courses/C-sharp.png" alt="Js-course" class="">
@@ -458,7 +543,8 @@
                             <!-- Box Body -->
                             <div class="flex flex-col justify-center items-start self-baseline gap-y-4">
                                 <!-- Topic -->
-                                <h4 class="text-2xl text-right font-EstedadMedium font-bold overflow-hidden line-clamp-1">
+                                <h4
+                                    class="text-2xl text-right font-EstedadMedium font-bold overflow-hidden line-clamp-1">
                                     صفر تا صد جاوااسکریپت</h4>
                                 <!-- Teacher & Time -->
                                 <div class="flex flex-wrap text-sm">
@@ -482,10 +568,12 @@
                                 <span>تومان</span>
                             </div>
                             <!-- Button -->
-                            <a href="#" class="self-stretch py-3 text-white text-center font-EstedadMedium bg-teal-600 hover:bg-teal-700 rounded-2xl delay-100 transition-all">
+                            <a href="#"
+                                class="self-stretch py-3 text-white text-center font-EstedadMedium bg-teal-600 hover:bg-teal-700 rounded-2xl delay-100 transition-all">
                                 مشاهده و ثبت نام </a>
                         </div>
-                        <div class="inline-flex flex-col items-center gap-y-4 py-3 px-4 bg-white max-w-[340px] rounded-3xl shadow-sm">
+                        <div
+                            class="inline-flex flex-col items-center gap-y-4 py-3 px-4 bg-white max-w-[340px] rounded-3xl shadow-sm">
                             <!-- Image -->
                             <div class="">
                                 <img src="images/courses/C-sharp.png" alt="Js-course" class="">
@@ -493,7 +581,8 @@
                             <!-- Box Body -->
                             <div class="flex flex-col justify-center items-start self-baseline gap-y-4">
                                 <!-- Topic -->
-                                <h4 class="text-2xl text-right font-EstedadMedium font-bold overflow-hidden line-clamp-1">
+                                <h4
+                                    class="text-2xl text-right font-EstedadMedium font-bold overflow-hidden line-clamp-1">
                                     صفر تا صد جاوااسکریپت</h4>
                                 <!-- Teacher & Time -->
                                 <div class="flex flex-wrap text-sm">
@@ -517,10 +606,12 @@
                                 <span>تومان</span>
                             </div>
                             <!-- Button -->
-                            <a href="#" class="self-stretch py-3 text-white text-center font-EstedadMedium bg-teal-600 hover:bg-teal-700 rounded-2xl delay-100 transition-all">
+                            <a href="#"
+                                class="self-stretch py-3 text-white text-center font-EstedadMedium bg-teal-600 hover:bg-teal-700 rounded-2xl delay-100 transition-all">
                                 مشاهده و ثبت نام </a>
                         </div>
-                        <div class="inline-flex flex-col items-center gap-y-4 py-3 px-4 bg-white max-w-[340px] rounded-3xl shadow-sm">
+                        <div
+                            class="inline-flex flex-col items-center gap-y-4 py-3 px-4 bg-white max-w-[340px] rounded-3xl shadow-sm">
                             <!-- Image -->
                             <div class="">
                                 <img src="images/courses/C-sharp.png" alt="Js-course" class="">
@@ -528,7 +619,8 @@
                             <!-- Box Body -->
                             <div class="flex flex-col justify-center items-start self-baseline gap-y-4">
                                 <!-- Topic -->
-                                <h4 class="text-2xl text-right font-EstedadMedium font-bold overflow-hidden line-clamp-1">
+                                <h4
+                                    class="text-2xl text-right font-EstedadMedium font-bold overflow-hidden line-clamp-1">
                                     صفر تا صد جاوااسکریپت</h4>
                                 <!-- Teacher & Time -->
                                 <div class="flex flex-wrap text-sm">
@@ -552,12 +644,14 @@
                                 <span>تومان</span>
                             </div>
                             <!-- Button -->
-                            <a href="#" class="self-stretch py-3 text-white text-center font-EstedadMedium bg-teal-600 hover:bg-teal-700 rounded-2xl delay-100 transition-all">
+                            <a href="#"
+                                class="self-stretch py-3 text-white text-center font-EstedadMedium bg-teal-600 hover:bg-teal-700 rounded-2xl delay-100 transition-all">
                                 مشاهده و ثبت نام </a>
                         </div>
                     </div>
                     <!-- Show more Button -->
-                    <div class="show-more flex-center w-52 h-14 mt-10 mx-auto bg-gray-200 text-zinc-700 text-xl rounded-full cursor-pointer transition-all">
+                    <div
+                        class="show-more flex-center w-52 h-14 mt-10 mx-auto bg-gray-200 text-zinc-700 text-xl rounded-full cursor-pointer transition-all">
                         <div class="show-more__content gap-x-2 flex-center ">
                             مشاهده بیشتر
                             <svg class="w-5 h-5">
@@ -574,8 +668,7 @@
                                 fill="currentFill"></path>
                         </svg>
                     </div>
-                    <div
-                        class="all_loaded hidden text-zinc-700 font-EstedadLight mt-7 leading-7 text-center">
+                    <div class="all_loaded hidden text-zinc-700 font-EstedadLight mt-7 leading-7 text-center">
                         تمام دوره ها نمایش داده شده است.
                     </div>
                 </section>
