@@ -26,6 +26,11 @@ const getToken = () => {
 const isLogin = () => {
     const userInfos = localStorage.getItem('user');
     return userInfos ? true : false
-}
+};
 
-export { Toast, saveIntoLocalStorage, getFromLocalStorage, getToken, isLogin };
+const getUrlParam = key =>{
+    const urlParam = new URLSearchParams(window.location.search)
+    return urlParam.get(key);
+};
+
+export { Toast, saveIntoLocalStorage, getFromLocalStorage, getToken, isLogin, getUrlParam };

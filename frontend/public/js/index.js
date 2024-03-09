@@ -14,7 +14,6 @@ window.addEventListener('load', () => {
     getAndShowAllCourses();
     getAndShowPreSellCourses();
     getAndShowArticles();
-    getAndShowMenus();
 });
 
 function makeCounter(max, elemCounter, elemName) {

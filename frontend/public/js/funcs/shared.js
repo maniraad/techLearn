@@ -1,5 +1,5 @@
 import { getMe } from "./auth.js";
-import { isLogin } from "./utils.js";
+import { isLogin, getUrlParam } from "./utils.js";
 
 const headerResponsive = () => {
     const menuNavElem = document.querySelector('#nav-bar-icon');
@@ -206,7 +206,6 @@ const getAndShowMenus = async () => {
 
     const menus = await res.json();
 
-    console.log(menus);
 
     menus.forEach(menu => {
         menusContainer.insertAdjacentHTML('beforeend',
@@ -216,7 +215,7 @@ const getAndShowMenus = async () => {
                     ${menu.title}
                 </a>
                     ${menu.submenus.length !== 0 ?
-                    `   
+                `   
                     <svg class="w-4 h-4">
                         <use xlink:href="#chevron-down"></use>
                     </svg>
@@ -224,14 +223,14 @@ const getAndShowMenus = async () => {
                     <div class="invisible opacity-0 group-hover:visible group-hover:opacity-100 absolute right-0 top-full pt-1 xl:pt-4 transition-all z-10">
                         <div class="flex flex-col gap-y-5 w-64 bg-white shadow-sm py-5 px-6 rounded-2xl text-base">
                             ${menu.submenus.map((submenu) => (
-                            ` 
-                            <a href="http://127.0.0.1:5500/frontend/public/${menu.href}" class="overflow-hidden text-ellipsis whitespace-nowrap text-zinc-700 transition-all">
+                    ` 
+                            <a href=category.html?cat=${submenu.href} class="overflow-hidden text-ellipsis whitespace-nowrap text-zinc-700 transition-all">
                             ${submenu.title}
                             </a>
                           `
-                        )).join('')}
+                )).join('')}
                       `
-                        : ''}
+                : ''}
                         </div>
                     </div>
                 
@@ -241,4 +240,14 @@ const getAndShowMenus = async () => {
     });
 };
 
-export { showUserNameInNavbar, headerResponsive, getAndShowAllCourses, getAndShowPreSellCourses, getAndShowArticles, getAndShowMenus };
+const getAndShowCategoryCourses = async () => { 
+    const categoryName = getUrlParam("cat");
+
+    const res = await fetch(`http://localhost:4000/v1/courses/category/${categoryName}`);
+    const courses = res.json()
+
+    return courses
+};
+
+
+export { showUserNameInNavbar, headerResponsive, getAndShowAllCourses, getAndShowPreSellCourses, getAndShowArticles, getAndShowMenus, getAndShowCategoryCourses };
