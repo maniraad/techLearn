@@ -256,41 +256,47 @@
                         <div class="flex w-full md:w-auto gap-4 text-sm">
 
                             <div class="relative transition-all w-full text-sm md:w-fit md:text-base ">
-                                <div
-                                    class="bg-white border-2 border-solid border-white transition-all rounded-xl p-3 md:p-3.5 flex justify-center items-center gap-1 cursor-pointer h-full">
+                                <div id="sort" 
+                                    class="bg-white border-2 border-solid border-white transition-all rounded-xl p-3 md:p-3.5 flex justify-center items-center gap-1 cursor-pointer h-full z-50">
                                     <span class="flex items-center shrink-0 gap-x-2.5 cursor-pointer">
                                         <svg class="w-5 h-5">
                                             <use xlink:href="#sort"></use>
                                         </svg>
                                         مرتب سازی
                                     </span>
-                                    <div class="absolute left-0 w-full pt-2 z-10 transition-all">
-                                        <div class="bg-white transition-all rounded-xl shadow-sm opacity-0 invisible">
-                                            <ul>
-                                                <li class="border-b border-solid border-gray-300 last:border-b-0 transition-colors">
-                                                    <a class="text-zinc-700 cursor-pointer px-3 md:px-3.5 py-2.5 inline-block text-center w-full text-xs md:text-sm"
-                                                        href="">همه دوره ها
-                                                    </a>
-                                                </li>
-                                                <li class="border-b border-solid border-gray-300 last:border-b-0 transition-colors">
-                                                    <a class="text-zinc-700 cursor-pointer px-3 md:px-3.5 py-2.5 inline-block text-center w-full text-xs md:text-sm"
-                                                        href="">ارزان ترین</a>
-                                                </li>
-                                                <li class="border-b border-solid border-gray-300 last:border-b-0 transition-colors">
-                                                    <a class="text-zinc-700 cursor-pointer px-3 md:px-3.5 py-2.5 inline-block text-center w-full text-xs md:text-sm"
-                                                        href="">گران ترین</a>
-                                                </li>
-                                                <li class="border-b border-solid border-gray-300 last:border-b-0 transition-colors">
-                                                    <a class="text-zinc-700 cursor-pointer px-3 md:px-3.5 py-2.5 inline-block text-center w-full text-xs md:text-sm"
-                                                        href="">پرمخاطب ها</a>
-                                                </li>
-                                            </ul>
-                                        </div>
+                                </div>
+                                <div class="absolute left-0 w-full pt-2 z-10 transition-all">
+                                    <div id="sort-box" class="bg-white transition-all rounded-xl shadow-sm hide">
+                                        <ul>
+                                            <li
+                                                class="border-b border-solid border-gray-300 last:border-b-0 transition-colors">
+                                                <a class="text-zinc-700 cursor-pointer px-3 md:px-3.5 py-2.5 inline-block text-center w-full text-xs md:text-sm"
+                                                    href="">همه دوره ها
+                                                </a>
+                                            </li>
+                                            <li
+                                                class="border-b border-solid border-gray-300 last:border-b-0 transition-colors">
+                                                <a class="text-zinc-700 cursor-pointer px-3 md:px-3.5 py-2.5 inline-block text-center w-full text-xs md:text-sm"
+                                                    href="">ارزان ترین</a>
+                                            </li>
+                                            <li
+                                                class="border-b border-solid border-gray-300 last:border-b-0 transition-colors">
+                                                <a class="text-zinc-700 cursor-pointer px-3 md:px-3.5 py-2.5 inline-block text-center w-full text-xs md:text-sm"
+                                                    href="">گران ترین</a>
+                                            </li>
+                                            <li
+                                                class="border-b border-solid border-gray-300 last:border-b-0 transition-colors">
+                                                <a class="text-zinc-700 cursor-pointer px-3 md:px-3.5 py-2.5 inline-block text-center w-full text-xs md:text-sm"
+                                                    href="">پرمخاطب ها</a>
+                                            </li>
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
+
+
                             <div class="relative transition-all w-full text-sm md:w-fit md:text-base ">
-                                <div
+                                <div id="Grouping"
                                     class="bg-white border-2 border-solid border-white transition-all rounded-xl p-3 md:p-3.5 flex justify-center items-center gap-1 cursor-pointer h-full">
                                     <span class="flex items-center shrink-0 gap-x-2.5 cursor-pointer">
                                         <svg class="w-5 h-5">
@@ -300,25 +306,30 @@
                                     </span>
                                 </div>
                                 <div class="absolute left-0 w-full pt-2 z-10 transition-all">
-                                    <div class="bg-white transition-all rounded-xl shadow-sm opacity-0 invisible">
+                                    <div id="Grouping-box" class="bg-white transition-all rounded-xl shadow-sm hide">
                                         <ul>
-                                            <li class="border-b border-solid border-gray-300 last:border-b-0 transition-colors">
+                                            <li
+                                                class="border-b border-solid border-gray-300 last:border-b-0 transition-colors">
                                                 <a class="text-zinc-700 cursor-pointer px-3 md:px-3.5 py-2.5 inline-block text-center w-full text-xs md:text-sm"
                                                     href="">همه</a>
                                             </li>
-                                            <li class="border-b border-solid border-gray-300 last:border-b-0 transition-colors">
+                                            <li
+                                                class="border-b border-solid border-gray-300 last:border-b-0 transition-colors">
                                                 <a class="text-zinc-700 cursor-pointer px-3 md:px-3.5 py-2.5 inline-block text-center w-full text-xs md:text-sm"
                                                     href="">فرانت اند</a>
                                             </li>
-                                            <li class="border-b border-solid border-gray-300 last:border-b-0 transition-colors">
+                                            <li
+                                                class="border-b border-solid border-gray-300 last:border-b-0 transition-colors">
                                                 <a class="text-zinc-700 cursor-pointer px-3 md:px-3.5 py-2.5 inline-block text-center w-full text-xs md:text-sm"
                                                     href="">بک اند</a>
                                             </li>
-                                            <li class="border-b border-solid border-gray-300 last:border-b-0 transition-colors">
+                                            <li
+                                                class="border-b border-solid border-gray-300 last:border-b-0 transition-colors">
                                                 <a class="text-zinc-700 cursor-pointer px-3 md:px-3.5 py-2.5 inline-block text-center w-full text-xs md:text-sm"
                                                     href="">پایتون</a>
                                             </li>
-                                            <li class="border-b border-solid border-gray-300 last:border-b-0 transition-colors">
+                                            <li
+                                                class="border-b border-solid border-gray-300 last:border-b-0 transition-colors">
                                                 <a class="text-zinc-700 cursor-pointer px-3 md:px-3.5 py-2.5 inline-block text-center w-full text-xs md:text-sm"
                                                     href="">مهارت های نرم</a>
                                             </li>
