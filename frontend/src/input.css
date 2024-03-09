@@ -52,7 +52,7 @@
     }
 
     .hide {
-        @apply invisible opacity-0;
+        @apply invisible opacity-0 hidden;
     }
 
     .show {

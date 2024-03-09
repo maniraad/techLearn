@@ -15,6 +15,5 @@ Grouping.addEventListener('click', () => {
 
 window.addEventListener('load', () => {
     getAndShowCategoryCourses().then(data => {
-        console.log(data);
     });
 });
