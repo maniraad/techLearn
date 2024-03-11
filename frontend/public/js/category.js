@@ -1,4 +1,5 @@
 import { getAndShowCategoryCourses, insertCourseBoxHtmlTemplate, coursesSorting } from "./funcs/shared.js";
+import { searchInArray } from "./funcs/utils.js";
 
 const sort = document.querySelector('#sort');
 const sortBox = document.querySelector('#sort-box');
@@ -14,7 +15,8 @@ window.addEventListener("load", () => {
 
         let courses = [...responseCourses];
         const categoryCourseWrapper = document.querySelector('#category-course-wrapper');
-        const sortList = document.querySelectorAll('.sort-list')
+        const sortList = document.querySelectorAll('.sort-list');
+        const coursesSearchInput = document.querySelector('#search-input')
 
         // Show Category Courses By row showType
         if (courses.length) {
@@ -48,5 +50,14 @@ window.addEventListener("load", () => {
                 insertCourseBoxHtmlTemplate(showCourses, categoryCourseWrapper)
             })
         });
+
+        // Handle Search In Courses
+        coursesSearchInput.addEventListener('input', event => {
+            console.log(event.target.value);
+
+            const showCourses = searchInArray([...responseCourses], "name", event.target.value);
+
+            insertCourseBoxHtmlTemplate(showCourses, categoryCourseWrapper)
+        })
     });
 });

@@ -28,9 +28,15 @@ const isLogin = () => {
     return userInfos ? true : false
 };
 
-const getUrlParam = key =>{
+const getUrlParam = key => {
     const urlParam = new URLSearchParams(window.location.search)
     return urlParam.get(key);
 };
 
-export { Toast, saveIntoLocalStorage, getFromLocalStorage, getToken, isLogin, getUrlParam };
+const searchInArray = (array, searchProperty, searchValue) => {
+    let outPutArray = array.filter(item => item[searchProperty].includes(searchValue));
+
+    return outPutArray
+};
+
+export { Toast, saveIntoLocalStorage, getFromLocalStorage, getToken, isLogin, getUrlParam, searchInArray };

@@ -305,26 +305,26 @@ const coursesSorting = (array, filterMethod) => {
         case 'free': {
             outPutArray = array.filter(course => course.price === 0)
             break
-          }
-          case 'money': {
+        }
+        case 'money': {
             outPutArray = array.filter(course => course.price !== 0)
             break
-          }
-          case 'first': {
+        }
+        case 'first': {
             outPutArray = [...array].reverse()
             break
-          }
-          case 'last': {
+        }
+        case 'last': {
             outPutArray = array
             break
-          }
-          case 'default': {
+        }
+        case 'default': {
             outPutArray = array
             break
-          }
-          default: {
+        }
+        default: {
             outPutArray = array
-          }
+        }
     };
 
     return outPutArray
