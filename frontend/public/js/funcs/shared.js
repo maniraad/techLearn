@@ -1,5 +1,5 @@
 import { getMe } from "./auth.js";
-import { isLogin, getUrlParam } from "./utils.js";
+import { isLogin, getUrlParam, getToken } from "./utils.js";
 
 const headerResponsive = () => {
     const menuNavElem = document.querySelector('#nav-bar-icon');
@@ -68,9 +68,9 @@ const getAndShowAllCourses = async () => {
             <!-- Box Body -->
             <div class="flex flex-col justify-center items-start self-baseline gap-y-4">
                 <!-- Topic -->
-                <h4 class="text-2xl text-right font-EstedadMedium font-bold overflow-hidden line-clamp-1">
+                <a href="course.html?name=${course.shortName}" class="text-2xl text-right font-EstedadMedium font-bold overflow-hidden line-clamp-1">
                     ${course.name}
-                    </h4>
+                    </a>
                 <!-- Teacher & Time -->
                 <div class="flex flex-wrap text-sm">
                     <div class="flex-center gap-x-1 py-1 px-2">
@@ -92,7 +92,7 @@ const getAndShowAllCourses = async () => {
                 ${course.price === 0 ? "رایگان" : course.price.toLocaleString() + "تومان"} 
             </div>
             <!-- Button -->
-            <a href="#"
+            <a href="course.html?name=${course.shortName}"
                 class="self-stretch py-3 text-white text-center font-EstedadMedium bg-teal-600 hover:bg-teal-700 rounded-2xl delay-100 transition-all">
                 مشاهده و ثبت نام </a>
         </div>
@@ -122,9 +122,9 @@ const getAndShowPreSellCourses = async () => {
                                 <!-- Box Body -->
                                 <div class="flex flex-col justify-center items-start self-baseline gap-y-4">
                                     <!-- Topic -->
-                                    <h4
+                                    <a href="course.html?name=${presellCourse.shortName}"
                                         class="text-xl lg:text-2xl text-right font-EstedadMedium lg:font-bold overflow-hidden line-clamp-1">
-                                          ${presellCourse.name} </h4>
+                                          ${presellCourse.name} </a>
                                     <!-- Teacher & Time -->
                                     <div class="flex flex-wrap text-sm">
                                         <div class="flex-center gap-x-1 py-1 px-2">
@@ -265,9 +265,9 @@ const insertCourseBoxHtmlTemplate = (courses, parentElement) => {
                             <!-- Box Body -->
                             <div class="flex flex-col justify-center items-start self-baseline gap-y-4">
                                 <!-- Topic -->
-                                <h4
+                                <a href="course.html?name=${course.shortName}"
                                     class="text-2xl text-right font-EstedadMedium font-bold overflow-hidden line-clamp-1">
-                                    ${course.name}</h4>
+                                    ${course.name}</a>
                                 <!-- Teacher & Time -->
                                 <div class="flex flex-wrap text-sm">
                                     <div class="flex-center gap-x-1 py-1 px-2">
@@ -289,7 +289,7 @@ const insertCourseBoxHtmlTemplate = (courses, parentElement) => {
                             ${course.price === 0 ? "رایگان" : course.price.toLocaleString() + "تومان"} 
                             </div>
                             <!-- Button -->
-                            <a href="#"
+                            <a href="course.html?name=${course.shortName}"
                                 class="self-stretch py-3 text-white text-center font-EstedadMedium bg-teal-600 hover:bg-teal-700 rounded-2xl delay-100 transition-all">
                                 مشاهده و ثبت نام </a>
                         </div>
@@ -330,4 +330,17 @@ const coursesSorting = (array, filterMethod) => {
     return outPutArray
 };
 
-export { showUserNameInNavbar, headerResponsive, getAndShowAllCourses, getAndShowPreSellCourses, getAndShowArticles, getAndShowMenus, getAndShowCategoryCourses, insertCourseBoxHtmlTemplate, coursesSorting };
+const getCourseDetails = () => {
+    const courseShortName = getUrlParam("name");
+
+    fetch(`http://localhost:4000/v1/courses/${courseShortName}`, {
+        method: "GET",
+        headers: {
+            Authorization: `Bearer ${getToken()}`
+        }
+    }).then(res=>res.json()).then(data=>{
+        console.log(data);
+    })
+};
+
+export { showUserNameInNavbar, headerResponsive, getAndShowAllCourses, getAndShowPreSellCourses, getAndShowArticles, getAndShowMenus, getAndShowCategoryCourses, insertCourseBoxHtmlTemplate, coursesSorting, getCourseDetails };

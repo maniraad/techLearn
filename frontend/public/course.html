@@ -104,30 +104,9 @@
                     <img src="images/logo/Logo.png" alt="Logo" class="">
                 </a>
                 <!-- NavBar Menu -->
-                <ul class="hidden lg:flex items-center gap-x-5  child:gap-x-1.5 child:flex child:items-center">
-                    <li class="relative sub-menu--active">
-                        <a href="#">
-                            صفحه اصلی
-                        </a>
-                    </li>
-                    <li class="relative">
-                        <a href="#" class="">
-                            همه دوره ها
-                        </a>
-                    </li>
-                    <li class="relative">
-                        <a href="#" class="">
-                            مقالات
-                        </a>
-                        <svg class="w-4 h-4">
-                            <use xlink:href="#chevron-down"></use>
-                        </svg>
-                    </li>
-                    <li class="relative">
-                        <a href="#" class="">
-                            درباره ما
-                        </a>
-                    </li>
+                <ul id="menus-wrapper"
+                    class="hidden lg:flex items-center gap-x-5  child:gap-x-1.5 child:flex child:items-center">
+                    
                 </ul>
 
             </nav>
@@ -186,13 +165,14 @@
                 </span>
 
                 <!-- LogIn Btn -->
-                <a href="#"
+                <div
                     class="hidden md:flex-center gap-x-2 font-EstedadMedium h-14 px-4 lg:px-6 bg-teal-600 hover:bg-teal-700 text-white rounded-2xl transition-all">
-                    <svg class="w-6 h-6">
+                    <svg id="user-login-btn-icon" class="w-6 h-6">
                         <use xlink:href="#arrow-right-rectangle"></use>
                     </svg>
-                    ورود یا ثبت نام
-                </a>
+                    <a id="user-login-btn">
+                    </a>
+                </div>
                 <!-- LogIn Icon Btn -->
                 <a href="#" class="md:hidden flex-center w-12 h-12 rounded-full bg-gray-100 text-slate-500">
                     <svg class="w-6 h-6">
@@ -618,7 +598,7 @@
     </footer>
 
     <div class="overlay fixed w-full h-full top-0 left-0 bg-black/40 z-30 transition-all invisible opacity-0"></div>
-    <script src="js/course.js"></script>
+    <script type="module" src="js/course.js"></script>
     <script type="module" src="js/style.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
