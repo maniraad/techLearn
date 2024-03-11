@@ -57,15 +57,17 @@ window.addEventListener("load", () => {
 
             const showCourses = searchInArray([...responseCourses], "name", event.target.value);
 
-            if (showCourses.length) {
-                insertCourseBoxHtmlTemplate(showCourses, categoryCourseWrapper)
+            // Handle Empty Search In Courses
 
+            if (showCourses.length) {
+                insertCourseBoxHtmlTemplate(showCourses, categoryCourseWrapper);
+                document.querySelector('#alert-box').innerHTML = '';
             } else {
                 if (categoryCourseWrapper.innerHTML !== '') {
                     categoryCourseWrapper.innerHTML = ''
                     categoryCourseWrapper.insertAdjacentHTML('afterend',
                         `
-                <div class="flex-center flex-col gap-5 text-slate-600 text-center text-xl">
+                <div id="alert-box" class="flex-center flex-col gap-5 text-slate-600 text-center text-xl">
                     <svg class="w-7 h-7">
                         <use xlink:href="#no-symbol"></use>
                     </svg>
