@@ -35,7 +35,7 @@ window.addEventListener("load", () => {
             </div>
         `
             )
-        }
+        };
 
         // Show Category Courses By user filtering method
         sortList.forEach(item => {
@@ -57,7 +57,24 @@ window.addEventListener("load", () => {
 
             const showCourses = searchInArray([...responseCourses], "name", event.target.value);
 
-            insertCourseBoxHtmlTemplate(showCourses, categoryCourseWrapper)
-        })
+            if (showCourses.length) {
+                insertCourseBoxHtmlTemplate(showCourses, categoryCourseWrapper)
+
+            } else {
+                if (categoryCourseWrapper.innerHTML !== '') {
+                    categoryCourseWrapper.innerHTML = ''
+                    categoryCourseWrapper.insertAdjacentHTML('afterend',
+                        `
+                <div class="flex-center flex-col gap-5 text-slate-600 text-center text-xl">
+                    <svg class="w-7 h-7">
+                        <use xlink:href="#no-symbol"></use>
+                    </svg>
+                    <span>متاسفانه دوره ای مطابق با جستجوی شما پیدا نشد ):</span>
+                </div>
+            `
+                    )
+                }
+            }
+        });
     });
 });
