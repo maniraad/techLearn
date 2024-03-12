@@ -146,6 +146,10 @@
     .topic__body {
         @apply overflow-hidden child:border-b child:border-b-gray-200 transition-all
     }
+
+    .menu-item-active {
+        @apply font-black text-gray-500
+    }
 }
 
 @layer utilities {

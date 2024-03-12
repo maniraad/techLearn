@@ -644,12 +644,6 @@ video {
   }
 }
 
-.sub-menu--active {
-  font-family: EstedadMedium;
-  --tw-text-opacity: 1;
-  color: rgb(13 148 136 / var(--tw-text-opacity));
-}
-
 .hide {
   visibility: hidden;
   display: none;
@@ -795,6 +789,12 @@ video {
   border-bottom-width: 1px;
   --tw-border-opacity: 1;
   border-bottom-color: rgb(229 231 235 / var(--tw-border-opacity));
+}
+
+.menu-item-active {
+  font-weight: 900;
+  --tw-text-opacity: 1;
+  color: rgb(107 114 128 / var(--tw-text-opacity));
 }
 
 .invisible {

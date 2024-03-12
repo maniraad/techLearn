@@ -305,12 +305,12 @@
                     <div class="w-full">
                         <div
                             class="tittles flex-center py-3 px-8 bg-white text-zinc-700 font-EstedadMedium text-lg gap-x-14 rounded-xl">
-                            <a href="#" class=""> توضیحات </a>
-                            <a href="#" class=""> سرفصل ها </a>
-                            <a href="#" class=""> نظرات </a>
+                            <a href="#" data-section="description" class="menu__item menu-item-active"> توضیحات </a>
+                            <a href="#" data-section="lessons" class="menu__item"> سرفصل ها </a>
+                            <a href="#" data-section="comments" class="menu__item"> نظرات </a>
                         </div>
                         <div id="description"
-                            class="bg-white px-3.5 md:px-5 pt-5 md:pt-7 pb-5 md:pb-6 shadow-sm rounded-2xl mt-3.5 sm:mt-5">
+                            class="select-section bg-white px-3.5 md:px-5 pt-5 md:pt-7 pb-5 md:pb-6 shadow-sm rounded-2xl mt-3.5 sm:mt-5">
                             <div class="flex items-center gap-x-3.5 mb-5">
                                 <span class="block w-2.5 h-10 bg-amber-400 dark:bg-yellow-400 rounded-sm"></span>
                                 <h3 class="text-zinc-700 font-EstedadMedium text-2xl lg:text-3xl">توضیحات</h3>
@@ -344,7 +344,7 @@
                         </div>
                         <!-- Course Topics -->
                         <div id="lessons"
-                            class="bg-white px-3.5 md:px-5 pt-5 md:pt-7 pb-3.5 md:pb-6 shadow-sm rounded-2xl mt-4 sm:mt-5">
+                            class="select-section bg-white px-3.5 md:px-5 pt-5 md:pt-7 pb-3.5 md:pb-6 shadow-sm rounded-2xl mt-4 sm:mt-5">
                             <div class="flex items-center justify-between flex-wrap mb-5">
                                 <div class="flex items-center gap-x-3.5">
                                     <span class="block w-2.5 h-10 bg-sky-500 rounded-sm"></span>
@@ -443,6 +443,9 @@
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                        <div id="comments" class="select-section">
+
                         </div>
                     </div>
                     <!-- side bar -->
