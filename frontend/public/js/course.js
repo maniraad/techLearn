@@ -13,11 +13,6 @@ function observerHandler(allSections) {
     allSections.map(section => {
         let sectionClassName = section.target.id;
         let sectionMenuItem = document.querySelector(`.menu__item[data-section=${sectionClassName}]`);
-        // if (section.isIntersecting) {
-        //     sectionMenuItem.classList.add("menu-item-active");
-        // } else {
-        //     sectionMenuItem.classList.remove("menu-item-active");
-        // }
     })
 };
 selectSection.forEach(section => {
@@ -38,16 +33,6 @@ menuItems.forEach(item => {
         });
     })
 });
-
-
-
-
-
-
-
-
-
-
 
 topicLesson.addEventListener('click', () => {
     topicName.classList.toggle('topic__name--active');
