@@ -330,7 +330,49 @@ const coursesSorting = (array, filterMethod) => {
     return outPutArray
 };
 
+const observerScroll = () => {
+    const selectSection = document.querySelectorAll('.select-section');
+    const menuItems = document.querySelectorAll('.menu__item');
+
+    // Intersection Observer Scroll
+    const observer = new IntersectionObserver(observerHandler, { threshold: 0.7 });
+    function observerHandler(allSections) {
+        allSections.map(section => {
+            let sectionClassName = section.target.id;
+            let sectionMenuItem = document.querySelector(`.menu__item[data-section=${sectionClassName}]`);
+        })
+    };
+    selectSection.forEach(section => {
+        observer.observe(section);
+    });
+    menuItems.forEach(item => {
+        item.addEventListener("click", function (e) {
+            e.preventDefault();
+
+            let sectionClass = item.getAttribute("data-section");
+            let sectionOffsetTop = document.querySelector(`#${sectionClass}`).offsetTop;
+
+            window.scrollTo({
+                top: sectionOffsetTop - 130,
+                behavior: "smooth"
+            });
+        })
+    });
+};
+
 const getCourseDetails = () => {
+
+    // Select Dom Elements
+    const $ = document;
+    const courseCategory = $.querySelector('#category-course');
+    const courseTitle = $.querySelector('#title-course');
+    const courseDescription = $.querySelector('#description-course');
+    const coursePrice = $.querySelector('#course-price');
+    const courseStatus = $.querySelector('#course-status');
+    const courseSupport = $.querySelector('#support');
+    const courseDate = $.querySelector('#date');
+    const courseRegisterButtons = $.querySelectorAll('.course-register-btn');
+
     const courseShortName = getUrlParam("name");
 
     fetch(`http://localhost:4000/v1/courses/${courseShortName}`, {
@@ -338,9 +380,23 @@ const getCourseDetails = () => {
         headers: {
             Authorization: `Bearer ${getToken()}`
         }
-    }).then(res=>res.json()).then(data=>{
-        console.log(data);
-    })
+    }).then(res => res.json())
+        .then(course => {
+            console.log(course);
+
+            courseCategory.innerHTML = course.categoryID.title
+            courseTitle.innerHTML = course.name
+            courseDescription.innerHTML = course.description
+            courseSupport.innerHTML = course.support
+            courseDate.innerHTML = course.updatedAt.slice(0,10)
+
+            coursePrice.innerHTML = course.price.toLocaleString() + " تومان "
+
+            courseStatus.innerHTML = course.isComplete ? "تکمیل شده" : "در حال برگذاری"
+            courseRegisterButtons.forEach(courseRegisterButton => {
+                courseRegisterButton.innerHTML = course.isUserRegisteredToThisCourse ? "دانشجوی دوره هستید" : "ثبت نام دوره"
+            });
+        })
 };
 
-export { showUserNameInNavbar, headerResponsive, getAndShowAllCourses, getAndShowPreSellCourses, getAndShowArticles, getAndShowMenus, getAndShowCategoryCourses, insertCourseBoxHtmlTemplate, coursesSorting, getCourseDetails };
+export { showUserNameInNavbar, headerResponsive, getAndShowAllCourses, getAndShowPreSellCourses, getAndShowArticles, getAndShowMenus, getAndShowCategoryCourses, insertCourseBoxHtmlTemplate, coursesSorting, observerScroll, getCourseDetails };
