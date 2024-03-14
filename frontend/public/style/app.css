@@ -738,14 +738,17 @@ video {
   color: rgb(63 63 70 / var(--tw-text-opacity));
 }
 
-.topic {
+.courses-sessions-head {
   overflow: hidden;
   border-radius: 1rem;
   --tw-bg-opacity: 1;
   background-color: rgb(243 244 246 / var(--tw-bg-opacity));
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
 }
 
-.topic__name {
+.courses-sessions-title {
   display: flex;
   height: 3rem;
   cursor: pointer;
@@ -760,32 +763,35 @@ video {
   transition-duration: 150ms;
 }
 
+.courses-sessions-title:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(229 231 235 / var(--tw-bg-opacity));
+}
+
 @media (min-width: 768px) {
-  .topic__name {
+  .courses-sessions-title {
     height: 75px;
     padding-left: 1.25rem;
     padding-right: 1.25rem;
   }
 }
 
-.topic__name:hover {
+.courses-sessions-title--active {
   --tw-bg-opacity: 1;
   background-color: rgb(229 231 235 / var(--tw-bg-opacity));
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
 }
 
-.topic__name--active {
-  --tw-bg-opacity: 1;
-  background-color: rgb(229 231 235 / var(--tw-bg-opacity));
-}
-
-.topic__body {
+.courses-sessions-wrapper {
   overflow: hidden;
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
 
-.topic__body > * {
+.courses-sessions-wrapper > * {
   border-bottom-width: 1px;
   --tw-border-opacity: 1;
   border-bottom-color: rgb(229 231 235 / var(--tw-border-opacity));
@@ -1325,10 +1331,6 @@ video {
 
 .cursor-pointer {
   cursor: pointer;
-}
-
-.cursor-auto {
-  cursor: auto;
 }
 
 .select-none {
@@ -2214,10 +2216,6 @@ video {
 .hover\:bg-teal-700:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(15 118 110 / var(--tw-bg-opacity));
-}
-
-.hover\:font-semibold:hover {
-  font-weight: 600;
 }
 
 .hover\:text-emerald-600:hover {

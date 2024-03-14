@@ -1,15 +1,15 @@
 import { getCourseDetails, observerScroll } from "./funcs/shared.js";
 
-const topicLesson = document.querySelector('.topic__name');
-const topicBody = document.querySelector('.topic__body');
-const topicName = document.querySelector('.topic__name');
-const topicNameArrow = document.querySelector('.topic__name--arrow');
+const topicLesson = document.querySelector('.courses-sessions-head');
+const topicBody = document.querySelector('.courses-sessions-wrapper');
+const topicName = document.querySelector('.courses-sessions-title');
+const topicNameArrow = document.querySelector('.courses-sessions--arrow');
 
-topicLesson.addEventListener('click', () => {
-    topicName.classList.toggle('topic__name--active');
-    topicBody.classList.toggle('max-h-full');
-    topicNameArrow.classList.toggle('rotate-180');
-});
+ topicLesson.addEventListener('click', () => {
+     topicName.classList.toggle('courses-sessions-title--active');
+     topicBody.classList.toggle('max-h-full');
+     topicNameArrow.classList.toggle('rotate-180');
+ });
 
 window.addEventListener("load", () => {
     observerScroll()

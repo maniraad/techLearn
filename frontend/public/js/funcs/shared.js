@@ -371,6 +371,7 @@ const getCourseDetails = () => {
     const courseStatus = $.querySelector('#course-status');
     const courseSupport = $.querySelector('#support');
     const courseDate = $.querySelector('#date');
+    const courseStudents = $.querySelector('#students');
     const courseRegisterButtons = $.querySelectorAll('.course-register-btn');
 
     const courseShortName = getUrlParam("name");
@@ -388,13 +389,50 @@ const getCourseDetails = () => {
             courseTitle.innerHTML = course.name
             courseDescription.innerHTML = course.description
             courseSupport.innerHTML = course.support
-            courseDate.innerHTML = course.updatedAt.slice(0,10)
+            courseStudents.innerHTML = course.courseStudentsCount
+            courseDate.innerHTML = course.updatedAt.slice(0, 10)
 
             coursePrice.innerHTML = course.price.toLocaleString() + " تومان "
 
             courseStatus.innerHTML = course.isComplete ? "تکمیل شده" : "در حال برگذاری"
             courseRegisterButtons.forEach(courseRegisterButton => {
                 courseRegisterButton.innerHTML = course.isUserRegisteredToThisCourse ? "دانشجوی دوره هستید" : "ثبت نام دوره"
+            });
+
+            // Show Course sessions
+            const coursesSessionsWrapper = $.querySelector('.courses-sessions-wrapper');
+            course.sessions.forEach((session, index) => {
+                console.log(session);
+                coursesSessionsWrapper.insertAdjacentHTML("beforeend",
+                    `
+                <div
+                    class="md:flex items-center gap-2.5 flex-wrap space-y-3.5 md:space-y-0 py-4 md:py-6 px-3.5 md:px-5 group">
+                    <a href=""
+                        class="flex items-center gap-x-1.5 md:gap-x-2.5 shrink-0 w-[85%] ">
+                        <span
+                            class="flex items-center justify-center shrink-0 w-5 h-5 md:w-7 md:h-7 bg-white font-EstedadBold text-xs md:text-base text-zinc-700 group-hover:bg-teal-600 group-hover:text-white rounded-md transition-colors">${index + 1}</span>
+                        <h4
+                            class="text-zinc-700 group-hover:text-teal-600 text-sm md:text-lg transition-colors">
+                          ${session.title}</h4>
+                    </a>
+                    <div class="flex items-center w-full justify-between">
+                        <span
+                            class="inline-block h-[25px] leading-[25px] px-2.5 bg-gray-200 text-zinc-700 group-hover:bg-teal-600/10 group-hover:text-teal-700 text-xs rounded transition-colors">
+                            ${session.free ? "جلسه رایگان" : "خصوصی"} 
+                        </span>
+                        <div class="flex items-start gap-x-1.5 md:gap-x-2">
+                            <span class="text-slate-500 text-sm md:text-lg font-EstedadMedium">
+                            ${session.time}
+                            </span>
+                            <svg
+                                class="w-5 h-6 md:w-6 md:h-6 text-zinc-700 group-hover:text-teal-600 transition-colors">
+                                <use xlink:href="#${session.free ? "play-circle" : "lock-closed"}"></use>
+                            </svg>
+                        </div>
+                    </div>
+
+                </div>
+                `)
             });
         })
 };
