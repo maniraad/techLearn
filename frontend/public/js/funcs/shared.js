@@ -407,14 +407,26 @@ const getCourseDetails = () => {
                     `
                 <div
                     class="md:flex items-center gap-2.5 flex-wrap space-y-3.5 md:space-y-0 py-4 md:py-6 px-3.5 md:px-5 group">
-                    <a href=""
-                        class="flex items-center gap-x-1.5 md:gap-x-2.5 shrink-0 w-[85%] ">
-                        <span
-                            class="flex items-center justify-center shrink-0 w-5 h-5 md:w-7 md:h-7 bg-white font-EstedadBold text-xs md:text-base text-zinc-700 group-hover:bg-teal-600 group-hover:text-white rounded-md transition-colors">${index + 1}</span>
-                        <h4
-                            class="text-zinc-700 group-hover:text-teal-600 text-sm md:text-lg transition-colors">
-                          ${session.title}</h4>
-                    </a>
+                    ${(session.free || course.isUserRegisteredToThisCourse) ? `
+                            <a href="#"
+                                class="flex items-center gap-x-1.5 md:gap-x-2.5 shrink-0 w-[85%] ">
+                                <span
+                                    class="flex items-center justify-center shrink-0 w-5 h-5 md:w-7 md:h-7 bg-white font-EstedadBold text-xs md:text-base text-zinc-700 group-hover:bg-teal-600 group-hover:text-white rounded-md transition-colors">${index + 1}</span>
+                                <h4
+                                    class="text-zinc-700 group-hover:text-teal-600 text-sm md:text-lg transition-colors">
+                                    ${session.title}</h4>
+                            </a>
+                        ` : `
+                            <span
+                                class="flex items-center gap-x-1.5 md:gap-x-2.5 shrink-0 w-[85%] ">
+                                <span
+                                    class="flex items-center justify-center shrink-0 w-5 h-5 md:w-7 md:h-7 bg-white font-EstedadBold text-xs md:text-base text-zinc-700 group-hover:bg-teal-600 group-hover:text-white rounded-md transition-colors">${index + 1}</span>
+                                <h4
+                                    class="text-zinc-700 group-hover:text-teal-600 text-sm md:text-lg transition-colors">
+                                    ${session.title}</h4>
+                            </span>
+                        `
+                    }
                     <div class="flex items-center w-full justify-between">
                         <span
                             class="inline-block h-[25px] leading-[25px] px-2.5 bg-gray-200 text-zinc-700 group-hover:bg-teal-600/10 group-hover:text-teal-700 text-xs rounded transition-colors">
