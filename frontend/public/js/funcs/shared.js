@@ -383,16 +383,14 @@ const getCourseDetails = () => {
         }
     }).then(res => res.json())
         .then(course => {
-            console.log(course);
-
+            console.log(course.shortName);
             courseCategory.innerHTML = course.categoryID.title
             courseTitle.innerHTML = course.name
             courseDescription.innerHTML = course.description
             courseSupport.innerHTML = course.support
             courseStudents.innerHTML = course.courseStudentsCount
             courseDate.innerHTML = course.updatedAt.slice(0, 10)
-
-            coursePrice.innerHTML = course.price.toLocaleString() + " تومان "
+            coursePrice.innerHTML = course.price === 0 ? "رایگان" : course.price.toLocaleString() + "تومان"
 
             courseStatus.innerHTML = course.isComplete ? "تکمیل شده" : "در حال برگذاری"
             courseRegisterButtons.forEach(courseRegisterButton => {
@@ -402,13 +400,17 @@ const getCourseDetails = () => {
             // Show Course sessions
             const coursesSessionsWrapper = $.querySelector('.courses-sessions-wrapper');
             course.sessions.forEach((session, index) => {
-                console.log(session);
+                let time = session.time
+                console.log(time);
+                // session.time.forEach(time => {
+                //     console.log(time);
+                // });
                 coursesSessionsWrapper.insertAdjacentHTML("beforeend",
                     `
                 <div
                     class="md:flex items-center gap-2.5 flex-wrap space-y-3.5 md:space-y-0 py-4 md:py-6 px-3.5 md:px-5 group">
                     ${(session.free || course.isUserRegisteredToThisCourse) ? `
-                            <a href="#"
+                            <a href="episode.html?name=${course.shortName}&id=${session._id}" target="_blank"
                                 class="flex items-center gap-x-1.5 md:gap-x-2.5 shrink-0 w-[85%] ">
                                 <span
                                     class="flex items-center justify-center shrink-0 w-5 h-5 md:w-7 md:h-7 bg-white font-EstedadBold text-xs md:text-base text-zinc-700 group-hover:bg-teal-600 group-hover:text-white rounded-md transition-colors">${index + 1}</span>
