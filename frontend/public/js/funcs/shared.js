@@ -453,6 +453,8 @@ const getCourseDetails = () => {
 
 const getSessionDetails = async () => {
 
+    const videoElem = document.querySelector('video')
+
     const courseShortName = getUrlParam("name");
     const sessionID = getUrlParam("id");
 
@@ -462,9 +464,9 @@ const getSessionDetails = async () => {
                 Authorization: `Bearer ${getToken()}`
             }
         })
-    const session = await res.json()
+    const  data = await res.json()
 
-    return session
+    videoElem.setAttribute("src", `http://localhost:4000/courses/covers/${data.session.video}`)
 };
 
 export { showUserNameInNavbar, headerResponsive, getAndShowAllCourses, getAndShowPreSellCourses, getAndShowArticles, getAndShowMenus, getAndShowCategoryCourses, insertCourseBoxHtmlTemplate, coursesSorting, observerScroll, getCourseDetails, getSessionDetails };
