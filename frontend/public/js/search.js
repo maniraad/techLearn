@@ -7,8 +7,6 @@ window.addEventListener("load", () => {
         const courses = responseSearch.allResultCourses;
         const categoryCourseWrapper = document.querySelector('#category-course-wrapper');
         
-        console.log(courses);
-
         if (courses.length) {
             insertCourseBoxHtmlTemplate(courses,categoryCourseWrapper)
         } else {

@@ -79,6 +79,11 @@
             <path stroke-linecap="round" stroke-linejoin="round"
                 d="M18.364 18.364A9 9 0 0 0 5.636 5.636m12.728 12.728A9 9 0 0 1 5.636 5.636m12.728 12.728L5.636 5.636" />
         </symbol>
+        <symbol id="users" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+        stroke="currentColor" class="w-6 h-6">
+        <path stroke-linecap="round" stroke-linejoin="round"
+            d="M15 19.128a9.38 9.38 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-.952 4.125 4.125 0 0 0-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 0 1 8.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0 1 11.964-3.07M12 6.375a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0Zm8.25 2.25a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z" />
+    </symbol>
     </svg>
 
     <header class="">
@@ -113,10 +118,11 @@
                 <div class="relative group hidden lg:block z-50" id="searchbox">
                     <form class="hidden xl:block" action="" method="get">
                         <label class="relative h-14 block transition-all">
-                            <input
+                            <input id="search-input"
                                 class="rounded-full text-slate-500 placeholder:text-slate-500 w-48 focus:w-64 h-full border border-transparent hover:border-gray-200 focus:border-gray-300 outline-none focus:text-zinc-700  bg-gray-100 text-base placeholder:text-lg pl-14 pr-5 block transition-all"
                                 name="s" type="text" placeholder="جستجو">
-                            <button class="absolute left-5 top-0 bottom-0 w-7 h-7 my-auto text-slate-500" type="submit"
+                            <button id="search-btn"
+                                class="absolute left-5 top-0 bottom-0 w-7 h-7 my-auto text-slate-500" type="submit"
                                 role="button">
                                 <svg class="w-7 h-7">
                                     <use xlink:href="#search"></use>

@@ -1213,10 +1213,6 @@ video {
   width: 50%;
 }
 
-.w-10 {
-  width: 2.5rem;
-}
-
 .w-12 {
   width: 3rem;
 }
@@ -1392,10 +1388,6 @@ video {
           user-select: none;
 }
 
-.resize {
-  resize: both;
-}
-
 .grid-cols-1 {
   grid-template-columns: repeat(1, minmax(0, 1fr));
 }
@@ -1569,6 +1561,16 @@ video {
 
 .gap-y-7 {
   row-gap: 1.75rem;
+}
+
+.gap-x-0 {
+  -moz-column-gap: 0px;
+       column-gap: 0px;
+}
+
+.gap-x-0\.5 {
+  -moz-column-gap: 0.125rem;
+       column-gap: 0.125rem;
 }
 
 .space-y-2 > :not([hidden]) ~ :not([hidden]) {
@@ -2049,6 +2051,10 @@ video {
   font-family: EstedadMedium;
 }
 
+.font-EstedadBlack {
+  font-family: EstedadBlack;
+}
+
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
@@ -2120,6 +2126,18 @@ video {
 
 .leading-loose {
   line-height: 2;
+}
+
+.tracking-tighter {
+  letter-spacing: -0.05em;
+}
+
+.tracking-tight {
+  letter-spacing: -0.025em;
+}
+
+.-tracking-tighter {
+  letter-spacing: 0.05em;
 }
 
 .text-gray-500 {
@@ -2211,14 +2229,6 @@ video {
 
 .filter {
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
-}
-
-.transition {
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
 }
 
 .transition-all {
@@ -2620,10 +2630,6 @@ video {
     display: none;
   }
 
-  .md\:h-12 {
-    height: 3rem;
-  }
-
   .md\:h-14 {
     height: 3.5rem;
   }
@@ -2646,10 +2652,6 @@ video {
 
   .md\:min-h-36 {
     min-height: 9rem;
-  }
-
-  .md\:w-12 {
-    width: 3rem;
   }
 
   .md\:w-14 {
@@ -2878,16 +2880,8 @@ video {
     display: none;
   }
 
-  .lg\:h-12 {
-    height: 3rem;
-  }
-
   .lg\:h-16 {
     height: 4rem;
-  }
-
-  .lg\:w-12 {
-    width: 3rem;
   }
 
   .lg\:w-16 {
@@ -3080,5 +3074,11 @@ video {
   .\32xl\:px-12 {
     padding-left: 3rem;
     padding-right: 3rem;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .dark\:text-white\/70 {
+    color: rgb(255 255 255 / 0.7);
   }
 }
