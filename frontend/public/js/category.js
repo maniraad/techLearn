@@ -2,14 +2,14 @@ import { getAndShowCategoryCourses, insertCourseBoxHtmlTemplate, coursesSorting,
 import { searchInArray } from "./funcs/utils.js";
 
 window.addEventListener("load", () => {
+    handleGroupingAndSortingBox();
     getAndShowCategoryCourses().then(responseCourses => {
 
         let courses = [...responseCourses];
         const categoryCourseWrapper = document.querySelector('#category-course-wrapper');
         const sortList = document.querySelectorAll('.sort-list');
         const coursesSearchInput = document.querySelector('#search-input');
-
-        handleGroupingAndSortingBox();
+  
         // Show Category Courses By row showType
         if (courses.length) {
             insertCourseBoxHtmlTemplate(

@@ -603,7 +603,11 @@ const submitContactUsMassage = async () => {
 
 const globalSearch = async () => {
     const searchValue = getUrlParam('value');
-    console.log(searchValue);
+
+    const res = await fetch(`http://localhost:4000/v1/search/${searchValue}`);
+    const result = await res.json();
+
+    return result
 };
 
 export { showUserNameInNavbar, headerResponsive, getAndShowAllCourses, getAndShowPreSellCourses, getAndShowArticles, getAndShowMenus, getAndShowCategoryCourses, insertCourseBoxHtmlTemplate, coursesSorting, observerScroll, handleGroupingAndSortingBox, getCourseDetails, getSessionDetails, submitContactUsMassage, globalSearch };
