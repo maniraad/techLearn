@@ -445,75 +445,88 @@ const getCourseDetails = () => {
 
             // Show Course Comments
             const coursesCommentsWrapper = $.querySelector('.courses-comments-wrapper');
-            course.comments.forEach(comment => {
-                console.log(comment);
-                coursesCommentsWrapper.insertAdjacentHTML("beforeend",
-                    `
-                                        <li class="w-full">
-                                            <!-- Question -->
-                                            <div
-                                                class="flex flex-col gap-4 rounded-lg p-4 sm:gap-5 sm:p-5 border-2 border-solid border-gray-200">
-                                                <!-- Profile -->
-                                                <div class="flex w-full justify-between gap-2 overflow-hidden">
-                                                    <div class="flex-center gap-3 overflow-hidden">
-                                                        <div class="overflow-hidden">
-                                                            <div class="flex items-center gap-1 overflow-hidden">
-                                                                <h3
-                                                                    class="overflow-hidden text-ellipsis text-xs font-EstedadBold sm:text-sm md:text-base">
-                                                                    <span>${comment.creator.name}</span>
-                                                                </h3>
-                                                                ${comment.creator.role === "ADMIN" ?
+
+            if (course.comments.length) {
+                course.comments.forEach(comment => {
+                    coursesCommentsWrapper.insertAdjacentHTML("beforeend",
                         `
-                                                                            <svg class="w-4 h-4 text-teal-700">
-                                                                                <use xlink:href="#check-badge"></use>
-                                                                            </svg>
-                                                            `: ""}
+                                            <li class="w-full">
+                                                <!-- Question -->
+                                                <div
+                                                    class="flex flex-col gap-4 rounded-lg p-4 sm:gap-5 sm:p-5 border-2 border-solid border-gray-200">
+                                                    <!-- Profile -->
+                                                    <div class="flex w-full justify-between gap-2 overflow-hidden">
+                                                        <div class="flex-center gap-3 overflow-hidden">
+                                                            <div class="overflow-hidden">
+                                                                <div class="flex items-center gap-1 overflow-hidden">
+                                                                    <h3
+                                                                        class="overflow-hidden text-ellipsis text-xs font-EstedadBold sm:text-sm md:text-base">
+                                                                        <span>${comment.creator.name}</span>
+                                                                    </h3>
+                                                                    ${comment.creator.role === "ADMIN" ?
+                            `
+                                                                                <svg class="w-4 h-4 text-teal-700">
+                                                                                    <use xlink:href="#check-badge"></use>
+                                                                                </svg>
+                                                                `: ""}
+                                                                </div>
+                                                                <span class="text-xs text-slate-500 sm:text-sm">${comment.createdAt.slice(0, 10)}</span>
                                                             </div>
-                                                            <span class="text-xs text-slate-500 sm:text-sm">${comment.createdAt.slice(0, 10)}</span>
                                                         </div>
                                                     </div>
+                                                    <!-- Massage -->
+                                                    <p class="overflow-hidden text-ellipsis text-sm text-gray-500 md:text-base">${comment.body}</p>
                                                 </div>
-                                                <!-- Massage -->
-                                                <p class="overflow-hidden text-ellipsis text-sm text-gray-500 md:text-base">${comment.body}</p>
-                                            </div>
-                                             ${comment.answerContent ?
-                        `
-                                            <!-- Answer -->
-
-                                                <ul>
-                                                    <li class="w-full pr-6 sm:pr-10">
-                                                        <div
-                                                            class="flex flex-col gap-4 rounded-lg p-4 sm:gap-5 sm:p-5 mt-3 bg-gray-100 md:mt-5">
-                                                            <div class="flex w-full justify-between gap-2 overflow-hidden">
-                                                                <div class="flex-center gap-3 overflow-hidden">
-                                                                    <div class="overflow-hidden">
-                                                                        <div
-                                                                            class="flex items-center gap-1 overflow-hidden">
-                                                                            <h3
-                                                                                class="overflow-hidden text-ellipsis text-xs font-EstedadBold sm:text-sm md:text-base">
-                                                                                <a target="_blank" href="">${comment.answerContent.creator.name}</a>
-                                                                            </h3>
-                                                                            ${comment.answerContent.creator.role === "ADMIN" ?
+                                                 ${comment.answerContent ?
                             `
-                                                                            <svg class="w-4 h-4 text-teal-700">
-                                                                                <use xlink:href="#check-badge"></use>
-                                                                            </svg>
-                                                                            `: ""}
+                                                <!-- Answer -->
+    
+                                                    <ul>
+                                                        <li class="w-full pr-6 sm:pr-10">
+                                                            <div
+                                                                class="flex flex-col gap-4 rounded-lg p-4 sm:gap-5 sm:p-5 mt-3 bg-gray-100 md:mt-5">
+                                                                <div class="flex w-full justify-between gap-2 overflow-hidden">
+                                                                    <div class="flex-center gap-3 overflow-hidden">
+                                                                        <div class="overflow-hidden">
+                                                                            <div
+                                                                                class="flex items-center gap-1 overflow-hidden">
+                                                                                <h3
+                                                                                    class="overflow-hidden text-ellipsis text-xs font-EstedadBold sm:text-sm md:text-base">
+                                                                                    <a target="_blank" href="">${comment.answerContent.creator.name}</a>
+                                                                                </h3>
+                                                                                ${comment.answerContent.creator.role === "ADMIN" ?
+                                `
+                                                                                <svg class="w-4 h-4 text-teal-700">
+                                                                                    <use xlink:href="#check-badge"></use>
+                                                                                </svg>
+                                                                                `: ""}
+                                                                            </div>
+                                                                            <span class="text-xs text-gray-500 sm:text-sm">${comment.answerContent.createdAt.slice(0, 10)}</span>
                                                                         </div>
-                                                                        <span class="text-xs text-gray-500 sm:text-sm">${comment.answerContent.createdAt.slice(0, 10)}</span>
                                                                     </div>
                                                                 </div>
+                                                                <p
+                                                                    class="overflow-hidden text-ellipsis text-sm text-gray-500 md:text-base">${comment.answerContent.body}</p>
                                                             </div>
-                                                            <p
-                                                                class="overflow-hidden text-ellipsis text-sm text-gray-500 md:text-base">${comment.answerContent.body}</p>
-                                                        </div>
-                                                    </li>
-                                                </ul>
-                                            `: ""}
-                                        </li>
-                `)
-            })
-
+                                                        </li>
+                                                    </ul>
+                                                `: ""}
+                                            </li>
+                    `)
+                });
+            } else {
+                coursesCommentsWrapper.insertAdjacentHTML("beforeend",
+                    `
+                    <div class="flex-center flex-col gap-5 text-slate-500 text-center border-t-2 w-full pt-4">
+                        <svg class="w-7 h-7">
+                            <use xlink:href="#no-symbol"></use>
+                        </svg>
+                        <span>نتیجه ای یافت نشد!</span>
+                    </div>
+                `
+                )
+            }
+            
         });
 };
 
