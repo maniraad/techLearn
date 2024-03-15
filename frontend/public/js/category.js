@@ -1,14 +1,5 @@
-import { getAndShowCategoryCourses, insertCourseBoxHtmlTemplate, coursesSorting } from "./funcs/shared.js";
+import { getAndShowCategoryCourses, insertCourseBoxHtmlTemplate, coursesSorting, handleGroupingAndSortingBox } from "./funcs/shared.js";
 import { searchInArray } from "./funcs/utils.js";
-
-const sort = document.querySelector('#sort');
-const sortBox = document.querySelector('#sort-box');
-const Grouping = document.querySelector('#Grouping');
-const GroupingBox = document.querySelector('#Grouping-box');
-
-Grouping.addEventListener('click', () => {
-    GroupingBox.classList.toggle('hide');
-});
 
 window.addEventListener("load", () => {
     getAndShowCategoryCourses().then(responseCourses => {
@@ -16,8 +7,9 @@ window.addEventListener("load", () => {
         let courses = [...responseCourses];
         const categoryCourseWrapper = document.querySelector('#category-course-wrapper');
         const sortList = document.querySelectorAll('.sort-list');
-        const coursesSearchInput = document.querySelector('#search-input')
+        const coursesSearchInput = document.querySelector('#search-input');
 
+        handleGroupingAndSortingBox();
         // Show Category Courses By row showType
         if (courses.length) {
             insertCourseBoxHtmlTemplate(

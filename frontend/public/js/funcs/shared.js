@@ -360,6 +360,25 @@ const observerScroll = () => {
     });
 };
 
+const handleGroupingAndSortingBox = () => {
+
+    const Grouping = document.querySelector('#Grouping');
+    const GroupingBox = document.querySelector('#Grouping-box');
+    const sorting = document.querySelector('#sorting');
+    const sortingBox = document.querySelector('#sorting-box');
+
+    Grouping.addEventListener("click", () => {
+        GroupingBox.classList.toggle('hide');
+    });
+    sorting.addEventListener("click", () => {
+        sortingBox.classList.toggle('hide');
+    });
+    // window.addEventListener("click",()=>{
+    //     sortingBox.classList.toggle('hide');
+    //     GroupingBox.classList.add('hide');
+    // })
+};
+
 const getCourseDetails = () => {
 
     // Select Dom Elements
@@ -521,12 +540,12 @@ const getCourseDetails = () => {
                         <svg class="w-7 h-7">
                             <use xlink:href="#no-symbol"></use>
                         </svg>
-                        <span>نتیجه ای یافت نشد!</span>
+                        <span>دیدگاه‌ای یافت نشد !</span>
                     </div>
                 `
                 )
             }
-            
+
         });
 };
 
@@ -587,4 +606,4 @@ const submitContactUsMassage = async () => {
     }
 };
 
-export { showUserNameInNavbar, headerResponsive, getAndShowAllCourses, getAndShowPreSellCourses, getAndShowArticles, getAndShowMenus, getAndShowCategoryCourses, insertCourseBoxHtmlTemplate, coursesSorting, observerScroll, getCourseDetails, getSessionDetails, submitContactUsMassage };
+export { showUserNameInNavbar, headerResponsive, getAndShowAllCourses, getAndShowPreSellCourses, getAndShowArticles, getAndShowMenus, getAndShowCategoryCourses, insertCourseBoxHtmlTemplate, coursesSorting, observerScroll, handleGroupingAndSortingBox, getCourseDetails, getSessionDetails, submitContactUsMassage };
