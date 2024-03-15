@@ -361,7 +361,6 @@ const observerScroll = () => {
 };
 
 const handleGroupingAndSortingBox = () => {
-
     const Grouping = document.querySelector('#Grouping');
     const GroupingBox = document.querySelector('#Grouping-box');
     const sorting = document.querySelector('#sorting');
@@ -373,10 +372,6 @@ const handleGroupingAndSortingBox = () => {
     sorting.addEventListener("click", () => {
         sortingBox.classList.toggle('hide');
     });
-    // window.addEventListener("click",()=>{
-    //     sortingBox.classList.toggle('hide');
-    //     GroupingBox.classList.add('hide');
-    // })
 };
 
 const getCourseDetails = () => {
@@ -606,4 +601,9 @@ const submitContactUsMassage = async () => {
     }
 };
 
-export { showUserNameInNavbar, headerResponsive, getAndShowAllCourses, getAndShowPreSellCourses, getAndShowArticles, getAndShowMenus, getAndShowCategoryCourses, insertCourseBoxHtmlTemplate, coursesSorting, observerScroll, handleGroupingAndSortingBox, getCourseDetails, getSessionDetails, submitContactUsMassage };
+const globalSearch = async () => {
+    const searchValue = getUrlParam('value');
+    console.log(searchValue);
+};
+
+export { showUserNameInNavbar, headerResponsive, getAndShowAllCourses, getAndShowPreSellCourses, getAndShowArticles, getAndShowMenus, getAndShowCategoryCourses, insertCourseBoxHtmlTemplate, coursesSorting, observerScroll, handleGroupingAndSortingBox, getCourseDetails, getSessionDetails, submitContactUsMassage, globalSearch };
