@@ -497,6 +497,9 @@ const submitContactUsMassage = async () => {
             icon: "success",
             title: "  نظر شما با موفقیت ثبت شد",
         });
+        setTimeout(function () {
+            location.href = "index.html"
+        }, 3000);
     } else if (res.status === 400) {
         Toast.fire({
             icon: "error",
