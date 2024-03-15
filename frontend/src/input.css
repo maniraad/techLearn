@@ -52,11 +52,14 @@
     }
 
     .hide {
-        @apply invisible opacity-0 hidden;
+        @apply opacity-0 !hidden;
     }
 
     .show {
-        @apply visible opacity-100;
+        @apply  opacity-100;
+    }
+    .show-comment {
+        @apply  !opacity-100 !flex;
     }
 
     .sub-menu::before {

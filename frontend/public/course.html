@@ -309,18 +309,20 @@
                     <div class="flex flex-col justify-between w-full lg:w-[60%]">
                         <div class="">
                             <div class="flex items-center mb-5">
-                                    <span id="category-course"
-                                        class="inline-block select-none bg-green-500/25 rounded-lg p-2 text-xs text-green-900 text-center"></span>
+                                <span id="category-course"
+                                    class="inline-block select-none bg-green-500/25 rounded-lg p-2 text-xs text-green-900 text-center"></span>
                             </div>
 
                             <h1 id="title-course"
                                 class="font-EstedadBold text-2xl md:text-3xl lg:text-4xl leading-[56px]">
                             </h1>
                             <p id="description-course"
-                                class="max-w-[640px] font-EstedadMedium leading-7 md:leading-9 text-base md:text-lg text-right text-neutral-700 mt-2 md:mt-4 mb-6"></p>
+                                class="max-w-[640px] font-EstedadMedium leading-7 md:leading-9 text-base md:text-lg text-right text-neutral-700 mt-2 md:mt-4 mb-6">
+                            </p>
                         </div>
 
-                        <div class="flex items-center justify-center justify-items-end sm:justify-between flex-wrap gap-y-7">
+                        <div
+                            class="flex items-center justify-center justify-items-end sm:justify-between flex-wrap gap-y-7">
                             <!-- Button -->
                             <span
                                 class="inline-flex items-center gap-3 bg-teal-600 text-white font-EstedadMedium py-3 pl-4 pr-6 rounded-2xl">
@@ -356,8 +358,8 @@
                             <a href="#" data-section="description"
                                 class="menu__item hover:text-emerald-600 transition-all"> توضیحات
                             </a>
-                            <a href="#" data-section="lessons"
-                                class="menu__item hover:text-emerald-600 transition-all"> سرفصل ها
+                            <a href="#" data-section="lessons" class="menu__item hover:text-emerald-600 transition-all">
+                                سرفصل ها
                             </a>
                             <a href="#" data-section="comments"
                                 class="menu__item hover:text-emerald-600 transition-all"> نظرات </a>
@@ -411,7 +413,7 @@
                                 <div class="courses-sessions-head">
                                     <div class="courses-sessions-title">
                                         <h3 class="font-EstedadBold text-base md:text-xl text-zinc-700">
-                                            مقدمات </h3> 
+                                            مقدمات </h3>
                                         <svg
                                             class="courses-sessions--arrow w-5 h-5 sm:w-6 sm:h-6 text-zinc-700 transition-transform">
                                             <use xlink:href="#chevron-down"></use>
@@ -447,8 +449,133 @@
                                 </div>
                             </div>
                         </div>
-                        <div id="comments" class="select-section">
+                        <div class="select-section mt-4 lg:mt-7" id="comments">
+                            <div class="p-4 lg:p-7 bg-white rounded-2xl">
 
+                                <div class="flex justify-between items-center gap-2">
+                                    <div class="flex-center w-fit gap-2">
+                                        <span class="flex">
+                                            <span class="rounded-full bg-teal-600 w-2 h-2"></span>
+                                        </span>
+                                        <h2 class="text-base md:text-lg xl:text-xl text-teal-600 font-EstedadBold">
+                                            دیدگاه ها و پرسش ها
+                                        </h2>
+                                    </div>
+                                    <button id="add-comment"
+                                        class="relative flex-center py-3 px-3.5 text-xs bg-teal-600 hover:ring-teal-600/35 hover:ring-4 text-white rounded-lg transition-all">
+                                        <span class="font-EstedadMedium text-sm">افزودن دیدگاه</span>
+                                    </button>
+                                </div>
+
+                                <form id="form-comment"
+                                    class="relative mt-4 flex-col gap-4 rounded-lg border-2 border-dashed border-gray-200 p-4 sm:p-5 lg:mt-7 transition-all !hide">
+                                    <h3 class="text-xs font-bold sm:text-sm md:text-base">دیدگاه شما</h3>
+                                    <div class="w-full flex flex-col">
+                                        <textarea
+                                            class="w-full outline-none border-2 border-solid border-transparent transition-all focus:border-gray-300 md:min-h-36 min-h-24 placeholder:text-gray-400 rounded-lg py-2 lg:py-3 px-3 lg:px-4 text-sm md:text-base bg-gray-100"
+                                            placeholder="نظر یا پرسش خود را بنویسید..."></textarea>
+                                    </div>
+                                    <div class="flex items-center justify-end">
+                                        <button
+                                            class="relative flex-center rounded-lg py-3 px-3 text-xs bg-teal-600 hover:ring-teal-600/35 hover:ring-4 text-white transition-all"
+                                            type="submit">
+                                            <span class="font-EstedadMedium text-xs">ارسال
+                                                نظر</span>
+                                        </button>
+                                    </div>
+                                    <div>
+                                        <div>
+                                            <div class="grecaptcha-badge" data-style="bottomright"
+                                                style="width: 256px; height: 60px; display: block; transition: right 0.3s ease 0s; position: fixed; bottom: 14px; right: -186px; box-shadow: gray 0px 0px 5px; border-radius: 2px; overflow: hidden;">
+                                                <div class="grecaptcha-logo"><iframe title="reCAPTCHA" width="256"
+                                                        height="60" role="presentation" name="a-2irec92a8t4b"
+                                                        frameborder="0" scrolling="no"
+                                                        sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation"
+                                                        src="https://www.google.com/recaptcha/api2/anchor?ar=1&amp;k=6LdQLxQpAAAAAB0J7v6j9JUJ6YnMTZbXmcts_3uU&amp;co=aHR0cHM6Ly9jb2RlbmlnaHQuaXI6NDQz&amp;hl=en&amp;type=image&amp;v=07g0mpPGukTo20VqKa8GbTSw&amp;theme=light&amp;size=invisible&amp;badge=bottomright&amp;cb=wh7drh66y8zy"></iframe>
+                                                </div>
+                                                <div class="grecaptcha-error"></div><textarea id="g-recaptcha-response"
+                                                    name="g-recaptcha-response" class="g-recaptcha-response"
+                                                    style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea>
+                                            </div><iframe style="display: none;"></iframe>
+                                        </div>
+                                    </div>
+                                </form>
+
+                                <div class="w-full mt-4 lg:mt-7">
+                                    <ul class="flex-center w-full gap-3 md:gap-5 flex-col">
+                                        <li class="w-full">
+                                            <!-- Question -->
+                                            <div
+                                                class="flex flex-col gap-4 rounded-lg p-4 sm:gap-5 sm:p-5 border-2 border-solid border-gray-200">
+                                                <!-- Profile -->
+                                                <div class="flex w-full justify-between gap-2 overflow-hidden">
+                                                    <div class="flex-center gap-3 overflow-hidden">
+                                                        <span>
+                                                            <img alt="" draggable="false" loading="lazy" width="300"
+                                                                height="300" decoding="async" data-nimg="1"
+                                                                class="aspect-square flex-none rounded-full object-cover h-10 w-10 md:h-12 md:w-12 lg:h-12 lg:w-12">
+                                                        </span>
+                                                        <div class="overflow-hidden">
+                                                            <div class="flex items-center gap-1 overflow-hidden">
+                                                                <h3
+                                                                    class="overflow-hidden text-ellipsis text-xs font-EstedadBold sm:text-sm md:text-base">
+                                                                    <span>وحید هادیان</span>
+                                                                </h3>
+                                                            </div>
+                                                            <span class="text-xs text-slate-500 sm:text-sm">4
+                                                                روز قبل
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- Massage -->
+                                                <p
+                                                    class="overflow-hidden text-ellipsis text-sm text-gray-500 md:text-base">
+                                                    چرا لایسنس رو یه دستگاه بیشتر جواب نمیده من تو محل کار چطوری دوره رو
+                                                    ببینم نمیشه هم رو گوشیم اوکی باشه هم لپ تاپم
+                                                </p>
+                                            </div>
+                                            <!-- Answer -->
+                                            <ul>
+                                                <li class="w-full pr-6 sm:pr-10">
+                                                    <div
+                                                        class="flex flex-col gap-4 rounded-lg p-4 sm:gap-5 sm:p-5 mt-3 bg-gray-100 md:mt-5">
+                                                        <div class="flex w-full justify-between gap-2 overflow-hidden">
+                                                            <div class="flex-center gap-3 overflow-hidden">
+                                                                <a target="_blank" href="">
+                                                                    <img alt="" draggable="false" loading="lazy"
+                                                                        width="300" height="300" decoding="async"
+                                                                        data-nimg="1"
+                                                                        class="aspect-square flex-none rounded-full object-cover h-10 w-10 md:h-12 md:w-12 lg:h-12 lg:w-12">
+                                                                </a>
+                                                                <div class="overflow-hidden">
+                                                                    <div
+                                                                        class="flex items-center gap-1 overflow-hidden">
+                                                                        <h3
+                                                                            class="overflow-hidden text-ellipsis text-xs font-EstedadBold sm:text-sm md:text-base">
+                                                                            <a target="_blank" href="">عرفان یوسفی</a>
+                                                                        </h3>
+                                                                        <svg class="w-4 h-4 text-teal-700">
+                                                                            <use xlink:href="#check-badge"></use>
+                                                                        </svg>
+                                                                    </div>
+                                                                    <span class="text-xs text-gray-500 sm:text-sm">2
+                                                                        روز قبل</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <p
+                                                            class="overflow-hidden text-ellipsis text-sm text-gray-500 md:text-base">
+                                                            سلام به پشتیبانی (مدرس دوره) توی تلگرام یا واتساپ پیام بدید
+                                                            تا براتون فعال کنن مشغصات تلگرام و واتساپ هم در پنل
+                                                            کاربریتون برای هردوره در جزيیات اون دوره موجود هست</p>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <!-- side bar -->
@@ -487,7 +614,7 @@
                                     </svg>
 
                                     <div>
-                                        <span class="block font-bold text-xs md:text-sm" >HTML CSS</span>
+                                        <span class="block font-bold text-xs md:text-sm">HTML CSS</span>
                                         <span class="block text-sm opacity-70">پیش نیاز
                                         </span>
                                     </div>
@@ -500,7 +627,7 @@
                                     </svg>
 
                                     <div>
-                                        <span class="block font-bold text-xs md:text-sm" >بصورت آنلاین</span>
+                                        <span class="block font-bold text-xs md:text-sm">بصورت آنلاین</span>
                                         <span class="block text-sm opacity-70">نوع مشاهده
                                         </span>
                                     </div>
@@ -531,7 +658,7 @@
                                 </div>
 
                             </div>
-                            <span 
+                            <span
                                 class="flex-center gap-3 bg-teal-600 text-white font-EstedadMedium py-3 pl-4 pr-6 mt-5 rounded-2xl">
                                 <a href="#" class="course-register-btn"></a>
                                 <svg class="w-6 h-6">
