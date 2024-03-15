@@ -1,5 +1,5 @@
 import { getMe } from "./auth.js";
-import { isLogin, getUrlParam, getToken } from "./utils.js";
+import { Toast, isLogin, getUrlParam, getToken } from "./utils.js";
 
 const headerResponsive = () => {
     const menuNavElem = document.querySelector('#nav-bar-icon');
@@ -470,11 +470,39 @@ const getSessionDetails = async () => {
 };
 
 const submitContactUsMassage = async () => {
-    const name = document.querySelector('#name');
-    const email = document.querySelector('#email');
-    const phone = document.querySelector('#phone-number');
-    const body = document.querySelector('#body');
-    const registerButton = document.querySelector('#register-btn');
+    const nameInputElem = document.querySelector('#name');
+    const emailInputElem = document.querySelector('#email');
+    const phoneInputElem = document.querySelector('#phone-number');
+    const bodyInputElem = document.querySelector('#body');
+
+    const newMassage = {
+        name: nameInputElem.value.trim(),
+        email: emailInputElem.value.trim(),
+        phone: phoneInputElem.value.trim(),
+        body: bodyInputElem.value.trim()
+    };
+
+    const res = await fetch(`http://localhost:4000/v1/contact`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(newMassage),
+    });
+
+    const result = await res.json()
+
+    if (res.status === 201) {
+        Toast.fire({
+            icon: "success",
+            title: "  نظر شما با موفقیت ثبت شد",
+        });
+    } else if (res.status === 400) {
+        Toast.fire({
+            icon: "error",
+            title: "لطفا همه ی فیلد هارو کامل کنید"
+        });
+    }
 };
 
 export { showUserNameInNavbar, headerResponsive, getAndShowAllCourses, getAndShowPreSellCourses, getAndShowArticles, getAndShowMenus, getAndShowCategoryCourses, insertCourseBoxHtmlTemplate, coursesSorting, observerScroll, getCourseDetails, getSessionDetails, submitContactUsMassage };
