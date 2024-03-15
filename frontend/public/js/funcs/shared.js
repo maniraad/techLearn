@@ -383,7 +383,6 @@ const getCourseDetails = () => {
         }
     }).then(res => res.json())
         .then(course => {
-            console.log(course.shortName);
             courseCategory.innerHTML = course.categoryID.title
             courseTitle.innerHTML = course.name
             courseDescription.innerHTML = course.description
@@ -397,14 +396,9 @@ const getCourseDetails = () => {
                 courseRegisterButton.innerHTML = course.isUserRegisteredToThisCourse ? "دانشجوی دوره هستید" : "ثبت نام دوره"
             });
 
-            // Show Course sessions
+            // Show Course Sessions
             const coursesSessionsWrapper = $.querySelector('.courses-sessions-wrapper');
             course.sessions.forEach((session, index) => {
-                let time = session.time
-                console.log(time);
-                // session.time.forEach(time => {
-                //     console.log(time);
-                // });
                 coursesSessionsWrapper.insertAdjacentHTML("beforeend",
                     `
                 <div
@@ -448,7 +442,79 @@ const getCourseDetails = () => {
                 </div>
                 `)
             });
-        })
+
+            // Show Course Comments
+            const coursesCommentsWrapper = $.querySelector('.courses-comments-wrapper');
+            course.comments.forEach(comment => {
+                console.log(comment);
+                coursesCommentsWrapper.insertAdjacentHTML("beforeend",
+                    `
+                                        <li class="w-full">
+                                            <!-- Question -->
+                                            <div
+                                                class="flex flex-col gap-4 rounded-lg p-4 sm:gap-5 sm:p-5 border-2 border-solid border-gray-200">
+                                                <!-- Profile -->
+                                                <div class="flex w-full justify-between gap-2 overflow-hidden">
+                                                    <div class="flex-center gap-3 overflow-hidden">
+                                                        <div class="overflow-hidden">
+                                                            <div class="flex items-center gap-1 overflow-hidden">
+                                                                <h3
+                                                                    class="overflow-hidden text-ellipsis text-xs font-EstedadBold sm:text-sm md:text-base">
+                                                                    <span>${comment.creator.name}</span>
+                                                                </h3>
+                                                                ${comment.creator.role === "ADMIN" ?
+                        `
+                                                                            <svg class="w-4 h-4 text-teal-700">
+                                                                                <use xlink:href="#check-badge"></use>
+                                                                            </svg>
+                                                            `: ""}
+                                                            </div>
+                                                            <span class="text-xs text-slate-500 sm:text-sm">${comment.createdAt.slice(0, 10)}</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- Massage -->
+                                                <p class="overflow-hidden text-ellipsis text-sm text-gray-500 md:text-base">${comment.body}</p>
+                                            </div>
+                                             ${comment.answerContent ?
+                        `
+                                            <!-- Answer -->
+
+                                                <ul>
+                                                    <li class="w-full pr-6 sm:pr-10">
+                                                        <div
+                                                            class="flex flex-col gap-4 rounded-lg p-4 sm:gap-5 sm:p-5 mt-3 bg-gray-100 md:mt-5">
+                                                            <div class="flex w-full justify-between gap-2 overflow-hidden">
+                                                                <div class="flex-center gap-3 overflow-hidden">
+                                                                    <div class="overflow-hidden">
+                                                                        <div
+                                                                            class="flex items-center gap-1 overflow-hidden">
+                                                                            <h3
+                                                                                class="overflow-hidden text-ellipsis text-xs font-EstedadBold sm:text-sm md:text-base">
+                                                                                <a target="_blank" href="">${comment.answerContent.creator.name}</a>
+                                                                            </h3>
+                                                                            ${comment.answerContent.creator.role === "ADMIN" ?
+                            `
+                                                                            <svg class="w-4 h-4 text-teal-700">
+                                                                                <use xlink:href="#check-badge"></use>
+                                                                            </svg>
+                                                                            `: ""}
+                                                                        </div>
+                                                                        <span class="text-xs text-gray-500 sm:text-sm">${comment.answerContent.createdAt.slice(0, 10)}</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <p
+                                                                class="overflow-hidden text-ellipsis text-sm text-gray-500 md:text-base">${comment.answerContent.body}</p>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            `: ""}
+                                        </li>
+                `)
+            })
+
+        });
 };
 
 const getSessionDetails = async () => {
