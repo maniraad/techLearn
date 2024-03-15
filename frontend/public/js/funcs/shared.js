@@ -464,9 +464,17 @@ const getSessionDetails = async () => {
                 Authorization: `Bearer ${getToken()}`
             }
         })
-    const  data = await res.json()
+    const data = await res.json()
 
     videoElem.setAttribute("src", `http://localhost:4000/courses/covers/${data.session.video}`)
 };
 
-export { showUserNameInNavbar, headerResponsive, getAndShowAllCourses, getAndShowPreSellCourses, getAndShowArticles, getAndShowMenus, getAndShowCategoryCourses, insertCourseBoxHtmlTemplate, coursesSorting, observerScroll, getCourseDetails, getSessionDetails };
+const submitContactUsMassage = async () => {
+    const name = document.querySelector('#name');
+    const email = document.querySelector('#email');
+    const phone = document.querySelector('#phone-number');
+    const body = document.querySelector('#body');
+    const registerButton = document.querySelector('#register-btn');
+};
+
+export { showUserNameInNavbar, headerResponsive, getAndShowAllCourses, getAndShowPreSellCourses, getAndShowArticles, getAndShowMenus, getAndShowCategoryCourses, insertCourseBoxHtmlTemplate, coursesSorting, observerScroll, getCourseDetails, getSessionDetails, submitContactUsMassage };

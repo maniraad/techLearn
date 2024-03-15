@@ -1,0 +1,1 @@
+import { submitContactUsMassage } from "./funcs/shared.js";
