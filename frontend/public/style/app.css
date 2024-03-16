@@ -1476,6 +1476,16 @@ video {
   gap: 1.5rem;
 }
 
+.gap-x-0 {
+  -moz-column-gap: 0px;
+       column-gap: 0px;
+}
+
+.gap-x-0\.5 {
+  -moz-column-gap: 0.125rem;
+       column-gap: 0.125rem;
+}
+
 .gap-x-1 {
   -moz-column-gap: 0.25rem;
        column-gap: 0.25rem;
@@ -1561,16 +1571,6 @@ video {
 
 .gap-y-7 {
   row-gap: 1.75rem;
-}
-
-.gap-x-0 {
-  -moz-column-gap: 0px;
-       column-gap: 0px;
-}
-
-.gap-x-0\.5 {
-  -moz-column-gap: 0.125rem;
-       column-gap: 0.125rem;
 }
 
 .space-y-2 > :not([hidden]) ~ :not([hidden]) {
@@ -2051,10 +2051,6 @@ video {
   font-family: EstedadMedium;
 }
 
-.font-EstedadBlack {
-  font-family: EstedadBlack;
-}
-
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
@@ -2130,14 +2126,6 @@ video {
 
 .tracking-tighter {
   letter-spacing: -0.05em;
-}
-
-.tracking-tight {
-  letter-spacing: -0.025em;
-}
-
-.-tracking-tighter {
-  letter-spacing: 0.05em;
 }
 
 .text-gray-500 {
@@ -3074,11 +3062,5 @@ video {
   .\32xl\:px-12 {
     padding-left: 3rem;
     padding-right: 3rem;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  .dark\:text-white\/70 {
-    color: rgb(255 255 255 / 0.7);
   }
 }

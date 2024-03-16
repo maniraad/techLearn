@@ -1,4 +1,4 @@
-import { getCourseDetails, observerScroll } from "./funcs/shared.js";
+import { getCourseDetails, observerScroll, submitComments } from "./funcs/shared.js";
 
 window.addEventListener("load", () => {
 
@@ -8,6 +8,7 @@ window.addEventListener("load", () => {
     const topicNameArrow = document.querySelector('.courses-sessions--arrow');
     const addCommentButton = document.querySelector('#add-comment');
     const formCommentElem = document.querySelector('#form-comment');
+    const commentSubmitButton = document.querySelector('#comment-submit-btn');
 
     topicLesson.addEventListener('click', () => {
         topicName.classList.toggle('courses-sessions-title--active');
@@ -15,11 +16,16 @@ window.addEventListener("load", () => {
         topicNameArrow.classList.toggle('rotate-180');
     });
 
-    addCommentButton.addEventListener("click",(event)=>{
+    addCommentButton.addEventListener("click", (event) => {
         event.preventDefault();
         formCommentElem.classList.toggle('!show-comment')
     });
 
-    observerScroll()
-    getCourseDetails()
+    commentSubmitButton.addEventListener("click", (event)=>{
+        event.preventDefault();
+        submitComments();
+    });
+    
+    observerScroll();
+    getCourseDetails(); 
 });

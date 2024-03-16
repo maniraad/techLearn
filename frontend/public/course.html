@@ -345,7 +345,7 @@
                     <!-- Course Banner -->
                     <div
                         class="flex-shrink flex-grow mb-3 sm:mb-6 lg:mb-0 w-[80%] lg:w-[40%] h-auto  rounded-2xl sm:rounded-3xl overflow-hidden relative">
-                        <img src="images/courses/C-sharp.png" class="w-full h-full object-cover" alt="">
+                        <img class="w-full h-full object-cover" id="course-cover">
                         <div
                             class="absolute top-5 left-5 inline-block py-2.5 px-4  bg-zinc-500 rounded-full text-xs text-white shadow-sm opacity-100">
                             <div class="flex justify-center w-fit items-center gap-2">
@@ -478,12 +478,12 @@
                                     class="relative mt-4 flex-col gap-4 rounded-lg border-2 border-dashed border-gray-200 p-4 sm:p-5 lg:mt-7 transition-all !hide">
                                     <h3 class="text-xs font-bold sm:text-sm md:text-base">دیدگاه شما</h3>
                                     <div class="w-full flex flex-col">
-                                        <textarea
+                                        <textarea id="comments-body"
                                             class="w-full outline-none border-2 border-solid border-transparent transition-all focus:border-gray-300 md:min-h-36 min-h-24 placeholder:text-gray-400 rounded-lg py-2 lg:py-3 px-3 lg:px-4 text-sm md:text-base bg-gray-100"
                                             placeholder="نظر یا پرسش خود را بنویسید..."></textarea>
                                     </div>
                                     <div class="flex items-center justify-end">
-                                        <button
+                                        <button id="comment-submit-btn"
                                             class="relative flex-center rounded-lg py-3 px-3 text-xs bg-teal-600 hover:ring-teal-600/35 hover:ring-4 text-white transition-all"
                                             type="submit">
                                             <span class="font-EstedadMedium text-xs">ارسال

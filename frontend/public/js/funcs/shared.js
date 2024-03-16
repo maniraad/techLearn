@@ -64,7 +64,7 @@ const getAndShowAllCourses = async () => {
                         class="inline-flex flex-col items-center gap-y-4 py-3 px-4 bg-white max-w-[340px] rounded-3xl shadow-sm">
 
                         <div class="">
-                            <img src="images/courses/Js.png" alt="Js-course" class="">
+                            <img src=http://localhost:4000/courses/covers/${course.cover}>
                         </div>
                         <!-- Box Body -->
                         <div class="flex flex-col justify-center items-start self-baseline gap-y-4">
@@ -271,7 +271,8 @@ const insertCourseBoxHtmlTemplate = (courses, parentElement) => {
                         class="inline-flex flex-col items-center gap-y-4 py-3 px-4 bg-white max-w-[340px] rounded-3xl shadow-sm">
 
                         <div class="">
-                            <img src="images/courses/Js.png" alt="Js-course" class="">
+                            <img src=http://localhost:4000/courses/covers/${course.cover
+            }>
                         </div>
                         <!-- Box Body -->
                         <div class="flex flex-col justify-center items-start self-baseline gap-y-4">
@@ -407,6 +408,7 @@ const getCourseDetails = () => {
     const courseSupport = $.querySelector('#support');
     const courseDate = $.querySelector('#date');
     const courseStudents = $.querySelector('#students');
+    const courseCover = $.querySelector('#course-cover');
     const courseRegisterButtons = $.querySelectorAll('.course-register-btn');
 
     const courseShortName = getUrlParam("name");
@@ -418,6 +420,8 @@ const getCourseDetails = () => {
         }
     }).then(res => res.json())
         .then(course => {
+            console.log(course);
+            courseCover.setAttribute("src", `http://localhost:4000/courses/covers/${course.cover}`)
             courseCategory.innerHTML = course.categoryID.title
             courseTitle.innerHTML = course.name
             courseDescription.innerHTML = course.description
@@ -631,4 +635,25 @@ const globalSearch = async () => {
     return result
 };
 
-export { showUserNameInNavbar, headerResponsive, getAndShowAllCourses, getAndShowPreSellCourses, getAndShowArticles, getAndShowMenus, getAndShowCategoryCourses, insertCourseBoxHtmlTemplate, coursesSorting, observerScroll, handleGroupingAndSortingBox, getCourseDetails, getSessionDetails, submitContactUsMassage, globalSearch };
+const submitComments = async () => {
+    const commentTextAreaElem = document.querySelector('#comments-body')
+
+    let courseShortName = getUrlParam("name");
+
+    const newCommentInfos = {
+        body: commentTextAreaElem.value.trim(),
+        courseShortName,
+        score: 5
+    };
+
+    const res = await fetch(`http://localhost:4000/v1/comments`, {
+        method: "POST",
+        headers: {
+            'Authorization': `Bearer ${getToken()}`,
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(newCommentInfos)
+    });
+};
+
+export { showUserNameInNavbar, headerResponsive, getAndShowAllCourses, getAndShowPreSellCourses, getAndShowArticles, getAndShowMenus, getAndShowCategoryCourses, insertCourseBoxHtmlTemplate, coursesSorting, observerScroll, handleGroupingAndSortingBox, getCourseDetails, getSessionDetails, submitContactUsMassage, globalSearch, submitComments };
