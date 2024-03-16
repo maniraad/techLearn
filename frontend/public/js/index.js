@@ -11,7 +11,7 @@ window.addEventListener('load', () => {
     makeCounter(1293, landingStudents, 'دانشجو');
     makeCounter(453, landingBlogs, 'مقاله رایگان');
 
-    getAndShowAllCourses();
+    getAndShowAllCourses(8);
     getAndShowPreSellCourses();
     getAndShowArticles();
 });

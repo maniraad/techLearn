@@ -49,7 +49,7 @@ const showUserNameInNavbar = () => {
     }
 };
 
-const getAndShowAllCourses = async () => {
+const getAndShowAllCourses = async (coursesCount) => {
 
     const courseContainer = document.querySelector('#course-container');
 
@@ -57,7 +57,7 @@ const getAndShowAllCourses = async () => {
 
     const courses = await res.json();
 
-    courses.slice(0, 8).map(course => {
+    courses.slice(0, coursesCount).map(course => {
         courseContainer.insertAdjacentHTML('beforeend',
             `
         <div
@@ -109,7 +109,9 @@ const getAndShowAllCourses = async () => {
                     </div>
         `
         )
-    })
+    });
+
+    return courses
 };
 
 const getAndShowPreSellCourses = async () => {

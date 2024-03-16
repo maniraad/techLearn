@@ -4,10 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
     <link href="./style/app.css" rel="stylesheet">
     <link rel="icon" href="images/fav-icon.png">
-    <title> تک لرن | صفحه اصلی </title>
+    <title> تک لرن | دوره ها </title>
 </head>
 
 <body dir="rtl" class="font-Estedad bg-gray-100">
@@ -65,13 +64,27 @@
             <path
                 d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z" />
         </symbol>
+        <symbol id="sort" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                d="M3 4.5h14.25M3 9h9.75M3 13.5h9.75m4.5-4.5v12m0 0-3.75-3.75M17.25 21 21 17.25" />
+        </symbol>
+        <symbol id="squares-2x2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                d="M3.75 6A2.25 2.25 0 0 1 6 3.75h2.25A2.25 2.25 0 0 1 10.5 6v2.25a2.25 2.25 0 0 1-2.25 2.25H6a2.25 2.25 0 0 1-2.25-2.25V6ZM3.75 15.75A2.25 2.25 0 0 1 6 13.5h2.25a2.25 2.25 0 0 1 2.25 2.25V18a2.25 2.25 0 0 1-2.25 2.25H6A2.25 2.25 0 0 1 3.75 18v-2.25ZM13.5 6a2.25 2.25 0 0 1 2.25-2.25H18A2.25 2.25 0 0 1 20.25 6v2.25A2.25 2.25 0 0 1 18 10.5h-2.25a2.25 2.25 0 0 1-2.25-2.25V6ZM13.5 15.75a2.25 2.25 0 0 1 2.25-2.25H18a2.25 2.25 0 0 1 2.25 2.25V18A2.25 2.25 0 0 1 18 20.25h-2.25A2.25 2.25 0 0 1 13.5 18v-2.25Z" />
+        </symbol>
+        <symbol id="no-symbol" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                d="M18.364 18.364A9 9 0 0 0 5.636 5.636m12.728 12.728A9 9 0 0 1 5.636 5.636m12.728 12.728L5.636 5.636" />
+        </symbol>
         <symbol id="users" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
             stroke="currentColor" class="w-6 h-6">
             <path stroke-linecap="round" stroke-linejoin="round"
                 d="M15 19.128a9.38 9.38 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-.952 4.125 4.125 0 0 0-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 0 1 8.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0 1 11.964-3.07M12 6.375a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0Zm8.25 2.25a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z" />
         </symbol>
     </svg>
-
 
     <header class="">
         <div
@@ -226,210 +239,135 @@
         </div>
     </header>
 
-    <main>
-        <section class="head pt-28">
-            <div class="container">
-                <div class="flex justify-between items-center flex-col-reverse md:flex-row gap-x-5 gap-y-10 mt-14">
-                    <!-- Head Content -->
-                    <div class="text-right">
-                        <h2 class="font-EstedadBold text-4xl sm:text-5xl lg:text-6xl xl:text-[64px]/[90px]">اینجا <span
-                                class="text-red-800">متخصص</span>
-                            میشی!</h2>
-                        <div class="flex items-center gap-x-8 my-10 font-EstedadMedium text-sm lg:text-base xl:text-lg">
-                            <div class="flex flex-col gap-y-6 w-40 lg:w-48">
-                                <div class="flex items-center gap-x-2">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="41" height="41" viewBox="0 0 41 41"
-                                        fill="none">
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                            d="M21.9016 31.3092C21.9016 31.9149 22.5305 32.3336 23.0987 32.1239C25.1667 31.3603 29.8026 29.8922 36.1304 29.3306C36.5647 29.292 36.9016 28.9407 36.9016 28.5047C36.9016 25.3532 36.9016 13.3724 36.9016 10.0984C36.9016 9.63821 36.5325 9.27093 36.0728 9.29345C33.9817 9.39592 28.2408 9.90044 22.3991 12.3844C22.096 12.5133 21.9016 12.8105 21.9016 13.1398C21.9016 15.7835 21.9016 27.3972 21.9016 31.3092Z"
-                                            fill="#2B8679" />
-                                        <path opacity="0.3" fill-rule="evenodd" clip-rule="evenodd"
-                                            d="M18.5681 31.3092C18.5681 31.9149 17.9392 32.3336 17.3711 32.1239C15.3031 31.3603 10.6671 29.8922 4.33929 29.3306C3.90501 29.292 3.56809 28.9407 3.56809 28.5047C3.56809 25.3532 3.56809 13.3724 3.56809 10.0984C3.56809 9.63821 3.93723 9.27093 4.39692 9.29345C6.488 9.39592 12.229 9.90044 18.0706 12.3844C18.3737 12.5133 18.5681 12.8105 18.5681 13.1398C18.5681 15.7835 18.5681 27.3972 18.5681 31.3092Z"
-                                            fill="#8C0014" />
-                                    </svg>
-                                    <span class="course-status">
-                                        ۳۲ دوره آموزشی
+    <main id="courses">
+        <div class="container pt-28">
+            <!-- Section Name -->
+            <h2
+                class="flex items-center flex-col-reverse gap-y-5 w-min mx-auto mt-14 font-EstedadBold text-4xl sm:text-6xl whitespace-nowrap">
+                <span class="block w-7 sm:w-full h-2.5 bg-rose-500 shrink-0 rounded-sm"></span>
+                دوره ها
+            </h2>
+            <!-- Section -->
+            <section class="grid items-center grid-rows-1 gap-3.5 sm:gap-5 mt-9 sm:mt-25">
+                <!-- Content -->
+                <section class="col-span-1 lg:col-span-2 xl:col-span-3 order-1 lg:order-2">
+                    <!-- Course Sort -->
+                    <div
+                        class="flex items-center justify-between flex-wrap md:flex-nowrap gap-5 my-5 px-7 mb-5 min-h-16 md:shadow-sm md:bg-white md:border-gray-700 rounded-2xl">
+                        <div class="flex w-full md:w-auto gap-4 text-sm">
+                            <div class="relative transition-all w-full text-sm md:w-fit md:text-base ">
+                                <div id="sorting"
+                                    class="bg-white border-2 border-solid border-white transition-all rounded-xl p-3 md:p-3.5 flex justify-center items-center gap-1 cursor-pointer h-full">
+                                    <span class="flex items-center shrink-0 gap-x-2.5 cursor-pointer">
+                                        <svg class="w-5 h-5">
+                                            <use xlink:href="#sort"></use>
+                                        </svg>
+                                        مرتب سازی
                                     </span>
                                 </div>
-                                <div class="flex items-center gap-x-2">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="41" height="41" viewBox="0 0 41 41"
-                                        fill="none">
-                                        <path opacity="0.3"
-                                            d="M20.2348 19.2673C16.5529 19.2673 13.5681 16.2826 13.5681 12.6007C13.5681 8.91877 16.5529 5.93401 20.2348 5.93401C23.9167 5.93401 26.9014 8.91877 26.9014 12.6007C26.9014 16.2826 23.9167 19.2673 20.2348 19.2673Z"
-                                            fill="#8C0014" />
-                                        <path
-                                            d="M5.23595 34.5993C5.88196 26.6449 12.3381 22.6007 20.2071 22.6007C28.1869 22.6007 34.743 26.4227 35.2314 34.6007C35.2508 34.9265 35.2314 35.934 33.9794 35.934C27.8034 35.934 18.6261 35.934 6.44737 35.934C6.02938 35.934 5.20076 35.0326 5.23595 34.5993Z"
-                                            fill="#2B8679" />
-                                    </svg>
-                                    <span class="student">
-                                        ۱۳۴۹۸۷ دانشجو
-                                    </span>
+                                <div class="absolute left-0 w-full pt-2 z-10 transition-all">
+                                    <div id="sorting-box" class="bg-white transition-all rounded-xl shadow-sm hide">
+                                        <ul>
+                                            <li data-key="default"
+                                                class="sort-list border-b border-solid border-gray-300 last:border-b-0 transition-colors text-zinc-700 cursor-pointer px-3 md:px-3.5 py-2.5 inline-block text-center w-full text-xs md:text-sm font-bold">
+                                                همه دوره ها
+                                            </li>
+                                            <li data-key="last"
+                                                class="sort-list border-b border-solid border-gray-300 last:border-b-0 transition-colors text-zinc-700 cursor-pointer px-3 md:px-3.5 py-2.5 inline-block text-center w-full text-xs md:text-sm">
+                                                جدید ترین
+                                            </li>
+                                            <li data-key="first"
+                                                class="sort-list border-b border-solid border-gray-300 last:border-b-0 transition-colors text-zinc-700 cursor-pointer px-3 md:px-3.5 py-2.5 inline-block text-center w-full text-xs md:text-sm">
+                                                قدیمی ترین
+                                            </li>
+                                            <li data-key="free"
+                                                class="sort-list border-b border-solid border-gray-300 last:border-b-0 transition-colors text-zinc-700 cursor-pointer px-3 md:px-3.5 py-2.5 inline-block text-center w-full text-xs md:text-sm">
+                                                دوره های رایگان
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="flex flex-col gap-y-6">
-                                <div class="flex items-center gap-x-2">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="41" height="41" viewBox="0 0 41 41"
-                                        fill="none">
-                                        <rect opacity="0.3" x="5.08594" y="6.74541" width="35" height="20" rx="1.66667"
-                                            transform="rotate(15 5.08594 6.74541)" fill="#8C0014" />
-                                        <rect x="1.90161" y="10.934" width="35" height="20" rx="1.66667"
-                                            fill="#2B8679" />
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                            d="M19.4015 27.6007C23.0834 27.6007 26.0682 24.6159 26.0682 20.934C26.0682 17.2521 23.0834 14.2673 19.4015 14.2673C15.7196 14.2673 12.7349 17.2521 12.7349 20.934C12.7349 24.6159 15.7196 27.6007 19.4015 27.6007Z"
-                                            fill="white" />
-                                        <circle cx="19.4014" cy="20.934" r="3.33333" fill="#2B8679" />
-                                    </svg>
-                                    <span class="">
-                                        تضمین بازگشت وجه
+                            <div class="relative transition-all w-full text-sm md:w-fit md:text-base ">
+                                <div id="Grouping"
+                                    class="bg-white border-2 border-solid border-white transition-all rounded-xl p-3 md:p-3.5 flex justify-center items-center gap-1 cursor-pointer h-full">
+                                    <span class="flex items-center shrink-0 gap-x-2.5 cursor-pointer">
+                                        <svg class="w-5 h-5">
+                                            <use xlink:href="#squares-2x2"></use>
+                                        </svg>
+                                        دسته بندی ها
                                     </span>
                                 </div>
-                                <div class="flex items-center gap-x-2">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="41" height="41" viewBox="0 0 41 41"
-                                        fill="none">
-                                        <path opacity="0.3"
-                                            d="M9.99685 4.26734H23.129C23.7201 4.26734 24.2921 4.47681 24.7435 4.85857L32.6828 11.5739C33.2444 12.0489 33.5683 12.7471 33.5683 13.4827V34.4062C33.5683 37.3905 33.5342 37.6007 30.473 37.6007H9.99685C6.93569 37.6007 6.90161 37.3905 6.90161 34.4062V7.46178C6.90161 4.47755 6.93569 4.26734 9.99685 4.26734Z"
-                                            fill="#8C0014" />
-                                        <rect x="10.2349" y="19.2673" width="15" height="3.33333" rx="1.66667"
-                                            fill="#2B8679" />
-                                        <rect x="10.2349" y="25.934" width="8.33333" height="3.33333" rx="1.66667"
-                                            fill="#2B8679" />
-                                    </svg>
-                                    <span class="blogs">
-                                        ۴۵۳ مقاله رایگان
-                                    </span>
+                                <div class="absolute left-0 w-full pt-2 z-10 transition-all">
+                                    <div id="Grouping-box" class="bg-white transition-all rounded-xl shadow-sm hide">
+                                        <ul>
+                                            <li data-key="http://127.0.0.1:5500/frontend/public/courses"
+                                                class="group-list border-b border-solid border-gray-300 text-zinc-700 cursor-pointer px-3 md:px-3.5 py-2.5 inline-block text-center w-full text-xs md:text-sm last:border-b-0 transition-colors">همه
+                                            </li>
+                                            <li data-key="http://127.0.0.1:5500/frontend/public/category.html?cat=frontend"
+                                                class="group-list border-b border-solid border-gray-300 text-zinc-700 cursor-pointer px-3 md:px-3.5 py-2.5 inline-block text-center w-full text-xs md:text-sm last:border-b-0 transition-colors">فرانت اند
+                                            </li>
+                                            <li data-key="http://127.0.0.1:5500/frontend/public/category.html?cat=backend"
+                                                class="group-list border-b border-solid border-gray-300 text-zinc-700 cursor-pointer px-3 md:px-3.5 py-2.5 inline-block text-center w-full text-xs md:text-sm last:border-b-0 transition-colors">بک اند
+                                            </li>
+                                            <li data-key="http://127.0.0.1:5500/frontend/public/category.html?cat=python"
+                                                class="group-list border-b border-solid border-gray-300 text-zinc-700 cursor-pointer px-3 md:px-3.5 py-2.5 inline-block text-center w-full text-xs md:text-sm last:border-b-0 transition-colors">پایتون
+                                            </li>
+                                            <li data-key="http://127.0.0.1:5500/frontend/public/category.html?cat=softskills"
+                                                class="group-list border-b border-solid border-gray-300 text-zinc-700 cursor-pointer px-3 md:px-3.5 py-2.5 inline-block text-center w-full text-xs md:text-sm last:border-b-0 transition-colors">مهارت های نرم
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <a href="#"
-                            class="inline-flex items-center justify-center gap-x-3 py-3 pl-4 pr-6 bg-teal-600 hover:bg-teal-700 text-white font-EstedadMedium rounded-2xl transition-all">
-                            شروع یادگیری
-                            <svg class="w-4 h-4">
-                                <use href="#arrow-left"></use>
+                        <div class="h-16 w-full md:w-auto bg-white border-gray-700 rounded-2xl">
+                            <form action="#" class="h-full flex items-center justify-between text-slate-500">
+                                <input type="text" name="s" id="course-search-input"
+                                    class="w-full bg-transparent text-sm pr-7 border-none outline-none"
+                                    placeholder="در بین دوره ها جستجو کنید">
+                                <span class="mr-4 ml-6">
+                                    <svg class="w-5 h-5">
+                                        <use xlink:href="#search"></use>
+                                    </svg>
+                                </span>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- Course List -->
+                    <div id="course-container"
+                        class="grid grid-rows-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-items-center gap-5">
+                    </div>
+                    <!-- Show more Button -->
+                    <div
+                        class="show-more flex-center w-52 h-14 mt-10 mx-auto bg-gray-200 text-zinc-700 text-xl rounded-full cursor-pointer transition-all">
+                        <div class="show-more__content gap-x-2 flex-center ">
+                            مشاهده بیشتر
+                            <svg class="w-5 h-5">
+                                <use xlink:href="#chevron-down"></use>
                             </svg>
-                        </a>
-                    </div>
-                    <!-- Head Image -->
-                    <div class="">
-                        <img class="w-full" src="images/header.png" alt="header">
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="courses mt-32 sm:mt-36">
-            <div class="container">
-                <!-- Tittle -->
-                <div class="flex items-center gap-x-1.5 sm:gap-x-2.5 mb-4">
-                    <div class="w-20 sm:w-[100px]">
-                        <img class="w-full" src="images/logo/svg/tittle-icon.svg">
-                    </div>
-                    <h3 class="font-EstedadBold text-2xl md:text-3xl"> محبوب ترین دور های <span
-                            class="text-teal-600">تک</span> <span class="text-red-800"> لرن </span></h3>
-                </div>
-                <!-- Courses -->
-                <div id="course-container"
-                    class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 justify-items-center gap-5">
-                </div>
-                <a href="courses.html" class="section-btn">
-                    مشاهده همه
-                    <svg class="w-6 h-6">
-                        <use href="#arrow-long-left"></use>
-                    </svg>
-                </a>
-            </div>
-        </section>
-        <section class="about-techLearn mt-32 sm:mt-36">
-            <div class="container">
-                <div class="flex items-center gap-x-1.5 sm:gap-x-2.5 mb-4">
-                    <div class="w-20 sm:w-[100px]">
-                        <img class="w-full" src="images/logo/svg/tittle-icon.svg">
-                    </div>
-                    <h3 class="font-EstedadBold text-2xl md:text-3xl"> چرا باید از <span class="text-teal-600">تک</span>
-                        <span class="text-red-800"> لرن </span> یاد بگیرم؟
-                    </h3>
-                </div>
-                <div
-                    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-items-center items-start gap-5">
-                    <div class="flex-center flex-col gap-4 w-72">
-                        <img src="images/logo/svg/teacher.svg" alt="teacher">
-                        <div class="flex-center flex-col gap-2 self-stretch text-center">
-                            <h4 class="font-EstedadBold text-2xl font-bold"> آموزش پروژه محور </h4>
-                            <p class="font-EstedadMedium text-base font-normal leading-7"> همه دوره های تک‌لرن دارای
-                                حداقل ۲ پروژه
-                                عملی هستند. </p>
                         </div>
+                        <svg class="show-more__loading hidden w-6 h-6 animate-spin text-white fill-zinc-700"
+                            viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z"
+                                fill="currentColor"></path>
+                            <path
+                                d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z"
+                                fill="currentFill"></path>
+                        </svg>
                     </div>
-                    <div class="flex-center flex-col gap-4 w-72">
-                        <img src="images/logo/svg/walletmoney.svg" alt="teacher">
-                        <div class="flex-center flex-col gap-2 self-stretch text-center">
-                            <h4 class="font-EstedadBold text-2xl font-bold"> تضمین بازگشت وجه </h4>
-                            <p class="font-EstedadMedium text-base font-normal leading-7"> اگر پس از خرید یکی از دوره ای
-                                تک‌لرن،‌
-                                از هر نظر از آن رضایت نداشتید، میتوانید ۱۰۰٪ وجه خود پس بگیرید. </p>
-                        </div>
+                    <div class="all_loaded hidden text-zinc-700 font-EstedadLight mt-7 leading-7 text-center">
+                        تمام دوره ها نمایش داده شده است.
                     </div>
-                    <div class="flex-center flex-col gap-4 w-72">
-                        <img src="images/logo/svg/personalcard.svg" alt="teacher">
-                        <div class="flex-center flex-col gap-2 self-stretch text-center">
-                            <h4 class="font-EstedadBold text-2xl font-bold"> ارائه مدرک معتبر </h4>
-                            <p class="font-EstedadMedium text-base font-normal leading-7"> هرکدام از دوره های تک‌لرن،
-                                دارای مدرک
-                                معتبر هستند که پس از گذراندن آن، میتوانید آن را دریافت کنید. </p>
-                        </div>
-                    </div>
-                    <div class="flex-center flex-col gap-4 w-72">
-                        <img src="images/logo/svg/calendar.svg" alt="teacher">
-                        <div class="flex-center flex-col gap-2 self-stretch text-center">
-                            <h4 class="font-EstedadBold text-2xl font-bold"> دسترسی مادام العمر </h4>
-                            <p class="font-EstedadMedium text-base font-normal leading-7"> با یکبار خرید دوره در تک‌لرن،
-                                مادام
-                                العمر میتوانید آن را ببینید و آپدیت های آن را دریافت کنید. </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="new-cours mt-32 sm:mt-36">
-            <div class="container">
-                <div class="flex items-center gap-x-1.5 sm:gap-x-2.5 mb-4">
-                    <div class="w-20 sm:w-[100px]">
-                        <img class="w-full" src="images/logo/svg/tittle-icon.svg">
-                    </div>
-                    <h3 class="font-EstedadBold text-2xl md:text-3xl"> جدیدترین دوره های <span
-                            class="text-teal-600">تک</span> <span class="text-red-800"> لرن </span></h3>
-                </div>
-
-                <div class="swiper mySwiper text-center">
-                    <div id="presell-courses-wrapper" class="swiper-wrapper flex items-center gap-x-5">
-
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="blog mt-32 sm:mt-36">
-            <div class="container">
-                <div class="flex items-center gap-x-1.5 sm:gap-x-2.5 mb-4">
-                    <div class="w-20 sm:w-[100px]">
-                        <img class="w-full" src="images/logo/svg/tittle-icon.svg">
-                    </div>
-                    <h3 class="font-EstedadBold text-2xl md:text-3xl"> جدیدترین مقالات <span
-                            class="text-teal-600">تک</span> <span class="text-red-800"> لرن </span></h3>
-                </div>
-                <div id="articles-wrapper" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
-                </div>
-                <a href="blogs.html" class="section-btn">
-                    مشاهده همه
-                    <svg class="w-6 h-6">
-                        <use href="#arrow-long-left"></use>
-                    </svg>
-                </a>
-            </div>
-        </section>
-
+                </section>
+            </section>
+        </div>
     </main>
 
     <footer class="pt-8 w-full mt-36 bg-white">
         <div class="container">
-            <div class="mb-12 md:mb-8 flex items-center justify-between">
+            <div class="mb-12 md:mb-8 flex-center md:block">
                 <a href="#">
                     <img src="images/logo/Logo.png" alt="Logo">
                 </a>
@@ -452,7 +390,7 @@
                     </div>
                 </div>
                 <div class="flex flex-col items-center gap-y-5 m-auto md:m-[unset] min-w-40">
-                    <h4 class="font-EstedadBold text-xl font-semibold text-zinc-700"> با ما همراه باشید! </h4>
+                    <h4 class="font-EstedadBold text-xl font-semibold text-zinc-700">شبکه های اجتماعی</h4>
                     <div
                         class="flex flex-col items-start gap-y-3 pr-3.5  font-normal text-base xl:text-lg text-slate-500 leading-7">
 
@@ -515,7 +453,6 @@
                             </svg>
                         </div>
                     </div>
-
                 </div>
             </div>
             <div
@@ -527,72 +464,9 @@
     </footer>
 
     <div class="overlay fixed w-full h-full top-0 left-0 bg-black/40 z-30 transition-all invisible opacity-0"></div>
-
-    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
     <script type="module" src="js/style.js"></script>
+    <script type="module" src="js/courses.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script type="module" src="js/index.js"></script>
-    <script>
-        var swiper = new Swiper(".mySwiper", {
-            slidesPerView: 1,
-            spaceBetween: 14,
-            loop: true,
-            breakpoints: {
-                640: {
-                    slidesPerView: 2,
-                    spaceBetween: 14,
-                },
-                768: {
-                    slidesPerView: 2,
-                    spaceBetween: 20,
-                },
-                1024: {
-                    slidesPerView: 3,
-                    spaceBetween: 20,
-                },
-                1280: {
-                    slidesPerView: 4,
-                    spaceBetween: 20,
-                },
-            },
-            spaceBetween: 30,
-            centeredSlides: true,
-            autoplay: {
-                delay: 2500,
-                disableOnInteraction: false,
-            },
-        });
-    </script>
 </body>
 
 </html>
-
-<!-- <div class="w-full flex flex-col items-start mt-4 sm:mt-8">
-                    <h4 class="hidden md:block font-EstedadBold text-lg text-zinc-700 mb-3">از
-                        جدید‌ترین تخفیف‌ها با‌خبر شوید</h4>
-                    <div class="w-full flex items-center">
-                        <form class="w-full flex">
-                            <label class="relative inline-block grow w-full">
-                                <div class="h-[50px] px-2 flex items-center bg-neutral-100 rounded-lg">
-                                    <div class="grow">
-                                        <input class="px-2 text-base w-full outline-none border-none bg-neutral-100"
-                                            type="email" name="email" placeholder="ایمیل شما">
-                                    </div>
-                                </div>
-                                <button
-                                    class="absolute left-2 top-1.5 bottom-1.5 bg-teal-600 px-5 flex-center rounded-md">
-                                    <svg class="rotate-180" xmlns="http://www.w3.org/2000/svg" width="18.504"
-                                        height="17.181" viewBox="0 0 18.504 17.181">
-                                        <g transform="translate(0 -16.021)">
-                                            <g transform="translate(0 16.02)">
-                                                <path
-                                                    d="M18.121,24.01.939,16.08a.664.664,0,0,0-.79.185.657.657,0,0,0-.016.812l5.65,7.534L.133,32.144a.661.661,0,0,0,.8,1L18.12,25.21a.661.661,0,0,0,0-1.2Z"
-                                                    transform="translate(0 -16.02)" fill="#fff" />
-                                            </g>
-                                        </g>
-                                    </svg>
-                                </button>
-                            </label>
-                        </form>
-                    </div>
-                </div> -->
