@@ -445,6 +445,12 @@ const getCourseDetails = () => {
                 }
             });
 
+            // Breadcrumb
+            const breadcrumbCategory = $.querySelector('#breadcrumb-category');
+            const breadcrumbCourse = $.querySelector('#breadcrumb-course');
+
+            breadcrumbCategory.innerHTML = course.categoryID.title
+            breadcrumbCourse.innerHTML = course.name
             // Show Creator Course
             const sidebarWrapper = $.querySelector('.side-bar')
             sidebarWrapper.insertAdjacentHTML("beforeend",
@@ -456,7 +462,7 @@ const getCourseDetails = () => {
                                         <div
                                             class="flex flex-col items-center justify-center gap-2 sm:flex-row sm:gap-4 lg:flex-col lg:gap-0">
                                             <div class="flex w-full flex-col items-center ">
-                                                <a target="_blank" href="">
+                                                <a href="#">
                                                     <img alt="" draggable="false" loading="lazy" width="120"
                                                         height="120" decoding="async" data-nimg="1"
                                                         class="aspect-square flex-none rounded-full object-cover transition-all duration-500 opacity-100 h-14 w-14 select-none md:h-16 md:w-16 lg:h-16 lg:w-16 xl:h-20 xl:w-20"
@@ -466,7 +472,7 @@ const getCourseDetails = () => {
                                                 <div
                                                     class="mt-3 flex items-center justify-center gap-1 text-center text-sm font-bold md:text-base">
                                                     <p class="select-none transition-colors">
-                                                        <a target="_blank" href="">${course.creator.name}</a>
+                                                        <a href="#">${course.creator.name}</a>
                                                     </p>
                                                     <svg class="w-5 h-5 text-teal-700">
                                                         <use xlink:href="#check-badge"></use>
