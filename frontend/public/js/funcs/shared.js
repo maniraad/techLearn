@@ -435,7 +435,55 @@ const getCourseDetails = () => {
             courseStatus.innerHTML = course.isComplete ? "تکمیل شده" : "در حال برگذاری"
             courseRegisterButtons.forEach(courseRegisterButton => {
                 courseRegisterButton.innerHTML = course.isUserRegisteredToThisCourse ? "دانشجوی دوره هستید" : "ثبت نام دوره"
+
+                if (courseRegisterButton.innerHTML === "ثبت نام دوره") {
+                    courseRegisterButton.classList.add('cursor-pointer');
+
+                    courseRegisterButton.addEventListener("click", () => {
+
+                    })
+                }
             });
+
+            // Show Creator Course
+            const sidebarWrapper = $.querySelector('.side-bar')
+            sidebarWrapper.insertAdjacentHTML("beforeend",
+                `
+            <div class="rounded-2xl bg-white p-4 transition-all lg:p-7 mt-4 lg:mt-7 shadow-sm">
+                            <div class="relative">
+                                <div class="overflow-hidden relative ">
+                                    <div>
+                                        <div
+                                            class="flex flex-col items-center justify-center gap-2 sm:flex-row sm:gap-4 lg:flex-col lg:gap-0">
+                                            <div class="flex w-full flex-col items-center ">
+                                                <a target="_blank" href="">
+                                                    <img alt="" draggable="false" loading="lazy" width="120"
+                                                        height="120" decoding="async" data-nimg="1"
+                                                        class="aspect-square flex-none rounded-full object-cover transition-all duration-500 opacity-100 h-14 w-14 select-none md:h-16 md:w-16 lg:h-16 lg:w-16 xl:h-20 xl:w-20"
+                                                        src="http://localhost:4000/courses/covers/${course.creator.cover}">
+                                                </a>
+
+                                                <div
+                                                    class="mt-3 flex items-center justify-center gap-1 text-center text-sm font-bold md:text-base">
+                                                    <p class="select-none transition-colors">
+                                                        <a target="_blank" href="">${course.creator.name}</a>
+                                                    </p>
+                                                    <svg class="w-5 h-5 text-teal-700">
+                                                        <use xlink:href="#check-badge"></use>
+                                                    </svg>
+                                                </div>
+                                                <p
+                                                    class="mt-1 select-none text-center text-xs text-gray-500 transition-colors md:text-sm xl:mt-3">
+                                                    مدرس دوره</p>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+            `)
+
 
             // Show Course Sessions
             const coursesSessionsWrapper = $.querySelector('.courses-sessions-wrapper');
