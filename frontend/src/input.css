@@ -56,10 +56,11 @@
     }
 
     .show {
-        @apply  opacity-100;
+        @apply opacity-100;
     }
+
     .show-comment {
-        @apply  !opacity-100 !flex;
+        @apply !opacity-100 !flex;
     }
 
     .sub-menu::before {
@@ -145,10 +146,27 @@
     .courses-sessions-wrapper {
         @apply overflow-hidden child:border-b child:border-b-gray-200 transition-all
     }
+    .side-bar{
+        @apply hover:text-white hover:bg-gradient-to-r from-white/30 via-white/10 to-white/0
+    }
+    .side-bar--active{
+        @apply relative text-white bg-gradient-to-r from-white/30 via-white/10 to-white/0
+    }
+    .side-bar--active::before {
+        @apply content-[""] absolute top-0 left-0 w-1.5 h-full bg-sky-500
+    }
 }
 
 @layer utilities {
     .flex-center {
         @apply flex items-center justify-center;
+    }
+
+    .container-2 {
+        width: 100%;
+        padding-right: 25px;
+        padding-left: 25px;
+        margin-right: auto;
+        margin-left: auto;
     }
 }
