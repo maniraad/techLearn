@@ -146,14 +146,21 @@
     .courses-sessions-wrapper {
         @apply overflow-hidden child:border-b child:border-b-gray-200 transition-all
     }
-    .side-bar{
+
+    .side-bar {
         @apply hover:text-white hover:bg-gradient-to-r from-white/30 via-white/10 to-white/0
     }
-    .side-bar--active{
+
+    .side-bar--active {
         @apply relative text-white bg-gradient-to-r from-white/30 via-white/10 to-white/0
     }
+
     .side-bar--active::before {
         @apply content-[""] absolute top-0 left-0 w-1.5 h-full bg-sky-500
+    }
+
+    .profile-menu--show {
+       @apply !top-14 !opacity-100
     }
 }
 
