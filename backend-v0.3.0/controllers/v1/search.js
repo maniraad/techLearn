@@ -26,7 +26,8 @@ exports.get = async (req, res, next) => {
 
     const allResultCourses = await coursesModel.find({
       name: regex,
-    });
+    }).populate("creator");
+    
     const allResultArticles = await articlesModel.find({
       title: regex,
     });
