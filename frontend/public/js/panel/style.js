@@ -20,7 +20,7 @@ window.addEventListener('load', () => {
         profileMenuElem.classList.toggle('profile-menu--show');
         profileIconArrowElem.classList.toggle('rotate-180')
     });
-    
+
     // Handle notification Toggle
     notificationIconElem.addEventListener('click', () => {
         notificationMenuElem.classList.toggle('profile-menu--show');
@@ -41,6 +41,10 @@ window.addEventListener('load', () => {
             adminNameElem.innerHTML = admin.name
             adminWelcomeElem.innerHTML = `خوش آمدید , ${admin.name}`
             adminImageElem.setAttribute('src', `http://localhost:4000/${admin.profile}`)
+
+            if (admin.notifications.length) {
+                notificationIconElem.insertAdjacentHTML("beforeend",`<span class="notification-alarm inline-block absolute -top-0.5 -left-0.5 bg-red-500 w-2 h-2 rounded-full"></span>`)
+            }
 
         } else {
             location.replace("../login.html")
