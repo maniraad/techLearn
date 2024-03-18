@@ -30,6 +30,16 @@
             <path stroke-linecap="round" stroke-linejoin="round"
                 d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0" />
         </symbol>
+        <symbol id="information-circle" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+            stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
+        </symbol>
+        <symbol id="x-circle" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                d="m9.75 9.75 4.5 4.5m0-4.5-4.5 4.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+        </symbol>
     </svg>
 
     <!-- Header -->
@@ -101,16 +111,76 @@
                     <div class=" ml-4 flex items-center gap-x-5">
                         <!-- Profile Notifications -->
                         <div class="cursor-pointer">
-                            <span class="relative">
+                            <div class="notification-icon relative transition-all">
                                 <svg class="w-6 h-6">
                                     <use xlink:href="#bell"></use>
                                 </svg>
                                 <span class="inline-block absolute -top-0.5 -left-0.5 bg-red-500 w-2 h-2 rounded-full"></span>
-                                <div class="">
-
+                                <div class="notification-menu absolute invisible opacity-0 -top-10 left-0 mt-4 flex max-h-[415px] w-80 flex-col border shadow-sm bg-white rounded-lg cursor-auto duration-200 transition-all">
+                                    <div class="p-4">
+                                        <h5 class="text-sm font-medium text-bodydark2">شما 4 اعلان جدید دارید.</h5>
+                                    </div>
+                                    <ul class="flex h-auto flex-col overflow-y-auto">
+                                        <li
+                                            class="flex items-center justify-between px-4 py-3 border-t hover:bg-gray-100">
+                                            <a href="#" class="hover:text-blue-600 transition-all">
+                                                <p class="flex items-center gap-x-2.5 text-sm">
+                                                    <svg class="w-5 h-5">
+                                                        <use xlink:href="#information-circle"></use>
+                                                    </svg>
+                                                    <span>تغییرات زیادی در صفحات وجود دارد.</span>
+                                                </p>
+                                            </a>
+                                            <svg class="w-5 h-5 cursor-pointer hover:text-red-500 transition-all">
+                                                <use xlink:href="#x-circle"></use>
+                                            </svg>
+                                        </li>
+                                        <li
+                                            class="flex items-center justify-between px-4 py-3 border-t hover:bg-gray-100">
+                                            <a href="#" class="hover:text-blue-600 transition-all">
+                                                <p class="flex items-center gap-x-2.5 text-sm">
+                                                    <svg class="w-5 h-5">
+                                                        <use xlink:href="#information-circle"></use>
+                                                    </svg>
+                                                    <span>تغییرات زیادی در صفحات وجود دارد.</span>
+                                                </p>
+                                            </a>
+                                            <svg class="w-5 h-5 cursor-pointer hover:text-red-500 transition-all">
+                                                <use xlink:href="#x-circle"></use>
+                                            </svg>
+                                        </li>
+                                        <li
+                                            class="flex items-center justify-between px-4 py-3 border-t hover:bg-gray-100">
+                                            <a href="#" class="hover:text-blue-600 transition-all">
+                                                <p class="flex items-center gap-x-2.5 text-sm">
+                                                    <svg class="w-5 h-5">
+                                                        <use xlink:href="#information-circle"></use>
+                                                    </svg>
+                                                    <span>تغییرات زیادی در صفحات وجود دارد.</span>
+                                                </p>
+                                            </a>
+                                            <svg class="w-5 h-5 cursor-pointer hover:text-red-500 transition-all">
+                                                <use xlink:href="#x-circle"></use>
+                                            </svg>
+                                        </li>
+                                        <li
+                                            class="flex items-center justify-between px-4 py-3 border-t hover:bg-gray-100">
+                                            <a href="#" class="hover:text-blue-600 transition-all">
+                                                <p class="flex items-center gap-x-2.5 text-sm">
+                                                    <svg class="w-5 h-5">
+                                                        <use xlink:href="#information-circle"></use>
+                                                    </svg>
+                                                    <span>تغییرات زیادی در صفحات وجود دارد.</span>
+                                                </p>
+                                            </a>
+                                            <svg class="w-5 h-5 cursor-pointer hover:text-red-500 transition-all">
+                                                <use xlink:href="#x-circle"></use>
+                                            </svg>
+                                        </li>
+                                    </ul>
                                 </div>
-                            </span>
-                        </div>  
+                            </div>
+                        </div>
                         <!-- Profile Details -->
                         <div class="relative cursor-pointer">
                             <span class="relative flex items-center gap-x-3 z-50 profile">
@@ -126,9 +196,10 @@
                                 </span>
                             </span>
                             <div
-                                class="profile-menu absolute invisible opacity-0 -top-14 left-0 mt-4 flex w-60 flex-col rounded-md border bg-white shadow-sm duration-300 transition-all">
+                                class="profile-menu absolute invisible opacity-0 -top-14 left-0 mt-4 flex w-60 flex-col rounded-lg border bg-white shadow-sm duration-300 transition-all">
                                 <div class="p-5 border-b">
-                                    <h5 class="text-base mb-2 font-EstedadMedium text-zinc-900"><a href="#">طاهر نصیری</a></h5>
+                                    <h5 class="text-base mb-2 font-EstedadMedium text-zinc-900"><a href="#">طاهر
+                                            نصیری</a></h5>
                                     <a class="block text-sm text-slate-600" href="#">mailnam@mail.com</a>
                                 </div>
                                 <ul class="flex flex-col gap-5 border-b px-6 py-7">

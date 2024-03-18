@@ -968,6 +968,10 @@ video {
   top: 100%;
 }
 
+.-top-10 {
+  top: -2.5rem;
+}
+
 .z-10 {
   z-index: 10;
 }
@@ -1295,12 +1299,32 @@ video {
   height: 100vh;
 }
 
+.h-96 {
+  height: 24rem;
+}
+
+.h-\[\] {
+  height: ;
+}
+
+.h-\[415px\] {
+  height: 415px;
+}
+
+.h-\[360px\] {
+  height: 360px;
+}
+
 .max-h-0 {
   max-height: 0px;
 }
 
 .max-h-full {
   max-height: 100%;
+}
+
+.max-h-\[415px\] {
+  max-height: 415px;
 }
 
 .min-h-16 {
@@ -1433,6 +1457,18 @@ video {
   width: 1px;
 }
 
+.w-\[\] {
+  width: ;
+}
+
+.w-\[320px\] {
+  width: 320px;
+}
+
+.w-\[380px\] {
+  width: 380px;
+}
+
 .min-w-40 {
   min-width: 10rem;
 }
@@ -1494,6 +1530,10 @@ video {
 
 .cursor-pointer {
   cursor: pointer;
+}
+
+.cursor-auto {
+  cursor: auto;
 }
 
 .select-none {
@@ -2073,6 +2113,11 @@ video {
   padding-bottom: 2.25rem;
 }
 
+.py-10 {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
 .pb-16 {
   padding-bottom: 4rem;
 }
@@ -2371,6 +2416,11 @@ video {
   color: rgb(39 39 42 / var(--tw-text-opacity));
 }
 
+.text-black {
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
+}
+
 .opacity-0 {
   opacity: 0;
 }
@@ -2436,6 +2486,10 @@ video {
 
 .duration-500 {
   transition-duration: 500ms;
+}
+
+.duration-200 {
+  transition-duration: 200ms;
 }
 
 .ease-in-out {
@@ -2534,6 +2588,11 @@ video {
   background-color: rgb(15 118 110 / var(--tw-bg-opacity));
 }
 
+.hover\:bg-gray-100:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(243 244 246 / var(--tw-bg-opacity));
+}
+
 .hover\:text-emerald-600:hover {
   --tw-text-opacity: 1;
   color: rgb(5 150 105 / var(--tw-text-opacity));
@@ -2552,6 +2611,16 @@ video {
 .hover\:text-zinc-900:hover {
   --tw-text-opacity: 1;
   color: rgb(24 24 27 / var(--tw-text-opacity));
+}
+
+.hover\:text-red-500:hover {
+  --tw-text-opacity: 1;
+  color: rgb(239 68 68 / var(--tw-text-opacity));
+}
+
+.hover\:text-blue-600:hover {
+  --tw-text-opacity: 1;
+  color: rgb(37 99 235 / var(--tw-text-opacity));
 }
 
 .hover\:ring-4:hover {
@@ -2638,6 +2707,10 @@ video {
     left: 1rem;
   }
 
+  .sm\:right-0 {
+    right: 0px;
+  }
+
   .sm\:my-10 {
     margin-top: 2.5rem;
     margin-bottom: 2.5rem;
@@ -2717,6 +2790,10 @@ video {
 
   .sm\:w-full {
     width: 100%;
+  }
+
+  .sm\:w-80 {
+    width: 20rem;
   }
 
   .sm\:grid-cols-2 {
@@ -3296,5 +3373,12 @@ video {
   .\32xl\:px-12 {
     padding-left: 3rem;
     padding-right: 3rem;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .dark\:text-white {
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity));
   }
 }
