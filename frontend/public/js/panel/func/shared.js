@@ -6,8 +6,11 @@ const insertNotificationHTMLTemplate = (notifications) => {
     const notificationHeaderElem = document.querySelector('.notification-header');
     const notificationIconElem = document.querySelector('.notification-icon');
 
+    notificationsWrapperElem.innerHTML = ''
+
     if (notifications.length) {
         notificationIconElem.insertAdjacentHTML("beforeend", `<span class="notification-alarm inline-block absolute -top-0.5 -left-0.5 bg-red-500 w-2 h-2 rounded-full"></span>`)
+       
         notifications.forEach((notification, index) => {
             notificationHeaderElem.innerHTML = `شما ${index + 1} اعلان جدید دارید.`
             notificationsWrapperElem.insertAdjacentHTML("beforeend",
@@ -21,7 +24,7 @@ const insertNotificationHTMLTemplate = (notifications) => {
                             <span>${notification.msg}</span>
                         </p>
                     </a>
-                    <svg onclick="seenNotification('${notification._id}')" class="w-5 h-5 cursor-pointer hover:text-red-500 transition-all">
+                    <svg onclick='seenNotification(${JSON.stringify(notifications)}, ${JSON.stringify(notification._id)})' class="w-5 h-5 cursor-pointer hover:text-red-500 transition-all">
                         <use xlink:href="#x-circle"></use>
                     </svg>
                 </li>
@@ -32,15 +35,24 @@ const insertNotificationHTMLTemplate = (notifications) => {
     }
 };
 
-const seenNotification = async (notificationID) => {
+const seenNotification = async (notifications, notificationID) => {
 
     const res = await fetch(`http://localhost:4000/v1/notifications/see/${notificationID}`, {
-        method: 'PUT',
+        method: "PUT",
         headers: {
-            Authorization: `Bearer ${getToken()}`
+            Authorization: `Bearer ${getToken()}`,
         },
     })
-    const result = await res.json()
+    
+    removeNotification(notifications, notificationID)
+
+    const result = await res.json();
+};
+
+const removeNotification = (notifications, notificationID) => {
+    const filteredNotifications = notifications.filter(notification => notification._id !== notificationID)
+
+    insertNotificationHTMLTemplate(filteredNotifications)
 };
 
 export { insertNotificationHTMLTemplate, seenNotification }
