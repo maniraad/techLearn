@@ -6,11 +6,16 @@ const insertNotificationHTMLTemplate = (notifications) => {
     const notificationHeaderElem = document.querySelector('.notification-header');
     const notificationIconElem = document.querySelector('.notification-icon');
 
-    notificationsWrapperElem.innerHTML = ''
+    notificationsWrapperElem.innerHTML = '';
 
     if (notifications.length) {
         notificationIconElem.insertAdjacentHTML("beforeend", `<span class="notification-alarm inline-block absolute -top-0.5 -left-0.5 bg-red-500 w-2 h-2 rounded-full"></span>`)
-       
+
+        notificationsWrapperElem.insertAdjacentHTML("afterend", `
+        <div class="text-center border-t">
+            <a href="#" class="block py-2.5 text-sm hover:text-blue-500 transition-all">مشاهده همه</a>
+        </div>`)
+
         notifications.forEach((notification, index) => {
             notificationHeaderElem.innerHTML = `شما ${index + 1} اعلان جدید دارید.`
             notificationsWrapperElem.insertAdjacentHTML("beforeend",
@@ -43,16 +48,16 @@ const seenNotification = async (notifications, notificationID) => {
             Authorization: `Bearer ${getToken()}`,
         },
     })
-    
-    removeNotification(notifications, notificationID)
+
+    removeNotification(notifications, notificationID);
 
     const result = await res.json();
 };
 
 const removeNotification = (notifications, notificationID) => {
-    const filteredNotifications = notifications.filter(notification => notification._id !== notificationID)
+    const filteredNotifications = notifications.filter(notification => notification._id !== notificationID);
 
-    insertNotificationHTMLTemplate(filteredNotifications)
+    insertNotificationHTMLTemplate(filteredNotifications);
 };
 
-export { insertNotificationHTMLTemplate, seenNotification }
+export { insertNotificationHTMLTemplate, seenNotification };
