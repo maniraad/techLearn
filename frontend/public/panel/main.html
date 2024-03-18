@@ -95,11 +95,11 @@
                     <!-- Header Profile -->
                     <div class="relative cursor-pointer ml-4">
                         <span class="relative flex items-center gap-x-3 z-50 profile">
-                            <span class="flex items-center gap-x-1.5">
+                            <span class="flex items-center gap-x-1.5" >
                                 <svg class=" profile-icon w-4 h-4 transition-all duration-300">
                                     <use href="#chevron-down"></use>
                                 </svg>
-                                مانی راد
+                                <span class="admin-name">مانی راد</span>
                             </span>
                             <span>
                                 <img class="w-10 h-10 rounded-full" src="../images/courses/GoLang.png">
@@ -214,7 +214,7 @@
     </aside>
 
     <main class="mr-64 mt-28 py-9 px-14 transition-all">
-        <p class="block font-EstedadMedium text-lg">خوش آمدید,مانی راد</p>
+        <p class="admin-welcome-name block font-EstedadMedium text-lg">خوش آمدید,مانی راد</p>
         <section class="recently-user mb-8 container">
             <div class="bg-neutral-50 shadow-md rounded-xl overflow-hidden">
                 <div class="py-5 px-6 border-b-2 bg-white">
@@ -284,7 +284,8 @@
         </section>
     </main>
 
-    <script src="../js/panel/style.js"></script>
+    <script type="module" src="../js/panel/style.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 
 </html>
