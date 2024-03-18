@@ -15,7 +15,7 @@ const insertNotificationHTMLTemplate = (notifications) => {
             notificationHeaderElem.innerHTML = `شما ${index + 1} اعلان جدید دارید.`
             notificationsWrapperElem.insertAdjacentHTML("beforeend",
                 ` <li
-                    class="flex items-center justify-between px-4 py-3 border-t hover:bg-gray-100">
+                    class="flex items-center justify-between px-4 py-3.5 border-t hover:bg-gray-100">
                     <a href="#" class="hover:text-blue-600 transition-all">
                         <p class="flex items-center gap-x-2.5 text-sm">
                             <svg class="w-5 h-5">
