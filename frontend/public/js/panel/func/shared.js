@@ -31,7 +31,7 @@ const insertNotificationHTMLTemplate = (notifications) => {
                 `)
         });
     } else {
-
+        notificationHeaderElem.innerHTML = 'اعلانی وجود ندارد'
     }
 };
 
