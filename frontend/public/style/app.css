@@ -2833,6 +2833,10 @@ video {
     height: 1.75rem;
   }
 
+  .md\:h-12 {
+    height: 3rem;
+  }
+
   .md\:min-h-36 {
     min-height: 9rem;
   }
@@ -2860,6 +2864,10 @@ video {
   .md\:w-fit {
     width: -moz-fit-content;
     width: fit-content;
+  }
+
+  .md\:w-12 {
+    width: 3rem;
   }
 
   .md\:grid-cols-2 {

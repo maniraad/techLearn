@@ -3,13 +3,13 @@ import { getAdminInfos } from "./func/util.js";
 window.addEventListener('load', () => {
 
     // Select Element From Dom
-    const profileMenu = document.querySelector('.profile-menu');
-    const profile = document.querySelector('.profile');
-    const profileIconArrow = document.querySelector('.profile-icon');
-    const asideElem = document.querySelector('aside');
-    const mainElem = document.querySelector('main');
-    const menuButton = document.querySelector('.menu-btn');
     const $ = document;
+    const profileMenu = $.querySelector('.profile-menu');
+    const profile = $.querySelector('.profile');
+    const profileIconArrow = $.querySelector('.profile-icon');
+    const asideElem = $.querySelector('aside');
+    const mainElem = $.querySelector('main');
+    const menuButton = $.querySelector('.menu-btn');
     const adminNameElem = $.querySelector('.admin-name');
     const adminWelcomeElem = $.querySelector('.admin-welcome-name');
 
@@ -27,8 +27,14 @@ window.addEventListener('load', () => {
 
     // Admin Info
     getAdminInfos().then(admin => {
-        console.log(admin);
-        adminNameElem.innerHTML = admin.name
-        adminWelcomeElem.innerHTML = `خوش آمدید , ${admin.name}`
+
+        // Protect Cms Route
+        if (admin.role === "ADMIN") {
+            // Show Admin Name
+            adminNameElem.innerHTML = admin.name
+            adminWelcomeElem.innerHTML = `خوش آمدید , ${admin.name}`
+        } else {
+            location.replace("../login.html")
+        }
     });
 });
