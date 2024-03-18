@@ -1,7 +1,6 @@
 import { getAdminInfos } from "./func/util.js";
 
 window.addEventListener('load', () => {
-
     // Select Element From Dom
     const $ = document;
     const profileMenu = $.querySelector('.profile-menu');
@@ -12,6 +11,7 @@ window.addEventListener('load', () => {
     const menuButton = $.querySelector('.menu-btn');
     const adminNameElem = $.querySelector('.admin-name');
     const adminWelcomeElem = $.querySelector('.admin-welcome-name');
+    const adminImageElem = $.querySelector('.admin-img');
 
     // Handle Profile Toggle
     profile.addEventListener('click', () => {
@@ -27,12 +27,13 @@ window.addEventListener('load', () => {
 
     // Admin Info
     getAdminInfos().then(admin => {
-
         // Protect Cms Route
         if (admin.role === "ADMIN") {
             // Show Admin Name
             adminNameElem.innerHTML = admin.name
             adminWelcomeElem.innerHTML = `خوش آمدید , ${admin.name}`
+            adminImageElem.setAttribute('src',`http://localhost:4000/${admin.profile}`)
+
         } else {
             location.replace("../login.html")
         }
