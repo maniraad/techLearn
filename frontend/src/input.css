@@ -160,7 +160,7 @@
     }
 
     .profile-menu--show {
-       @apply !top-14 !opacity-100
+       @apply !top-14 !visible !opacity-100
     }
 }
 
