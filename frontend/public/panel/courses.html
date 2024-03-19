@@ -25,25 +25,40 @@
             stroke="currentColor" class="w-6 h-6">
             <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
         </symbol>
+        <symbol id="bell" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0" />
+        </symbol>
+        <symbol id="information-circle" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+            stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
+        </symbol>
+        <symbol id="x-circle" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                d="m9.75 9.75 4.5 4.5m0-4.5-4.5 4.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+        </symbol>
     </svg>
 
     <!-- Header -->
     <header class="bg-neutral-50 shadow-md fixed top-0 left-0 w-full z-50">
         <div class="container-2">
-            <div class="flex flex-wrap justify-between items-center">
+            <div class="flex flex-col md:flex-row justify-between items-center">
                 <!-- Header Logo -->
-                <div class="flex-center h-28 mx-14">
+                <div class="flex-center w-full md:w-auto py-2.5 md:py-0 md:h-28 mx-6 lg:mx-14 border-b md:border-none">
                     <a href="#">
                         <img src="../images/logo/Logo.png" alt="Logo">
                     </a>
                 </div>
                 <!-- Header Details -->
-                <div class="flex flex-wrap justify-between items-center grow z-50">
+                <div class="w-full md:w-auto py-2.5 md:py-0 flex flex-wrap justify-between items-center grow z-50">
                     <!-- Sidebar Header Toggle & Searchbar -->
                     <div class="flex flex-wrap items-center gap-x-4">
                         <!--Sidebar Header Toggle-->
                         <div class="menu-btn cursor-pointer">
-                            <svg class="w-9 h-9 hover:text-teal-600 transition-all">
+                            <svg class="w-7 md:w-9 h-7 md:h-9 hover:text-teal-600 transition-all">
                                 <use href="#menu-bars"></use>
                             </svg>
                         </div>
@@ -92,81 +107,109 @@
                             </div>
                         </div>
                     </div>
+
                     <!-- Header Profile -->
-                    <div class="relative cursor-pointer ml-4">
-                        <span class="relative flex items-center gap-x-3 z-50 profile">
-                            <span class="flex items-center gap-x-1.5">
-                                <svg class=" profile-icon w-4 h-4 transition-all duration-300">
-                                    <use href="#chevron-down"></use>
+                    <div class=" ml-4 flex items-center gap-x-2.5 md:gap-x-5">
+                        <!-- Profile Notifications -->
+                        <div class="cursor-pointer">
+                            <div class="notification-icon relative transition-all">
+                                <svg class="w-5 md:w-6 h-5 md:h-6">
+                                    <use xlink:href="#bell"></use>
                                 </svg>
-                                مانی راد
+
+                                <div
+                                    class="notification-menu absolute invisible opacity-0 -top-10 left-0 mt-4 flex max-h-[415px] w-80 flex-col border shadow-sm bg-white rounded-lg cursor-auto duration-200 transition-all">
+                                    <div class="p-4">
+                                        <h5 class="notification-header text-sm font-medium text-bodydark2"></h5>
+                                    </div>
+                                    <ul class="notifications-wrapper flex h-auto flex-col overflow-y-auto">
+                                        <!-- Notifications Loaded From Js -->
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Profile Details -->
+                        <div class="relative cursor-pointer">
+                            <span class="relative flex items-center gap-x-1.5 md:gap-x-3 z-50 profile">
+                                <span class="flex items-center gap-x-1.5">
+                                    <svg class=" profile-icon w-4 h-4 transition-all duration-300">
+                                        <use href="#chevron-down"></use>
+                                    </svg>
+                                    <span class="admin-name hidden md:inline-block"></span>
+                                </span>
+                                <span>
+                                    <img
+                                        class="admin-img object-cover w-10 h-10 md:w-12 md:h-12 rounded-full inline-block cursor-pointer">
+                                </span>
                             </span>
-                            <span>
-                                <img class="w-10 h-10 rounded-full" src="../images/courses/GoLang.png">
-                            </span>
-                        </span>
-                        <div
-                            class="profile-menu absolute opacity-0 -top-14 left-0 mt-4 flex w-60 flex-col rounded-md border bg-white shadow-sm duration-300 transition-all">
-                            <ul class="flex flex-col gap-5 border-b px-6 py-7">
-                                <li>
-                                    <a href="profile.html"
-                                        class="flex items-center gap-3.5 text-sm font-medium duration-300 ease-in-out hover:text-primary lg:text-base">
-                                        <svg class="fill-current" width="22" height="22" viewBox="0 0 22 22" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path
-                                                d="M11 9.62499C8.42188 9.62499 6.35938 7.59687 6.35938 5.12187C6.35938 2.64687 8.42188 0.618744 11 0.618744C13.5781 0.618744 15.6406 2.64687 15.6406 5.12187C15.6406 7.59687 13.5781 9.62499 11 9.62499ZM11 2.16562C9.28125 2.16562 7.90625 3.50624 7.90625 5.12187C7.90625 6.73749 9.28125 8.07812 11 8.07812C12.7188 8.07812 14.0938 6.73749 14.0938 5.12187C14.0938 3.50624 12.7188 2.16562 11 2.16562Z"
-                                                fill=""></path>
-                                            <path
-                                                d="M17.7719 21.4156H4.2281C3.5406 21.4156 2.9906 20.8656 2.9906 20.1781V17.0844C2.9906 13.7156 5.7406 10.9656 9.10935 10.9656H12.925C16.2937 10.9656 19.0437 13.7156 19.0437 17.0844V20.1781C19.0094 20.8312 18.4594 21.4156 17.7719 21.4156ZM4.53748 19.8687H17.4969V17.0844C17.4969 14.575 15.4344 12.5125 12.925 12.5125H9.07498C6.5656 12.5125 4.5031 14.575 4.5031 17.0844V19.8687H4.53748Z"
-                                                fill=""></path>
-                                        </svg>
-                                        My Profile
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="profile.html"
-                                        class="flex items-center gap-3.5 text-sm font-medium duration-300 ease-in-out hover:text-primary lg:text-base">
-                                        <svg class="fill-current" width="22" height="22" viewBox="0 0 22 22" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path
-                                                d="M11 9.62499C8.42188 9.62499 6.35938 7.59687 6.35938 5.12187C6.35938 2.64687 8.42188 0.618744 11 0.618744C13.5781 0.618744 15.6406 2.64687 15.6406 5.12187C15.6406 7.59687 13.5781 9.62499 11 9.62499ZM11 2.16562C9.28125 2.16562 7.90625 3.50624 7.90625 5.12187C7.90625 6.73749 9.28125 8.07812 11 8.07812C12.7188 8.07812 14.0938 6.73749 14.0938 5.12187C14.0938 3.50624 12.7188 2.16562 11 2.16562Z"
-                                                fill=""></path>
-                                            <path
-                                                d="M17.7719 21.4156H4.2281C3.5406 21.4156 2.9906 20.8656 2.9906 20.1781V17.0844C2.9906 13.7156 5.7406 10.9656 9.10935 10.9656H12.925C16.2937 10.9656 19.0437 13.7156 19.0437 17.0844V20.1781C19.0094 20.8312 18.4594 21.4156 17.7719 21.4156ZM4.53748 19.8687H17.4969V17.0844C17.4969 14.575 15.4344 12.5125 12.925 12.5125H9.07498C6.5656 12.5125 4.5031 14.575 4.5031 17.0844V19.8687H4.53748Z"
-                                                fill=""></path>
-                                        </svg>
-                                        My Profile
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="profile.html"
-                                        class="flex items-center gap-3.5 text-sm font-medium duration-300 ease-in-out hover:text-primary lg:text-base">
-                                        <svg class="fill-current" width="22" height="22" viewBox="0 0 22 22" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path
-                                                d="M11 9.62499C8.42188 9.62499 6.35938 7.59687 6.35938 5.12187C6.35938 2.64687 8.42188 0.618744 11 0.618744C13.5781 0.618744 15.6406 2.64687 15.6406 5.12187C15.6406 7.59687 13.5781 9.62499 11 9.62499ZM11 2.16562C9.28125 2.16562 7.90625 3.50624 7.90625 5.12187C7.90625 6.73749 9.28125 8.07812 11 8.07812C12.7188 8.07812 14.0938 6.73749 14.0938 5.12187C14.0938 3.50624 12.7188 2.16562 11 2.16562Z"
-                                                fill=""></path>
-                                            <path
-                                                d="M17.7719 21.4156H4.2281C3.5406 21.4156 2.9906 20.8656 2.9906 20.1781V17.0844C2.9906 13.7156 5.7406 10.9656 9.10935 10.9656H12.925C16.2937 10.9656 19.0437 13.7156 19.0437 17.0844V20.1781C19.0094 20.8312 18.4594 21.4156 17.7719 21.4156ZM4.53748 19.8687H17.4969V17.0844C17.4969 14.575 15.4344 12.5125 12.925 12.5125H9.07498C6.5656 12.5125 4.5031 14.575 4.5031 17.0844V19.8687H4.53748Z"
-                                                fill=""></path>
-                                        </svg>
-                                        My Profile
-                                    </a>
-                                </li>
-                            </ul>
-                            <button
-                                class="flex items-center gap-3.5 px-6 py-4 text-sm font-EstedadMedium duration-300 ease-in-out hover:text-red-700 lg:text-base">
-                                <svg class="fill-current" width="22" height="22" viewBox="0 0 22 22" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M15.5375 0.618744H11.6531C10.7594 0.618744 10.0031 1.37499 10.0031 2.26874V4.64062C10.0031 5.05312 10.3469 5.39687 10.7594 5.39687C11.1719 5.39687 11.55 5.05312 11.55 4.64062V2.23437C11.55 2.16562 11.5844 2.13124 11.6531 2.13124H15.5375C16.3625 2.13124 17.0156 2.78437 17.0156 3.60937V18.3562C17.0156 19.1812 16.3625 19.8344 15.5375 19.8344H11.6531C11.5844 19.8344 11.55 19.8 11.55 19.7312V17.3594C11.55 16.9469 11.2062 16.6031 10.7594 16.6031C10.3125 16.6031 10.0031 16.9469 10.0031 17.3594V19.7312C10.0031 20.625 10.7594 21.3812 11.6531 21.3812H15.5375C17.2219 21.3812 18.5625 20.0062 18.5625 18.3562V3.64374C18.5625 1.95937 17.1875 0.618744 15.5375 0.618744Z"
-                                        fill=""></path>
-                                    <path
-                                        d="M6.05001 11.7563H12.2031C12.6156 11.7563 12.9594 11.4125 12.9594 11C12.9594 10.5875 12.6156 10.2438 12.2031 10.2438H6.08439L8.21564 8.07813C8.52501 7.76875 8.52501 7.2875 8.21564 6.97812C7.90626 6.66875 7.42501 6.66875 7.11564 6.97812L3.67814 10.4844C3.36876 10.7938 3.36876 11.275 3.67814 11.5844L7.11564 15.0906C7.25314 15.2281 7.45939 15.3312 7.66564 15.3312C7.87189 15.3312 8.04376 15.2625 8.21564 15.125C8.52501 14.8156 8.52501 14.3344 8.21564 14.025L6.05001 11.7563Z"
-                                        fill=""></path>
-                                </svg>
-                                Log Out
-                            </button>
+                            <div
+                                class="profile-menu absolute invisible opacity-0 -top-14 left-0 mt-4 flex w-60 flex-col rounded-lg border bg-white shadow-sm duration-300 transition-all">
+                                <div class="p-5 border-b">
+                                    <h5 class="text-base mb-2 font-EstedadMedium text-zinc-900"><a href="#">طاهر
+                                            نصیری</a></h5>
+                                    <a class="block text-sm text-slate-600" href="#">mailnam@mail.com</a>
+                                </div>
+                                <ul class="flex flex-col gap-5 border-b px-6 py-7">
+                                    <li>
+                                        <a href="profile.html"
+                                            class="flex items-center gap-3.5 text-sm font-medium duration-300 ease-in-out hover:text-primary lg:text-base">
+                                            <svg class="fill-current" width="22" height="22" viewBox="0 0 22 22"
+                                                fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M11 9.62499C8.42188 9.62499 6.35938 7.59687 6.35938 5.12187C6.35938 2.64687 8.42188 0.618744 11 0.618744C13.5781 0.618744 15.6406 2.64687 15.6406 5.12187C15.6406 7.59687 13.5781 9.62499 11 9.62499ZM11 2.16562C9.28125 2.16562 7.90625 3.50624 7.90625 5.12187C7.90625 6.73749 9.28125 8.07812 11 8.07812C12.7188 8.07812 14.0938 6.73749 14.0938 5.12187C14.0938 3.50624 12.7188 2.16562 11 2.16562Z"
+                                                    fill=""></path>
+                                                <path
+                                                    d="M17.7719 21.4156H4.2281C3.5406 21.4156 2.9906 20.8656 2.9906 20.1781V17.0844C2.9906 13.7156 5.7406 10.9656 9.10935 10.9656H12.925C16.2937 10.9656 19.0437 13.7156 19.0437 17.0844V20.1781C19.0094 20.8312 18.4594 21.4156 17.7719 21.4156ZM4.53748 19.8687H17.4969V17.0844C17.4969 14.575 15.4344 12.5125 12.925 12.5125H9.07498C6.5656 12.5125 4.5031 14.575 4.5031 17.0844V19.8687H4.53748Z"
+                                                    fill=""></path>
+                                            </svg>
+                                            My Profile
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="profile.html"
+                                            class="flex items-center gap-3.5 text-sm font-medium duration-300 ease-in-out hover:text-primary lg:text-base">
+                                            <svg class="fill-current" width="22" height="22" viewBox="0 0 22 22"
+                                                fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M11 9.62499C8.42188 9.62499 6.35938 7.59687 6.35938 5.12187C6.35938 2.64687 8.42188 0.618744 11 0.618744C13.5781 0.618744 15.6406 2.64687 15.6406 5.12187C15.6406 7.59687 13.5781 9.62499 11 9.62499ZM11 2.16562C9.28125 2.16562 7.90625 3.50624 7.90625 5.12187C7.90625 6.73749 9.28125 8.07812 11 8.07812C12.7188 8.07812 14.0938 6.73749 14.0938 5.12187C14.0938 3.50624 12.7188 2.16562 11 2.16562Z"
+                                                    fill=""></path>
+                                                <path
+                                                    d="M17.7719 21.4156H4.2281C3.5406 21.4156 2.9906 20.8656 2.9906 20.1781V17.0844C2.9906 13.7156 5.7406 10.9656 9.10935 10.9656H12.925C16.2937 10.9656 19.0437 13.7156 19.0437 17.0844V20.1781C19.0094 20.8312 18.4594 21.4156 17.7719 21.4156ZM4.53748 19.8687H17.4969V17.0844C17.4969 14.575 15.4344 12.5125 12.925 12.5125H9.07498C6.5656 12.5125 4.5031 14.575 4.5031 17.0844V19.8687H4.53748Z"
+                                                    fill=""></path>
+                                            </svg>
+                                            My Profile
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="profile.html"
+                                            class="flex items-center gap-3.5 text-sm font-medium duration-300 ease-in-out hover:text-primary lg:text-base">
+                                            <svg class="fill-current" width="22" height="22" viewBox="0 0 22 22"
+                                                fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M11 9.62499C8.42188 9.62499 6.35938 7.59687 6.35938 5.12187C6.35938 2.64687 8.42188 0.618744 11 0.618744C13.5781 0.618744 15.6406 2.64687 15.6406 5.12187C15.6406 7.59687 13.5781 9.62499 11 9.62499ZM11 2.16562C9.28125 2.16562 7.90625 3.50624 7.90625 5.12187C7.90625 6.73749 9.28125 8.07812 11 8.07812C12.7188 8.07812 14.0938 6.73749 14.0938 5.12187C14.0938 3.50624 12.7188 2.16562 11 2.16562Z"
+                                                    fill=""></path>
+                                                <path
+                                                    d="M17.7719 21.4156H4.2281C3.5406 21.4156 2.9906 20.8656 2.9906 20.1781V17.0844C2.9906 13.7156 5.7406 10.9656 9.10935 10.9656H12.925C16.2937 10.9656 19.0437 13.7156 19.0437 17.0844V20.1781C19.0094 20.8312 18.4594 21.4156 17.7719 21.4156ZM4.53748 19.8687H17.4969V17.0844C17.4969 14.575 15.4344 12.5125 12.925 12.5125H9.07498C6.5656 12.5125 4.5031 14.575 4.5031 17.0844V19.8687H4.53748Z"
+                                                    fill=""></path>
+                                            </svg>
+                                            My Profile
+                                        </a>
+                                    </li>
+                                </ul>
+                                <button
+                                    class="flex items-center gap-3.5 px-6 py-4 text-sm font-EstedadMedium duration-300 ease-in-out hover:text-red-700 lg:text-base">
+                                    <svg class="fill-current" width="22" height="22" viewBox="0 0 22 22" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M15.5375 0.618744H11.6531C10.7594 0.618744 10.0031 1.37499 10.0031 2.26874V4.64062C10.0031 5.05312 10.3469 5.39687 10.7594 5.39687C11.1719 5.39687 11.55 5.05312 11.55 4.64062V2.23437C11.55 2.16562 11.5844 2.13124 11.6531 2.13124H15.5375C16.3625 2.13124 17.0156 2.78437 17.0156 3.60937V18.3562C17.0156 19.1812 16.3625 19.8344 15.5375 19.8344H11.6531C11.5844 19.8344 11.55 19.8 11.55 19.7312V17.3594C11.55 16.9469 11.2062 16.6031 10.7594 16.6031C10.3125 16.6031 10.0031 16.9469 10.0031 17.3594V19.7312C10.0031 20.625 10.7594 21.3812 11.6531 21.3812H15.5375C17.2219 21.3812 18.5625 20.0062 18.5625 18.3562V3.64374C18.5625 1.95937 17.1875 0.618744 15.5375 0.618744Z"
+                                            fill=""></path>
+                                        <path
+                                            d="M6.05001 11.7563H12.2031C12.6156 11.7563 12.9594 11.4125 12.9594 11C12.9594 10.5875 12.6156 10.2438 12.2031 10.2438H6.08439L8.21564 8.07813C8.52501 7.76875 8.52501 7.2875 8.21564 6.97812C7.90626 6.66875 7.42501 6.66875 7.11564 6.97812L3.67814 10.4844C3.36876 10.7938 3.36876 11.275 3.67814 11.5844L7.11564 15.0906C7.25314 15.2281 7.45939 15.3312 7.66564 15.3312C7.87189 15.3312 8.04376 15.2625 8.21564 15.125C8.52501 14.8156 8.52501 14.3344 8.21564 14.025L6.05001 11.7563Z"
+                                            fill=""></path>
+                                    </svg>
+                                    Log Out
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -175,9 +218,10 @@
     </header>
 
     <!-- Sidebar -->
-    <aside class="bg-sky-950 h-full w-64 py-8 fixed top-28 right-0 shadow-sm z-50 transition-all">
+    <aside
+        class="bg-sky-950 h-full w-40 md:w-52 lg:w-64 py-8 fixed top-[8.5rem] md:top-28 -right-64 shadow-sm z-50 transition-all">
         <nav>
-            <ul class="text-white/60">
+            <ul class="text-white/60 child:text-sm child:md:text-base">
                 <li class="side-bar side-bar--active">
                     <a class="py-4 px-6 block transition-all" href="#">صفحه اصلی
                     </a>
@@ -213,13 +257,341 @@
         </nav>
     </aside>
 
-    <main class="mr-64 mt-28 py-9 px-14 transition-all">
+    <main class="mr-0 mt-28 py-9 px-14 transition-all">
+
+
         <div class="container">
-            <h1>افزودن دوره جدید</h1>
+            <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+
+                <div class="py-5 px-6 bg-white">
+                    <h4 class="text-sm md:text-base font-EstedadBold">کاربران اخیرا <span class="text-teal-600"> ثبت
+                            نام
+                        </span>
+                        شده</h4>
+                </div>
+
+                <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                    <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                        <tr>
+                            <th scope="col" class="p-4">
+                                <div class="flex items-center">
+                                    <input id="checkbox-all" type="checkbox"
+                                        class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                                    <label for="checkbox-all" class="sr-only">checkbox</label>
+                                </div>
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                Product name
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                Color
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                Category
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                Price
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                Action
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr
+                            class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                            <td class="w-4 p-4">
+                                <div class="flex items-center">
+                                    <input id="checkbox-table-1" type="checkbox"
+                                        class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                                    <label for="checkbox-table-1" class="sr-only">checkbox</label>
+                                </div>
+                            </td>
+                            <th scope="row"
+                                class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                Apple MacBook Pro 17"
+                            </th>
+                            <td class="px-6 py-4">
+                                Silver
+                            </td>
+                            <td class="px-6 py-4">
+                                Laptop
+                            </td>
+                            <td class="px-6 py-4">
+                                $2999
+                            </td>
+                            <td class="px-6 py-4">
+                                <a href="#"
+                                    class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                            </td>
+                        </tr>
+                        <tr
+                            class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                            <td class="w-4 p-4">
+                                <div class="flex items-center">
+                                    <input id="checkbox-table-2" type="checkbox"
+                                        class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                                    <label for="checkbox-table-2" class="sr-only">checkbox</label>
+                                </div>
+                            </td>
+                            <th scope="row"
+                                class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                Microsoft Surface Pro
+                            </th>
+                            <td class="px-6 py-4">
+                                White
+                            </td>
+                            <td class="px-6 py-4">
+                                Laptop PC
+                            </td>
+                            <td class="px-6 py-4">
+                                $1999
+                            </td>
+                            <td class="px-6 py-4">
+                                <a href="#"
+                                    class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                            </td>
+                        </tr>
+                        <tr
+                            class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                            <td class="w-4 p-4">
+                                <div class="flex items-center">
+                                    <input id="checkbox-table-3" type="checkbox"
+                                        class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                                    <label for="checkbox-table-3" class="sr-only">checkbox</label>
+                                </div>
+                            </td>
+                            <th scope="row"
+                                class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                Magic Mouse 2
+                            </th>
+                            <td class="px-6 py-4">
+                                Black
+                            </td>
+                            <td class="px-6 py-4">
+                                Accessories
+                            </td>
+                            <td class="px-6 py-4">
+                                $99
+                            </td>
+                            <td class="px-6 py-4">
+                                <a href="#"
+                                    class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                            </td>
+                        </tr>
+                        <tr
+                            class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                            <td class="w-4 p-4">
+                                <div class="flex items-center">
+                                    <input id="checkbox-table-3" type="checkbox"
+                                        class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                                    <label for="checkbox-table-3" class="sr-only">checkbox</label>
+                                </div>
+                            </td>
+                            <th scope="row"
+                                class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                Apple Watch
+                            </th>
+                            <td class="px-6 py-4">
+                                Silver
+                            </td>
+                            <td class="px-6 py-4">
+                                Accessories
+                            </td>
+                            <td class="px-6 py-4">
+                                $179
+                            </td>
+                            <td class="px-6 py-4">
+                                <a href="#"
+                                    class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                            </td>
+                        </tr>
+                        <tr
+                            class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                            <td class="w-4 p-4">
+                                <div class="flex items-center">
+                                    <input id="checkbox-table-3" type="checkbox"
+                                        class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                                    <label for="checkbox-table-3" class="sr-only">checkbox</label>
+                                </div>
+                            </td>
+                            <th scope="row"
+                                class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                iPad
+                            </th>
+                            <td class="px-6 py-4">
+                                Gold
+                            </td>
+                            <td class="px-6 py-4">
+                                Tablet
+                            </td>
+                            <td class="px-6 py-4">
+                                $699
+                            </td>
+                            <td class="px-6 py-4">
+                                <a href="#"
+                                    class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                            </td>
+                        </tr>
+                        <tr class="bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-600">
+                            <td class="w-4 p-4">
+                                <div class="flex items-center">
+                                    <input id="checkbox-table-3" type="checkbox"
+                                        class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                                    <label for="checkbox-table-3" class="sr-only">checkbox</label>
+                                </div>
+                            </td>
+                            <th scope="row"
+                                class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                Apple iMac 27"
+                            </th>
+                            <td class="px-6 py-4">
+                                Silver
+                            </td>
+                            <td class="px-6 py-4">
+                                PC Desktop
+                            </td>
+                            <td class="px-6 py-4">
+                                $3999
+                            </td>
+                            <td class="px-6 py-4">
+                                <a href="#"
+                                    class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
         </div>
+
+        <section class="recently-user mb-8 mt-10">
+            <div class="container">
+                <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+                    <div class="py-5 px-6 bg-white">
+                        <h4 class="text-sm md:text-base font-EstedadBold">کاربران اخیرا <span class="text-teal-600"> ثبت
+                                نام
+                            </span>
+                            شده</h4>
+                    </div>
+                    <table class="w-full text-sm md:text-base rtl:text-right text-gray-500">
+                        <thead class="text-xs md:text-base text-gray-700 uppercase bg-gray-50">
+                            <tr>
+                                <th scope="col" class="px-6 py-3 text-nowrap">
+                                    شناسه
+                                </th>
+                                <th scope="col" class="px-6 py-3 text-nowrap">
+                                    نام و نام خانوادگی
+                                </th>
+                                <th scope="col" class="px-6 py-3 text-nowrap">
+                                    نام کاربری
+                                </th>
+                                <th scope="col" class="px-6 py-3 text-nowrap">
+                                    شماره
+                                </th>
+                                <th scope="col" class="px-6 py-3 text-nowrap">
+                                    ایمیل
+                                </th>
+                                <th scope="col" class="px-6 py-3 text-nowrap">
+                                    تاریخ ثبت نام
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="bg-white border-b odd:bg-white  even:bg-gray-100">
+                                <th scope="row"
+                                    class="px-6 py-4 font-EstedadMedium text-gray-900 whitespace-nowrap text-xs text-nowrap sm:text-sm md:text-base">
+                                    1
+                                </th>
+                                <td class="px-6 py-4 text-xs text-nowrap sm:text-sm md:text-base">
+                                    ahmad rashidi
+                                </td>
+                                <td class="px-6 py-4 text-xs text-nowrap sm:text-sm md:text-base">
+                                    Ahmad8912
+                                </td>
+                                <td class="px-6 py-4 text-xs text-nowrap sm:text-sm md:text-base">
+                                    09123456785
+                                </td>
+                                <td class="px-6 py-4 text-xs text-nowrap sm:text-sm md:text-base">
+                                    Ahmad8912@gmail.com
+                                </td>
+                                <td class="px-6 py-4 text-xs text-nowrap sm:text-sm md:text-base">
+                                    2024-03-12
+                                </td>
+                            </tr>
+                            <tr class="bg-white border-b odd:bg-white  even:bg-gray-100">
+                                <th scope="row"
+                                    class="px-6 py-4 font-EstedadMedium text-gray-900 whitespace-nowrap text-xs text-nowrap sm:text-sm md:text-base">
+                                    1
+                                </th>
+                                <td class="px-6 py-4 text-xs text-nowrap sm:text-sm md:text-base">
+                                    ahmad rashidi
+                                </td>
+                                <td class="px-6 py-4 text-xs text-nowrap sm:text-sm md:text-base">
+                                    Ahmad8912
+                                </td>
+                                <td class="px-6 py-4 text-xs text-nowrap sm:text-sm md:text-base">
+                                    09123456785
+                                </td>
+                                <td class="px-6 py-4 text-xs text-nowrap sm:text-sm md:text-base">
+                                    Ahmad8912@gmail.com
+                                </td>
+                                <td class="px-6 py-4 text-xs text-nowrap sm:text-sm md:text-base">
+                                    2024-03-12
+                                </td>
+                            </tr>
+                            <tr class="bg-white border-b odd:bg-white  even:bg-gray-100">
+                                <th scope="row"
+                                    class="px-6 py-4 font-EstedadMedium text-gray-900 whitespace-nowrap text-xs text-nowrap sm:text-sm md:text-base">
+                                    1
+                                </th>
+                                <td class="px-6 py-4 text-xs text-nowrap sm:text-sm md:text-base">
+                                    ahmad rashidi
+                                </td>
+                                <td class="px-6 py-4 text-xs text-nowrap sm:text-sm md:text-base">
+                                    Ahmad8912
+                                </td>
+                                <td class="px-6 py-4 text-xs text-nowrap sm:text-sm md:text-base">
+                                    09123456785
+                                </td>
+                                <td class="px-6 py-4 text-xs text-nowrap sm:text-sm md:text-base">
+                                    Ahmad8912@gmail.com
+                                </td>
+                                <td class="px-6 py-4 text-xs text-nowrap sm:text-sm md:text-base">
+                                    2024-03-12
+                                </td>
+                            </tr>
+                            <tr class="bg-white border-b odd:bg-white  even:bg-gray-100">
+                                <th scope="row"
+                                    class="px-6 py-4 font-EstedadMedium text-gray-900 whitespace-nowrap text-xs text-nowrap sm:text-sm md:text-base">
+                                    1
+                                </th>
+                                <td class="px-6 py-4 text-xs text-nowrap sm:text-sm md:text-base">
+                                    ahmad rashidi
+                                </td>
+                                <td class="px-6 py-4 text-xs text-nowrap sm:text-sm md:text-base">
+                                    Ahmad8912
+                                </td>
+                                <td class="px-6 py-4 text-xs text-nowrap sm:text-sm md:text-base">
+                                    09123456785
+                                </td>
+                                <td class="px-6 py-4 text-xs text-nowrap sm:text-sm md:text-base">
+                                    Ahmad8912@gmail.com
+                                </td>
+                                <td class="px-6 py-4 text-xs text-nowrap sm:text-sm md:text-base">
+                                    2024-03-12
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
     </main>
 
-    <script src="../js/panel/style.js"></script>
+    <script type="module" src="../js/panel/style.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 
 </html>

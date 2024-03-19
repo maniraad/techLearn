@@ -14,7 +14,6 @@ window.addEventListener('load', () => {
     const mainElem = $.querySelector('main');
     const menuButton = $.querySelector('.menu-btn');
     const adminNameElem = $.querySelector('.admin-name');
-    const adminWelcomeElem = $.querySelector('.admin-welcome-name');
     const adminImageElem = $.querySelector('.admin-img');
 
     // Admin Info
@@ -25,7 +24,6 @@ window.addEventListener('load', () => {
 
             // Show Admin Name
             adminNameElem.innerHTML = admin.name
-            adminWelcomeElem.innerHTML = `خوش آمدید , ${admin.name}`
             adminImageElem.setAttribute('src', `http://localhost:4000/${admin.profile}`)
 
             // Show Notifications
@@ -44,8 +42,8 @@ window.addEventListener('load', () => {
 
             // Handle Menu Button
             menuButton.addEventListener('click', () => {
-                asideElem.classList.toggle('!-right-64');
-                mainElem.classList.toggle('md:!mr-0');
+                asideElem.classList.toggle('!-right-0');
+                mainElem.classList.toggle('md:!mr-64');
             });
 
         } else {
