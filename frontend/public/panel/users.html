@@ -219,105 +219,47 @@
 
     <!-- Sidebar -->
     <aside
-    class="bg-sky-950 h-full w-40 md:w-52 lg:w-64 py-8 fixed top-[8.5rem] md:top-28 -right-64 shadow-sm z-50 transition-all">
-    <nav>
-        <ul class="text-white/60 child:text-sm child:md:text-base">
-            <li class="side-bar side-bar--active">
-                <a class="py-4 px-6 block transition-all" href="main.html">صفحه اصلی
-                </a>
-            </li>
-            <li class="side-bar">
-                <a class="py-4 px-6 block transition-all" href="courses.html">دوره ها</a>
-            </li>
-            <li class="side-bar">
-                <a class="py-4 px-6 block transition-all" href="menus.html">منو ها</a>
-            </li>
-            <li class="side-bar">
-                <a class="py-4 px-6 block transition-all" href="articles.html">مقاله ها</a>
-            </li>
-            <li class="side-bar">
-                <a class="py-4 px-6 block transition-all" href="#">پیش نویس ها</a>
-            </li>
-            <li class="side-bar">
-                <a class="py-4 px-6 block transition-all" href="users.html">کاربران</a>
-            </li>
-            <li class="side-bar">
-                <a class="py-4 px-6 block transition-all" href="categories.html">دسته‌بندی‌ ها</a>
-            </li>
-            <li class="side-bar">
-                <a class="py-4 px-6 block transition-all" href="messages.html">پیغام ها</a>
-            </li>
-            <li class="side-bar">
-                <a class="py-4 px-6 block transition-all" href="discount.html">کدهای تخفیف</a>
-            </li>
-            <li class="side-bar">
-                <a class="py-4 px-6 block transition-all" href="#">تیکت‌ ها</a>
-            </li>
-        </ul>
-    </nav>
-</aside>
-
-    <main class="mr-0 mt-28 py-9 px-14 transition-all">
+        class="bg-sky-950 h-full w-40 md:w-52 lg:w-64 py-8 fixed top-[8.5rem] md:top-28 -right-64 shadow-sm z-50 transition-all">
+        <nav>
+            <ul class="text-white/60 child:text-sm child:md:text-base">
+                <li class="side-bar side-bar--active">
+                    <a class="py-4 px-6 block transition-all" href="main.html">صفحه اصلی
+                    </a>
+                </li>
+                <li class="side-bar">
+                    <a class="py-4 px-6 block transition-all" href="courses.html">دوره ها</a>
+                </li>
+                <li class="side-bar">
+                    <a class="py-4 px-6 block transition-all" href="menus.html">منو ها</a>
+                </li>
+                <li class="side-bar">
+                    <a class="py-4 px-6 block transition-all" href="articles.html">مقاله ها</a>
+                </li>
+                <li class="side-bar">
+                    <a class="py-4 px-6 block transition-all" href="#">پیش نویس ها</a>
+                </li>
+                <li class="side-bar">
+                    <a class="py-4 px-6 block transition-all" href="users.html">کاربران</a>
+                </li>
+                <li class="side-bar">
+                    <a class="py-4 px-6 block transition-all" href="categories.html">دسته‌بندی‌ ها</a>
+                </li>
+                <li class="side-bar">
+                    <a class="py-4 px-6 block transition-all" href="messages.html">پیغام ها</a>
+                </li>
+                <li class="side-bar">
+                    <a class="py-4 px-6 block transition-all" href="discount.html">کدهای تخفیف</a>
+                </li>
+                <li class="side-bar">
+                    <a class="py-4 px-6 block transition-all" href="#">تیکت‌ ها</a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
 
 
-        <div class="container">
-            <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
-
-                <div class="py-5 px-6 bg-white">
-                    <h4 class="text-sm md:text-base font-EstedadBold"> لیست  <span class="text-teal-600"> دوره ها
-                            
-                        </span>
-                        </h4>
-                </div>
-
-                <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-                    <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-                        <tr>
-                            <th scope="col" class="p-4">
-                                <div class="flex items-center">
-                                    <input id="checkbox-all" type="checkbox"
-                                        class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-                                    <label for="checkbox-all" class="sr-only">checkbox</label>
-                                </div>
-                            </th>
-                            <th scope="col" class="px-6 py-3 text-nowrap">
-                                شناسه
-                            </th>
-                            <th scope="col" class="px-6 py-3 text-nowrap">
-                                نام دوره
-                            </th>
-                            <th scope="col" class="px-6 py-3 text-nowrap">
-                                مبلغ
-                            </th>
-                            <th scope="col" class="px-6 py-3 text-nowrap">
-                                شرکت کننده ها
-                            </th>
-                            <th scope="col" class="px-6 py-3 text-nowrap">
-                                دسته‌بندی‌
-                            </th>
-                            <th scope="col" class="px-6 py-3 text-nowrap">
-                                وضعیت دروه
-                            </th>
-                            <th scope="col" class="px-6 py-3 text-nowrap">
-                                ویرایش
-                            </th>
-                            <th scope="col" class="px-6 py-3 text-nowrap">
-                                حذف
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody id="courses-wrapper">
-                        <!-- Data Loaded From Js -->
-                    </tbody>
-                </table>
-
-            </div>
-        </div>
-
-    </main>
-
-    <script type="module" src="../js/panel/style.js"></script>
-    <script type="module" src="../js/panel/courses.js"></script>
+<script type="module" src="../js/panel/style.js"></script>
+    <script type="module" src="../js/panel/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 
