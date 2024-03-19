@@ -1,7 +1,7 @@
-import { getAllCourses, createNewCourse } from "./func/shared.js";
+import { getAllCourses, prepareCreateCourseForm } from "./func/shared.js";
 
 window.addEventListener("load", () => {
     getAllCourses();
-    createNewCourse();
+    prepareCreateCourseForm();
 });
 

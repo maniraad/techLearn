@@ -1,6 +1,8 @@
 import { getToken } from "../../funcs/utils.js";
 
-let categoryID = null
+let categoryID = null;
+let status = null;
+let cover = null;
 
 const insertNotificationHTMLTemplate = (notifications) => {
 
@@ -110,8 +112,11 @@ const getAllCourses = async () => {
     });
 };
 
-const getAndShowCategoryOption = async () => {
+const prepareCreateCourseForm = async () => {
     const categoryListElem = document.querySelector('.category-list');
+    const startCourseElem = document.querySelector('#start');
+    const presellCourseElem = document.querySelector('#presell');
+    const coverCourseElem = document.querySelector('.cover');
 
     const res = await fetch(`http://localhost:4000/v1/category`)
 
@@ -119,10 +124,16 @@ const getAndShowCategoryOption = async () => {
 
     categories.forEach(category => categoryListElem.insertAdjacentHTML("beforeend", `<option value="${category._id}" class="text-gray-700">${category.title}</option>`));
 
-    categoryListElem.addEventListener('change', (event) => categoryID = event.target.value);
+    categoryListElem.addEventListener('change', event => categoryID = event.target.value);
+
+    startCourseElem.addEventListener("change", event => status = event.target.value);
+    presellCourseElem.addEventListener("change", event => status = event.target.value);
+    coverCourseElem.addEventListener("change", event => cover = event.target.files)
 };
 
 const createNewCourse = async () => {
+
+    
 };
 
-export { insertNotificationHTMLTemplate, seenNotification, getAllCourses, createNewCourse };
+export { insertNotificationHTMLTemplate, seenNotification, getAllCourses, prepareCreateCourseForm };
