@@ -45,7 +45,7 @@ window.addEventListener('load', () => {
             // Handle Menu Button
             menuButton.addEventListener('click', () => {
                 asideElem.classList.toggle('!-right-64');
-                mainElem.classList.toggle('!mr-0');
+                mainElem.classList.toggle('md:!mr-0');
             });
 
         } else {
