@@ -132,8 +132,21 @@ const prepareCreateCourseForm = async () => {
 };
 
 const createNewCourse = async () => {
+    const courseNameElem = document.querySelector('#course-name');
+    const coursePriceElem = document.querySelector('#course-price');
+    const courseShortnameElem = document.querySelector('#course-shortname');
+    const courseDescriptionElem = document.querySelector('#course-description');
 
-    
+    const formData = new FormData();
+    formData.append('name', courseNameElem.value.trim());
+    formData.append('price', coursePriceElem.value.trim());
+    formData.append('shortName', courseShortnameElem.value.trim());
+    formData.append('categoryID', categoryID);
+    formData.append('status', status);
+    formData.append('cover', cover);
+    formData.append('description', courseDescriptionElem.value.trim());
+
+    console.log(formData);
 };
 
-export { insertNotificationHTMLTemplate, seenNotification, getAllCourses, prepareCreateCourseForm };
+export { insertNotificationHTMLTemplate, seenNotification, getAllCourses, prepareCreateCourseForm, createNewCourse };
