@@ -1020,6 +1020,10 @@ video {
   grid-column: span 1 / span 1;
 }
 
+.col-span-full {
+  grid-column: 1 / -1;
+}
+
 .m-auto {
   margin: auto;
 }
@@ -1878,6 +1882,10 @@ video {
 
 .border-2 {
   border-width: 2px;
+}
+
+.border-\[1\.5px\] {
+  border-width: 1.5px;
 }
 
 .border-b {
@@ -2900,6 +2908,10 @@ video {
 .active\:border-blue-500:active {
   --tw-border-opacity: 1;
   border-color: rgb(59 130 246 / var(--tw-border-opacity));
+}
+
+.disabled\:cursor-default:disabled {
+  cursor: default;
 }
 
 .group:hover .group-hover\:visible {

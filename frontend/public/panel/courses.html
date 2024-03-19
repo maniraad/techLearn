@@ -297,10 +297,9 @@
                             </label>
                             <div class="relative z-20 bg-white">
                                 <select
-                                    class="relative text-gray-700 z-20 w-full appearance-none rounded-lg border border-solid bg-transparent py-3 pr-4 outline-none transition focus:border-blue-500 active:border-blue-500">
-                                    <option value="" class="text-gray-700">Option 1</option>
-                                    <option value="" class="text-gray-700">Option 2</option>
-                                    <option value="" class="text-gray-700">Option 3</option>
+                                    class="category-list relative text-gray-700 z-20 w-full appearance-none rounded-lg border border-solid bg-transparent py-3 pr-4 outline-none transition focus:border-blue-500 active:border-blue-500">
+                                    <!-- Option Loaded From Js -->
+                                    <option value="" class="text-gray-700">  </option>
                                 </select>
                                 <span class="absolute left-4 top-1/2 z-20 -translate-y-1/2">
                                     <svg class="w-5 md:w-6 h-5 md:h-6 text-gray-500">
@@ -309,8 +308,13 @@
                                 </span>
                             </div>
                         </div>
-
                     </div>
+                    <div>
+                        <label class="mb-3 block text-sm font-EstedadMedium">
+                          Default textarea
+                        </label>
+                        <textarea rows="6" placeholder="Default textarea" class="w-full rounded-lg border bg-transparent px-5 py-3 font-normal outline-none transition focus:border-blue-500 active:border-blue-500 disabled:cursor-default"></textarea>
+                      </div>
                     <div class="flex-center w-full my-6">
                         <label for="dropzone-file"
                             class="flex-center flex-col w-full h-64 border-2 border-gray-300 hover:border-blue-500 border-dashed rounded-lg cursor-pointer bg-gray-50 transition-all">
