@@ -6,7 +6,6 @@ window.addEventListener("load", () => {
 
     getAllCourses().then(courses => {
         courses.forEach((course, index) => {
-            console.log(course);
             coursesWrapper.insertAdjacentHTML("beforeend", `
                              <tr
                                  class="bg-white border-b hover:bg-gray-50">
