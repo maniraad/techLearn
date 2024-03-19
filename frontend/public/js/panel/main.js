@@ -3,8 +3,7 @@ import { insertNotificationHTMLTemplate, seenNotification } from "./func/shared.
 
 window.addEventListener('load', () => {
     // Select Element From Dom
-    const $ = document;
-    const adminWelcomeElem = $.querySelector('.admin-welcome-name');
+    const adminWelcomeElem = document.querySelector('.admin-welcome-name');
 
     // Admin Info
     getAdminInfos().then(admin => {
