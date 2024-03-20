@@ -6,8 +6,8 @@ window.addEventListener("load", () => {
     getAllCourses();
     prepareCreateCourseForm();
 
-    addCourseBtn.addEventListener("click", (event) => {
-        event.preventDefault()
+    addCourseBtn.addEventListener("click", event => {
+        event.preventDefault();
         createNewCourse()
     });
 });

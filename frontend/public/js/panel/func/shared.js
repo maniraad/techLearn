@@ -1,8 +1,8 @@
 import { getToken } from "../../funcs/utils.js";
 
-let categoryID = null;
-let status = null;
-let cover = null;
+let categoryID = -1;
+let status = "start";
+let courseCover = null;
 
 const insertNotificationHTMLTemplate = (notifications) => {
 
@@ -125,10 +125,10 @@ const prepareCreateCourseForm = async () => {
     categories.forEach(category => categoryListElem.insertAdjacentHTML("beforeend", `<option value="${category._id}" class="text-gray-700">${category.title}</option>`));
 
     categoryListElem.addEventListener('change', event => categoryID = event.target.value);
-
     startCourseElem.addEventListener("change", event => status = event.target.value);
     presellCourseElem.addEventListener("change", event => status = event.target.value);
-    coverCourseElem.addEventListener("change", event => cover = event.target.files)
+    coverCourseElem.addEventListener('change', event => (courseCover = event.target.files[0]))
+
 };
 
 const createNewCourse = async () => {
@@ -139,14 +139,22 @@ const createNewCourse = async () => {
 
     const formData = new FormData();
     formData.append('name', courseNameElem.value.trim());
-    formData.append('price', coursePriceElem.value.trim());
+    formData.append('price', Number(coursePriceElem.value.trim()));
+    formData.append('description', courseDescriptionElem.value.trim());
     formData.append('shortName', courseShortnameElem.value.trim());
     formData.append('categoryID', categoryID);
     formData.append('status', status);
-    formData.append('cover', cover);
-    formData.append('description', courseDescriptionElem.value.trim());
+    formData.append('cover', courseCover);
 
-    console.log(formData);
+    const res = await fetch(`http://localhost:4000/v1/courses`, {
+        method: "POST",
+        headers: {
+            Authorization: `Bearer ${getToken()}`
+        },
+        body: formData
+    })
+
+    console.log(res);
 };
 
 export { insertNotificationHTMLTemplate, seenNotification, getAllCourses, prepareCreateCourseForm, createNewCourse };
