@@ -1,5 +1,6 @@
-import { getAllCourses, prepareCreateCourseForm, createNewCourse } from "./func/shared.js";
+import { getAllCourses, prepareCreateCourseForm, createNewCourse, removeCourse } from "./func/shared.js";
 
+window.removeCourse = removeCourse
 window.addEventListener("load", () => {
     const addCourseBtn = document.querySelector('#addCourseBtn');
 
