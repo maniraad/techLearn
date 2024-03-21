@@ -67,8 +67,7 @@ const removeNotification = (notifications, notificationID) => {
 const getAllCourses = async () => {
     const coursesWrapper = document.querySelector('#courses-wrapper');
 
-    const res = await fetch(`http://localhost:4000/v1/courses`)
-
+    const res = await fetch(`http://localhost:4000/v1/courses`);
     const courses = await res.json();
 
     courses.forEach((course, index) => {
@@ -110,6 +109,8 @@ const getAllCourses = async () => {
                                  </td>
                              </tr>`)
     });
+
+    return courses;
 };
 
 const prepareCreateCourseForm = async () => {
@@ -182,6 +183,7 @@ console.log(courseID);
                     icon: "success",
                     title: " حذف با موفقیت انجام شد",
                 });
+                getAllCourses()
             } else {
                 Toast.fire({
                     icon: "error",

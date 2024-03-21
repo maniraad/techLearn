@@ -1,5 +1,5 @@
 import { getAdminInfos } from "./func/utils.js";
-import { insertNotificationHTMLTemplate , seenNotification} from "./func/shared.js";
+import { insertNotificationHTMLTemplate, seenNotification } from "./func/shared.js";
 
 window.seenNotification = seenNotification
 window.addEventListener('load', () => {
@@ -13,8 +13,9 @@ window.addEventListener('load', () => {
     const asideElem = $.querySelector('aside');
     const mainElem = $.querySelector('main');
     const menuButton = $.querySelector('.menu-btn');
-    const adminNameElem = $.querySelector('.admin-name');
+    const adminNameElems = $.querySelectorAll('.admin-name');
     const adminImageElem = $.querySelector('.admin-img');
+    const adminEmailElem = $.querySelector('.admin-email');
 
     // Admin Info
     getAdminInfos().then(admin => {
@@ -23,7 +24,10 @@ window.addEventListener('load', () => {
         if (admin.role === "ADMIN") {
 
             // Show Admin Name
-            adminNameElem.innerHTML = admin.name
+            adminNameElems.forEach(adminNameElem => {
+                adminNameElem.innerHTML = admin.name
+            })
+            adminEmailElem.innerHTML = admin.email
             adminImageElem.setAttribute('src', `http://localhost:4000/${admin.profile}`)
 
             // Show Notifications

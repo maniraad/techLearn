@@ -40,6 +40,9 @@
             <path stroke-linecap="round" stroke-linejoin="round"
                 d="m9.75 9.75 4.5 4.5m0-4.5-4.5 4.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
         </symbol>
+        <symbol id="arrow-left-start-on-rectangle" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 9V5.25A2.25 2.25 0 0 1 10.5 3h6a2.25 2.25 0 0 1 2.25 2.25v13.5A2.25 2.25 0 0 1 16.5 21h-6a2.25 2.25 0 0 1-2.25-2.25V15m-3 0-3-3m0 0 3-3m-3 3H15" />
+          </symbol>
     </svg>
 
     <!-- Header -->
@@ -145,9 +148,8 @@
                             <div
                                 class="profile-menu absolute invisible opacity-0 -top-14 left-0 mt-4 flex w-60 flex-col rounded-lg border bg-white shadow-sm duration-300 transition-all">
                                 <div class="p-5 border-b">
-                                    <h5 class="text-base mb-2 font-EstedadMedium text-zinc-900"><a href="#">طاهر
-                                            نصیری</a></h5>
-                                    <a class="block text-sm text-slate-600" href="#">mailnam@mail.com</a>
+                                    <h5 class="text-base mb-2 font-EstedadMedium text-zinc-900"><a class="admin-name " href="#"> </a></h5>
+                                    <a class="admin-email block text-sm text-slate-600" href="#">mailnam@mail.com</a>
                                 </div>
                                 <ul class="flex flex-col gap-5 border-b px-6 py-7">
                                     <li>
@@ -197,17 +199,176 @@
                                     </li>
                                 </ul>
                                 <button
-                                    class="flex items-center gap-3.5 px-6 py-4 text-sm font-EstedadMedium duration-300 ease-in-out hover:text-red-700 lg:text-base">
-                                    <svg class="fill-current" width="22" height="22" viewBox="0 0 22 22" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M15.5375 0.618744H11.6531C10.7594 0.618744 10.0031 1.37499 10.0031 2.26874V4.64062C10.0031 5.05312 10.3469 5.39687 10.7594 5.39687C11.1719 5.39687 11.55 5.05312 11.55 4.64062V2.23437C11.55 2.16562 11.5844 2.13124 11.6531 2.13124H15.5375C16.3625 2.13124 17.0156 2.78437 17.0156 3.60937V18.3562C17.0156 19.1812 16.3625 19.8344 15.5375 19.8344H11.6531C11.5844 19.8344 11.55 19.8 11.55 19.7312V17.3594C11.55 16.9469 11.2062 16.6031 10.7594 16.6031C10.3125 16.6031 10.0031 16.9469 10.0031 17.3594V19.7312C10.0031 20.625 10.7594 21.3812 11.6531 21.3812H15.5375C17.2219 21.3812 18.5625 20.0062 18.5625 18.3562V3.64374C18.5625 1.95937 17.1875 0.618744 15.5375 0.618744Z"
-                                            fill=""></path>
-                                        <path
-                                            d="M6.05001 11.7563H12.2031C12.6156 11.7563 12.9594 11.4125 12.9594 11C12.9594 10.5875 12.6156 10.2438 12.2031 10.2438H6.08439L8.21564 8.07813C8.52501 7.76875 8.52501 7.2875 8.21564 6.97812C7.90626 6.66875 7.42501 6.66875 7.11564 6.97812L3.67814 10.4844C3.36876 10.7938 3.36876 11.275 3.67814 11.5844L7.11564 15.0906C7.25314 15.2281 7.45939 15.3312 7.66564 15.3312C7.87189 15.3312 8.04376 15.2625 8.21564 15.125C8.52501 14.8156 8.52501 14.3344 8.21564 14.025L6.05001 11.7563Z"
-                                            fill=""></path>
+                                    class="flex items-center gap-3.5 px-6 py-4 text-sm font-EstedadMedium duration-300 ease-in-out hover:text-red-600 lg:text-base">
+                                    <svg class="w-5 md:w-6 h-5 md:h-6">
+                                        <use xlink:href="#arrow-left-start-on-rectangle"></use>
                                     </svg>
-                                    Log Out
+                                    خروج
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header><header class="bg-neutral-50 shadow-md fixed top-0 left-0 w-full z-50">
+        <div class="container-2">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <!-- Header Logo -->
+                <div class="flex-center w-full md:w-auto py-2.5 md:py-0 md:h-28 mx-6 lg:mx-14 border-b md:border-none">
+                    <a href="#">
+                        <img src="../images/logo/Logo.png" alt="Logo">
+                    </a>
+                </div>
+                <!-- Header Details -->
+                <div class="w-full md:w-auto py-2.5 md:py-0 flex flex-wrap justify-between items-center grow z-50">
+                    <!-- Sidebar Header Toggle & Searchbar -->
+                    <div class="flex flex-wrap items-center gap-x-4">
+                        <!--Sidebar Header Toggle-->
+                        <div class="menu-btn cursor-pointer">
+                            <svg class="w-7 md:w-9 h-7 md:h-9 hover:text-teal-600 transition-all">
+                                <use href="#menu-bars"></use>
+                            </svg>
+                        </div>
+                        <!--Header Searchbar-->
+                        <div class="relative group hidden lg:block z-50" id="searchbox">
+                            <form class="hidden xl:block" action="" method="get">
+                                <label class="relative h-14 block transition-all">
+                                    <input id="search-input"
+                                        class="rounded-full text-slate-500 placeholder:text-slate-500 w-48 focus:w-64 h-full border border-transparent hover:border-gray-200 focus:border-gray-300 outline-none focus:text-zinc-700  bg-gray-100 text-base placeholder:text-lg pl-14 pr-5 block transition-all"
+                                        name="s" type="text" placeholder="جستجو">
+                                    <button id="search-btn"
+                                        class="absolute left-5 top-0 bottom-0 w-7 h-7 my-auto text-slate-500"
+                                        type="submit" role="button">
+                                        <svg class="w-7 h-7">
+                                            <use xlink:href="#search"></use>
+                                        </svg>
+                                    </button>
+                                </label>
+                            </form>
+                            <!-- SearchBar Mobile -->
+                            <div class="xl:hidden">
+                                <div
+                                    class="searchbox flex-center w-14 h-14 rounded-full bg-gray-100 transition-colors cursor-pointer">
+                                    <svg class="w-6 h-6 text-slate-500">
+                                        <use xlink:href="#search"></use>
+                                    </svg>
+                                </div>
+                                <!-- When Click Box Showing -->
+                                <div class="absolute -left-24 top-full pt-4 z-10 transition-all hide"
+                                    id="searchbox-dropdown">
+                                    <form action="" method="get">
+                                        <label class="relative block w-64">
+                                            <input
+                                                class="w-full h-16 pr-7 pl-10 text-lg bg-white placeholder:text-slate-500 text-zinc-700 outline-none rounded-2xl"
+                                                type="text" name="s" placeholder="جستجو در بین دوره ها">
+                                            <button
+                                                class="absolute left-0 top-0 bottom-0 w-12 h-full my-auto text-slate-500"
+                                                type="submit" role="button">
+                                                <svg class="ml-2 w-6 h-6">
+                                                    <use xlink:href="#search"></use>
+                                                </svg>
+                                            </button>
+                                        </label>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Header Profile -->
+                    <div class=" ml-4 flex items-center gap-x-2.5 md:gap-x-5">
+                        <!-- Profile Notifications -->
+                        <div class="cursor-pointer">
+                            <div class="notification-icon relative transition-all">
+                                <svg class="w-5 md:w-6 h-5 md:h-6">
+                                    <use xlink:href="#bell"></use>
+                                </svg>
+
+                                <div
+                                    class="notification-menu absolute invisible opacity-0 -top-10 left-0 mt-4 flex max-h-[415px] w-80 flex-col border shadow-sm bg-white rounded-lg cursor-auto duration-200 transition-all">
+                                    <div class="p-4">
+                                        <h5 class="notification-header text-sm font-medium text-bodydark2"></h5>
+                                    </div>
+                                    <ul class="notifications-wrapper flex h-auto flex-col overflow-y-auto">
+                                        <!-- Notifications Loaded From Js -->
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Profile Details -->
+                        <div class="relative cursor-pointer">
+                            <span class="relative flex items-center gap-x-1.5 md:gap-x-3 z-50 profile">
+                                <span class="flex items-center gap-x-1.5">
+                                    <svg class=" profile-icon w-4 h-4 transition-all duration-300">
+                                        <use href="#chevron-down"></use>
+                                    </svg>
+                                    <span class="admin-name hidden md:inline-block"></span>
+                                </span>
+                                <span>
+                                    <img
+                                        class="admin-img object-cover w-10 h-10 md:w-12 md:h-12 rounded-full inline-block cursor-pointer">
+                                </span>
+                            </span>
+                            <div
+                                class="profile-menu absolute invisible opacity-0 -top-14 left-0 mt-4 flex w-60 flex-col rounded-lg border bg-white shadow-sm duration-300 transition-all">
+                                <div class="p-5 border-b">
+                                    <h5 class="text-base mb-2 font-EstedadMedium text-zinc-900"><a class="admin-name " href="#"> </a></h5>
+                                    <a class="admin-email block text-sm text-slate-600" href="#">mailnam@mail.com</a>
+                                </div>
+                                <ul class="flex flex-col gap-5 border-b px-6 py-7">
+                                    <li>
+                                        <a href="profile.html"
+                                            class="flex items-center gap-3.5 text-sm font-medium duration-300 ease-in-out hover:text-primary lg:text-base">
+                                            <svg class="fill-current" width="22" height="22" viewBox="0 0 22 22"
+                                                fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M11 9.62499C8.42188 9.62499 6.35938 7.59687 6.35938 5.12187C6.35938 2.64687 8.42188 0.618744 11 0.618744C13.5781 0.618744 15.6406 2.64687 15.6406 5.12187C15.6406 7.59687 13.5781 9.62499 11 9.62499ZM11 2.16562C9.28125 2.16562 7.90625 3.50624 7.90625 5.12187C7.90625 6.73749 9.28125 8.07812 11 8.07812C12.7188 8.07812 14.0938 6.73749 14.0938 5.12187C14.0938 3.50624 12.7188 2.16562 11 2.16562Z"
+                                                    fill=""></path>
+                                                <path
+                                                    d="M17.7719 21.4156H4.2281C3.5406 21.4156 2.9906 20.8656 2.9906 20.1781V17.0844C2.9906 13.7156 5.7406 10.9656 9.10935 10.9656H12.925C16.2937 10.9656 19.0437 13.7156 19.0437 17.0844V20.1781C19.0094 20.8312 18.4594 21.4156 17.7719 21.4156ZM4.53748 19.8687H17.4969V17.0844C17.4969 14.575 15.4344 12.5125 12.925 12.5125H9.07498C6.5656 12.5125 4.5031 14.575 4.5031 17.0844V19.8687H4.53748Z"
+                                                    fill=""></path>
+                                            </svg>
+                                            My Profile
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="profile.html"
+                                            class="flex items-center gap-3.5 text-sm font-medium duration-300 ease-in-out hover:text-primary lg:text-base">
+                                            <svg class="fill-current" width="22" height="22" viewBox="0 0 22 22"
+                                                fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M11 9.62499C8.42188 9.62499 6.35938 7.59687 6.35938 5.12187C6.35938 2.64687 8.42188 0.618744 11 0.618744C13.5781 0.618744 15.6406 2.64687 15.6406 5.12187C15.6406 7.59687 13.5781 9.62499 11 9.62499ZM11 2.16562C9.28125 2.16562 7.90625 3.50624 7.90625 5.12187C7.90625 6.73749 9.28125 8.07812 11 8.07812C12.7188 8.07812 14.0938 6.73749 14.0938 5.12187C14.0938 3.50624 12.7188 2.16562 11 2.16562Z"
+                                                    fill=""></path>
+                                                <path
+                                                    d="M17.7719 21.4156H4.2281C3.5406 21.4156 2.9906 20.8656 2.9906 20.1781V17.0844C2.9906 13.7156 5.7406 10.9656 9.10935 10.9656H12.925C16.2937 10.9656 19.0437 13.7156 19.0437 17.0844V20.1781C19.0094 20.8312 18.4594 21.4156 17.7719 21.4156ZM4.53748 19.8687H17.4969V17.0844C17.4969 14.575 15.4344 12.5125 12.925 12.5125H9.07498C6.5656 12.5125 4.5031 14.575 4.5031 17.0844V19.8687H4.53748Z"
+                                                    fill=""></path>
+                                            </svg>
+                                            My Profile
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="profile.html"
+                                            class="flex items-center gap-3.5 text-sm font-medium duration-300 ease-in-out hover:text-primary lg:text-base">
+                                            <svg class="fill-current" width="22" height="22" viewBox="0 0 22 22"
+                                                fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M11 9.62499C8.42188 9.62499 6.35938 7.59687 6.35938 5.12187C6.35938 2.64687 8.42188 0.618744 11 0.618744C13.5781 0.618744 15.6406 2.64687 15.6406 5.12187C15.6406 7.59687 13.5781 9.62499 11 9.62499ZM11 2.16562C9.28125 2.16562 7.90625 3.50624 7.90625 5.12187C7.90625 6.73749 9.28125 8.07812 11 8.07812C12.7188 8.07812 14.0938 6.73749 14.0938 5.12187C14.0938 3.50624 12.7188 2.16562 11 2.16562Z"
+                                                    fill=""></path>
+                                                <path
+                                                    d="M17.7719 21.4156H4.2281C3.5406 21.4156 2.9906 20.8656 2.9906 20.1781V17.0844C2.9906 13.7156 5.7406 10.9656 9.10935 10.9656H12.925C16.2937 10.9656 19.0437 13.7156 19.0437 17.0844V20.1781C19.0094 20.8312 18.4594 21.4156 17.7719 21.4156ZM4.53748 19.8687H17.4969V17.0844C17.4969 14.575 15.4344 12.5125 12.925 12.5125H9.07498C6.5656 12.5125 4.5031 14.575 4.5031 17.0844V19.8687H4.53748Z"
+                                                    fill=""></path>
+                                            </svg>
+                                            My Profile
+                                        </a>
+                                    </li>
+                                </ul>
+                                <button
+                                    class="flex items-center gap-3.5 px-6 py-4 text-sm font-EstedadMedium duration-300 ease-in-out hover:text-red-600 lg:text-base">
+                                    <svg class="w-5 md:w-6 h-5 md:h-6">
+                                        <use xlink:href="#arrow-left-start-on-rectangle"></use>
+                                    </svg>
+                                    خروج
                                 </button>
                             </div>
                         </div>
