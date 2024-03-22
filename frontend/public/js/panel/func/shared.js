@@ -439,7 +439,7 @@ const createNewUser = async () => {
             };
 
             return res.json();
-        }).then(()=>{
+        }).then(() => {
             getAllUsers()
         })
 };
@@ -527,8 +527,43 @@ const banUser = async (userID) => {
 
 // Functions For Category
 
-const CategoryAllMenus = async () => {
+const getAllCategories = async () => {
+    const categoriesWrapper = document.querySelector('#categories-wrapper');
+    categoriesWrapper.innerHTML = ''
+    const res = await fetch(`http://localhost:4000/v1/category`);
+    const categories = await res.json();
 
+    categories.forEach((category, index) => {
+        console.log(category);
+        categoriesWrapper.insertAdjacentHTML("beforeend", `
+                             <tr
+                                 class="bg-white border-b hover:bg-gray-50">
+                                 <td class="w-4 p-4">
+                                     <div class="flex items-center">
+                                         <input id="checkbox-table-1" type="checkbox"
+                                             class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2 cursor-pointer">
+                                         <label for="checkbox-table-1" class="sr-only">checkbox</label>
+                                     </div>
+                                 </td>
+                                 <th scope="row"
+                                     class="px-6 py-4 text-nowrap font-medium text-gray-900 whitespace-nowrap">
+                                     ${index + 1}
+                                 </th>
+                                 <td class="px-6 py-4 text-nowrap">
+                                     ${category.title}
+                                 </td>
+                                 <td class="px-6 py-4 text-nowrap">
+                                     ${category.name}
+                                 </td>
+                                 <td class="px-6 py-4 text-nowrap">
+                                     <a href="#"
+                                         class="font-medium text-blue-600 dark:text-blue-500 hover:underline">ویرایش</a>
+                                 </td>
+                                 <td class="px-6 py-4">
+                                     <a href="#" onclick="removeCourse('${category._id}')" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">حذف</a>
+                                 </td>
+                             </tr>`)
+    });
 };
 
 const prepareCreateCategory = async () => {
@@ -543,4 +578,4 @@ const removeCategory = async (categoryID) => {
 
 };
 
-export { insertNotificationHTMLTemplate, seenNotification, getAllCourses, prepareCreateCourseForm, createNewCourse, removeCourse, getAllMenus, prepareCreateMenuItem, createNewMenuItem, removeMenuItem, getAllUsers, createNewUser, removeUser, banUser };
+export { insertNotificationHTMLTemplate, seenNotification, getAllCourses, prepareCreateCourseForm, createNewCourse, removeCourse, getAllMenus, prepareCreateMenuItem, createNewMenuItem, removeMenuItem, getAllUsers, createNewUser, removeUser, banUser, getAllCategories, prepareCreateCategory, createNewCategory, removeCategory };
