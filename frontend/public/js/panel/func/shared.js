@@ -600,7 +600,38 @@ const createNewCategory = async () => {
 };
 
 const removeCategory = async (categoryID) => {
+    Swal.fire({
+        text: "آیا از حذف دوره مورد نظر اطمینان دارید؟",
+        icon: "error",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        cancelButtonText: "خیر",
+        confirmButtonText: "بله"
+    }).then(async (result) => {
+        if (result.isConfirmed) {
+            const res = await fetch(`http://localhost:4000/v1/category/${categoryID}`, {
+                method: "DELETE",
+                headers: {
+                    Authorization: `Bearer ${getToken()}`
+                }
+            })
+            if (res.ok) {
+                Toast.fire({
+                    icon: "success",
+                    title: " حذف با موفقیت انجام شد",
+                });
 
+                getAllCategories()
+            } else {
+                Toast.fire({
+                    icon: "error",
+                    title: "مشکلی رخ داده است",
+                    text: "لطفا بعدا امتحان کنید !"
+                });
+            }
+        }
+    });
 };
 
 export { insertNotificationHTMLTemplate, seenNotification, getAllCourses, prepareCreateCourseForm, createNewCourse, removeCourse, getAllMenus, prepareCreateMenuItem, createNewMenuItem, removeMenuItem, getAllUsers, createNewUser, removeUser, banUser, getAllCategories, createNewCategory, removeCategory };

@@ -1,6 +1,6 @@
 import { getAllCategories, createNewCategory, removeCategory } from "./func/shared.js";
 
-// window.removeCourse = removeCourse
+window.removeCategory = removeCategory
 window.addEventListener("load", () => {
 
     getAllCategories();
