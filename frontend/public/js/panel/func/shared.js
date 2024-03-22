@@ -1,6 +1,7 @@
 import { Toast, getToken } from "../../funcs/utils.js";
 
 let categoryID = -1;
+let menuItemID = -1;
 let status = "start";
 let courseCover = null;
 
@@ -112,48 +113,6 @@ const getAllCourses = async () => {
 
 };
 
-const getAllMenus = async () => {
-    const menusWrapper = document.querySelector('#menus-wrapper');
-    menusWrapper.innerHTML = ''
-    const res = await fetch(`http://localhost:4000/v1/menus/all`);
-    const menus = await res.json();
-
-    menus.forEach((menu, index) => {
-        console.log(menu);
-        menusWrapper.insertAdjacentHTML("beforeend", `
-                <tr class="bg-white border-b hover:bg-gray-50">
-                    <td class="w-4 p-4">
-                        <div class="flex items-center">
-                            <input id="checkbox-table-1" type="checkbox"
-                                class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2 cursor-pointer">
-                            <label for="checkbox-table-1" class="sr-only">checkbox</label>
-                        </div>
-                    </td>
-                    <th scope="row"
-                        class="px-6 py-4 text-nowrap font-medium text-gray-900 whitespace-nowrap">
-                        ${index + 1}
-                    </th>
-                    <td class="px-6 py-4 text-nowrap">
-                       ${menu.title}
-                    </td>
-                    <td class="px-6 py-4 text-nowrap">
-                        ${menu.href}
-                    </td>
-                    <td class="px-6 py-4 text-nowrap">
-                         ${menu.parent ? menu.parent.title : "___"}
-                    </td>
-                    <td class="px-6 py-4 text-nowrap">
-                        <a href="#"
-                            class="font-medium text-blue-600 dark:text-blue-500 hover:underline">ویرایش</a>
-                    </td>
-                    <td class="px-6 py-4">
-                        <a href="#" onclick="removeCourse('65fd445d0cac932cff2557d4')"
-                            class="font-medium text-blue-600 dark:text-blue-500 hover:underline">حذف</a>
-                    </td>
-                </tr>`)
-    });
-};
-
 const prepareCreateCourseForm = async () => {
     const categoryListElem = document.querySelector('.category-list');
     const startCourseElem = document.querySelector('#start');
@@ -170,7 +129,6 @@ const prepareCreateCourseForm = async () => {
     startCourseElem.addEventListener("change", event => status = event.target.value);
     presellCourseElem.addEventListener("change", event => status = event.target.value);
     coverCourseElem.addEventListener('change', event => (courseCover = event.target.files[0]))
-
 };
 
 const createNewCourse = async () => {
@@ -251,4 +209,65 @@ const removeCourse = async (courseID) => {
     });
 };
 
-export { insertNotificationHTMLTemplate, seenNotification, getAllCourses, prepareCreateCourseForm, createNewCourse, removeCourse, getAllMenus };
+const getAllMenus = async () => {
+    const menusWrapper = document.querySelector('#menus-wrapper');
+    menusWrapper.innerHTML = ''
+    const res = await fetch(`http://localhost:4000/v1/menus/all`);
+    const menus = await res.json();
+
+    menus.forEach((menu, index) => {
+        menusWrapper.insertAdjacentHTML("beforeend", `
+                <tr class="bg-white border-b hover:bg-gray-50">
+                    <td class="w-4 p-4">
+                        <div class="flex items-center">
+                            <input id="checkbox-table-1" type="checkbox"
+                                class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2 cursor-pointer">
+                            <label for="checkbox-table-1" class="sr-only">checkbox</label>
+                        </div>
+                    </td>
+                    <th scope="row"
+                        class="px-6 py-4 text-nowrap font-medium text-gray-900 whitespace-nowrap">
+                        ${index + 1}
+                    </th>
+                    <td class="px-6 py-4 text-nowrap">
+                       ${menu.title}
+                    </td>
+                    <td class="px-6 py-4 text-nowrap">
+                        ${menu.href}
+                    </td>
+                    <td class="px-6 py-4 text-nowrap">
+                         ${menu.parent ? menu.parent.title : "___"}
+                    </td>
+                    <td class="px-6 py-4 text-nowrap">
+                        <a href="#"
+                            class="font-medium text-blue-600 dark:text-blue-500 hover:underline">ویرایش</a>
+                    </td>
+                    <td class="px-6 py-4">
+                        <a href="#" onclick="removeCourse('65fd445d0cac932cff2557d4')"
+                            class="font-medium text-blue-600 dark:text-blue-500 hover:underline">حذف</a>
+                    </td>
+                </tr>`)
+    });
+};
+
+const prepareCreateMenuItem = async () => {
+    const menuItemListElem = document.querySelector('.menu-item-list');
+
+    const res = await fetch(`http://localhost:4000/v1/menus`)
+    const menuItems = await res.json()
+
+
+    menuItems.forEach(menuItemList => menuItemListElem.insertAdjacentHTML("beforeend", `<option value="${menuItemList._id}" class="text-gray-700">${menuItemList.title}</option>`));
+
+    menuItemListElem.addEventListener('change', event => menuItemID = event.target.value);
+};
+
+const createNewMenuItem = async () => {
+
+};
+
+const removeMenuItem = async (courseID) => {
+
+};
+
+export { insertNotificationHTMLTemplate, seenNotification, getAllCourses, prepareCreateCourseForm, createNewCourse, removeCourse, getAllMenus, prepareCreateMenuItem, createNewMenuItem, removeMenuItem };
