@@ -1,8 +1,14 @@
-import { getAllMenus,prepareCreateMenuItem } from "./func/shared.js";
+import { getAllMenus, prepareCreateMenuItem, createNewMenuItem } from "./func/shared.js";
 
 window.addEventListener("load", () => {
+
     getAllMenus();
-    prepareCreateMenuItem().then(res=>{
-        console.log(res);
-    })
+    prepareCreateMenuItem();
+
+    const addMenuItemBtn = document.querySelector('#addMenuItemBtn');
+    addMenuItemBtn.addEventListener("click", event => {
+        event.preventDefault();
+        createNewMenuItem();
+    });
+    
 });

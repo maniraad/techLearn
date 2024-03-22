@@ -1,7 +1,7 @@
 import { Toast, getToken } from "../../funcs/utils.js";
 
 let categoryID = -1;
-let menuItemID = -1;
+let parentMenuID = undefined;
 let status = "start";
 let courseCover = null;
 
@@ -259,11 +259,32 @@ const prepareCreateMenuItem = async () => {
 
     menuItems.forEach(menuItemList => menuItemListElem.insertAdjacentHTML("beforeend", `<option value="${menuItemList._id}" class="text-gray-700">${menuItemList.title}</option>`));
 
-    menuItemListElem.addEventListener('change', event => menuItemID = event.target.value);
+    menuItemListElem.addEventListener('change', event => parentMenuID = event.target.value);
 };
 
 const createNewMenuItem = async () => {
+    const titleInputElem = document.querySelector('#title')
+    const hrefInputElem = document.querySelector('#href')
 
+    console.log(titleInputElem.value.trim());
+    console.log(hrefInputElem.value.trim());
+
+    const newMenusInfos = {
+        title: titleInputElem.value.trim(),
+        href: hrefInputElem.value.trim(),
+        parent: parentMenuID
+    }
+
+    const res = await fetch(`http://localhost:4000/v1/menus`, {
+        method: "POST",
+        headers: {
+            Authorization: `Bearer ${getToken()}`,
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(newMenusInfos)
+    })
+
+    console.log(res);
 };
 
 const removeMenuItem = async (courseID) => {

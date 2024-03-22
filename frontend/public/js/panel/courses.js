@@ -9,7 +9,7 @@ window.addEventListener("load", () => {
     const addCourseBtn = document.querySelector('#addCourseBtn');
     
     addCourseBtn.addEventListener("click", event => {
-        // event.preventDefault();
+        event.preventDefault();
         createNewCourse()
     });
 });
