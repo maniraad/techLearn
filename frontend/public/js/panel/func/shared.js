@@ -674,7 +674,7 @@ const getAllMessages = async () => {
                         class="font-medium text-blue-600 dark:text-blue-500 hover:underline cursor-pointer">مشاهده</span>
                 </td>
                 <td class="px-6 py-4 text-nowrap">
-                    <span
+                    <span onclick="answerToContact('${message.email}')"
                         class="font-medium text-blue-600 dark:text-blue-500 hover:underline cursor-pointer">پاسخ</span>
                 </td>
                 <td class="px-6 py-4">
@@ -688,13 +688,52 @@ const getAllMessages = async () => {
 const showContentBody = async (messageBody) => {
     Swal.fire({
         text: messageBody,
-        confirmButtonColor:'#0d9488',
-        confirmButtonText:'مشاهده'
+        confirmButtonColor: '#0d9488',
+        confirmButtonText: 'مشاهده'
     });
 };
 
-const removeMessage = async (messageID) => {
+const answerToContact = async (userEmail) => {
 
+    Swal.fire({
+        input: "textarea",
+        inputLabel: "ارسال پاسخ",
+        inputAttributes: {
+            "aria-label": "Type your message here"
+        },
+        showCancelButton: true
+    }).then(async result => {
+        if (result.value) {
+
+            const answerContentInfos = {
+                email: userEmail,
+                answer: result.value
+            }
+
+            const res = await fetch(`http://localhost:4000/v1/contact/answer`, {
+                method: "POST",
+                headers: {
+                    Authorization: `Bearer ${getToken()}`,
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(answerContentInfos)
+            });
+            const answerResult = await res.json();
+
+            if (res.ok) {
+                Toast.fire({
+                    icon: "success",
+                    title: " پاسخ با موفقیت ارسال شد",
+                });
+            } else {
+                Toast.fire({
+                    icon: "error",
+                    title: "مشکلی رخ داده است",
+                    text: "لطفا بعدا امتحان کنید !"
+                });
+            }
+        }
+    })
 };
 
-export { insertNotificationHTMLTemplate, seenNotification, getAllCourses, prepareCreateCourseForm, createNewCourse, removeCourse, getAllMenus, prepareCreateMenuItem, createNewMenuItem, removeMenuItem, getAllUsers, createNewUser, removeUser, banUser, getAllCategories, createNewCategory, removeCategory, getAllMessages, showContentBody, removeMessage };
+export { insertNotificationHTMLTemplate, seenNotification, getAllCourses, prepareCreateCourseForm, createNewCourse, removeCourse, getAllMenus, prepareCreateMenuItem, createNewMenuItem, removeMenuItem, getAllUsers, createNewUser, removeUser, banUser, getAllCategories, createNewCategory, removeCategory, getAllMessages, showContentBody, answerToContact };

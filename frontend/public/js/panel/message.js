@@ -1,6 +1,7 @@
-import { getAllMessages, showContentBody, removeMessage } from "./func/shared.js";
+import { getAllMessages, showContentBody, answerToContact } from "./func/shared.js";
 
 window.showContentBody = showContentBody
+window.answerToContact = answerToContact
 window.addEventListener("load", () => {
     getAllMessages();
     // prepareCreateMenuItem();
