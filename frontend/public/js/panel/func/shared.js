@@ -667,30 +667,34 @@ const getAllMessages = async () => {
                     ${message.phone}
                 </td>
                 <td class="px-6 py-4 text-nowrap">
-                    ${message.createdAt.slice(0,10)}
+                    ${message.createdAt.slice(0, 10)}
                 </td>
                 <td class="px-6 py-4 text-nowrap">
-                    <a href="#"
-                        class="font-medium text-blue-600 dark:text-blue-500 hover:underline">مشاهده</a>
+                    <span onclick="showContentBody('${message.body}')"
+                        class="font-medium text-blue-600 dark:text-blue-500 hover:underline cursor-pointer">مشاهده</span>
                 </td>
                 <td class="px-6 py-4 text-nowrap">
-                    <a href="#"
-                        class="font-medium text-blue-600 dark:text-blue-500 hover:underline">پاسخ</a>
+                    <span
+                        class="font-medium text-blue-600 dark:text-blue-500 hover:underline cursor-pointer">پاسخ</span>
                 </td>
                 <td class="px-6 py-4">
-                    <a href="#" onclick="removeMenuItem('6345987bd4a59348b0c6e2a7')"
-                        class="font-medium text-blue-600 dark:text-blue-500 hover:underline">حذف</a>
+                    <span onclick="removeMenuItem('6345987bd4a59348b0c6e2a7')"
+                        class="font-medium text-blue-600 dark:text-blue-500 hover:underline cursor-pointer">حذف</span>
                 </td>
             </tr>`)
     });
 };
 
-const createNewMessage = async () => {
-
+const showContentBody = async (messageBody) => {
+    Swal.fire({
+        text: messageBody,
+        confirmButtonColor:'#0d9488',
+        confirmButtonText:'مشاهده'
+    });
 };
 
 const removeMessage = async (messageID) => {
 
 };
 
-export { insertNotificationHTMLTemplate, seenNotification, getAllCourses, prepareCreateCourseForm, createNewCourse, removeCourse, getAllMenus, prepareCreateMenuItem, createNewMenuItem, removeMenuItem, getAllUsers, createNewUser, removeUser, banUser, getAllCategories, createNewCategory, removeCategory, getAllMessages, createNewMessage, removeMessage };
+export { insertNotificationHTMLTemplate, seenNotification, getAllCourses, prepareCreateCourseForm, createNewCourse, removeCourse, getAllMenus, prepareCreateMenuItem, createNewMenuItem, removeMenuItem, getAllUsers, createNewUser, removeUser, banUser, getAllCategories, createNewCategory, removeCategory, getAllMessages, showContentBody, removeMessage };

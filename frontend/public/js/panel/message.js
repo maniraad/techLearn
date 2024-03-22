@@ -1,6 +1,6 @@
-import { getAllMessages, createNewMessage, removeMessage } from "./func/shared.js";
+import { getAllMessages, showContentBody, removeMessage } from "./func/shared.js";
 
-// window.removeMenuItem = removeMenuItem
+window.showContentBody = showContentBody
 window.addEventListener("load", () => {
     getAllMessages();
     // prepareCreateMenuItem();
