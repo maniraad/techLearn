@@ -523,6 +523,24 @@ const banUser = async (userID) => {
             }
         }
     });
-}
+};
+
+// Functions For Category
+
+const CategoryAllMenus = async () => {
+
+};
+
+const prepareCreateCategory = async () => {
+
+};
+
+const createNewCategory = async () => {
+
+};
+
+const removeCategory = async (categoryID) => {
+
+};
 
 export { insertNotificationHTMLTemplate, seenNotification, getAllCourses, prepareCreateCourseForm, createNewCourse, removeCourse, getAllMenus, prepareCreateMenuItem, createNewMenuItem, removeMenuItem, getAllUsers, createNewUser, removeUser, banUser };

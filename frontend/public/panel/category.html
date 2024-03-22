@@ -211,171 +211,6 @@
                 </div>
             </div>
         </div>
-    </header><header class="bg-neutral-50 shadow-md fixed top-0 left-0 w-full z-50">
-        <div class="container-2">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <!-- Header Logo -->
-                <div class="flex-center w-full md:w-auto py-2.5 md:py-0 md:h-28 mx-6 lg:mx-14 border-b md:border-none">
-                    <a href="#">
-                        <img src="../images/logo/Logo.png" alt="Logo">
-                    </a>
-                </div>
-                <!-- Header Details -->
-                <div class="w-full md:w-auto py-2.5 md:py-0 flex flex-wrap justify-between items-center grow z-50">
-                    <!-- Sidebar Header Toggle & Searchbar -->
-                    <div class="flex flex-wrap items-center gap-x-4">
-                        <!--Sidebar Header Toggle-->
-                        <div class="menu-btn cursor-pointer">
-                            <svg class="w-7 md:w-9 h-7 md:h-9 hover:text-teal-600 transition-all">
-                                <use href="#menu-bars"></use>
-                            </svg>
-                        </div>
-                        <!--Header Searchbar-->
-                        <div class="relative group hidden lg:block z-50" id="searchbox">
-                            <form class="hidden xl:block" action="" method="get">
-                                <label class="relative h-14 block transition-all">
-                                    <input id="search-input"
-                                        class="rounded-full text-slate-500 placeholder:text-slate-500 w-48 focus:w-64 h-full border border-transparent hover:border-gray-200 focus:border-gray-300 outline-none focus:text-zinc-700  bg-gray-100 text-base placeholder:text-lg pl-14 pr-5 block transition-all"
-                                        name="s" type="text" placeholder="جستجو">
-                                    <button id="search-btn"
-                                        class="absolute left-5 top-0 bottom-0 w-7 h-7 my-auto text-slate-500"
-                                        type="submit" role="button">
-                                        <svg class="w-7 h-7">
-                                            <use xlink:href="#search"></use>
-                                        </svg>
-                                    </button>
-                                </label>
-                            </form>
-                            <!-- SearchBar Mobile -->
-                            <div class="xl:hidden">
-                                <div
-                                    class="searchbox flex-center w-14 h-14 rounded-full bg-gray-100 transition-colors cursor-pointer">
-                                    <svg class="w-6 h-6 text-slate-500">
-                                        <use xlink:href="#search"></use>
-                                    </svg>
-                                </div>
-                                <!-- When Click Box Showing -->
-                                <div class="absolute -left-24 top-full pt-4 z-10 transition-all hide"
-                                    id="searchbox-dropdown">
-                                    <form action="" method="get">
-                                        <label class="relative block w-64">
-                                            <input
-                                                class="w-full h-16 pr-7 pl-10 text-lg bg-white placeholder:text-slate-500 text-zinc-700 outline-none rounded-2xl"
-                                                type="text" name="s" placeholder="جستجو در بین دوره ها">
-                                            <button
-                                                class="absolute left-0 top-0 bottom-0 w-12 h-full my-auto text-slate-500"
-                                                type="submit" role="button">
-                                                <svg class="ml-2 w-6 h-6">
-                                                    <use xlink:href="#search"></use>
-                                                </svg>
-                                            </button>
-                                        </label>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Header Profile -->
-                    <div class=" ml-4 flex items-center gap-x-2.5 md:gap-x-5">
-                        <!-- Profile Notifications -->
-                        <div class="cursor-pointer">
-                            <div class="notification-icon relative transition-all">
-                                <svg class="w-5 md:w-6 h-5 md:h-6">
-                                    <use xlink:href="#bell"></use>
-                                </svg>
-
-                                <div
-                                    class="notification-menu absolute invisible opacity-0 -top-10 left-0 mt-4 flex max-h-[415px] w-80 flex-col border shadow-sm bg-white rounded-lg cursor-auto duration-200 transition-all">
-                                    <div class="p-4">
-                                        <h5 class="notification-header text-sm font-medium text-bodydark2"></h5>
-                                    </div>
-                                    <ul class="notifications-wrapper flex h-auto flex-col overflow-y-auto">
-                                        <!-- Notifications Loaded From Js -->
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Profile Details -->
-                        <div class="relative cursor-pointer">
-                            <span class="relative flex items-center gap-x-1.5 md:gap-x-3 z-50 profile">
-                                <span class="flex items-center gap-x-1.5">
-                                    <svg class=" profile-icon w-4 h-4 transition-all duration-300">
-                                        <use href="#chevron-down"></use>
-                                    </svg>
-                                    <span class="admin-name hidden md:inline-block"></span>
-                                </span>
-                                <span>
-                                    <img
-                                        class="admin-img object-cover w-10 h-10 md:w-12 md:h-12 rounded-full inline-block cursor-pointer">
-                                </span>
-                            </span>
-                            <div
-                                class="profile-menu absolute invisible opacity-0 -top-14 left-0 mt-4 flex w-60 flex-col rounded-lg border bg-white shadow-sm duration-300 transition-all">
-                                <div class="p-5 border-b">
-                                    <h5 class="text-base mb-2 font-EstedadMedium text-zinc-900"><a class="admin-name " href="#"> </a></h5>
-                                    <a class="admin-email block text-sm text-slate-600" href="#">mailnam@mail.com</a>
-                                </div>
-                                <ul class="flex flex-col gap-5 border-b px-6 py-7">
-                                    <li>
-                                        <a href="profile.html"
-                                            class="flex items-center gap-3.5 text-sm font-medium duration-300 ease-in-out hover:text-primary lg:text-base">
-                                            <svg class="fill-current" width="22" height="22" viewBox="0 0 22 22"
-                                                fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path
-                                                    d="M11 9.62499C8.42188 9.62499 6.35938 7.59687 6.35938 5.12187C6.35938 2.64687 8.42188 0.618744 11 0.618744C13.5781 0.618744 15.6406 2.64687 15.6406 5.12187C15.6406 7.59687 13.5781 9.62499 11 9.62499ZM11 2.16562C9.28125 2.16562 7.90625 3.50624 7.90625 5.12187C7.90625 6.73749 9.28125 8.07812 11 8.07812C12.7188 8.07812 14.0938 6.73749 14.0938 5.12187C14.0938 3.50624 12.7188 2.16562 11 2.16562Z"
-                                                    fill=""></path>
-                                                <path
-                                                    d="M17.7719 21.4156H4.2281C3.5406 21.4156 2.9906 20.8656 2.9906 20.1781V17.0844C2.9906 13.7156 5.7406 10.9656 9.10935 10.9656H12.925C16.2937 10.9656 19.0437 13.7156 19.0437 17.0844V20.1781C19.0094 20.8312 18.4594 21.4156 17.7719 21.4156ZM4.53748 19.8687H17.4969V17.0844C17.4969 14.575 15.4344 12.5125 12.925 12.5125H9.07498C6.5656 12.5125 4.5031 14.575 4.5031 17.0844V19.8687H4.53748Z"
-                                                    fill=""></path>
-                                            </svg>
-                                            My Profile
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="profile.html"
-                                            class="flex items-center gap-3.5 text-sm font-medium duration-300 ease-in-out hover:text-primary lg:text-base">
-                                            <svg class="fill-current" width="22" height="22" viewBox="0 0 22 22"
-                                                fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path
-                                                    d="M11 9.62499C8.42188 9.62499 6.35938 7.59687 6.35938 5.12187C6.35938 2.64687 8.42188 0.618744 11 0.618744C13.5781 0.618744 15.6406 2.64687 15.6406 5.12187C15.6406 7.59687 13.5781 9.62499 11 9.62499ZM11 2.16562C9.28125 2.16562 7.90625 3.50624 7.90625 5.12187C7.90625 6.73749 9.28125 8.07812 11 8.07812C12.7188 8.07812 14.0938 6.73749 14.0938 5.12187C14.0938 3.50624 12.7188 2.16562 11 2.16562Z"
-                                                    fill=""></path>
-                                                <path
-                                                    d="M17.7719 21.4156H4.2281C3.5406 21.4156 2.9906 20.8656 2.9906 20.1781V17.0844C2.9906 13.7156 5.7406 10.9656 9.10935 10.9656H12.925C16.2937 10.9656 19.0437 13.7156 19.0437 17.0844V20.1781C19.0094 20.8312 18.4594 21.4156 17.7719 21.4156ZM4.53748 19.8687H17.4969V17.0844C17.4969 14.575 15.4344 12.5125 12.925 12.5125H9.07498C6.5656 12.5125 4.5031 14.575 4.5031 17.0844V19.8687H4.53748Z"
-                                                    fill=""></path>
-                                            </svg>
-                                            My Profile
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="profile.html"
-                                            class="flex items-center gap-3.5 text-sm font-medium duration-300 ease-in-out hover:text-primary lg:text-base">
-                                            <svg class="fill-current" width="22" height="22" viewBox="0 0 22 22"
-                                                fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path
-                                                    d="M11 9.62499C8.42188 9.62499 6.35938 7.59687 6.35938 5.12187C6.35938 2.64687 8.42188 0.618744 11 0.618744C13.5781 0.618744 15.6406 2.64687 15.6406 5.12187C15.6406 7.59687 13.5781 9.62499 11 9.62499ZM11 2.16562C9.28125 2.16562 7.90625 3.50624 7.90625 5.12187C7.90625 6.73749 9.28125 8.07812 11 8.07812C12.7188 8.07812 14.0938 6.73749 14.0938 5.12187C14.0938 3.50624 12.7188 2.16562 11 2.16562Z"
-                                                    fill=""></path>
-                                                <path
-                                                    d="M17.7719 21.4156H4.2281C3.5406 21.4156 2.9906 20.8656 2.9906 20.1781V17.0844C2.9906 13.7156 5.7406 10.9656 9.10935 10.9656H12.925C16.2937 10.9656 19.0437 13.7156 19.0437 17.0844V20.1781C19.0094 20.8312 18.4594 21.4156 17.7719 21.4156ZM4.53748 19.8687H17.4969V17.0844C17.4969 14.575 15.4344 12.5125 12.925 12.5125H9.07498C6.5656 12.5125 4.5031 14.575 4.5031 17.0844V19.8687H4.53748Z"
-                                                    fill=""></path>
-                                            </svg>
-                                            My Profile
-                                        </a>
-                                    </li>
-                                </ul>
-                                <button
-                                    class="flex items-center gap-3.5 px-6 py-4 text-sm font-EstedadMedium duration-300 ease-in-out hover:text-red-600 lg:text-base">
-                                    <svg class="w-5 md:w-6 h-5 md:h-6">
-                                        <use xlink:href="#arrow-left-start-on-rectangle"></use>
-                                    </svg>
-                                    خروج
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </header>
 
     <!-- Sidebar -->
@@ -418,9 +253,102 @@
         </nav>
     </aside>
 
+    <main class="mr-0 mt-28 py-9 px-14 transition-all">
+
+        <!-- New Category -->
+        <section>
+            <div class="container">
+                <h1 class="lg:text-2xl font-EstedadBold mb-8">دسته بندی جدید</h1>
+
+                <div onsubmit="submitHandeler(event)">
+                    <div class="grid gap-6 mb-6 grid-cols-1 md:grid-cols-2">
+                        <div>
+                            <label class="mb-3 block text-sm font-EstedadMedium">
+                                عنوان دسته بندی
+                            </label>
+                            <input id="course-name" type="text" placeholder="محصولات پر فروش"
+                                class="w-full rounded-lg border border-solid bg-transparent px-5 py-3 outline-none text-gray-700 transition focus:border-blue-500 active:border-blue-500">
+                        </div>
+                        <div>
+                            <label class="mb-3 block text-sm font-EstedadMedium">
+                                انتخاب دسته بندی
+                            </label>
+                            <div class="relative z-20 bg-white">
+                                <select
+                                    class="category-list relative text-gray-700 z-20 w-full appearance-none rounded-lg border border-solid bg-transparent py-3 pr-4 outline-none transition focus:border-blue-500 active:border-blue-500">
+                                    <!-- Option Loaded From Js -->
+                                    <option value="" class="text-gray-700"> </option>
+                                </select>
+                                <span class="absolute left-4 top-1/2 z-20 -translate-y-1/2">
+                                    <svg class="w-5 md:w-6 h-5 md:h-6 text-gray-500">
+                                        <use xlink:href="#chevron-down"></use>
+                                    </svg>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button"
+                        class="my-6 text-white bg-teal-600 hover:bg-teal-700 focus:ring-4 focus:ring-teal-300 font-EstedadMedium rounded-lg text-sm px-5 py-2.5 me-2 focus:outline-none"
+                        id="addCourseBtn">
+                        افزودن دوره
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories list -->
+        <section class="mt-10">
+            <div class="container">
+                <div class="relative max-h-[85vh] overflow-x-auto shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] sm:rounded-lg">
+
+                    <div class="py-5 px-6 bg-white">
+                        <h4 class="text-sm md:text-base font-EstedadBold"> لیست <span class="text-teal-600"> دسته بندی ها
+
+                            </span>
+                        </h4>
+                    </div>
+
+                    <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                            <tr>
+                                <th scope="col" class="p-4">
+                                    <div class="flex items-center">
+                                        <input id="checkbox-all" type="checkbox"
+                                            class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                                        <label for="checkbox-all" class="sr-only">checkbox</label>
+                                    </div>
+                                </th>
+                                <th scope="col" class="px-6 py-3 text-nowrap">
+                                    شناسه
+                                </th>
+                                <th scope="col" class="px-6 py-3 text-nowrap">
+                                    عنوان
+                                </th>
+                                <th scope="col" class="px-6 py-3 text-nowrap">
+                                    مقصد
+                                </th>
+                                <th scope="col" class="px-6 py-3 text-nowrap">
+                                    ویرایش
+                                </th>
+                                <th scope="col" class="px-6 py-3 text-nowrap">
+                                    حذف
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody id="courses-wrapper" class="transition-all">
+                            <!-- Data Loaded From Js -->
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
 
 <script type="module" src="../js/panel/style.js"></script>
-    <script type="module" src="../js/panel/main.js"></script>
+    <script type="module" src="../js/panel/category.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 
