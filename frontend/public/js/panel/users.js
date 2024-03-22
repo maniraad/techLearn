@@ -1,4 +1,4 @@
-import { getAllUsers, prepareCreateUser, createNewUser, removeUser, banUser } from "./func/shared.js";
+import { getAllUsers, createNewUser, removeUser, banUser } from "./func/shared.js";
 
 window.removeUser = removeUser
 window.banUser = banUser
@@ -6,10 +6,10 @@ window.addEventListener("load", () => {
 
     getAllUsers();
 
-    // const addCourseBtn = document.querySelector('#addCourseBtn');
+    const addUserBtn = document.querySelector('#addUserBtn');
 
-    // addCourseBtn.addEventListener("click", event => {
-    //     event.preventDefault();
-    //     createNewCourse()
-    // });
+    addUserBtn.addEventListener("click", event => {
+        event.preventDefault();
+        createNewUser   ()
+    });
 });
