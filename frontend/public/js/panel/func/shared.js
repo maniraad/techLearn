@@ -161,7 +161,6 @@ const createNewCourse = async () => {
         });
 
         getAllCourses()
-        console.log(getAllCourses());
     } else {
         Toast.fire({
             icon: "error",
@@ -284,7 +283,20 @@ const createNewMenuItem = async () => {
         body: JSON.stringify(newMenusInfos)
     })
 
-    console.log(res);
+    if (res.ok) {
+        Toast.fire({
+            icon: "success",
+            title: " ایتم با موفقیت اضافه شد ",
+        });
+
+        getAllMenus()
+    } else {
+        Toast.fire({
+            icon: "error",
+            title: "مشکلی رخ داده است",
+            text: "لطفا بعدا امتحان کنید !"
+        });
+    }
 };
 
 const removeMenuItem = async (courseID) => {
