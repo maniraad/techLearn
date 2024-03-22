@@ -66,7 +66,7 @@ const removeNotification = (notifications, notificationID) => {
 
 const getAllCourses = async () => {
     const coursesWrapper = document.querySelector('#courses-wrapper');
-
+    coursesWrapper.innerHTML = ''
     const res = await fetch(`http://localhost:4000/v1/courses`);
     const courses = await res.json();
 
@@ -110,7 +110,6 @@ const getAllCourses = async () => {
                              </tr>`)
     });
 
-    return courses;
 };
 
 const prepareCreateCourseForm = async () => {
@@ -155,11 +154,25 @@ const createNewCourse = async () => {
         body: formData
     })
 
-    console.log(res);
+    if (res.ok) {
+        Toast.fire({
+            icon: "success",
+            title: " دوره با موفقیت اضافه شد ",
+        });
+
+        getAllCourses()
+        console.log(getAllCourses());
+    } else {
+        Toast.fire({
+            icon: "error",
+            title: "مشکلی رخ داده است",
+            text: "لطفا بعدا امتحان کنید !"
+        });
+    }
 };
 
 const removeCourse = async (courseID) => {
-console.log(courseID);
+    console.log(courseID);
     Swal.fire({
         text: "آیا از حذف دوره مورد نظر اطمینان دارید؟",
         icon: "error",
@@ -171,9 +184,9 @@ console.log(courseID);
     }).then(async (result) => {
         if (result.isConfirmed) {
 
-            const res = await fetch(`http://localhost:4000/v1/courses/${courseID}`,{
-                method:"DELETE",
-                headers:{
+            const res = await fetch(`http://localhost:4000/v1/courses/${courseID}`, {
+                method: "DELETE",
+                headers: {
                     Authorization: `Bearer ${getToken()}`
                 }
             })
@@ -183,12 +196,13 @@ console.log(courseID);
                     icon: "success",
                     title: " حذف با موفقیت انجام شد",
                 });
+
                 getAllCourses()
             } else {
                 Toast.fire({
                     icon: "error",
                     title: "مشکلی رخ داده است",
-                    text:"لطفا بعدا امتحان کنید !"
+                    text: "لطفا بعدا امتحان کنید !"
                 });
             }
         }

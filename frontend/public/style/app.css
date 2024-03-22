@@ -448,7 +448,7 @@ video {
   font-family: "Estedad";
 
   src: local("Estedad"),
-            url("/frontend/public/fonts/Estedad/Estedad-Regular.woff2");
+            url("/public/fonts/Estedad/Estedad-Regular.woff2");
 
   font-display: swap;
 }
@@ -457,7 +457,7 @@ video {
   font-family: "EstedadBlack";
 
   src: local("EstedadBlack"),
-            url("/frontend/public/fonts/Estedad/Estedad-Black.woff2");
+            url("/public/fonts/Estedad/Estedad-Black.woff2");
 
   font-display: swap;
 }
@@ -466,7 +466,7 @@ video {
   font-family: "EstedadBold";
 
   src: local("EstedadBold"),
-            url("/frontend/public/fonts/Estedad/Estedad-Bold.woff2");
+            url("/public/fonts/Estedad/Estedad-Bold.woff2");
 
   font-display: swap;
 }
@@ -475,7 +475,7 @@ video {
   font-family: "EstedadMedium";
 
   src: local("EstedadMedium"),
-            url("/frontend/public/fonts/Estedad/Estedad-Medium.woff2");
+            url("/public/fonts/Estedad/Estedad-Medium.woff2");
 
   font-display: swap;
 }
@@ -484,7 +484,7 @@ video {
   font-family: "EstedadLight";
 
   src: local("EstedadLight"),
-            url("/frontend/public/fonts/Estedad/Estedad-Light.woff2");
+            url("/public/fonts/Estedad/Estedad-Light.woff2");
 
   font-display: swap;
 }
@@ -493,7 +493,7 @@ video {
   font-family: "EstedadThin";
 
   src: local("EstedadThin"),
-            url("/frontend/public/fonts/Estedad/Estedad-Thin.woff2");
+            url("/public/fonts/Estedad/Estedad-Thin.woff2");
 
   font-display: swap;
 }
@@ -2454,21 +2454,6 @@ video {
   color: rgb(24 24 27 / var(--tw-text-opacity));
 }
 
-.text-red-700 {
-  --tw-text-opacity: 1;
-  color: rgb(185 28 28 / var(--tw-text-opacity));
-}
-
-.text-red-500 {
-  --tw-text-opacity: 1;
-  color: rgb(239 68 68 / var(--tw-text-opacity));
-}
-
-.text-red-600 {
-  --tw-text-opacity: 1;
-  color: rgb(220 38 38 / var(--tw-text-opacity));
-}
-
 .opacity-0 {
   opacity: 0;
 }
@@ -2685,9 +2670,9 @@ video {
   color: rgb(239 68 68 / var(--tw-text-opacity));
 }
 
-.hover\:text-red-700:hover {
+.hover\:text-red-600:hover {
   --tw-text-opacity: 1;
-  color: rgb(185 28 28 / var(--tw-text-opacity));
+  color: rgb(220 38 38 / var(--tw-text-opacity));
 }
 
 .hover\:text-teal-600:hover {
@@ -2698,11 +2683,6 @@ video {
 .hover\:text-zinc-900:hover {
   --tw-text-opacity: 1;
   color: rgb(24 24 27 / var(--tw-text-opacity));
-}
-
-.hover\:text-red-600:hover {
-  --tw-text-opacity: 1;
-  color: rgb(220 38 38 / var(--tw-text-opacity));
 }
 
 .hover\:underline:hover {
