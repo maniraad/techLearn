@@ -634,4 +634,63 @@ const removeCategory = async (categoryID) => {
     });
 };
 
-export { insertNotificationHTMLTemplate, seenNotification, getAllCourses, prepareCreateCourseForm, createNewCourse, removeCourse, getAllMenus, prepareCreateMenuItem, createNewMenuItem, removeMenuItem, getAllUsers, createNewUser, removeUser, banUser, getAllCategories, createNewCategory, removeCategory };
+// Functions For Message
+
+const getAllMessages = async () => {
+    const messageWrapperElem = document.querySelector('#message-wrapper');
+    messageWrapperElem.innerHTML = ''
+    const res = await fetch(`http://localhost:4000/v1/contact`);
+    const messages = await res.json();
+
+    messages.forEach((message, index) => {
+        console.log(message);
+        messageWrapperElem.insertAdjacentHTML("beforeend", `
+            <tr class="bg-white border-b hover:bg-gray-50">
+                <td class="w-4 p-4">
+                    <div class="flex items-center">
+                        <input id="checkbox-table-1" type="checkbox"
+                            class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2 cursor-pointer">
+                        <label for="checkbox-table-1" class="sr-only">checkbox</label>
+                    </div>
+                </td>
+                <th scope="row"
+                    class="px-6 py-4 text-nowrap font-medium text-gray-900 whitespace-nowrap">
+                    ${index + 1}
+                </th>
+                <td class="px-6 py-4 text-nowrap">
+                    ${message.name}
+                </td>
+                <td class="px-6 py-4 text-nowrap">
+                    ${message.email}
+                </td>
+                <td class="px-6 py-4 text-nowrap">
+                    ${message.phone}
+                </td>
+                <td class="px-6 py-4 text-nowrap">
+                    ${message.createdAt.slice(0,10)}
+                </td>
+                <td class="px-6 py-4 text-nowrap">
+                    <a href="#"
+                        class="font-medium text-blue-600 dark:text-blue-500 hover:underline">مشاهده</a>
+                </td>
+                <td class="px-6 py-4 text-nowrap">
+                    <a href="#"
+                        class="font-medium text-blue-600 dark:text-blue-500 hover:underline">پاسخ</a>
+                </td>
+                <td class="px-6 py-4">
+                    <a href="#" onclick="removeMenuItem('6345987bd4a59348b0c6e2a7')"
+                        class="font-medium text-blue-600 dark:text-blue-500 hover:underline">حذف</a>
+                </td>
+            </tr>`)
+    });
+};
+
+const createNewMessage = async () => {
+
+};
+
+const removeMessage = async (messageID) => {
+
+};
+
+export { insertNotificationHTMLTemplate, seenNotification, getAllCourses, prepareCreateCourseForm, createNewCourse, removeCourse, getAllMenus, prepareCreateMenuItem, createNewMenuItem, removeMenuItem, getAllUsers, createNewUser, removeUser, banUser, getAllCategories, createNewCategory, removeCategory, getAllMessages, createNewMessage, removeMessage };
