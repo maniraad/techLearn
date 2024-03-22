@@ -352,7 +352,6 @@ const getAllUsers = async () => {
     const users = await res.json();
 
     users.forEach((user, index) => {
-        console.log(user);
         usersWrapper.insertAdjacentHTML("beforeend", `
             <tr class="bg-white border-b hover:bg-gray-50">
                 <td class="w-4 p-4">
@@ -386,7 +385,7 @@ const getAllUsers = async () => {
                         class="font-medium text-blue-600 dark:text-blue-500 hover:underline">ویرایش</a>
                 </td>
                 <td class="px-6 py-4">
-                    <a href="#" onclick="removeCourse('65fd445d0cac932cff2557d4')"
+                    <a href="#" onclick="removeUser('${user._id}')"
                         class="font-medium text-blue-600 dark:text-blue-500 hover:underline">حذف</a>
                 </td>
                 <td class="px-6 py-4 text-nowrap">
@@ -405,8 +404,41 @@ const createNewUser = async () => {
 
 };
 
-const removeUser = async (menuID) => {
+const removeUser = async (userID) => {
+    Swal.fire({
+        text: "آیا از حذف دوره مورد نظر اطمینان دارید؟",
+        icon: "error",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        cancelButtonText: "خیر",
+        confirmButtonText: "بله"
+    }).then(async (result) => {
+        if (result.isConfirmed) {
 
+            const res = await fetch(`http://localhost:4000/v1/users/${userID}`, {
+                method: "DELETE",
+                headers: {
+                    Authorization: `Bearer ${getToken()}`
+                }
+            })
+
+            if (res.ok) {
+                Toast.fire({
+                    icon: "success",
+                    title: " حذف با موفقیت انجام شد",
+                });
+
+                getAllUsers()
+            } else {
+                Toast.fire({
+                    icon: "error",
+                    title: "مشکلی رخ داده است",
+                    text: "لطفا بعدا امتحان کنید !"
+                });
+            }
+        }
+    });
 };
 
 export { insertNotificationHTMLTemplate, seenNotification, getAllCourses, prepareCreateCourseForm, createNewCourse, removeCourse, getAllMenus, prepareCreateMenuItem, createNewMenuItem, removeMenuItem, getAllUsers, prepareCreateUser, createNewUser, removeUser };

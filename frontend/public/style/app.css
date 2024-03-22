@@ -1344,6 +1344,10 @@ video {
   max-height: 100%;
 }
 
+.max-h-\[85vh\] {
+  max-height: 85vh;
+}
+
 .min-h-16 {
   min-height: 4rem;
 }

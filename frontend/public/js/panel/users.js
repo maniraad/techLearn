@@ -1,6 +1,6 @@
 import { getAllUsers, prepareCreateUser, createNewUser, removeUser  } from "./func/shared.js";
 
-// window.removeCourse = removeCourse
+window.removeUser = removeUser
 window.addEventListener("load", () => {
     
     getAllUsers();
