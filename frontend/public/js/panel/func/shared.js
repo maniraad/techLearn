@@ -461,12 +461,19 @@ const banUser = async (userID) => {
             })
 
             if (res.ok) {
+                if (result.isConfirmed) {
+                    const res = await fetch(`http://localhost:4000/v1/users/${userID}`, {
+                        method: "DELETE",
+                        headers: {
+                            Authorization: `Bearer ${getToken()}`
+                        }
+                    })
+                }
                 Toast.fire({
                     icon: "success",
-                    title: " حذف با موفقیت انجام شد",
+                    title: " بن با موفقیت انجام شد",
                 });
-
-                getAllUsers()
+                getAllUsers();
             } else {
                 Toast.fire({
                     icon: "error",

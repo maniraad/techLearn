@@ -38,6 +38,11 @@ const register = () => {
           icon: "error",
           title: "نام کاربری یا ایمیل قبلا استفاده شده",
         });
+      } else if (res.status === 403) {
+        Toast.fire({
+          icon: "error",
+          title: "این شماره بن شده است!",
+        });
       };
 
       return res.json();
@@ -100,7 +105,7 @@ const getMe = async () => {
     },
   });
   const data = await res.json();
-  
+
   return data;
 };
 
