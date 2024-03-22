@@ -1,15 +1,14 @@
-import { getAllCategories, prepareCreateCategory, createNewCategory, removeCategory } from "./func/shared.js";
+import { getAllCategories, createNewCategory, removeCategory } from "./func/shared.js";
 
 // window.removeCourse = removeCourse
 window.addEventListener("load", () => {
 
     getAllCategories();
-    // prepareCreateCourseForm();
 
-    // const addCourseBtn = document.querySelector('#addCourseBtn');
+     const addCategoriesBtn = document.querySelector('#addCategoriesBtn');
 
-    // addCourseBtn.addEventListener("click", event => {
-    //     event.preventDefault();
-    //     createNewCourse()
-    // });
+     addCategoriesBtn.addEventListener("click", event => {
+         event.preventDefault();
+         createNewCategory()
+     });
 });

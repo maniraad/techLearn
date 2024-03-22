@@ -534,7 +534,6 @@ const getAllCategories = async () => {
     const categories = await res.json();
 
     categories.forEach((category, index) => {
-        console.log(category);
         categoriesWrapper.insertAdjacentHTML("beforeend", `
                              <tr
                                  class="bg-white border-b hover:bg-gray-50">
@@ -560,22 +559,48 @@ const getAllCategories = async () => {
                                          class="font-medium text-blue-600 dark:text-blue-500 hover:underline">ویرایش</a>
                                  </td>
                                  <td class="px-6 py-4">
-                                     <a href="#" onclick="removeCourse('${category._id}')" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">حذف</a>
+                                     <a href="#" onclick="removeCategory('${category._id}')" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">حذف</a>
                                  </td>
                              </tr>`)
     });
 };
 
-const prepareCreateCategory = async () => {
-
-};
-
 const createNewCategory = async () => {
+    const titleInputElem = document.querySelector("#title");
+    const destinationInputElem = document.querySelector("#destination");
 
+    const newCategoryInfos = {
+        title: titleInputElem.value.trim(),
+        name: destinationInputElem.value.trim(),
+    };
+
+    const res = await fetch(`http://localhost:4000/v1/category`, {
+        method: "POST",
+        headers: {
+            Authorization: `Bearer ${getToken()}`,
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(newCategoryInfos),
+    })
+
+    if (res.ok) {
+        Toast.fire({
+            icon: "success",
+            title: " ایتم با موفقیت اضافه شد ",
+        });
+
+        getAllCategories()
+    } else {
+        Toast.fire({
+            icon: "error",
+            title: "مشکلی رخ داده است",
+            text: "لطفا بعدا امتحان کنید !"
+        });
+    }
 };
 
 const removeCategory = async (categoryID) => {
 
 };
 
-export { insertNotificationHTMLTemplate, seenNotification, getAllCourses, prepareCreateCourseForm, createNewCourse, removeCourse, getAllMenus, prepareCreateMenuItem, createNewMenuItem, removeMenuItem, getAllUsers, createNewUser, removeUser, banUser, getAllCategories, prepareCreateCategory, createNewCategory, removeCategory };
+export { insertNotificationHTMLTemplate, seenNotification, getAllCourses, prepareCreateCourseForm, createNewCourse, removeCourse, getAllMenus, prepareCreateMenuItem, createNewMenuItem, removeMenuItem, getAllUsers, createNewUser, removeUser, banUser, getAllCategories, createNewCategory, removeCategory };
