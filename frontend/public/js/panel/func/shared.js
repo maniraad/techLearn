@@ -65,6 +65,8 @@ const removeNotification = (notifications, notificationID) => {
     insertNotificationHTMLTemplate(filteredNotifications);
 };
 
+// Functions For Courses
+
 const getAllCourses = async () => {
     const coursesWrapper = document.querySelector('#courses-wrapper');
     coursesWrapper.innerHTML = ''
@@ -207,6 +209,8 @@ const removeCourse = async (courseID) => {
     });
 };
 
+// Functions For Menus
+
 const getAllMenus = async () => {
     const menusWrapper = document.querySelector('#menus-wrapper');
     menusWrapper.innerHTML = ''
@@ -335,4 +339,74 @@ const removeMenuItem = async (menuID) => {
     });
 };
 
-export { insertNotificationHTMLTemplate, seenNotification, getAllCourses, prepareCreateCourseForm, createNewCourse, removeCourse, getAllMenus, prepareCreateMenuItem, createNewMenuItem, removeMenuItem };
+// Functions For Users
+
+const getAllUsers = async () => {
+    const usersWrapper = document.querySelector('#users-wrapper');
+    usersWrapper.innerHTML = ''
+    const res = await fetch(`http://localhost:4000/v1/users`,{
+        headers:{
+            Authorization:`Bearer ${getToken()}`
+        }
+    });
+    const users = await res.json();
+
+    users.forEach((user, index) => {
+        console.log(user);
+        usersWrapper.insertAdjacentHTML("beforeend", `
+            <tr class="bg-white border-b hover:bg-gray-50">
+                <td class="w-4 p-4">
+                    <div class="flex items-center">
+                        <input id="checkbox-table-1" type="checkbox"
+                            class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2 cursor-pointer">
+                        <label for="checkbox-table-1" class="sr-only">checkbox</label>
+                    </div>
+                </td>
+                <th scope="row"
+                    class="px-6 py-4 text-nowrap font-medium text-gray-900 whitespace-nowrap">
+                    ${index + 1}
+                </th>
+                <td class="px-6 py-4 text-nowrap">
+                    ${user.name}
+                </td>
+                <td class="px-6 py-4 text-nowrap">
+                    ${user.username}
+                </td>
+                <td class="px-6 py-4 text-nowrap">
+                    ${user.phone}
+                </td>
+                <td class="px-6 py-4 text-nowrap">
+                    ${user.email}
+                </td>
+                <td class="px-6 py-4 text-nowrap">
+                    ${user.role}
+                </td>
+                <td class="px-6 py-4 text-nowrap">
+                    <a href="#"
+                        class="font-medium text-blue-600 dark:text-blue-500 hover:underline">ویرایش</a>
+                </td>
+                <td class="px-6 py-4">
+                    <a href="#" onclick="removeCourse('65fd445d0cac932cff2557d4')"
+                        class="font-medium text-blue-600 dark:text-blue-500 hover:underline">حذف</a>
+                </td>
+                <td class="px-6 py-4 text-nowrap">
+                    <a href="#"
+                        class="font-medium text-blue-600 dark:text-blue-500 hover:underline">بن</a>
+                </td>
+            </tr>`)
+    });
+};
+
+const prepareCreateUser = async () => {
+
+};
+
+const createNewUser = async () => {
+
+};
+
+const removeUser = async (menuID) => {
+
+};
+
+export { insertNotificationHTMLTemplate, seenNotification, getAllCourses, prepareCreateCourseForm, createNewCourse, removeCourse, getAllMenus, prepareCreateMenuItem, createNewMenuItem, removeMenuItem, getAllUsers, prepareCreateUser, createNewUser, removeUser };
