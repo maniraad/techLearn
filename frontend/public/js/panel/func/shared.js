@@ -344,9 +344,9 @@ const removeMenuItem = async (menuID) => {
 const getAllUsers = async () => {
     const usersWrapper = document.querySelector('#users-wrapper');
     usersWrapper.innerHTML = ''
-    const res = await fetch(`http://localhost:4000/v1/users`,{
-        headers:{
-            Authorization:`Bearer ${getToken()}`
+    const res = await fetch(`http://localhost:4000/v1/users`, {
+        headers: {
+            Authorization: `Bearer ${getToken()}`
         }
     });
     const users = await res.json();
@@ -389,7 +389,7 @@ const getAllUsers = async () => {
                         class="font-medium text-blue-600 dark:text-blue-500 hover:underline">حذف</a>
                 </td>
                 <td class="px-6 py-4 text-nowrap">
-                    <a href="#"
+                    <a href="#"  onclick="banUser('${user._id}')"
                         class="font-medium text-blue-600 dark:text-blue-500 hover:underline">بن</a>
                 </td>
             </tr>`)
@@ -406,7 +406,7 @@ const createNewUser = async () => {
 
 const removeUser = async (userID) => {
     Swal.fire({
-        text: "آیا از حذف دوره مورد نظر اطمینان دارید؟",
+        text: "آیا از حذف کاربر مورد نظر اطمینان دارید؟",
         icon: "error",
         showCancelButton: true,
         confirmButtonColor: "#3085d6",
@@ -441,4 +441,41 @@ const removeUser = async (userID) => {
     });
 };
 
-export { insertNotificationHTMLTemplate, seenNotification, getAllCourses, prepareCreateCourseForm, createNewCourse, removeCourse, getAllMenus, prepareCreateMenuItem, createNewMenuItem, removeMenuItem, getAllUsers, prepareCreateUser, createNewUser, removeUser };
+const banUser = async (userID) => {
+    Swal.fire({
+        text: "آیا از بن کاربر مورد نظر اطمینان دارید؟",
+        icon: "error",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        cancelButtonText: "خیر",
+        confirmButtonText: "بله"
+    }).then(async (result) => {
+        if (result.isConfirmed) {
+
+            const res = await fetch(`http://localhost:4000/v1/users/ban/${userID}`, {
+                method: "PUT",
+                headers: {
+                    Authorization: `Bearer ${getToken()}`
+                }
+            })
+
+            if (res.ok) {
+                Toast.fire({
+                    icon: "success",
+                    title: " حذف با موفقیت انجام شد",
+                });
+
+                getAllUsers()
+            } else {
+                Toast.fire({
+                    icon: "error",
+                    title: "مشکلی رخ داده است",
+                    text: "لطفا بعدا امتحان کنید !"
+                });
+            }
+        }
+    });
+}
+
+export { insertNotificationHTMLTemplate, seenNotification, getAllCourses, prepareCreateCourseForm, createNewCourse, removeCourse, getAllMenus, prepareCreateMenuItem, createNewMenuItem, removeMenuItem, getAllUsers, prepareCreateUser, createNewUser, removeUser, banUser };
