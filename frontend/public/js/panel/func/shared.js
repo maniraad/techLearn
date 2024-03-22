@@ -643,7 +643,6 @@ const getAllMessages = async () => {
     const messages = await res.json();
 
     messages.forEach((message, index) => {
-        console.log(message);
         messageWrapperElem.insertAdjacentHTML("beforeend", `
             <tr class="bg-white border-b hover:bg-gray-50">
                 <td class="w-4 p-4">
@@ -678,7 +677,7 @@ const getAllMessages = async () => {
                         class="font-medium text-blue-600 dark:text-blue-500 hover:underline cursor-pointer">پاسخ</span>
                 </td>
                 <td class="px-6 py-4">
-                    <span onclick="removeMenuItem('6345987bd4a59348b0c6e2a7')"
+                    <span onclick="removeMessage('${message._id}')"
                         class="font-medium text-blue-600 dark:text-blue-500 hover:underline cursor-pointer">حذف</span>
                 </td>
             </tr>`)
@@ -698,9 +697,10 @@ const answerToContact = async (userEmail) => {
     Swal.fire({
         input: "textarea",
         inputLabel: "ارسال پاسخ",
-        inputAttributes: {
-            "aria-label": "Type your message here"
-        },
+        confirmButtonColor: '#0d9488',
+        confirmButtonText:"ارسال پاسخ",
+        cancelButtonColor: '#ef4444',
+        cancelButtonText:"لغو",
         showCancelButton: true
     }).then(async result => {
         if (result.value) {
@@ -736,4 +736,39 @@ const answerToContact = async (userEmail) => {
     })
 };
 
-export { insertNotificationHTMLTemplate, seenNotification, getAllCourses, prepareCreateCourseForm, createNewCourse, removeCourse, getAllMenus, prepareCreateMenuItem, createNewMenuItem, removeMenuItem, getAllUsers, createNewUser, removeUser, banUser, getAllCategories, createNewCategory, removeCategory, getAllMessages, showContentBody, answerToContact };
+const removeMessage = async (messageID) => {
+    Swal.fire({
+        text: "آیا از حذف پیفام مورد نظر اطمینان دارید؟",
+        icon: "error",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        cancelButtonText: "خیر",
+        confirmButtonText: "بله"
+    }).then(async (result) => {
+        if (result.isConfirmed) {
+            const res = await fetch(`http://localhost:4000/v1/contact/${messageID}`, {
+                method: "DELETE",
+                headers: {
+                    Authorization: `Bearer ${getToken()}`
+                }
+            })
+            if (res.ok) {
+                Toast.fire({
+                    icon: "success",
+                    title: " حذف با موفقیت انجام شد",
+                });
+
+                getAllMessages()
+            } else {
+                Toast.fire({
+                    icon: "error",
+                    title: "مشکلی رخ داده است",
+                    text: "لطفا بعدا امتحان کنید !"
+                });
+            }
+        }
+    });
+};
+
+export { insertNotificationHTMLTemplate, seenNotification, getAllCourses, prepareCreateCourseForm, createNewCourse, removeCourse, getAllMenus, prepareCreateMenuItem, createNewMenuItem, removeMenuItem, getAllUsers, createNewUser, removeUser, banUser, getAllCategories, createNewCategory, removeCategory, getAllMessages, showContentBody, answerToContact,removeMessage };
