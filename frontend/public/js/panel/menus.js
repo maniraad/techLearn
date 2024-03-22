@@ -1,7 +1,7 @@
-import { getAllMenus, prepareCreateMenuItem, createNewMenuItem } from "./func/shared.js";
+import { getAllMenus, prepareCreateMenuItem, createNewMenuItem,removeMenuItem } from "./func/shared.js";
 
+window.removeMenuItem = removeMenuItem
 window.addEventListener("load", () => {
-
     getAllMenus();
     prepareCreateMenuItem();
 
@@ -10,5 +10,5 @@ window.addEventListener("load", () => {
         event.preventDefault();
         createNewMenuItem();
     });
-    
+
 });

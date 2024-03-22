@@ -171,7 +171,6 @@ const createNewCourse = async () => {
 };
 
 const removeCourse = async (courseID) => {
-    console.log(courseID);
     Swal.fire({
         text: "آیا از حذف دوره مورد نظر اطمینان دارید؟",
         icon: "error",
@@ -242,7 +241,7 @@ const getAllMenus = async () => {
                             class="font-medium text-blue-600 dark:text-blue-500 hover:underline">ویرایش</a>
                     </td>
                     <td class="px-6 py-4">
-                        <a href="#" onclick="removeCourse('65fd445d0cac932cff2557d4')"
+                        <a href="#" onclick="removeMenuItem('${menu._id}')"
                             class="font-medium text-blue-600 dark:text-blue-500 hover:underline">حذف</a>
                     </td>
                 </tr>`)
@@ -299,8 +298,41 @@ const createNewMenuItem = async () => {
     }
 };
 
-const removeMenuItem = async (courseID) => {
+const removeMenuItem = async (menuID) => {
+    Swal.fire({
+        text: "آیا از حذف منو مورد نظر اطمینان دارید؟",
+        icon: "error",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        cancelButtonText: "خیر",
+        confirmButtonText: "بله"
+    }).then(async (result) => {
+        if (result.isConfirmed) {
 
+            const res = await fetch(`http://localhost:4000/v1/menus/${menuID}`, {
+                method: "DELETE",
+                headers: {
+                    Authorization: `Bearer ${getToken()}`
+                }
+            })
+
+            if (res.ok) {
+                Toast.fire({
+                    icon: "success",
+                    title: " حذف با موفقیت انجام شد",
+                });
+
+                getAllMenus()
+            } else {
+                Toast.fire({
+                    icon: "error",
+                    title: "مشکلی رخ داده است",
+                    text: "لطفا بعدا امتحان کنید !"
+                });
+            }
+        }
+    });
 };
 
 export { insertNotificationHTMLTemplate, seenNotification, getAllCourses, prepareCreateCourseForm, createNewCourse, removeCourse, getAllMenus, prepareCreateMenuItem, createNewMenuItem, removeMenuItem };
