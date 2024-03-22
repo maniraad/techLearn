@@ -1,6 +1,5 @@
 import { getAdminInfos } from "./func/utils.js";
-import { insertNotificationHTMLTemplate, seenNotification } from "./func/shared.js";
-
+    
 window.addEventListener('load', () => {
     // Select Element From Dom
     const adminWelcomeElem = document.querySelector('.admin-welcome-name');
