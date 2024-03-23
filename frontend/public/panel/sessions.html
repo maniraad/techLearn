@@ -261,66 +261,104 @@
 
     <main class="mr-0 mt-28 py-9 px-14 transition-all">
 
-        <!-- New Users -->
+        <!-- New Session -->
         <section>
             <div class="container">
-                <h1 class="lg:text-2xl font-EstedadBold mb-8">کاربر جدید</h1>
+                <h1 class="lg:text-2xl font-EstedadBold mb-8"> قسمت جدید </h1>
 
                 <div>
                     <div class="grid gap-6 mb-6 grid-cols-1 md:grid-cols-2">
                         <div>
                             <label class="mb-3 block text-sm font-EstedadMedium">
-                                نام و نام خانوادگی
+                                عنوان جلسه
                             </label>
-                            <input id="name" type="text" placeholder="مانی راد"
+                            <input id="title" type="text" placeholder="محصولات پر فروش"
                                 class="w-full rounded-lg border border-solid bg-transparent px-5 py-3 outline-none text-gray-700 transition focus:border-blue-500 active:border-blue-500">
                         </div>
                         <div>
                             <label class="mb-3 block text-sm font-EstedadMedium">
-                                نام کاربری
+                                مدت زمان جلسه
                             </label>
-                            <input id="username" type="text" placeholder="maniraad"
+                            <input id="destination" type="text" placeholder="محصولات پر فروش"
                                 class="w-full rounded-lg border border-solid bg-transparent px-5 py-3 outline-none text-gray-700 transition focus:border-blue-500 active:border-blue-500">
                         </div>
                         <div>
                             <label class="mb-3 block text-sm font-EstedadMedium">
-                                آدرس ایمیل
+                                انتخاب دوره
                             </label>
-                            <input id="email" type="text" placeholder="mani@gmail.com"
-                                class="w-full rounded-lg border border-solid bg-transparent px-5 py-3 outline-none text-gray-700 transition focus:border-blue-500 active:border-blue-500">
+                            <div class="relative z-20 bg-white">
+                                <select
+                                    class="category-list relative text-gray-700 z-20 w-full appearance-none rounded-lg border border-solid bg-transparent py-3 pr-4 outline-none transition focus:border-blue-500 active:border-blue-500">
+                                    <!-- Option Loaded From Js -->
+                                    <option value="" class="text-gray-700"> </option>
+                                    <option value="6345cbd132c10de974957632" class="text-gray-700">برنامه نویسی فرانت
+                                        اند</option>
+                                    <option value="6345cc0a32c10de974957635" class="text-gray-700">برنامه نویسی بک‌اند
+                                    </option>
+                                    <option value="635d0df056ccb11e448fe992" class="text-gray-700">برنامه نویسی فلاتر
+                                    </option>
+                                    <option value="635ef447f058a6af04d00510" class="text-gray-700">پایتون</option>
+                                    <option value="63ae19ccb2f67a35191a3ea7" class="text-gray-700">سی شارپ</option>
+                                </select>
+                                <span class="absolute left-4 top-1/2 z-20 -translate-y-1/2">
+                                    <svg class="w-5 md:w-6 h-5 md:h-6 text-gray-500">
+                                        <use xlink:href="#chevron-down"></use>
+                                    </svg>
+                                </span>
+                            </div>
                         </div>
-                        <div>
+                        <div class="flex flex-col justify-end">
                             <label class="mb-3 block text-sm font-EstedadMedium">
-                                رمز عبور
+                                وضعیت جلسه
                             </label>
-                            <input id="password" type="text" placeholder="12345678"
-                                class="w-full rounded-lg border border-solid bg-transparent px-5 py-3 outline-none text-gray-700 transition focus:border-blue-500 active:border-blue-500">
+                            <div class="flex items-center mb-4">
+                                <input id="start" type="radio" value="start" name="start"
+                                    class="w-4 h-4 text-teal-600 bg-gray-100 border-gray-300 rounded-full">
+                                <label for="start" class="ms-2 text-sm font-medium rounded-full">در حال برگزاری</label>
+                            </div>
+                            <div class="flex items-center mb-4">
+                                <input id="presell" type="radio" value="presell" name="presell"
+                                    class="w-4 h-4 text-teal-600 bg-gray-100 border-gray-300 rounded-full">
+                                <label for="presell" class="ms-2 text-sm font-medium rounded-full">پیش فروش</label>
+                            </div>
                         </div>
-                        <div>
-                            <label class="mb-3 block text-sm font-EstedadMedium">
-                                شماره تلفن
-                            </label>
-                            <input id="phone-number" type="text" placeholder="09123456789"
-                                class="w-full rounded-lg border border-solid bg-transparent px-5 py-3 outline-none text-gray-700 transition focus:border-blue-500 active:border-blue-500">
-                        </div>
+                    </div>
+                    <div class="flex-center w-full my-6">
+                        <label for="dropzone-file"
+                            class="flex-center flex-col w-full h-64 border-2 border-gray-300 hover:border-blue-500 border-dashed rounded-lg cursor-pointer bg-gray-50 transition-all">
+                            <div class="flex-center flex-col pt-5 pb-6">
+                                <svg class="w-8 h-8 mb-4 text-gray-500" aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2">
+                                    </path>
+                                </svg>
+                                <p class="mb-2 text-sm text-gray-500"><span class="font-EstedadLight">Click to
+                                        upload</span> or drag and drop</p>
+                                <p class="text-xs text-gray-500">SVG, PNG, JPG or GIF (MAX.
+                                    800x400px)</p>
+                            </div>
+                            <input id="dropzone-file" type="file" class="hidden cover">
+                        </label>
                     </div>
                     <button type="button"
                         class="my-6 text-white bg-teal-600 hover:bg-teal-700 focus:ring-4 focus:ring-teal-300 font-EstedadMedium rounded-lg text-sm px-5 py-2.5 me-2 focus:outline-none"
-                        id="addUserBtn">
-                        افزودن دوره
+                        id="addCategoriesBtn">
+                        افزودن جلسه
                     </button>
                 </div>
             </div>
         </section>
 
-        <!-- Users list -->
+        <!-- Sessions list -->
         <section class="mt-10">
             <div class="container">
                 <div
                     class="relative max-h-[85vh] overflow-x-auto shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] sm:rounded-lg">
 
                     <div class="py-5 px-6 bg-white">
-                        <h4 class="text-sm md:text-base font-EstedadBold"> لیست <span class="text-teal-600"> کاربران
+                        <h4 class="text-sm md:text-base font-EstedadBold"> لیست <span class="text-teal-600"> جلسات
 
                             </span>
                         </h4>
@@ -340,19 +378,19 @@
                                     شناسه
                                 </th>
                                 <th scope="col" class="px-6 py-3 text-nowrap">
-                                    نام و نام خانوادگی
+                                    عنوان جلسه
                                 </th>
                                 <th scope="col" class="px-6 py-3 text-nowrap">
-                                    نام کاربری
+                                    تاریخ اپلود
                                 </th>
                                 <th scope="col" class="px-6 py-3 text-nowrap">
-                                    شماره
+                                    مدت زمان جلسه
                                 </th>
                                 <th scope="col" class="px-6 py-3 text-nowrap">
-                                    ایمیل
+                                    نام دوره
                                 </th>
                                 <th scope="col" class="px-6 py-3 text-nowrap">
-                                    نقش
+                                    قمیت
                                 </th>
                                 <th scope="col" class="px-6 py-3 text-nowrap">
                                     ویرایش
@@ -360,92 +398,10 @@
                                 <th scope="col" class="px-6 py-3 text-nowrap">
                                     حذف
                                 </th>
-                                <th scope="col" class="px-6 py-3 text-nowrap">
-                                    بن
-                                </th>
                             </tr>
                         </thead>
-                        <tbody id="users-wrapper" class="transition-all">
-                            <tr class="bg-white border-b hover:bg-gray-50">
-                                <td class="w-4 p-4">
-                                    <div class="flex items-center">
-                                        <input id="checkbox-table-1" type="checkbox"
-                                            class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2 cursor-pointer">
-                                        <label for="checkbox-table-1" class="sr-only">checkbox</label>
-                                    </div>
-                                </td>
-                                <th scope="row"
-                                    class="px-6 py-4 text-nowrap font-medium text-gray-900 whitespace-nowrap">
-                                    1
-                                </th>
-                                <td class="px-6 py-4 text-nowrap">
-                                    امیر محمدیان
-                                </td>
-                                <td class="px-6 py-4 text-nowrap">
-                                    amir_mmdi
-                                </td>
-                                <td class="px-6 py-4 text-nowrap">
-                                    09121112234
-                                </td>
-                                <td class="px-6 py-4 text-nowrap">
-                                    amir@gmail.com
-                                </td>
-                                <td class="px-6 py-4 text-nowrap">
-                                    USER
-                                </td>
-                                <td class="px-6 py-4 text-nowrap">
-                                    <a href="#"
-                                        class="font-medium text-blue-600 dark:text-blue-500 hover:underline">ویرایش</a>
-                                </td>
-                                <td class="px-6 py-4">
-                                    <a href="#" onclick="removeCourse('65fd445d0cac932cff2557d4')"
-                                        class="font-medium text-blue-600 dark:text-blue-500 hover:underline">حذف</a>
-                                </td>
-                                <td class="px-6 py-4 text-nowrap">
-                                    <a href="#"
-                                        class="font-medium text-blue-600 dark:text-blue-500 hover:underline">بن</a>
-                                </td>
-                            </tr>
-                            <tr class="bg-white border-b hover:bg-gray-50">
-                                <td class="w-4 p-4">
-                                    <div class="flex items-center">
-                                        <input id="checkbox-table-1" type="checkbox"
-                                            class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2 cursor-pointer">
-                                        <label for="checkbox-table-1" class="sr-only">checkbox</label>
-                                    </div>
-                                </td>
-                                <th scope="row"
-                                    class="px-6 py-4 text-nowrap font-medium text-gray-900 whitespace-nowrap">
-                                    1
-                                </th>
-                                <td class="px-6 py-4 text-nowrap">
-                                    امیر محمدیان
-                                </td>
-                                <td class="px-6 py-4 text-nowrap">
-                                    amir_mmdi
-                                </td>
-                                <td class="px-6 py-4 text-nowrap">
-                                    09121112234
-                                </td>
-                                <td class="px-6 py-4 text-nowrap">
-                                    amir@gmail.com
-                                </td>
-                                <td class="px-6 py-4 text-nowrap">
-                                    USER
-                                </td>
-                                <td class="px-6 py-4 text-nowrap">
-                                    <a href="#"
-                                        class="font-medium text-blue-600 dark:text-blue-500 hover:underline">ویرایش</a>
-                                </td>
-                                <td class="px-6 py-4">
-                                    <a href="#" onclick="removeCourse('65fd445d0cac932cff2557d4')"
-                                        class="font-medium text-blue-600 dark:text-blue-500 hover:underline">حذف</a>
-                                </td>
-                                <td class="px-6 py-4 text-nowrap">
-                                    <a href="#"
-                                        class="font-medium text-blue-600 dark:text-blue-500 hover:underline">بن</a>
-                                </td>
-                            </tr>
+                        <tbody id="sessions-wrapper" class="transition-all">
+                            <!-- Data Loaded From Js -->
                         </tbody>
                     </table>
 
@@ -455,8 +411,9 @@
 
     </main>
 
+
     <script type="module" src="../js/panel/style.js"></script>
-    <script type="module" src="../js/panel/users.js"></script>
+    <script type="module" src="../js/panel/sessions.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 

@@ -647,9 +647,9 @@ const getAllMessages = async () => {
             <tr class="bg-white border-b hover:bg-gray-50">
                 <td class="w-4 p-4">
                     <div class="flex items-center">
-                        <input id="checkbox-table-1" type="checkbox"
-                            class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2 cursor-pointer">
-                        <label for="checkbox-table-1" class="sr-only">checkbox</label>
+                        <svg class="w-5 md:w-6 h-5 md:h-6">
+                            <use xlink:href="${message.answer === 1 ? "#check" : "#x-circle"}"></use>
+                        </svg> 
                     </div>
                 </td>
                 <th scope="row"
@@ -698,9 +698,9 @@ const answerToContact = async (userEmail) => {
         input: "textarea",
         inputLabel: "ارسال پاسخ",
         confirmButtonColor: '#0d9488',
-        confirmButtonText:"ارسال پاسخ",
+        confirmButtonText: "ارسال پاسخ",
         cancelButtonColor: '#ef4444',
-        cancelButtonText:"لغو",
+        cancelButtonText: "لغو",
         showCancelButton: true
     }).then(async result => {
         if (result.value) {
@@ -725,6 +725,7 @@ const answerToContact = async (userEmail) => {
                     icon: "success",
                     title: " پاسخ با موفقیت ارسال شد",
                 });
+                getAllMessages()
             } else {
                 Toast.fire({
                     icon: "error",
@@ -771,4 +772,53 @@ const removeMessage = async (messageID) => {
     });
 };
 
-export { insertNotificationHTMLTemplate, seenNotification, getAllCourses, prepareCreateCourseForm, createNewCourse, removeCourse, getAllMenus, prepareCreateMenuItem, createNewMenuItem, removeMenuItem, getAllUsers, createNewUser, removeUser, banUser, getAllCategories, createNewCategory, removeCategory, getAllMessages, showContentBody, answerToContact,removeMessage };
+// Functions For Session
+
+const getAllSessions = async () => {
+    const sessionsWrapperElem = document.querySelector('#sessions-wrapper');
+    sessionsWrapperElem.innerHTML = ''
+    const res = await fetch(`http://localhost:4000/v1/courses/sessions`);
+    const sessions = await res.json();
+
+    sessions.forEach((session, index) => {
+        sessionsWrapperElem.insertAdjacentHTML("beforeend", `
+            <tr class="bg-white border-b hover:bg-gray-50">
+                <td class="w-4 p-4">
+                    <div class="flex items-center">
+                        <input id="checkbox-table-1" type="checkbox"
+                            class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2 cursor-pointer">
+                        <label for="checkbox-table-1" class="sr-only">checkbox</label>
+                    </div>
+                </td>
+                <th scope="row"
+                    class="px-6 py-4 text-nowrap font-medium text-gray-900 whitespace-nowrap">
+                    ${index + 1}
+                </th>
+                <td class="px-6 py-4 text-nowrap">
+                    ${session.title}
+                </td>
+                <td class="px-6 py-4 text-nowrap">
+                    ${session.createdAt.slice(0, 10)}
+                </td>
+                <td class="px-6 py-4 text-nowrap">
+                    ${session.time}
+                </td>
+                <td class="px-6 py-4 text-nowrap">
+                    ${session.course.name}
+                </td>
+                <td class="px-6 py-4 text-nowrap">
+                    ${session.free === 1 ? "رایگان" : "غیر رایگان"}
+                </td>
+                <td class="px-6 py-4 text-nowrap">
+                    <a href="#"
+                        class="font-medium text-blue-600 dark:text-blue-500 hover:underline">ویرایش</a>
+                </td>
+                <td class="px-6 py-4">
+                    <a href="#" onclick="removeMenuItem('6345987bd4a59348b0c6e2a7')"
+                        class="font-medium text-blue-600 dark:text-blue-500 hover:underline">حذف</a>
+                </td>
+            </tr>`)
+    });
+};
+
+export { insertNotificationHTMLTemplate, seenNotification, getAllCourses, prepareCreateCourseForm, createNewCourse, removeCourse, getAllMenus, prepareCreateMenuItem, createNewMenuItem, removeMenuItem, getAllUsers, createNewUser, removeUser, banUser, getAllCategories, createNewCategory, removeCategory, getAllMessages, showContentBody, answerToContact, removeMessage, getAllSessions };
