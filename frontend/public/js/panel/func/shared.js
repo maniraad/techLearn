@@ -1040,7 +1040,7 @@ const getAllArticles = async () => {
                     ${article.creator.name}		
                 </td>
                 <td class="px-6 py-4">
-                    <a href="#" onclick="removeMenuItem('6345987bd4a59348b0c6e2a7')" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">حذف</a>
+                    <a href="#" onclick="removeArticle('${article._id}')" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">حذف</a>
                 </td>
             </tr>`
     );
@@ -1126,42 +1126,42 @@ const createNewArticle = async () => {
   }
 };
 
-// const removeArticle = async (courseID) => {
-//     Swal.fire({
-//         text: "آیا از حذف دوره مورد نظر اطمینان دارید؟",
-//         icon: "error",
-//         showCancelButton: true,
-//         confirmButtonColor: "#3085d6",
-//         cancelButtonColor: "#d33",
-//         cancelButtonText: "خیر",
-//         confirmButtonText: "بله"
-//     }).then(async (result) => {
-//         if (result.isConfirmed) {
+const removeArticle = async (articleID) => {
+  Swal.fire({
+    text: "آیا از حذف مقاله مورد نظر اطمینان دارید؟",
+    icon: "error",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    cancelButtonText: "خیر",
+    confirmButtonText: "بله"
+  }).then(async (result) => {
+    if (result.isConfirmed) {
 
-//             const res = await fetch(`http://localhost:4000/v1/courses/${courseID}`, {
-//                 method: "DELETE",
-//                 headers: {
-//                     Authorization: `Bearer ${getToken()}`
-//                 }
-//             })
+      const res = await fetch(`http://localhost:4000/v1/articles/${articleID}`, {
+        method: "DELETE",
+        headers: {
+          Authorization: `Bearer ${getToken()}`
+        }
+      })
 
-//             if (res.ok) {
-//                 Toast.fire({
-//                     icon: "success",
-//                     title: " حذف با موفقیت انجام شد",
-//                 });
+      if (res.ok) {
+        Toast.fire({
+          icon: "success",
+          title: " حذف با موفقیت انجام شد",
+        });
 
-//                 getAllCourses()
-//             } else {
-//                 Toast.fire({
-//                     icon: "error",
-//                     title: "مشکلی رخ داده است",
-//                     text: "لطفا بعدا امتحان کنید !"
-//                 });
-//             }
-//         }
-//     });
-// };
+        getAllArticles()
+      } else {
+        Toast.fire({
+          icon: "error",
+          title: "مشکلی رخ داده است",
+          text: "لطفا بعدا امتحان کنید !"
+        });
+      }
+    }
+  });
+};
 
 export {
   insertNotificationHTMLTemplate,
@@ -1206,4 +1206,5 @@ export {
   getAllArticles,
   prepareCreateArticleForm,
   createNewArticle,
+  removeArticle,
 };

@@ -1,6 +1,6 @@
-import { getAllArticles, prepareCreateArticleForm, createNewArticle } from "./func/shared.js";
+import { getAllArticles, prepareCreateArticleForm, createNewArticle,removeArticle } from "./func/shared.js";
 
-// window.removeSession = removeSession
+window.removeArticle = removeArticle
 window.addEventListener("load", () => {
   getAllArticles();
   prepareCreateArticleForm();
