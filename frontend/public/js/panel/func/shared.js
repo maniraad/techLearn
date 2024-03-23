@@ -914,4 +914,89 @@ const removeSession = async (sessionID) => {
     });
 };
 
-export { insertNotificationHTMLTemplate, seenNotification, getAllCourses, prepareCreateCourseForm, createNewCourse, removeCourse, getAllMenus, prepareCreateMenuItem, createNewMenuItem, removeMenuItem, getAllUsers, createNewUser, removeUser, banUser, getAllCategories, createNewCategory, removeCategory, getAllMessages, showContentBody, answerToContact, removeMessage, getAllSessions, prepareCreateSessionForm, createNewSession,removeSession };
+// Functions For Article
+
+const getAllArticles = async () => {
+    const articleWrapperElem = document.querySelector('#article-wrapper');
+    articleWrapperElem.innerHTML = ''
+    const res = await fetch(`http://localhost:4000/v1/articles`);
+    const articles = await res.json();
+
+    articles.forEach((article, index) => {
+        console.log(article);
+        articleWrapperElem.insertAdjacentHTML("beforeend", `
+            <tr class="bg-white border-b hover:bg-gray-50">
+                <td class="w-4 p-4">
+                    <div class="flex items-center">
+                        <input id="checkbox-table-1" type="checkbox" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2 cursor-pointer">
+                        <label for="checkbox-table-1" class="sr-only">checkbox</label>
+                    </div>
+                </td>
+                <th scope="row" class="px-6 py-4 text-nowrap font-medium text-gray-900 whitespace-nowrap">
+                    ${index + 1}
+                </th>
+                <td class="px-6 py-4 text-nowrap">
+                    ${article.title}
+                </td>
+                <td class="px-6 py-4 text-nowrap">
+                    جامعه شناسی	
+                </td>
+                <td class="px-6 py-4 text-nowrap">
+                    ${article.publish === 1 ? "منتشر شده" : "پیش نویس"}
+                </td>
+                <td class="px-6 py-4 text-nowrap">
+                    ${article.createdAt.slice(0, 10)}	
+                </td>
+                <td class="px-6 py-4 text-nowrap">
+                    ${article.creator.name}		
+                </td>
+                <td class="px-6 py-4">
+                    <a href="#" onclick="removeMenuItem('6345987bd4a59348b0c6e2a7')" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">حذف</a>
+                </td>
+            </tr>`)
+    });
+};
+
+export {
+
+    insertNotificationHTMLTemplate,
+    seenNotification,
+
+    // Export Functions Courses
+    getAllCourses,
+    prepareCreateCourseForm,
+    createNewCourse,
+    removeCourse,
+
+    // Export Functions Menus
+    getAllMenus,
+    prepareCreateMenuItem,
+    createNewMenuItem,
+    removeMenuItem,
+
+    // Export Functions Users
+    getAllUsers,
+    createNewUser,
+    removeUser,
+    banUser,
+
+    // Export Functions Category
+    getAllCategories,
+    createNewCategory,
+    removeCategory,
+
+    // Export Functions Message
+    getAllMessages,
+    showContentBody,
+    answerToContact,
+    removeMessage,
+
+    // Export Functions Session
+    getAllSessions,
+    prepareCreateSessionForm,
+    createNewSession,
+    removeSession,
+
+    // Export Functions Article
+    getAllArticles,
+};
