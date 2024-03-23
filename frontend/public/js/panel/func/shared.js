@@ -1,9 +1,12 @@
 import { Toast, getToken } from "../../funcs/utils.js";
 
 let categoryID = -1;
+let courseID = -1;
 let parentMenuID = undefined;
 let status = "start";
+let isFree = "1";
 let courseCover = null;
+let videoSession = null;
 
 const insertNotificationHTMLTemplate = (notifications) => {
 
@@ -821,4 +824,22 @@ const getAllSessions = async () => {
     });
 };
 
-export { insertNotificationHTMLTemplate, seenNotification, getAllCourses, prepareCreateCourseForm, createNewCourse, removeCourse, getAllMenus, prepareCreateMenuItem, createNewMenuItem, removeMenuItem, getAllUsers, createNewUser, removeUser, banUser, getAllCategories, createNewCategory, removeCategory, getAllMessages, showContentBody, answerToContact, removeMessage, getAllSessions };
+const prepareCreateSessionForm = async () => {
+    const courseListElem = document.querySelector('.course-list');
+    const freeSessionElem = document.querySelector('#free');
+    const moneySessionElem = document.querySelector('#money');
+    const videoSessionElem = document.querySelector('.video');
+
+    const res = await fetch(`http://localhost:4000/v1/courses`)
+
+    const courses = await res.json()
+
+    courses.forEach(course => courseListElem.insertAdjacentHTML("beforeend", `<option value="${course._id}" class="text-gray-700">${course.name}</option>`));
+
+    courseListElem.addEventListener("change", event => courseID = event.target.value);
+    freeSessionElem.addEventListener("change", event => isFree = event.target.value);
+    moneySessionElem.addEventListener("change", event => isFree = event.target.value);
+    videoSessionElem.addEventListener("change", event => (videoSession = event.target.files[0]));
+};
+
+export { insertNotificationHTMLTemplate, seenNotification, getAllCourses, prepareCreateCourseForm, createNewCourse, removeCourse, getAllMenus, prepareCreateMenuItem, createNewMenuItem, removeMenuItem, getAllUsers, createNewUser, removeUser, banUser, getAllCategories, createNewCategory, removeCategory, getAllMessages, showContentBody, answerToContact, removeMessage, getAllSessions, prepareCreateSessionForm };

@@ -288,17 +288,9 @@
                             </label>
                             <div class="relative z-20 bg-white">
                                 <select
-                                    class="category-list relative text-gray-700 z-20 w-full appearance-none rounded-lg border border-solid bg-transparent py-3 pr-4 outline-none transition focus:border-blue-500 active:border-blue-500">
+                                    class="course-list relative text-gray-700 z-20 w-full appearance-none rounded-lg border border-solid bg-transparent py-3 pr-4 outline-none transition focus:border-blue-500 active:border-blue-500">
                                     <!-- Option Loaded From Js -->
                                     <option value="" class="text-gray-700"> </option>
-                                    <option value="6345cbd132c10de974957632" class="text-gray-700">برنامه نویسی فرانت
-                                        اند</option>
-                                    <option value="6345cc0a32c10de974957635" class="text-gray-700">برنامه نویسی بک‌اند
-                                    </option>
-                                    <option value="635d0df056ccb11e448fe992" class="text-gray-700">برنامه نویسی فلاتر
-                                    </option>
-                                    <option value="635ef447f058a6af04d00510" class="text-gray-700">پایتون</option>
-                                    <option value="63ae19ccb2f67a35191a3ea7" class="text-gray-700">سی شارپ</option>
                                 </select>
                                 <span class="absolute left-4 top-1/2 z-20 -translate-y-1/2">
                                     <svg class="w-5 md:w-6 h-5 md:h-6 text-gray-500">
@@ -312,14 +304,14 @@
                                 وضعیت جلسه
                             </label>
                             <div class="flex items-center mb-4">
-                                <input id="start" type="radio" value="start" name="start"
+                                <input id="free" type="radio" value="1" name="start"
                                     class="w-4 h-4 text-teal-600 bg-gray-100 border-gray-300 rounded-full">
-                                <label for="start" class="ms-2 text-sm font-medium rounded-full">در حال برگزاری</label>
+                                <label for="free" class="ms-2 text-sm font-medium rounded-full">رایگان</label>
                             </div>
                             <div class="flex items-center mb-4">
-                                <input id="presell" type="radio" value="presell" name="presell"
+                                <input id="money" type="radio" value="0" name="presell"
                                     class="w-4 h-4 text-teal-600 bg-gray-100 border-gray-300 rounded-full">
-                                <label for="presell" class="ms-2 text-sm font-medium rounded-full">پیش فروش</label>
+                                <label for="money" class="ms-2 text-sm font-medium rounded-full"> غیر رایگان	</label>
                             </div>
                         </div>
                     </div>
@@ -339,7 +331,7 @@
                                 <p class="text-xs text-gray-500">SVG, PNG, JPG or GIF (MAX.
                                     800x400px)</p>
                             </div>
-                            <input id="dropzone-file" type="file" class="hidden cover">
+                            <input id="dropzone-file" type="file" class="hidden video">
                         </label>
                     </div>
                     <button type="button"

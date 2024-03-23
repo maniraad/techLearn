@@ -1,11 +1,11 @@
-import { getAllSessions } from "./func/shared.js";
+import { getAllSessions, prepareCreateSessionForm } from "./func/shared.js";
 
 // window.showContentBody = showContentBody
 // window.answerToContact = answerToContact
 // window.removeMessage = removeMessage
 window.addEventListener("load", () => {
     getAllSessions();
-    //     prepareCreateMenuItem();
+    prepareCreateSessionForm();
 
     //     const addMenuItemBtn = document.querySelector('#addMenuItemBtn');
     //     addMenuItemBtn.addEventListener("click", event => {
