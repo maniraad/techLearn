@@ -262,7 +262,85 @@
     <main class="mr-0 mt-28 py-9 px-14 transition-all">
 
         <!-- New article -->
+        <section>
+            <div class="container">
+                <h1 class="lg:text-2xl font-EstedadBold mb-8">مقاله جدید</h1>
 
+                <div>
+                    <div class="grid gap-6 mb-6 grid-cols-1 md:grid-cols-2">
+                        <div>
+                            <label class="mb-3 block text-sm font-EstedadMedium">
+                                عنوان مقاله
+                            </label>
+                            <input id="article-name" type="text" placeholder="تست"
+                                class="w-full rounded-lg border border-solid bg-transparent px-5 py-3 outline-none text-gray-700 transition focus:border-blue-500 active:border-blue-500">
+                        </div>
+                        <div>
+                            <label class="mb-3 block text-sm font-EstedadMedium">
+                                توضیح کوتاه
+                            </label>
+                            <input id="article-description" type="text" placeholder="۱۲۰۰۰۰"
+                                class="w-full rounded-lg border border-solid bg-transparent px-5 py-3 outline-none text-gray-700 transition focus:border-blue-500 active:border-blue-500">
+                        </div>
+                        <div>
+                            <label class="mb-3 block text-sm font-EstedadMedium">
+                                لینک
+                            </label>
+                            <input id="article-shortname" type="text" placeholder="test-course"
+                                class="w-full rounded-lg border border-solid bg-transparent px-5 py-3 outline-none text-gray-700 transition focus:border-blue-500 active:border-blue-500">
+                        </div>
+                        <div>
+                            <label class="mb-3 block text-sm font-EstedadMedium">
+                                انتخاب دسته بندی
+                            </label>
+                            <div class="relative z-20 bg-white">
+                                <select
+                                    class="article-category-list relative text-gray-700 z-20 w-full appearance-none rounded-lg border border-solid bg-transparent py-3 pr-4 outline-none transition focus:border-blue-500 active:border-blue-500">
+                                    <!-- Option Loaded From Js -->
+                                    <option value="" class="text-gray-700"> </option>
+                                </select>
+                                <span class="absolute left-4 top-1/2 z-20 -translate-y-1/2">
+                                    <svg class="w-5 md:w-6 h-5 md:h-6 text-gray-500">
+                                        <use xlink:href="#chevron-down"></use>
+                                    </svg>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="mb-3 block text-sm font-EstedadMedium">
+                            توضیحات مقاله
+                        </label>
+                        <div id="editor"></div>
+                    </div>
+
+                    <div class="flex-center w-full my-6">
+                        <label for="dropzone-file"
+                            class="flex-center flex-col w-full h-64 border-2 border-gray-300 hover:border-blue-500 border-dashed rounded-lg cursor-pointer bg-gray-50 transition-all">
+                            <div class="flex-center flex-col pt-5 pb-6">
+                                <svg class="w-8 h-8 mb-4 text-gray-500" aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2">
+                                    </path>
+                                </svg>
+                                <p class="mb-2 text-sm text-gray-500"><span class="font-EstedadLight">Click to
+                                        upload</span> or drag and drop</p>
+                                <p class="text-xs text-gray-500">SVG, PNG, JPG or GIF (MAX.
+                                    800x400px)</p>
+                            </div>
+                            <input id="dropzone-file" type="file" class="hidden cover">
+                        </label>
+                    </div>
+                    <button type="button"
+                        class="my-6 text-white bg-teal-600 hover:bg-teal-700 focus:ring-4 focus:ring-teal-300 font-EstedadMedium rounded-lg text-sm px-5 py-2.5 me-2 focus:outline-none"
+                        id="addArticleBtn">
+                        افزودن مقاله
+                    </button>
+                </div>
+            </div>
+        </section>
         <!-- articles list -->
         <section class="mt-10">
             <div class="container">
@@ -293,13 +371,13 @@
                                     عنوان مقاله
                                 </th>
                                 <th scope="col" class="px-6 py-3 text-nowrap">
-                                    دسته بندی	
+                                    دسته بندی
                                 </th>
                                 <th scope="col" class="px-6 py-3 text-nowrap">
-                                    وضعیت انتشار	
+                                    وضعیت انتشار
                                 </th>
                                 <th scope="col" class="px-6 py-3 text-nowrap">
-                                    زمان انتشار	
+                                    زمان انتشار
                                 </th>
                                 <th scope="col" class="px-6 py-3 text-nowrap">
                                     نویسنده
@@ -320,6 +398,7 @@
 
     </main>
 
+    <script src="https://cdn.ckeditor.com/ckeditor5/41.2.1/classic/ckeditor.js"></script>
     <script type="module" src="../js/panel/style.js"></script>
     <script type="module" src="../js/panel/articles.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>

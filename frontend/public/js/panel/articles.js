@@ -1,14 +1,13 @@
-import { getAllArticles } from "./func/shared.js";
+import { getAllArticles, prepareCreateArticleForm, createNewArticle } from "./func/shared.js";
 
 // window.removeSession = removeSession
 window.addEventListener("load", () => {
-    getAllArticles();
-    //     prepareCreateSessionForm();
+  getAllArticles();
+  prepareCreateArticleForm();
 
-    //     const addSessionBtn = document.querySelector('#addSessionBtn');
-    //     addSessionBtn.addEventListener("click", event => {
-    //         event.preventDefault();
-    //         createNewSession();
-    //     });
-
+  const addArticleBtn = document.querySelector("#addArticleBtn");
+  addArticleBtn.addEventListener("click", (event) => {
+    event.preventDefault();
+    createNewArticle();
+  });
 });
