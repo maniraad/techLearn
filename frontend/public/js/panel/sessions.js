@@ -1,16 +1,14 @@
-import { getAllSessions, prepareCreateSessionForm } from "./func/shared.js";
+import { getAllSessions, prepareCreateSessionForm, createNewSession } from "./func/shared.js";
 
-// window.showContentBody = showContentBody
-// window.answerToContact = answerToContact
 // window.removeMessage = removeMessage
 window.addEventListener("load", () => {
     getAllSessions();
     prepareCreateSessionForm();
 
-    //     const addMenuItemBtn = document.querySelector('#addMenuItemBtn');
-    //     addMenuItemBtn.addEventListener("click", event => {
-    //         event.preventDefault();
-    //         createNewMenuItem();
-    //     });
+    const addSessionBtn = document.querySelector('#addSessionBtn');
+    addSessionBtn.addEventListener("click", event => {
+        event.preventDefault();
+        createNewSession();
+    });
 
 });

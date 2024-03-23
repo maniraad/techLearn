@@ -842,4 +842,43 @@ const prepareCreateSessionForm = async () => {
     videoSessionElem.addEventListener("change", event => (videoSession = event.target.files[0]));
 };
 
-export { insertNotificationHTMLTemplate, seenNotification, getAllCourses, prepareCreateCourseForm, createNewCourse, removeCourse, getAllMenus, prepareCreateMenuItem, createNewMenuItem, removeMenuItem, getAllUsers, createNewUser, removeUser, banUser, getAllCategories, createNewCategory, removeCategory, getAllMessages, showContentBody, answerToContact, removeMessage, getAllSessions, prepareCreateSessionForm };
+const createNewSession = async () => {
+    const sessionNameElem = document.querySelector('#title');
+    const sessionTimeElem = document.querySelector('#time');
+
+    const formData = new FormData();
+    formData.append('video', videoSession);
+    formData.append('title', sessionNameElem.value.trim());
+    formData.append('time', Number(sessionTimeElem.value.trim()));
+    formData.append('free', isFree);
+
+    const res = await fetch(`http://localhost:4000/v1/courses/${courseID}/sessions`,
+        {
+            method: "POST",
+            headers: {
+                Authorization: `Bearer ${getToken()}`,
+            },
+            body: formData,
+        })
+
+    const result = await res.json()
+
+    if (res.ok) {
+        Toast.fire({
+            icon: "success",
+            title: " جلسه با موفقیت اضافه شد ",
+        });
+
+        getAllSessions()
+    } else {
+        Toast.fire({
+            icon: "error",
+            title: "مشکلی رخ داده است",
+            text: "لطفا بعدا امتحان کنید !"
+        });
+    }
+    console.log(res);
+    console.log(result);
+};
+
+export { insertNotificationHTMLTemplate, seenNotification, getAllCourses, prepareCreateCourseForm, createNewCourse, removeCourse, getAllMenus, prepareCreateMenuItem, createNewMenuItem, removeMenuItem, getAllUsers, createNewUser, removeUser, banUser, getAllCategories, createNewCategory, removeCategory, getAllMessages, showContentBody, answerToContact, removeMessage, getAllSessions, prepareCreateSessionForm, createNewSession };
