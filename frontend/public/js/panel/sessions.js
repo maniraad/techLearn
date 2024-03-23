@@ -1,6 +1,6 @@
-import { getAllSessions, prepareCreateSessionForm, createNewSession } from "./func/shared.js";
+import { getAllSessions, prepareCreateSessionForm, createNewSession, removeSession } from "./func/shared.js";
 
-// window.removeMessage = removeMessage
+window.removeSession = removeSession
 window.addEventListener("load", () => {
     getAllSessions();
     prepareCreateSessionForm();

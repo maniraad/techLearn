@@ -817,7 +817,7 @@ const getAllSessions = async () => {
                         class="font-medium text-blue-600 dark:text-blue-500 hover:underline">ویرایش</a>
                 </td>
                 <td class="px-6 py-4">
-                    <a href="#" onclick="removeMenuItem('6345987bd4a59348b0c6e2a7')"
+                    <a href="#" onclick="removeSession('${session._id}')"
                         class="font-medium text-blue-600 dark:text-blue-500 hover:underline">حذف</a>
                 </td>
             </tr>`)
@@ -861,8 +861,6 @@ const createNewSession = async () => {
             body: formData,
         })
 
-    const result = await res.json()
-
     if (res.ok) {
         Toast.fire({
             icon: "success",
@@ -877,8 +875,43 @@ const createNewSession = async () => {
             text: "لطفا بعدا امتحان کنید !"
         });
     }
-    console.log(res);
-    console.log(result);
+
 };
 
-export { insertNotificationHTMLTemplate, seenNotification, getAllCourses, prepareCreateCourseForm, createNewCourse, removeCourse, getAllMenus, prepareCreateMenuItem, createNewMenuItem, removeMenuItem, getAllUsers, createNewUser, removeUser, banUser, getAllCategories, createNewCategory, removeCategory, getAllMessages, showContentBody, answerToContact, removeMessage, getAllSessions, prepareCreateSessionForm, createNewSession };
+const removeSession = async (sessionID) => {
+    Swal.fire({
+        text: "آیا از حذف جلسه مورد نظر اطمینان دارید؟",
+        icon: "error",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        cancelButtonText: "خیر",
+        confirmButtonText: "بله"
+    }).then(async (result) => {
+        if (result.isConfirmed) {
+
+            const res = await fetch(`http://localhost:4000/v1/courses/sessions/${sessionID}`, {
+                method: "DELETE",
+                headers: {
+                    Authorization: `Bearer ${getToken()}`
+                }
+            })
+            if (res.ok) {
+                Toast.fire({
+                    icon: "success",
+                    title: " حذف با موفقیت انجام شد",
+                });
+
+                getAllSessions()
+            } else {
+                Toast.fire({
+                    icon: "error",
+                    title: "مشکلی رخ داده است",
+                    text: "لطفا بعدا امتحان کنید !"
+                });
+            }
+        }
+    });
+};
+
+export { insertNotificationHTMLTemplate, seenNotification, getAllCourses, prepareCreateCourseForm, createNewCourse, removeCourse, getAllMenus, prepareCreateMenuItem, createNewMenuItem, removeMenuItem, getAllUsers, createNewUser, removeUser, banUser, getAllCategories, createNewCategory, removeCategory, getAllMessages, showContentBody, answerToContact, removeMessage, getAllSessions, prepareCreateSessionForm, createNewSession,removeSession };
