@@ -1171,7 +1171,6 @@ const getAllComments = async () => {
   const articles = await res.json();
 
   articles.forEach((comment, index) => {
-    console.log(comment);
     commentsWrapperElem.insertAdjacentHTML(
       "beforeend",
       `
@@ -1223,7 +1222,6 @@ const getAllComments = async () => {
     );
   });
 };
-
 
 const showCommentBody = async (commentBody) => {
   Swal.fire({
@@ -1386,6 +1384,62 @@ const removeComment = async (commentID) => {
   });
 };
 
+// Functions For Discount
+const getAllDiscount = async () => {
+  const discountWrapperElem = document.querySelector("#discount-wrapper");
+  discountWrapperElem.innerHTML = "";
+  const res = await fetch(`http://localhost:4000/v1/offs`, {
+    headers: {
+      Authorization: `Bearer ${getToken()}`
+    }
+  });
+  const discounts = await res.json();
+
+  discounts.forEach((discount, index) => {
+    console.log(discount);
+    discountWrapperElem.insertAdjacentHTML(
+      "beforeend",
+      `
+          <tr class="bg-white border-b hover:bg-gray-50">
+            <td class="w-4 p-4">
+                <div class="flex items-center">
+                    <input id="checkbox-table-1" type="checkbox"
+                        class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2 cursor-pointer">
+                    <label for="checkbox-table-1" class="sr-only">checkbox</label>
+                </div>
+            </td>
+            <th scope="row"
+                class="px-6 py-4 text-nowrap font-medium text-gray-900 whitespace-nowrap">
+                ${index + 1}
+            </th>
+            <td class="px-6 py-4 text-nowrap">
+                ${discount.code}   
+            </td>
+            <td class="px-6 py-4 text-nowrap">
+                ${discount.creator}
+            </td>
+            <td class="px-6 py-4 text-nowrap">
+                ${discount.percent}
+            </td>
+            <td class="px-6 py-4 text-nowrap">
+                ${discount.max}
+            </td>
+            <td class="px-6 py-4 text-nowrap">
+                ${discount.uses}
+            </td>
+            <td class="px-6 py-4 text-nowrap">
+                ${discount.createdAt.slice(0, 10)}
+            </td>
+            <td class="px-6 py-4 text-nowrap">
+                <span onclick="removeComment('${discount._id}')"
+                    class="font-medium text-blue-600 dark:text-blue-500 hover:underline cursor-pointer">حذف</span>
+            </td>
+          </tr>`
+    );
+  });
+};
+
+// Export All Functions
 export {
   insertNotificationHTMLTemplate,
   seenNotification,
@@ -1438,4 +1492,7 @@ export {
   rejectComment,
   showCommentBody,
   answerComment,
+
+  // Export Functions Comments
+  getAllDiscount,
 };
