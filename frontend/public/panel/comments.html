@@ -125,10 +125,11 @@
                                 <div
                                     class="notification-menu absolute invisible opacity-0 -top-10 left-0 mt-4 flex max-h-[415px] w-80 flex-col border shadow-sm bg-white rounded-lg cursor-auto duration-200 transition-all">
                                     <div class="p-4">
-                                        <h5 class="notification-header text-sm font-medium text-bodydark2">اعلانی وجود
-                                            ندارد</h5>
+                                        <h5 class="notification-header text-sm font-medium text-bodydark2"></h5>
                                     </div>
-                                    <ul class="notifications-wrapper flex h-auto flex-col overflow-y-auto"></ul>
+                                    <ul class="notifications-wrapper flex h-auto flex-col overflow-y-auto">
+                                        <!-- Notifications Loaded From Js -->
+                                    </ul>
                                 </div>
                             </div>
                         </div>
@@ -139,20 +140,18 @@
                                     <svg class=" profile-icon w-4 h-4 transition-all duration-300">
                                         <use href="#chevron-down"></use>
                                     </svg>
-                                    <span class="admin-name hidden md:inline-block">قدیر یلمه</span>
+                                    <span class="admin-name hidden md:inline-block"></span>
                                 </span>
                                 <span>
-                                    <img class="admin-img object-cover w-10 h-10 md:w-12 md:h-12 rounded-full inline-block cursor-pointer"
-                                        src="http://localhost:4000//images/yolme.jpg">
+                                    <img
+                                        class="admin-img object-cover w-10 h-10 md:w-12 md:h-12 rounded-full inline-block cursor-pointer">
                                 </span>
                             </span>
                             <div
                                 class="profile-menu absolute invisible opacity-0 -top-14 left-0 mt-4 flex w-60 flex-col rounded-lg border bg-white shadow-sm duration-300 transition-all">
                                 <div class="p-5 border-b">
-                                    <h5 class="text-base mb-2 font-EstedadMedium text-zinc-900"><a class="admin-name "
-                                            href="#">قدیر یلمه</a></h5>
-                                    <a class="admin-email block text-sm text-slate-600"
-                                        href="#">qadiryoilme@gmail.com</a>
+                                    <h5 class="text-base mb-2 font-EstedadMedium text-zinc-900"><a class="admin-name " href="#"> </a></h5>
+                                    <a class="admin-email block text-sm text-slate-600" href="#">mailnam@mail.com</a>
                                 </div>
                                 <ul class="flex flex-col gap-5 border-b px-6 py-7">
                                     <li>
@@ -201,7 +200,7 @@
                                         </a>
                                     </li>
                                 </ul>
-                                <button
+                                <button id="logout-btn"
                                     class="flex items-center gap-3.5 px-6 py-4 text-sm font-EstedadMedium duration-300 ease-in-out hover:text-red-600 lg:text-base">
                                     <svg class="w-5 md:w-6 h-5 md:h-6">
                                         <use xlink:href="#arrow-left-start-on-rectangle"></use>

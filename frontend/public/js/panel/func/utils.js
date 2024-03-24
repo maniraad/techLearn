@@ -10,4 +10,6 @@ const getAdminInfos = async () => {
     return data
 };
 
-export { getAdminInfos }
+const logout = () => {location.replace("../index.html")};
+
+export { getAdminInfos, logout }
