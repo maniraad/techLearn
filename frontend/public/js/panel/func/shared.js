@@ -2,6 +2,7 @@ import { Toast, getToken } from "../../funcs/utils.js";
 
 let categoryID = -1;
 let courseID = -1;
+let courseDiscountID = -1;
 let parentMenuID = undefined;
 let status = "start";
 let isFree = "1";
@@ -1396,7 +1397,6 @@ const getAllDiscount = async () => {
   const discounts = await res.json();
 
   discounts.forEach((discount, index) => {
-    console.log(discount);
     discountWrapperElem.insertAdjacentHTML(
       "beforeend",
       `
@@ -1431,11 +1431,95 @@ const getAllDiscount = async () => {
                 ${discount.createdAt.slice(0, 10)}
             </td>
             <td class="px-6 py-4 text-nowrap">
-                <span onclick="removeComment('${discount._id}')"
+                <span onclick="removeDiscount('${discount._id}')"
                     class="font-medium text-blue-600 dark:text-blue-500 hover:underline cursor-pointer">حذف</span>
             </td>
           </tr>`
     );
+  });
+};
+
+const prepareCreateDiscountForm = async () => {
+  const courseListElem = document.querySelector(".course-item-list");
+
+  const res = await fetch(`http://localhost:4000/v1/courses`);
+
+  const courses = await res.json();
+  courses.forEach((course) => courseListElem.insertAdjacentHTML("beforeend", `<option value="${course._id}" class="text-gray-700">${course.name}</option>`));
+
+  courseListElem.addEventListener("change", event => (courseDiscountID = event.target.value));
+};
+
+const createNewDiscount = async () => {
+  const codeInputElem = document.querySelector("#code");
+  const percentInputElem = document.querySelector("#percent");
+  const maxInputElem = document.querySelector("#max");
+
+  const newoffsInfos = {
+    code: codeInputElem.value.trim(),
+    percent: percentInputElem.value.trim(),
+    max: maxInputElem.value.trim(),
+    course: courseDiscountID,
+  };
+
+  const res = await fetch(`http://localhost:4000/v1/offs`, {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${getToken()}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(newoffsInfos),
+  });
+
+  if (res.ok) {
+    Toast.fire({
+      icon: "success",
+      title: " ایتم با موفقیت اضافه شد ",
+    });
+
+    getAllDiscount();
+  } else {
+    Toast.fire({
+      icon: "error",
+      title: "مشکلی رخ داده است",
+      text: "لطفا بعدا امتحان کنید !",
+    });
+  }
+};
+
+const removeDiscount = async (discountID) => {
+  Swal.fire({
+    text: "آیا از حذف کد تخفیف مورد نظر اطمینان دارید؟",
+    icon: "error",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    cancelButtonText: "خیر",
+    confirmButtonText: "بله",
+  }).then(async (result) => {
+    if (result.isConfirmed) {
+      const res = await fetch(`http://localhost:4000/v1/offs/${discountID}`, {
+        method: "DELETE",
+        headers: {
+          Authorization: `Bearer ${getToken()}`,
+        },
+      });
+
+      if (res.ok) {
+        Toast.fire({
+          icon: "success",
+          title: " حذف با موفقیت انجام شد",
+        });
+
+        getAllDiscount();
+      } else {
+        Toast.fire({
+          icon: "error",
+          title: "مشکلی رخ داده است",
+          text: "لطفا بعدا امتحان کنید !",
+        });
+      }
+    }
   });
 };
 
@@ -1495,4 +1579,7 @@ export {
 
   // Export Functions Comments
   getAllDiscount,
+  prepareCreateDiscountForm,
+  createNewDiscount,
+  removeDiscount,
 };

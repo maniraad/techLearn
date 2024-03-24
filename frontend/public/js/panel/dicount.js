@@ -1,14 +1,14 @@
-import { getAllDiscount, } from "./func/shared.js";
+import { getAllDiscount, prepareCreateDiscountForm, createNewDiscount, removeDiscount } from "./func/shared.js";
 
-// window.removeMenuItem = removeMenuItem
+window.removeDiscount = removeDiscount
 window.addEventListener("load", () => {
     getAllDiscount();
-    // prepareCreateMenuItem();
+    prepareCreateDiscountForm();
 
-    // const addMenuItemBtn = document.querySelector('#addMenuItemBtn');
-    // addMenuItemBtn.addEventListener("click", event => {
-    //     event.preventDefault();
-    //     createNewMenuItem();
-    // });
+    const addOffsBtn = document.querySelector('#addOffsBtn');
+    addOffsBtn.addEventListener("click", event => {
+        event.preventDefault();
+        createNewDiscount();
+    });
 
 });

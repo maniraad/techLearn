@@ -264,31 +264,38 @@
         <!-- Add Discount Item -->
         <section>
             <div class="container">
-                <h1 class="lg:text-2xl font-EstedadBold mb-8">ایتم جدید</h1>
+                <h1 class="lg:text-2xl font-EstedadBold mb-8"> افزودن کد تخفیف </h1>
 
                 <div>
                     <div class="grid gap-6 mb-6 grid-cols-1 md:grid-cols-2">
                         <div>
                             <label class="mb-3 block text-sm font-EstedadMedium">
-                                عنوان آیتم
+                                کد تخفیف
                             </label>
-                            <input id="title" type="text" placeholder="فرانت اند"
+                            <input id="code" type="text" placeholder="off"
                                 class="w-full rounded-lg border border-solid bg-transparent px-5 py-3 outline-none text-gray-700 transition focus:border-blue-500 active:border-blue-500">
                         </div>
                         <div>
                             <label class="mb-3 block text-sm font-EstedadMedium">
-                                مقصد آیتم
+                                درصد تخفیف
                             </label>
-                            <input id="href" type="text" placeholder="همه دوره ها	"
+                            <input id="percent" type="text" placeholder=" 50"
                                 class="w-full rounded-lg border border-solid bg-transparent px-5 py-3 outline-none text-gray-700 transition focus:border-blue-500 active:border-blue-500">
                         </div>
                         <div>
                             <label class="mb-3 block text-sm font-EstedadMedium">
-                                انتخاب پرنت
+                                مهلت استفاده
+                            </label>
+                            <input id="max" type="text" placeholder=" 3"
+                                class="w-full rounded-lg border border-solid bg-transparent px-5 py-3 outline-none text-gray-700 transition focus:border-blue-500 active:border-blue-500">
+                        </div>
+                        <div>
+                            <label class="mb-3 block text-sm font-EstedadMedium">
+                                انتخاب دوره مورد نظر
                             </label>
                             <div class="relative z-20 bg-white">
                                 <select
-                                    class="menu-item-list relative text-gray-700 z-20 w-full appearance-none rounded-lg border border-solid bg-transparent py-3 pr-4 outline-none transition focus:border-blue-500 active:border-blue-500">
+                                    class="course-item-list relative text-gray-700 z-20 w-full appearance-none rounded-lg border border-solid bg-transparent py-3 pr-4 outline-none transition focus:border-blue-500 active:border-blue-500">
                                     <!-- Option Loaded From Js -->
                                     <option value="" class="text-gray-700"> </option>
                                 </select>
@@ -302,7 +309,7 @@
                     </div>
                     <button type="button"
                         class="my-6 text-white bg-teal-600 hover:bg-teal-700 focus:ring-4 focus:ring-teal-300 font-EstedadMedium rounded-lg text-sm px-5 py-2.5 me-2 focus:outline-none"
-                        id="addMenuItemBtn">
+                        id="addOffsBtn">
                         افزودن دوره
                     </button>
                 </div>
@@ -358,7 +365,7 @@
                             </tr>
                         </thead>
                         <tbody id="discount-wrapper" class="transition-all">
-
+                            <!-- Data Loaded From Js -->
                         </tbody>
                     </table>
 
