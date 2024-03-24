@@ -1204,7 +1204,7 @@ const getAllComments = async () => {
                     class="font-medium text-blue-600 dark:text-blue-500 hover:underline cursor-pointer">مشاهده</span>
             </td>
             <td class="px-6 py-4 text-nowrap">
-                <span
+                <span onclick="answerComment('${comment._id}')"
                     class="font-medium text-blue-600 dark:text-blue-500 hover:underline cursor-pointer">پاسخ</span>
             </td>
             <td class="px-6 py-4">
@@ -1224,11 +1224,54 @@ const getAllComments = async () => {
   });
 };
 
+
 const showCommentBody = async (commentBody) => {
   Swal.fire({
     text: commentBody,
     confirmButtonColor: "#0d9488",
     confirmButtonText: "مشاهده",
+  });
+};
+
+const answerComment = async (commentID) => {
+  Swal.fire({
+    input: "textarea",
+    inputLabel: "ارسال پاسخ",
+    confirmButtonColor: "#0d9488",
+    confirmButtonText: "ارسال پاسخ",
+    cancelButtonColor: "#ef4444",
+    cancelButtonText: "لغو",
+    showCancelButton: true,
+  }).then(async (result) => {
+    if (result.value) {
+      const answerCommentInfos = {
+        body: result.value,
+      };
+
+      const res = await fetch(`http://localhost:4000/v1/comments/answer/${commentID}`, {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${getToken()}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(answerCommentInfos),
+      });
+      const answerResult = await res.json();
+      console.log(res);
+      console.log(answerResult);
+      if (res.ok) {
+        Toast.fire({
+          icon: "success",
+          title: " پاسخ با موفقیت ارسال شد",
+        });
+      } else {
+        Toast.fire({
+          icon: "error",
+          title: "مشکلی رخ داده است",
+          text: "لطفا بعدا امتحان کنید !",
+        });
+      }
+    }
   });
 };
 
@@ -1394,4 +1437,5 @@ export {
   acceptComment,
   rejectComment,
   showCommentBody,
+  answerComment,
 };
