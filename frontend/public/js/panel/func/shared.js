@@ -137,8 +137,7 @@ const getAllCourses = async () => {
       }
                                  </td>
                                  <td class="px-6 py-4">
-                                     <a href="#" onclick="removeCourse('${course._id
-      }')" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">حذف</a>
+                                 <button onclick="removeCourse('${course._id}')" type="button" class="focus:outline-none text-white bg-red-600 hover:bg-red-700 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-xs px-3 py-2 me-2 mb-2">حذف</button>
                                  </td>
                              </tr>`
     );
@@ -289,8 +288,7 @@ const getAllMenus = async () => {
                          ${menu.parent ? menu.parent.title : "___"}
                     </td>
                     <td class="px-6 py-4">
-                        <a href="#" onclick="removeMenuItem('${menu._id}')"
-                            class="font-medium text-blue-600 dark:text-blue-500 hover:underline">حذف</a>
+                    <button onclick="removeMenuItem('${menu._id}')" type="button" class="focus:outline-none text-white bg-red-600 hover:bg-red-700 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-xs px-3 py-2 me-2 mb-2">حذف</button>
                     </td>
                 </tr>`
     );
@@ -434,20 +432,16 @@ const getAllUsers = async () => {
                     ${user.role}
                 </td>
                 <td class="px-6 py-4 text-nowrap">
-                    <span onclick="changeRole('${user._id}')"
-                        class="font-medium text-blue-600 dark:text-blue-500 hover:underline cursor-pointer">تغییر نقش</span>
+                <button onclick="changeRole('${user._id}')" type="button" class="focus:outline-none text-white bg-yellow-500 hover:bg-yellow-600 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-xs px-3 py-2 me-2 mb-2">تغییر نقش			</button>
                 </td>
                 <td class="px-6 py-4 text-nowrap">
-                    <span
-                        class="font-medium text-blue-600 dark:text-blue-500 hover:underline cursor-pointer">ویرایش</span>
+                <button type="button" class="focus:outline-none text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-xs px-3 py-2 me-2 mb-2">ویرایش	</button>
                 </td>
                 <td class="px-6 py-4">
-                    <span onclick="removeUser('${user._id}')"
-                        class="font-medium text-blue-600 dark:text-blue-500 hover:underline cursor-pointer">حذف</span>
+                <button onclick="removeUser('${user._id}')" type="button" class="focus:outline-none text-xs text-white bg-red-600 hover:bg-red-700 focus:ring-4 focus:ring-red-300 font-medium rounded-lg px-3 py-2 me-2 mb-2">حذف</button>
                 </td>
                 <td class="px-6 py-4 text-nowrap">
-                    <span  onclick="banUser('${user._id}')"
-                        class="font-medium text-blue-600 dark:text-blue-500 hover:underline cursor-pointer">بن</span>
+                <button onclick="banUser('${user._id}')" type="button" class="focus:outline-none text-gray-900 bg-white border border-blue-500  font-medium rounded-lg text-xs px-3 py-2 me-2 mb-2">رد</button>
                 </td>
             </tr>`
     );
@@ -649,12 +643,10 @@ const getAllCategories = async () => {
                                      ${category.name}
                                  </td>
                                  <td class="px-6 py-4 text-nowrap">
-                                     <a href="#"
-                                         class="font-medium text-blue-600 dark:text-blue-500 hover:underline">ویرایش</a>
+                                 <button type="button" class="focus:outline-none text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-xs px-3 py-2 me-2 mb-2">ویرایش	</button>
                                  </td>
                                  <td class="px-6 py-4">
-                                     <a href="#" onclick="removeCategory('${category._id
-      }')" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">حذف</a>
+                                 <button onclick="removeCategory('${category._id}')" type="button" class="focus:outline-none text-white bg-red-600 hover:bg-red-700 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-xs px-3 py-2 me-2 mb-2">حذف</button>
                                  </td>
                              </tr>`
     );
@@ -771,16 +763,13 @@ const getAllMessages = async () => {
                     ${message.createdAt.slice(0, 10)}
                 </td>
                 <td class="px-6 py-4 text-nowrap">
-                    <span onclick="showContentBody('${message.body}')"
-                        class="font-medium text-blue-600 dark:text-blue-500 hover:underline cursor-pointer">مشاهده</span>
+                <button onclick="showContentBody('${message.body}')" type="button" class="focus:outline-none text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-xs px-3 py-2 me-2 mb-2">مشاهده	</button>
                 </td>
                 <td class="px-6 py-4 text-nowrap">
-                    <span onclick="answerToContact('${message.email}')"
-                        class="font-medium text-blue-600 dark:text-blue-500 hover:underline cursor-pointer">پاسخ</span>
+                <button onclick="answerToContact('${message.email}')" type="button" class="focus:outline-none text-white bg-yellow-600 hover:bg-yellow-700 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-xs px-3 py-2 me-2 mb-2">پاسخ		</button>
                 </td>
                 <td class="px-6 py-4">
-                    <span onclick="removeMessage('${message._id}')"
-                        class="font-medium text-blue-600 dark:text-blue-500 hover:underline cursor-pointer">حذف</span>
+                <button onclick="removeMessage('${message._id}')" type="button" class="focus:outline-none text-white bg-red-600 hover:bg-red-700 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-xs px-3 py-2 me-2 mb-2">حذف</button>
                 </td>
             </tr>`
     );
@@ -913,8 +902,7 @@ const getAllSessions = async () => {
                     ${session.free === 1 ? "رایگان" : "غیر رایگان"}
                 </td>
                 <td class="px-6 py-4">
-                    <a href="#" onclick="removeSession('${session._id}')"
-                        class="font-medium text-blue-600 dark:text-blue-500 hover:underline">حذف</a>
+                <button onclick="removeSession('${session._id}')" type="button" class="focus:outline-none text-white bg-red-600 hover:bg-red-700 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-xs px-3 py-2 me-2 mb-2">حذف</button>
                 </td>
             </tr>`
     );
@@ -1069,7 +1057,7 @@ const getAllArticles = async () => {
                     ${article.creator.name}		
                 </td>
                 <td class="px-6 py-4">
-                    <a href="#" onclick="removeArticle('${article._id}')" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">حذف</a>
+                <button onclick="removeArticle('${article._id}')" type="button" class="focus:outline-none text-white bg-red-600 hover:bg-red-700 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-xs px-3 py-2 me-2 mb-2">حذف</button>
                 </td>
             </tr>`
     );
@@ -1228,24 +1216,19 @@ const getAllComments = async () => {
                 ${comment.createdAt.slice(0, 10)}
             </td>
             <td class="px-6 py-4 text-nowrap">
-                <span onclick="showCommentBody('${comment.body}')"
-                    class="font-medium text-blue-600 dark:text-blue-500 hover:underline cursor-pointer">مشاهده</span>
+                <button onclick="showCommentBody('${comment.body}')" type="button" class="focus:outline-none text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-xs px-3 py-2 me-2 mb-2">مشاهده	</button>
             </td>
             <td class="px-6 py-4 text-nowrap">
-                <span onclick="answerComment('${comment._id}')"
-                    class="font-medium text-blue-600 dark:text-blue-500 hover:underline cursor-pointer">پاسخ</span>
-            </td>
-            <td class="px-6 py-4">
-                <span onclick="acceptComment('${comment._id}')"
-                    class="font-medium text-blue-600 dark:text-blue-500 hover:underline cursor-pointer">تایید</span>
+                <button onclick="answerComment('${comment._id}')" type="button" class="focus:outline-none text-white bg-yellow-600 hover:bg-yellow-700 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-xs px-3 py-2 me-2 mb-2">پاسخ		</button>
             </td>
             <td class="px-6 py-4 text-nowrap">
-                <span onclick="rejectComment('${comment._id}')"
-                    class="font-medium text-blue-600 dark:text-blue-500 hover:underline cursor-pointer">رد</span>
+                <button onclick="acceptComment('${comment._id}')" type="button" class="focus:outline-none text-white bg-green-600 hover:bg-green-700 focus:z-10 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-xs px-3 py-2 me-2 mb-2">تایید</button>
             </td>
             <td class="px-6 py-4 text-nowrap">
-                <span onclick="removeComment('${comment._id}')"
-                    class="font-medium text-blue-600 dark:text-blue-500 hover:underline cursor-pointer">حذف</span>
+                <button onclick="rejectComment('${comment._id}')" type="button" class="focus:outline-none text-gray-900 bg-white border border-blue-500  font-medium rounded-lg text-xs px-3 py-2 me-2 mb-2">رد</button>
+            </td>
+            <td class="px-6 py-4 text-nowrap">
+                <button onclick="removeComment('${comment._id}')" type="button" class="focus:outline-none text-white bg-red-600 hover:bg-red-700 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-xs px-3 py-2 me-2 mb-2">حذف</button>
             </td>
           </tr>`
     );
@@ -1459,8 +1442,7 @@ const getAllDiscount = async () => {
                 ${discount.createdAt.slice(0, 10)}
             </td>
             <td class="px-6 py-4 text-nowrap">
-                <span onclick="removeDiscount('${discount._id}')"
-                    class="font-medium text-blue-600 dark:text-blue-500 hover:underline cursor-pointer">حذف</span>
+            <button onclick="removeDiscount('${discount._id}')" type="button" class="focus:outline-none text-white bg-red-600 hover:bg-red-700 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-xs px-3 py-2 me-2 mb-2">حذف</button>
             </td>
           </tr>`
     );
