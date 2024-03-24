@@ -136,10 +136,6 @@ const getAllCourses = async () => {
         : "تکمیل شده"
       }
                                  </td>
-                                 <td class="px-6 py-4 text-nowrap">
-                                     <a href="#"
-                                         class="font-medium text-blue-600 dark:text-blue-500 hover:underline">ویرایش</a>
-                                 </td>
                                  <td class="px-6 py-4">
                                      <a href="#" onclick="removeCourse('${course._id
       }')" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">حذف</a>
@@ -292,10 +288,6 @@ const getAllMenus = async () => {
                     <td class="px-6 py-4 text-nowrap">
                          ${menu.parent ? menu.parent.title : "___"}
                     </td>
-                    <td class="px-6 py-4 text-nowrap">
-                        <a href="#"
-                            class="font-medium text-blue-600 dark:text-blue-500 hover:underline">ویرایش</a>
-                    </td>
                     <td class="px-6 py-4">
                         <a href="#" onclick="removeMenuItem('${menu._id}')"
                             class="font-medium text-blue-600 dark:text-blue-500 hover:underline">حذف</a>
@@ -442,16 +434,20 @@ const getAllUsers = async () => {
                     ${user.role}
                 </td>
                 <td class="px-6 py-4 text-nowrap">
-                    <a href="#"
-                        class="font-medium text-blue-600 dark:text-blue-500 hover:underline">ویرایش</a>
-                </td>
-                <td class="px-6 py-4">
-                    <a href="#" onclick="removeUser('${user._id}')"
-                        class="font-medium text-blue-600 dark:text-blue-500 hover:underline">حذف</a>
+                    <span onclick="changeRole('${user._id}')"
+                        class="font-medium text-blue-600 dark:text-blue-500 hover:underline cursor-pointer">تغییر نقش</span>
                 </td>
                 <td class="px-6 py-4 text-nowrap">
-                    <a href="#"  onclick="banUser('${user._id}')"
-                        class="font-medium text-blue-600 dark:text-blue-500 hover:underline">بن</a>
+                    <span
+                        class="font-medium text-blue-600 dark:text-blue-500 hover:underline cursor-pointer">ویرایش</span>
+                </td>
+                <td class="px-6 py-4">
+                    <span onclick="removeUser('${user._id}')"
+                        class="font-medium text-blue-600 dark:text-blue-500 hover:underline cursor-pointer">حذف</span>
+                </td>
+                <td class="px-6 py-4 text-nowrap">
+                    <span  onclick="banUser('${user._id}')"
+                        class="font-medium text-blue-600 dark:text-blue-500 hover:underline cursor-pointer">بن</span>
                 </td>
             </tr>`
     );
@@ -584,6 +580,42 @@ const banUser = async (userID) => {
     }
   });
 };
+
+// const changeRole = async (userID) => {
+//   const inputOptions = new Promise((resolve) => {
+//     resolve({
+//       "USER": "USER",
+//       "ADMIN": "ADMIN"
+//     });
+//   });
+//   const { value: role } = await Swal.fire({
+//     title: "Select color",
+//     input: "radio",
+//     inputOptions,
+//     inputValidator: (value) => {
+//       if (!value) {
+//         return "You need to choose something!";
+//       }
+//     }
+//   });
+//   console.log(userID);
+//   const  userNewRoleInfo =   {
+//     role: role,
+//     id: userID,
+//   }
+//   console.log(userNewRoleInfo);
+//   const res = await fetch(`http://localhost:4000/v1/users/role`, {
+//     method: "PUT",
+//     headers: {
+//       Authorization: `Bearer ${getToken()}`,
+//       "Content-Type": "application/json",
+//     },
+//     body: JSON.stringify(userNewRoleInfo)
+//   })
+//   const result = await res.json()
+//   console.log(res);
+//   console.log(result);
+// };
 
 // Functions For Category
 
@@ -879,10 +911,6 @@ const getAllSessions = async () => {
                 </td>
                 <td class="px-6 py-4 text-nowrap">
                     ${session.free === 1 ? "رایگان" : "غیر رایگان"}
-                </td>
-                <td class="px-6 py-4 text-nowrap">
-                    <a href="#"
-                        class="font-medium text-blue-600 dark:text-blue-500 hover:underline">ویرایش</a>
                 </td>
                 <td class="px-6 py-4">
                     <a href="#" onclick="removeSession('${session._id}')"
@@ -1545,6 +1573,7 @@ export {
   createNewUser,
   removeUser,
   banUser,
+  // changeRole,
 
   // Export Functions Category
   getAllCategories,

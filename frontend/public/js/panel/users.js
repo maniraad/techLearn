@@ -2,6 +2,7 @@ import { getAllUsers, createNewUser, removeUser, banUser } from "./func/shared.j
 
 window.removeUser = removeUser
 window.banUser = banUser
+// window.changeRole = changeRole
 window.addEventListener("load", () => {
 
     getAllUsers();

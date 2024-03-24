@@ -9,7 +9,7 @@
     <title> تک لرن | دوره </title>
 </head>
 
-<body dir="rtl" class="font-Estedad">
+<body dir="rtl" class="font-Estedad bg-gray-100">
 
     <svg class="hidden">
         <symbol id="menu-bars" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
@@ -40,11 +40,13 @@
             <path stroke-linecap="round" stroke-linejoin="round"
                 d="m9.75 9.75 4.5 4.5m0-4.5-4.5 4.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
         </symbol>
-        <symbol id="arrow-left-start-on-rectangle" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-            stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-            <path stroke-linecap="round" stroke-linejoin="round"
-                d="M8.25 9V5.25A2.25 2.25 0 0 1 10.5 3h6a2.25 2.25 0 0 1 2.25 2.25v13.5A2.25 2.25 0 0 1 16.5 21h-6a2.25 2.25 0 0 1-2.25-2.25V15m-3 0-3-3m0 0 3-3m-3 3H15" />
-        </symbol>
+        <symbol id="arrow-left-start-on-rectangle" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 9V5.25A2.25 2.25 0 0 1 10.5 3h6a2.25 2.25 0 0 1 2.25 2.25v13.5A2.25 2.25 0 0 1 16.5 21h-6a2.25 2.25 0 0 1-2.25-2.25V15m-3 0-3-3m0 0 3-3m-3 3H15" />
+          </symbol>
+          <symbol id="user" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+          </symbol>
+          
     </svg>
 
     <!-- Header -->
@@ -53,7 +55,7 @@
             <div class="flex flex-col md:flex-row justify-between items-center">
                 <!-- Header Logo -->
                 <div class="flex-center w-full md:w-auto py-2.5 md:py-0 md:h-28 mx-6 lg:mx-14 border-b md:border-none">
-                    <a href="#">
+                    <a href="../index.html">
                         <img src="../images/logo/Logo.png" alt="Logo">
                     </a>
                 </div>
@@ -63,7 +65,7 @@
                     <div class="flex flex-wrap items-center gap-x-4">
                         <!--Sidebar Header Toggle-->
                         <div class="menu-btn cursor-pointer">
-                            <svg class="w-7 md:w-9 h-7 md:h-9 hover:text-teal-600 transition-all">
+                            <svg class="w-7 md:w-9 h-7 md:h-9 transition-all">
                                 <use href="#menu-bars"></use>
                             </svg>
                         </div>
@@ -123,7 +125,7 @@
                                 </svg>
 
                                 <div
-                                    class="notification-menu absolute invisible opacity-0 -top-10 left-0 mt-4 flex max-h-[415px] w-80 flex-col border shadow-sm bg-white rounded-lg cursor-auto duration-200 transition-all">
+                                    class="notification-menu absolute invisible opacity-0 -top-10 left-0 mt-4 flex max-h-[415px] w-52 md:w-64 lg:w-80 flex-col border shadow-sm bg-white rounded-lg cursor-auto duration-200 transition-all">
                                     <div class="p-4">
                                         <h5 class="notification-header text-sm font-medium text-bodydark2"></h5>
                                     </div>
@@ -155,48 +157,21 @@
                                 </div>
                                 <ul class="flex flex-col gap-5 border-b px-6 py-7">
                                     <li>
-                                        <a href="profile.html"
+                                        <a href=""
                                             class="flex items-center gap-3.5 text-sm font-medium duration-300 ease-in-out hover:text-primary lg:text-base">
-                                            <svg class="fill-current" width="22" height="22" viewBox="0 0 22 22"
-                                                fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path
-                                                    d="M11 9.62499C8.42188 9.62499 6.35938 7.59687 6.35938 5.12187C6.35938 2.64687 8.42188 0.618744 11 0.618744C13.5781 0.618744 15.6406 2.64687 15.6406 5.12187C15.6406 7.59687 13.5781 9.62499 11 9.62499ZM11 2.16562C9.28125 2.16562 7.90625 3.50624 7.90625 5.12187C7.90625 6.73749 9.28125 8.07812 11 8.07812C12.7188 8.07812 14.0938 6.73749 14.0938 5.12187C14.0938 3.50624 12.7188 2.16562 11 2.16562Z"
-                                                    fill=""></path>
-                                                <path
-                                                    d="M17.7719 21.4156H4.2281C3.5406 21.4156 2.9906 20.8656 2.9906 20.1781V17.0844C2.9906 13.7156 5.7406 10.9656 9.10935 10.9656H12.925C16.2937 10.9656 19.0437 13.7156 19.0437 17.0844V20.1781C19.0094 20.8312 18.4594 21.4156 17.7719 21.4156ZM4.53748 19.8687H17.4969V17.0844C17.4969 14.575 15.4344 12.5125 12.925 12.5125H9.07498C6.5656 12.5125 4.5031 14.575 4.5031 17.0844V19.8687H4.53748Z"
-                                                    fill=""></path>
+                                            <svg class="w-5 md:w-6 h-5 md:h-6">
+                                                <use xlink:href="#user"></use>
                                             </svg>
-                                            My Profile
+                                            پروفایل من 
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="profile.html"
+                                        <a href=""
                                             class="flex items-center gap-3.5 text-sm font-medium duration-300 ease-in-out hover:text-primary lg:text-base">
-                                            <svg class="fill-current" width="22" height="22" viewBox="0 0 22 22"
-                                                fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path
-                                                    d="M11 9.62499C8.42188 9.62499 6.35938 7.59687 6.35938 5.12187C6.35938 2.64687 8.42188 0.618744 11 0.618744C13.5781 0.618744 15.6406 2.64687 15.6406 5.12187C15.6406 7.59687 13.5781 9.62499 11 9.62499ZM11 2.16562C9.28125 2.16562 7.90625 3.50624 7.90625 5.12187C7.90625 6.73749 9.28125 8.07812 11 8.07812C12.7188 8.07812 14.0938 6.73749 14.0938 5.12187C14.0938 3.50624 12.7188 2.16562 11 2.16562Z"
-                                                    fill=""></path>
-                                                <path
-                                                    d="M17.7719 21.4156H4.2281C3.5406 21.4156 2.9906 20.8656 2.9906 20.1781V17.0844C2.9906 13.7156 5.7406 10.9656 9.10935 10.9656H12.925C16.2937 10.9656 19.0437 13.7156 19.0437 17.0844V20.1781C19.0094 20.8312 18.4594 21.4156 17.7719 21.4156ZM4.53748 19.8687H17.4969V17.0844C17.4969 14.575 15.4344 12.5125 12.925 12.5125H9.07498C6.5656 12.5125 4.5031 14.575 4.5031 17.0844V19.8687H4.53748Z"
-                                                    fill=""></path>
+                                            <svg class="w-5 md:w-6 h-5 md:h-6">
+                                                <use xlink:href="#bell"></use>
                                             </svg>
-                                            My Profile
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="profile.html"
-                                            class="flex items-center gap-3.5 text-sm font-medium duration-300 ease-in-out hover:text-primary lg:text-base">
-                                            <svg class="fill-current" width="22" height="22" viewBox="0 0 22 22"
-                                                fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path
-                                                    d="M11 9.62499C8.42188 9.62499 6.35938 7.59687 6.35938 5.12187C6.35938 2.64687 8.42188 0.618744 11 0.618744C13.5781 0.618744 15.6406 2.64687 15.6406 5.12187C15.6406 7.59687 13.5781 9.62499 11 9.62499ZM11 2.16562C9.28125 2.16562 7.90625 3.50624 7.90625 5.12187C7.90625 6.73749 9.28125 8.07812 11 8.07812C12.7188 8.07812 14.0938 6.73749 14.0938 5.12187C14.0938 3.50624 12.7188 2.16562 11 2.16562Z"
-                                                    fill=""></path>
-                                                <path
-                                                    d="M17.7719 21.4156H4.2281C3.5406 21.4156 2.9906 20.8656 2.9906 20.1781V17.0844C2.9906 13.7156 5.7406 10.9656 9.10935 10.9656H12.925C16.2937 10.9656 19.0437 13.7156 19.0437 17.0844V20.1781C19.0094 20.8312 18.4594 21.4156 17.7719 21.4156ZM4.53748 19.8687H17.4969V17.0844C17.4969 14.575 15.4344 12.5125 12.925 12.5125H9.07498C6.5656 12.5125 4.5031 14.575 4.5031 17.0844V19.8687H4.53748Z"
-                                                    fill=""></path>
-                                            </svg>
-                                            My Profile
+                                            پروفایل من 
                                         </a>
                                     </li>
                                 </ul>
@@ -217,42 +192,39 @@
 
     <!-- Sidebar -->
     <aside
-        class="bg-sky-950 h-full w-40 md:w-52 lg:w-64 py-8 fixed top-[8.5rem] md:top-28 -right-64 shadow-sm z-50 transition-all">
+        class="bg-neutral-50 h-screen w-40 md:w-52 lg:w-64 py-8 fixed top-24 md:top-20 -right-64 shadow-sm z-40 transition-all">
         <nav>
-            <ul class="text-white/60 child:text-sm child:md:text-base">
-                <li class="side-bar side-bar--active">
-                    <a class="py-4 px-6 block transition-all" href="main.html">صفحه اصلی
+            <ul class="text-zinc-800 h-screen child:text-sm child:md:text-base px-2 py-5 md:p-8">
+                <li class="side-bar">
+                    <a class="py-2.5 px-6 block transition-all" href="main.html">صفحه اصلی
                     </a>
                 </li>
                 <li class="side-bar">
-                    <a class="py-4 px-6 block transition-all" href="courses.html">دوره ها</a>
+                    <a class="py-2.5 px-6 block transition-all" href="courses.html">دوره ها</a>
                 </li>
                 <li class="side-bar">
-                    <a class="py-4 px-6 block transition-all" href="menus.html">منو ها</a>
+                    <a class="py-2.5 px-6 block transition-all" href="menus.html">منو ها</a>
                 </li>
                 <li class="side-bar">
-                    <a class="py-4 px-6 block transition-all" href="articles.html">مقاله ها</a>
+                    <a class="py-2.5 px-6 block transition-all" href="articles.html">مقاله ها</a>
                 </li>
                 <li class="side-bar">
-                    <a class="py-4 px-6 block transition-all" href="#">پیش نویس ها</a>
+                    <a class="py-2.5 px-6 block transition-all" href="users.html">کاربران</a>
                 </li>
                 <li class="side-bar">
-                    <a class="py-4 px-6 block transition-all" href="users.html">کاربران</a>
+                    <a class="py-2.5 px-6 block transition-all" href="sessions.html">جلسات</a>
                 </li>
                 <li class="side-bar">
-                    <a class="py-4 px-6 block transition-all" href="sessions.html">جلسات</a>
+                    <a class="py-2.5 px-6 block transition-all" href="category.html">دسته‌بندی‌ ها</a>
                 </li>
                 <li class="side-bar">
-                    <a class="py-4 px-6 block transition-all" href="categories.html">دسته‌بندی‌ ها</a>
+                    <a class="py-2.5 px-6 block transition-all" href="messages.html">پیغام ها</a>
                 </li>
                 <li class="side-bar">
-                    <a class="py-4 px-6 block transition-all" href="messages.html">پیغام ها</a>
+                    <a class="py-2.5 px-6 block transition-all" href="discount.html">کدهای تخفیف</a>
                 </li>
                 <li class="side-bar">
-                    <a class="py-4 px-6 block transition-all" href="discount.html">کدهای تخفیف</a>
-                </li>
-                <li class="side-bar">
-                    <a class="py-4 px-6 block transition-all" href="#">تیکت‌ ها</a>
+                    <a class="py-2.5 px-6 block transition-all side-bar--active" href="comments.html">تیکت‌ ها</a>
                 </li>
             </ul>
         </nav>

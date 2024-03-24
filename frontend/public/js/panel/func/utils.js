@@ -10,6 +10,9 @@ const getAdminInfos = async () => {
     return data
 };
 
-const logout = () => {location.replace("../index.html")};
+const logout = () => {
+    localStorage.removeItem('user');
+    location.replace("../index.html");
+};
 
 export { getAdminInfos, logout }
