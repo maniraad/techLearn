@@ -1163,6 +1163,186 @@ const removeArticle = async (articleID) => {
   });
 };
 
+// Functions For Comments
+const getAllComments = async () => {
+  const commentsWrapperElem = document.querySelector("#comments-wrapper");
+  commentsWrapperElem.innerHTML = "";
+  const res = await fetch(`http://localhost:4000/v1/comments`);
+  const articles = await res.json();
+
+  articles.forEach((comment, index) => {
+    console.log(comment);
+    commentsWrapperElem.insertAdjacentHTML(
+      "beforeend",
+      `
+          <tr class="bg-white border-b hover:bg-gray-50">
+            <td class="w-4 p-4">
+                <div class="flex items-center">
+                    <input id="checkbox-table-1" type="checkbox"
+                        class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2 cursor-pointer">
+                    <label for="checkbox-table-1" class="sr-only">checkbox</label>
+                </div>
+            </td>
+            <th scope="row"
+                class="px-6 py-4 text-nowrap font-medium text-gray-900 whitespace-nowrap">
+                ${index + 1}
+            </th>
+            <td class="px-6 py-4 text-nowrap">
+                ${comment.creator.name}   
+            </td>
+            <td class="px-6 py-4 text-nowrap">
+                ${comment.creator.email}
+            </td>
+            <td class="px-6 py-4 text-nowrap">
+                ${comment.course}
+            </td>
+            <td class="px-6 py-4 text-nowrap">
+                ${comment.createdAt.slice(0, 10)}
+            </td>
+            <td class="px-6 py-4 text-nowrap">
+                <span onclick="showCommentBody('${comment.body}')"
+                    class="font-medium text-blue-600 dark:text-blue-500 hover:underline cursor-pointer">مشاهده</span>
+            </td>
+            <td class="px-6 py-4 text-nowrap">
+                <span
+                    class="font-medium text-blue-600 dark:text-blue-500 hover:underline cursor-pointer">پاسخ</span>
+            </td>
+            <td class="px-6 py-4">
+                <span onclick="acceptComment('${comment._id}')"
+                    class="font-medium text-blue-600 dark:text-blue-500 hover:underline cursor-pointer">تایید</span>
+            </td>
+            <td class="px-6 py-4 text-nowrap">
+                <span onclick="rejectComment('${comment._id}')"
+                    class="font-medium text-blue-600 dark:text-blue-500 hover:underline cursor-pointer">رد</span>
+            </td>
+            <td class="px-6 py-4 text-nowrap">
+                <span onclick="removeComment('${comment._id}')"
+                    class="font-medium text-blue-600 dark:text-blue-500 hover:underline cursor-pointer">حذف</span>
+            </td>
+          </tr>`
+    );
+  });
+};
+
+const showCommentBody = async (commentBody) => {
+  Swal.fire({
+    text: commentBody,
+    confirmButtonColor: "#0d9488",
+    confirmButtonText: "مشاهده",
+  });
+};
+
+const acceptComment = async (commentID) => {
+  Swal.fire({
+    text: "آیا از تایید کامنت مورد نظر اطمینان دارید؟",
+    icon: "error",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    cancelButtonText: "خیر",
+    confirmButtonText: "بله"
+  }).then(async (result) => {
+    if (result.isConfirmed) {
+
+      const res = await fetch(`http://localhost:4000/v1/comments/accept/${commentID}`, {
+        method: "PUT",
+        headers: {
+          Authorization: `Bearer ${getToken()}`
+        }
+      })
+
+      if (res.ok) {
+        Toast.fire({
+          icon: "success",
+          title: " کامنت مورد نظر با موفقیت تایید شد!",
+        });
+
+        getAllComments()
+      } else {
+        Toast.fire({
+          icon: "error",
+          title: "مشکلی رخ داده است",
+          text: "لطفا بعدا امتحان کنید !"
+        });
+      }
+    }
+  });
+};
+
+const rejectComment = async (commentID) => {
+  Swal.fire({
+    text: "آیا از رد کامنت مورد نظر اطمینان دارید؟",
+    icon: "error",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    cancelButtonText: "خیر",
+    confirmButtonText: "بله"
+  }).then(async (result) => {
+    if (result.isConfirmed) {
+
+      const res = await fetch(`http://localhost:4000/v1/comments/reject/${commentID}`, {
+        method: "PUT",
+        headers: {
+          Authorization: `Bearer ${getToken()}`
+        }
+      })
+
+      if (res.ok) {
+        Toast.fire({
+          icon: "success",
+          title: " کامنت مورد نظر با موفقیت رد شد!",
+        });
+
+        getAllComments()
+      } else {
+        Toast.fire({
+          icon: "error",
+          title: "مشکلی رخ داده است",
+          text: "لطفا بعدا امتحان کنید !"
+        });
+      }
+    }
+  });
+};
+
+const removeComment = async (commentID) => {
+  Swal.fire({
+    text: "آیا از حذف کامنت مورد نظر اطمینان دارید؟",
+    icon: "error",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    cancelButtonText: "خیر",
+    confirmButtonText: "بله"
+  }).then(async (result) => {
+    if (result.isConfirmed) {
+
+      const res = await fetch(`http://localhost:4000/v1/comments/${commentID}`, {
+        method: "DELETE",
+        headers: {
+          Authorization: `Bearer ${getToken()}`
+        }
+      })
+
+      if (res.ok) {
+        Toast.fire({
+          icon: "success",
+          title: " حذف با موفقیت انجام شد",
+        });
+
+        getAllComments()
+      } else {
+        Toast.fire({
+          icon: "error",
+          title: "مشکلی رخ داده است",
+          text: "لطفا بعدا امتحان کنید !"
+        });
+      }
+    }
+  });
+};
+
 export {
   insertNotificationHTMLTemplate,
   seenNotification,
@@ -1207,4 +1387,11 @@ export {
   prepareCreateArticleForm,
   createNewArticle,
   removeArticle,
+
+  // Export Functions Comments
+  getAllComments,
+  removeComment,
+  acceptComment,
+  rejectComment,
+  showCommentBody,
 };
