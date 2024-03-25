@@ -224,7 +224,7 @@ const getAndShowMenus = async () => {
         menusContainer.insertAdjacentHTML('beforeend',
             `
             <li class="relative group">
-                <a href="http://127.0.0.1:5500/frontend/public/${menu.href}" class="flex items-center gap-x-1.5 h-full text-zinc-700">
+                <a href="${menu.href}" class="flex items-center gap-x-1.5 h-full text-zinc-700">
                     ${menu.title}
                 </a>
                     ${menu.submenus.length !== 0 ?
@@ -440,7 +440,30 @@ const getCourseDetails = () => {
                     courseRegisterButton.classList.add('cursor-pointer');
 
                     courseRegisterButton.addEventListener("click", () => {
-
+                        if (course.price == 0) {
+                            fetch(`http://localhost:4000/v1/courses/${course._id}/register`, {
+                                method: "POST",
+                                headers: {
+                                    Authorization: `Bearer ${getToken()}`,
+                                    "Content-Type": "application/json"
+                                },
+                                body: JSON.stringify({ price: 0 })
+                            }).then(res => {
+                                Toast.fire({
+                                    icon: "success",
+                                    title: " ثبت نام با موفقیت انجام شد",
+                                });
+                                setTimeout(function () {
+                                    location.reload()
+                                }, 3000);
+                            }).catch(err => {
+                                Toast.fire({
+                                    icon: "error",
+                                    title: "مشکلی رخ داده است",
+                                    text: "لطفا بعدا امتحان کنید !",
+                                  });
+                            })
+                        }
                     })
                 }
             });
