@@ -1,8 +1,8 @@
-import { getAllUsers, createNewUser, removeUser, banUser } from "./func/shared.js";
+import { getAllUsers, createNewUser, removeUser, banUser, changeRole } from "./func/shared.js";
 
 window.removeUser = removeUser
 window.banUser = banUser
-// window.changeRole = changeRole
+window.changeRole = changeRole
 window.addEventListener("load", () => {
 
     getAllUsers();
@@ -11,6 +11,6 @@ window.addEventListener("load", () => {
 
     addUserBtn.addEventListener("click", event => {
         event.preventDefault();
-        createNewUser   ()
+        createNewUser()
     });
 });

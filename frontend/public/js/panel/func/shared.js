@@ -441,7 +441,7 @@ const getAllUsers = async () => {
                 <button onclick="removeUser('${user._id}')" type="button" class="focus:outline-none text-xs text-white bg-red-600 hover:bg-red-700 focus:ring-4 focus:ring-red-300 font-medium rounded-lg px-3 py-2 me-2 mb-2">حذف</button>
                 </td>
                 <td class="px-6 py-4 text-nowrap">
-                <button onclick="banUser('${user._id}')" type="button" class="focus:outline-none text-gray-900 bg-white border border-blue-500  font-medium rounded-lg text-xs px-3 py-2 me-2 mb-2">رد</button>
+                <button onclick="banUser('${user._id}')" type="button" class="focus:outline-none text-gray-900 bg-white border border-blue-500  font-medium rounded-lg text-xs px-3 py-2 me-2 mb-2">بن</button>
                 </td>
             </tr>`
     );
@@ -575,41 +575,41 @@ const banUser = async (userID) => {
   });
 };
 
-// const changeRole = async (userID) => {
-//   const inputOptions = new Promise((resolve) => {
-//     resolve({
-//       "USER": "USER",
-//       "ADMIN": "ADMIN"
-//     });
-//   });
-//   const { value: role } = await Swal.fire({
-//     title: "Select color",
-//     input: "radio",
-//     inputOptions,
-//     inputValidator: (value) => {
-//       if (!value) {
-//         return "You need to choose something!";
-//       }
-//     }
-//   });
-//   console.log(userID);
-//   const  userNewRoleInfo =   {
-//     role: role,
-//     id: userID,
-//   }
-//   console.log(userNewRoleInfo);
-//   const res = await fetch(`http://localhost:4000/v1/users/role`, {
-//     method: "PUT",
-//     headers: {
-//       Authorization: `Bearer ${getToken()}`,
-//       "Content-Type": "application/json",
-//     },
-//     body: JSON.stringify(userNewRoleInfo)
-//   })
-//   const result = await res.json()
-//   console.log(res);
-//   console.log(result);
-// };
+const changeRole = async (userID) => {
+  const inputOptions = await new Promise((resolve) => {
+    resolve({
+      "USER": "USER",
+      "ADMIN": "ADMIN"
+    });
+  });
+  const { value: role } = await Swal.fire({
+    title: "Select color",
+    input: "radio",
+    inputOptions,
+    inputValidator: (value) => {
+      if (!value) {
+        return "You need to choose something!";
+      }
+    }
+  });
+  console.log(userID);
+  const userNewRoleInfo = {
+    id: userID,
+    role: role,
+  }
+  console.log(userNewRoleInfo);
+  const res = await fetch(`http://localhost:4000/v1/users/role`, {
+    method: "PUT",
+    headers: {
+      Authorization: `Bearer ${getToken()}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(userNewRoleInfo)
+  })
+  const result = await res.json()
+  console.log(res);
+  console.log(result);
+};
 
 // Functions For Category
 
@@ -1555,7 +1555,7 @@ export {
   createNewUser,
   removeUser,
   banUser,
-  // changeRole,
+  changeRole,
 
   // Export Functions Category
   getAllCategories,

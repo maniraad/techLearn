@@ -69,6 +69,21 @@
             <path stroke-linecap="round" stroke-linejoin="round"
                 d="M3 4.5h14.25M3 9h9.75M3 13.5h9.75m4.5-4.5v12m0 0-3.75-3.75M17.25 21 21 17.25" />
         </symbol>
+        <symbol id="squares-2x2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                d="M3.75 6A2.25 2.25 0 0 1 6 3.75h2.25A2.25 2.25 0 0 1 10.5 6v2.25a2.25 2.25 0 0 1-2.25 2.25H6a2.25 2.25 0 0 1-2.25-2.25V6ZM3.75 15.75A2.25 2.25 0 0 1 6 13.5h2.25a2.25 2.25 0 0 1 2.25 2.25V18a2.25 2.25 0 0 1-2.25 2.25H6A2.25 2.25 0 0 1 3.75 18v-2.25ZM13.5 6a2.25 2.25 0 0 1 2.25-2.25H18A2.25 2.25 0 0 1 20.25 6v2.25A2.25 2.25 0 0 1 18 10.5h-2.25a2.25 2.25 0 0 1-2.25-2.25V6ZM13.5 15.75a2.25 2.25 0 0 1 2.25-2.25H18a2.25 2.25 0 0 1 2.25 2.25V18A2.25 2.25 0 0 1 18 20.25h-2.25A2.25 2.25 0 0 1 13.5 18v-2.25Z" />
+        </symbol>
+        <symbol id="no-symbol" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                d="M18.364 18.364A9 9 0 0 0 5.636 5.636m12.728 12.728A9 9 0 0 1 5.636 5.636m12.728 12.728L5.636 5.636" />
+        </symbol>
+        <symbol id="users" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                d="M15 19.128a9.38 9.38 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-.952 4.125 4.125 0 0 0-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 0 1 8.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0 1 11.964-3.07M12 6.375a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0Zm8.25 2.25a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z" />
+        </symbol>
     </svg>
 
     <header class="">
@@ -224,260 +239,108 @@
         </div>
     </header>
 
-    <main id="posts-archive">
+    <main id="courses">
         <div class="container pt-28">
             <!-- Section Name -->
             <h2
                 class="flex items-center flex-col-reverse gap-y-5 w-min mx-auto mt-14 font-EstedadBold text-4xl sm:text-6xl whitespace-nowrap">
-                <span class="block w-7 sm:w-full h-2.5 bg-amber-400 shrink-0 rounded-sm"></span>
-                وبلاگ
+                <span class="block w-7 sm:w-full h-2.5 bg-yellow-500 shrink-0 rounded-sm"></span>
+               مقالات
             </h2>
             <!-- Section -->
             <section class="grid items-center grid-rows-1 gap-3.5 sm:gap-5 mt-9 sm:mt-25">
                 <!-- Content -->
                 <section class="col-span-1 lg:col-span-2 xl:col-span-3 order-1 lg:order-2">
-                    <!-- Sort in Mobile Size -->
-                    <div class="flex sm:hidden items-center gap-3.5 mb-7">
-                        <div class="flex-center gap-x-2 w-1/2 mx-auto py-2 px-4 text-sm text-zinc-700 bg-white rounded-xl select-none"
-                            id="sort-btn">
-                            <svg class="w-6 h-6 text-gray-500">
-                                <use xlink:href="#sort"></use>
-                            </svg>
-                            <span class="active_sort_title">همه دوره ها</span>
-                        </div>
-                    </div>
                     <!-- Course Sort -->
                     <div
-                        class="hidden sm:flex items-center px-7 mb-5 h-16 shadow-sm bg-white border-gray-700 rounded-2xl">
-                        <div class="flex-center lg:justify-start gap-4 text-sm">
-                            <span class="flex items-center shrink-0 gap-x-2.5">
-                                <svg class="w-5 h-5">
-                                    <use xlink:href="#sort"></use>
-                                </svg>
-                                مرتب سازی :
-                            </span>
-                            <div class="flex items-center flex-wrap">
-                                <a href="" data-id="" class="sort-btn sort-btn--active" role="button">همه دوره ها</a>
-                                <a href="" data-id="" class="sort-btn" role="button"> عادی </a>
-                                <a href="" data-id="" class="sort-btn" role="button">جدید ترین</a>
-                                 <a href="" data-id="" class="sort-btn" role="button">قدیمی ترین</a>
+                        class="flex items-center justify-between flex-wrap md:flex-nowrap gap-5 my-5 px-7 mb-5 min-h-16 md:shadow-sm md:bg-white md:border-gray-700 rounded-2xl">
+                        <div class="flex w-full md:w-auto gap-4 text-sm">
+                            <div class="relative transition-all w-full text-sm md:w-fit md:text-base ">
+                                <div id="sorting"
+                                    class="bg-white border-2 border-solid border-white transition-all rounded-xl p-3 md:p-3.5 flex justify-center items-center gap-1 cursor-pointer h-full">
+                                    <span class="flex items-center shrink-0 gap-x-2.5 cursor-pointer">
+                                        <svg class="w-5 h-5">
+                                            <use xlink:href="#sort"></use>
+                                        </svg>
+                                        مرتب سازی
+                                    </span>
                                 </div>
+                                <div class="absolute left-0 w-full pt-2 z-10 transition-all">
+                                    <div id="sorting-box" class="bg-white transition-all rounded-xl shadow-sm hide">
+                                        <ul>
+                                            <li data-key="default"
+                                                class="sort-list border-b border-solid border-gray-300 last:border-b-0 transition-colors text-zinc-700 cursor-pointer px-3 md:px-3.5 py-2.5 inline-block text-center w-full text-xs md:text-sm font-bold">
+                                                همه دوره ها
+                                            </li>
+                                            <li data-key="last"
+                                                class="sort-list border-b border-solid border-gray-300 last:border-b-0 transition-colors text-zinc-700 cursor-pointer px-3 md:px-3.5 py-2.5 inline-block text-center w-full text-xs md:text-sm">
+                                                جدید ترین
+                                            </li>
+                                            <li data-key="first"
+                                                class="sort-list border-b border-solid border-gray-300 last:border-b-0 transition-colors text-zinc-700 cursor-pointer px-3 md:px-3.5 py-2.5 inline-block text-center w-full text-xs md:text-sm">
+                                                قدیمی ترین
+                                            </li>
+                                            <li data-key="free"
+                                                class="sort-list border-b border-solid border-gray-300 last:border-b-0 transition-colors text-zinc-700 cursor-pointer px-3 md:px-3.5 py-2.5 inline-block text-center w-full text-xs md:text-sm">
+                                                دوره های رایگان
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="relative transition-all w-full text-sm md:w-fit md:text-base ">
+                                <div id="Grouping"
+                                    class="bg-white border-2 border-solid border-white transition-all rounded-xl p-3 md:p-3.5 flex justify-center items-center gap-1 cursor-pointer h-full">
+                                    <span class="flex items-center shrink-0 gap-x-2.5 cursor-pointer">
+                                        <svg class="w-5 h-5">
+                                            <use xlink:href="#squares-2x2"></use>
+                                        </svg>
+                                        دسته بندی ها
+                                    </span>
+                                </div>
+                                <div class="absolute left-0 w-full pt-2 z-10 transition-all">
+                                    <div id="Grouping-box" class="bg-white transition-all rounded-xl shadow-sm hide">
+                                        <ul>
+                                            <li data-key="http://127.0.0.1:5500/frontend/public/courses"
+                                                class="group-list border-b border-solid border-gray-300 text-zinc-700 cursor-pointer px-3 md:px-3.5 py-2.5 inline-block text-center w-full text-xs md:text-sm last:border-b-0 transition-colors">همه
+                                            </li>
+                                            <li data-key="http://127.0.0.1:5500/frontend/public/category.html?cat=frontend"
+                                                class="group-list border-b border-solid border-gray-300 text-zinc-700 cursor-pointer px-3 md:px-3.5 py-2.5 inline-block text-center w-full text-xs md:text-sm last:border-b-0 transition-colors">فرانت اند
+                                            </li>
+                                            <li data-key="http://127.0.0.1:5500/frontend/public/category.html?cat=backend"
+                                                class="group-list border-b border-solid border-gray-300 text-zinc-700 cursor-pointer px-3 md:px-3.5 py-2.5 inline-block text-center w-full text-xs md:text-sm last:border-b-0 transition-colors">بک اند
+                                            </li>
+                                            <li data-key="http://127.0.0.1:5500/frontend/public/category.html?cat=python"
+                                                class="group-list border-b border-solid border-gray-300 text-zinc-700 cursor-pointer px-3 md:px-3.5 py-2.5 inline-block text-center w-full text-xs md:text-sm last:border-b-0 transition-colors">پایتون
+                                            </li>
+                                            <li data-key="http://127.0.0.1:5500/frontend/public/category.html?cat=softskills"
+                                                class="group-list border-b border-solid border-gray-300 text-zinc-700 cursor-pointer px-3 md:px-3.5 py-2.5 inline-block text-center w-full text-xs md:text-sm last:border-b-0 transition-colors">مهارت های نرم
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="h-16 w-full md:w-auto bg-white border-gray-700 rounded-2xl">
+                            <form action="#" class="h-full flex items-center justify-between text-slate-500">
+                                <input type="text" name="s" id="article-search-input"
+                                    class="w-full bg-transparent text-sm pr-7 border-none outline-none"
+                                    placeholder="در بین مقاله ها جستجو کنید">
+                                <span class="mr-4 ml-6">
+                                    <svg class="w-5 h-5">
+                                        <use xlink:href="#search"></use>
+                                    </svg>
+                                </span>
+                            </form>
                         </div>
                     </div>
                     <!-- Course List -->
-                    <div class="posts_wrap grid grid-rows-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-items-center gap-5">
-                        <div class="flex sm:block gap-x-2.5 group p-2.5 md:pb-2 bg-white shadow-sm rounded-2xl">
-                            <div class=" sm:mb-4 shrink-0 rounded-2xl rounded-bl-4xl overflow-hidden w-[130px] h-[130px] sm:w-auto sm:h-auto">
-                                <img src="images/blogs/VSCode-uptade.png" alt="" class="h-full sm:h-auto object-cover">
-                            </div>
-                            <div class="sm:flex items-start justify-between w-full">
-                                <a href="#" class="font-EstedadMedium md:font-Estedad ml-1.5 sm:ml-0 text-sm md:text-lg mt-2.5 sm:mt-0 line-clamp-2 leading-7 max-w-[193px] text-zinc-700 ">
-                                    آپدیت جدید vs code </a>
-                                <div class="hidden sm:flex items-center gap-x-5">
-                                    <span class="block w-px h-[61px] bg-gray-100 "></span>
-                                    <div class="flex flex-col ml-[18px] -mt-1 text-left text-teal-600 text-sm">
-                                        <span class="font-EstedadBold text-2xl">21</span>
-                                        <span class="">مرداد</span>
-                                        <span class="">1402</span>
-                                    </div>
-                                </div>
-                                <div class="flex sm:hidden justify-between items-end border-t border-t-gray-100 pt-[18px] mt-5">
-                                    <span class="text-xs text-teal-600">21 مرداد 1402</span>
-                                    <a href="#" class="flex items-center gap-x-1 ml-1.5 font-EstedadMedium text-xs h-5 rounded-md pr-2.5 pl-2 text-teal-600 bg-teal-400/20">
-                                        مطالعه
-                                        <svg class="w-3.5 h-3.5">
-                                            <use href="#arrow-left-mini"></use>
-                                        </svg>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="flex sm:block gap-x-2.5 group p-2.5 md:pb-2 bg-white shadow-sm rounded-2xl">
-                            <div class=" sm:mb-4 shrink-0 rounded-2xl rounded-bl-4xl overflow-hidden w-[130px] h-[130px] sm:w-auto sm:h-auto">
-                                <img src="images/blogs/VSCode-uptade.png" alt="" class="h-full sm:h-auto object-cover">
-                            </div>
-                            <div class="sm:flex items-start justify-between w-full">
-                                <a href="#" class="font-EstedadMedium md:font-Estedad ml-1.5 sm:ml-0 text-sm md:text-lg mt-2.5 sm:mt-0 line-clamp-2 leading-7 max-w-[193px] text-zinc-700 ">
-                                    آپدیت جدید vs code </a>
-                                <div class="hidden sm:flex items-center gap-x-5">
-                                    <span class="block w-px h-[61px] bg-gray-100 "></span>
-                                    <div class="flex flex-col ml-[18px] -mt-1 text-left text-teal-600 text-sm">
-                                        <span class="font-EstedadBold text-2xl">21</span>
-                                        <span class="">مرداد</span>
-                                        <span class="">1402</span>
-                                    </div>
-                                </div>
-                                <div class="flex sm:hidden justify-between items-end border-t border-t-gray-100 pt-[18px] mt-5">
-                                    <span class="text-xs text-teal-600">21 مرداد 1402</span>
-                                    <a href="#" class="flex items-center gap-x-1 ml-1.5 font-EstedadMedium text-xs h-5 rounded-md pr-2.5 pl-2 text-teal-600 bg-teal-400/20">
-                                        مطالعه
-                                        <svg class="w-3.5 h-3.5">
-                                            <use href="#arrow-left-mini"></use>
-                                        </svg>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="flex sm:block gap-x-2.5 group p-2.5 md:pb-2 bg-white shadow-sm rounded-2xl">
-                            <div class=" sm:mb-4 shrink-0 rounded-2xl rounded-bl-4xl overflow-hidden w-[130px] h-[130px] sm:w-auto sm:h-auto">
-                                <img src="images/blogs/VSCode-uptade.png" alt="" class="h-full sm:h-auto object-cover">
-                            </div>
-                            <div class="sm:flex items-start justify-between w-full">
-                                <a href="#" class="font-EstedadMedium md:font-Estedad ml-1.5 sm:ml-0 text-sm md:text-lg mt-2.5 sm:mt-0 line-clamp-2 leading-7 max-w-[193px] text-zinc-700 ">
-                                    آپدیت جدید vs code </a>
-                                <div class="hidden sm:flex items-center gap-x-5">
-                                    <span class="block w-px h-[61px] bg-gray-100 "></span>
-                                    <div class="flex flex-col ml-[18px] -mt-1 text-left text-teal-600 text-sm">
-                                        <span class="font-EstedadBold text-2xl">21</span>
-                                        <span class="">مرداد</span>
-                                        <span class="">1402</span>
-                                    </div>
-                                </div>
-                                <div class="flex sm:hidden justify-between items-end border-t border-t-gray-100 pt-[18px] mt-5">
-                                    <span class="text-xs text-teal-600">21 مرداد 1402</span>
-                                    <a href="#" class="flex items-center gap-x-1 ml-1.5 font-EstedadMedium text-xs h-5 rounded-md pr-2.5 pl-2 text-teal-600 bg-teal-400/20">
-                                        مطالعه
-                                        <svg class="w-3.5 h-3.5">
-                                            <use href="#arrow-left-mini"></use>
-                                        </svg>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="flex sm:block gap-x-2.5 group p-2.5 md:pb-2 bg-white shadow-sm rounded-2xl">
-                            <div class=" sm:mb-4 shrink-0 rounded-2xl rounded-bl-4xl overflow-hidden w-[130px] h-[130px] sm:w-auto sm:h-auto">
-                                <img src="images/blogs/VSCode-uptade.png" alt="" class="h-full sm:h-auto object-cover">
-                            </div>
-                            <div class="sm:flex items-start justify-between w-full">
-                                <a href="#" class="font-EstedadMedium md:font-Estedad ml-1.5 sm:ml-0 text-sm md:text-lg mt-2.5 sm:mt-0 line-clamp-2 leading-7 max-w-[193px] text-zinc-700 ">
-                                    آپدیت جدید vs code </a>
-                                <div class="hidden sm:flex items-center gap-x-5">
-                                    <span class="block w-px h-[61px] bg-gray-100 "></span>
-                                    <div class="flex flex-col ml-[18px] -mt-1 text-left text-teal-600 text-sm">
-                                        <span class="font-EstedadBold text-2xl">21</span>
-                                        <span class="">مرداد</span>
-                                        <span class="">1402</span>
-                                    </div>
-                                </div>
-                                <div class="flex sm:hidden justify-between items-end border-t border-t-gray-100 pt-[18px] mt-5">
-                                    <span class="text-xs text-teal-600">21 مرداد 1402</span>
-                                    <a href="#" class="flex items-center gap-x-1 ml-1.5 font-EstedadMedium text-xs h-5 rounded-md pr-2.5 pl-2 text-teal-600 bg-teal-400/20">
-                                        مطالعه
-                                        <svg class="w-3.5 h-3.5">
-                                            <use href="#arrow-left-mini"></use>
-                                        </svg>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="flex sm:block gap-x-2.5 group p-2.5 md:pb-2 bg-white shadow-sm rounded-2xl">
-                            <div class=" sm:mb-4 shrink-0 rounded-2xl rounded-bl-4xl overflow-hidden w-[130px] h-[130px] sm:w-auto sm:h-auto">
-                                <img src="images/blogs/VSCode-uptade.png" alt="" class="h-full sm:h-auto object-cover">
-                            </div>
-                            <div class="sm:flex items-start justify-between w-full">
-                                <a href="#" class="font-EstedadMedium md:font-Estedad ml-1.5 sm:ml-0 text-sm md:text-lg mt-2.5 sm:mt-0 line-clamp-2 leading-7 max-w-[193px] text-zinc-700 ">
-                                    آپدیت جدید vs code </a>
-                                <div class="hidden sm:flex items-center gap-x-5">
-                                    <span class="block w-px h-[61px] bg-gray-100 "></span>
-                                    <div class="flex flex-col ml-[18px] -mt-1 text-left text-teal-600 text-sm">
-                                        <span class="font-EstedadBold text-2xl">21</span>
-                                        <span class="">مرداد</span>
-                                        <span class="">1402</span>
-                                    </div>
-                                </div>
-                                <div class="flex sm:hidden justify-between items-end border-t border-t-gray-100 pt-[18px] mt-5">
-                                    <span class="text-xs text-teal-600">21 مرداد 1402</span>
-                                    <a href="#" class="flex items-center gap-x-1 ml-1.5 font-EstedadMedium text-xs h-5 rounded-md pr-2.5 pl-2 text-teal-600 bg-teal-400/20">
-                                        مطالعه
-                                        <svg class="w-3.5 h-3.5">
-                                            <use href="#arrow-left-mini"></use>
-                                        </svg>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="flex sm:block gap-x-2.5 group p-2.5 md:pb-2 bg-white shadow-sm rounded-2xl">
-                            <div class=" sm:mb-4 shrink-0 rounded-2xl rounded-bl-4xl overflow-hidden w-[130px] h-[130px] sm:w-auto sm:h-auto">
-                                <img src="images/blogs/VSCode-uptade.png" alt="" class="h-full sm:h-auto object-cover">
-                            </div>
-                            <div class="sm:flex items-start justify-between w-full">
-                                <a href="#" class="font-EstedadMedium md:font-Estedad ml-1.5 sm:ml-0 text-sm md:text-lg mt-2.5 sm:mt-0 line-clamp-2 leading-7 max-w-[193px] text-zinc-700 ">
-                                    آپدیت جدید vs code </a>
-                                <div class="hidden sm:flex items-center gap-x-5">
-                                    <span class="block w-px h-[61px] bg-gray-100 "></span>
-                                    <div class="flex flex-col ml-[18px] -mt-1 text-left text-teal-600 text-sm">
-                                        <span class="font-EstedadBold text-2xl">21</span>
-                                        <span class="">مرداد</span>
-                                        <span class="">1402</span>
-                                    </div>
-                                </div>
-                                <div class="flex sm:hidden justify-between items-end border-t border-t-gray-100 pt-[18px] mt-5">
-                                    <span class="text-xs text-teal-600">21 مرداد 1402</span>
-                                    <a href="#" class="flex items-center gap-x-1 ml-1.5 font-EstedadMedium text-xs h-5 rounded-md pr-2.5 pl-2 text-teal-600 bg-teal-400/20">
-                                        مطالعه
-                                        <svg class="w-3.5 h-3.5">
-                                            <use href="#arrow-left-mini"></use>
-                                        </svg>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="flex sm:block gap-x-2.5 group p-2.5 md:pb-2 bg-white shadow-sm rounded-2xl">
-                            <div class=" sm:mb-4 shrink-0 rounded-2xl rounded-bl-4xl overflow-hidden w-[130px] h-[130px] sm:w-auto sm:h-auto">
-                                <img src="images/blogs/VSCode-uptade.png" alt="" class="h-full sm:h-auto object-cover">
-                            </div>
-                            <div class="sm:flex items-start justify-between w-full">
-                                <a href="#" class="font-EstedadMedium md:font-Estedad ml-1.5 sm:ml-0 text-sm md:text-lg mt-2.5 sm:mt-0 line-clamp-2 leading-7 max-w-[193px] text-zinc-700 ">
-                                    آپدیت جدید vs code </a>
-                                <div class="hidden sm:flex items-center gap-x-5">
-                                    <span class="block w-px h-[61px] bg-gray-100 "></span>
-                                    <div class="flex flex-col ml-[18px] -mt-1 text-left text-teal-600 text-sm">
-                                        <span class="font-EstedadBold text-2xl">21</span>
-                                        <span class="">مرداد</span>
-                                        <span class="">1402</span>
-                                    </div>
-                                </div>
-                                <div class="flex sm:hidden justify-between items-end border-t border-t-gray-100 pt-[18px] mt-5">
-                                    <span class="text-xs text-teal-600">21 مرداد 1402</span>
-                                    <a href="#" class="flex items-center gap-x-1 ml-1.5 font-EstedadMedium text-xs h-5 rounded-md pr-2.5 pl-2 text-teal-600 bg-teal-400/20">
-                                        مطالعه
-                                        <svg class="w-3.5 h-3.5">
-                                            <use href="#arrow-left-mini"></use>
-                                        </svg>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="flex sm:block gap-x-2.5 group p-2.5 md:pb-2 bg-white shadow-sm rounded-2xl">
-                            <div class=" sm:mb-4 shrink-0 rounded-2xl rounded-bl-4xl overflow-hidden w-[130px] h-[130px] sm:w-auto sm:h-auto">
-                                <img src="images/blogs/VSCode-uptade.png" alt="" class="h-full sm:h-auto object-cover">
-                            </div>
-                            <div class="sm:flex items-start justify-between w-full">
-                                <a href="#" class="font-EstedadMedium md:font-Estedad ml-1.5 sm:ml-0 text-sm md:text-lg mt-2.5 sm:mt-0 line-clamp-2 leading-7 max-w-[193px] text-zinc-700 ">
-                                    آپدیت جدید vs code </a>
-                                <div class="hidden sm:flex items-center gap-x-5">
-                                    <span class="block w-px h-[61px] bg-gray-100 "></span>
-                                    <div class="flex flex-col ml-[18px] -mt-1 text-left text-teal-600 text-sm">
-                                        <span class="font-EstedadBold text-2xl">21</span>
-                                        <span class="">مرداد</span>
-                                        <span class="">1402</span>
-                                    </div>
-                                </div>
-                                <div class="flex sm:hidden justify-between items-end border-t border-t-gray-100 pt-[18px] mt-5">
-                                    <span class="text-xs text-teal-600">21 مرداد 1402</span>
-                                    <a href="#" class="flex items-center gap-x-1 ml-1.5 font-EstedadMedium text-xs h-5 rounded-md pr-2.5 pl-2 text-teal-600 bg-teal-400/20">
-                                        مطالعه
-                                        <svg class="w-3.5 h-3.5">
-                                            <use href="#arrow-left-mini"></use>
-                                        </svg>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
+                    <div id="article-container"
+                        class="grid grid-rows-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-items-center gap-5">
                     </div>
                     <!-- Show more Button -->
-                    <div class="show-more flex-center w-52 h-14 mt-10 mx-auto bg-gray-200 text-zinc-700 text-xl rounded-full cursor-pointer transition-all">
+                    <div
+                        class="show-more flex-center w-52 h-14 mt-10 mx-auto bg-gray-200 text-zinc-700 text-xl rounded-full cursor-pointer transition-all">
                         <div class="show-more__content gap-x-2 flex-center ">
                             مشاهده بیشتر
                             <svg class="w-5 h-5">
@@ -494,8 +357,7 @@
                                 fill="currentFill"></path>
                         </svg>
                     </div>
-                    <div
-                        class="all_loaded hidden text-zinc-700 font-EstedadLight mt-7 leading-7 text-center">
+                    <div class="all_loaded hidden text-zinc-700 font-EstedadLight mt-7 leading-7 text-center">
                         تمام دوره ها نمایش داده شده است.
                     </div>
                 </section>
@@ -605,6 +467,8 @@
 
     <div class="overlay fixed w-full h-full top-0 left-0 bg-black/40 z-30 transition-all invisible opacity-0"></div>
     <script type="module" src="js/style.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script></body>
+    <script type="module" src="js/blogs.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
 
 </html>

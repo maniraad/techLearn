@@ -257,6 +257,11 @@
 
     <main>
         <div class="container pt-28">
+            <span id="close-full-page" class="flex-center absolute left-0 right-0 -top-16 z-50 mx-auto w-16 h-16 rounded-full bg-gray-100 shadow-sm cursor-pointer transition-all">
+                <svg class="w-10 h-10 mx-auto flex-center">
+                    <use xlink:href="#x-mark"></use>
+                </svg>
+            </span>
             <!-- Breadcrumb -->
             <div class="breadcrumb">
                 <div class="breadcrumb__item">
@@ -275,36 +280,28 @@
                         </svg>
                     </span>
                 </div>
-                <div class="breadcrumb__item breadcrumb__item--acive">
-                    <a href="#"> قواعد نامگذاری در برنامه‌نویسی را بیاموزیم </a>
+                <div  class="breadcrumb__item breadcrumb__item--acive">
+                    <a id="breadcrumb-category"> قواعد نامگذاری در برنامه‌نویسی را بیاموزیم </a>
                 </div>
             </div>
-
-            <section class="mt-6 gap-4 grid grid-cols-1 lg:grid-cols-4 lg:gap-7">
-                <div class="p-5 border-gray-700 shadow-sm bg-white rounded-2xl lg:col-span-3">
+            <section class="relative mt-6 gap-4 grid grid-cols-1 lg:grid-cols-4 lg:gap-7">
+                <div id="article-wrapper" class="p-5 border-gray-700 shadow-sm bg-white rounded-2xl lg:col-span-3">
                     <div class="pb-6 mb-5 border-b border-b-gray-200">
-                        <h1 class="text-zinc-700 font-EstedadBold text-2xl/9 lg:text-4xl/[48px]">تایپ
-                            اسکریپت چیست؟</h1>
+                        <h1 id="title" class="text-zinc-700 font-EstedadBold text-2xl/9 lg:text-4xl/[48px]"></h1>
                     </div>
                     <div class="flex flex-wrap items-center gap-3 mb-6">
                         <div class="flex items-center text-xs font-EstedadMedium text-zinc-700">
                             <svg class="w-5 h-5 ml-1">
-                                <use href="#user"></use>
-                            </svg>
-                            <span>نوشته از علی علیزاده</span>
-                        </div>
-                        <div class="flex items-center text-xs font-EstedadMedium text-zinc-700">
-                            <svg class="w-5 h-5 ml-1">
                                 <use href="#calendar-days"></use>
                             </svg>
-                            <span>1402/11/18</span>
+                            <span id="date"></span>
                         </div>
                     </div>
-
+                    <img id="cover" src="images/blogs/bem-class.png" loading="lazy" class="w-full h-96 object-cover rounded-2xl mb-10">
                 </div>
-                <div class="flex flex-col gap-4 lg:col-span-1 lg:gap-7 sticky top-32">
-                    <div class="p-4 lg:p-7 bg-white transition-all rounded-2xl z-10 shadow-sm hidden lg:block">
-                        <button
+                <div class="aside flex flex-col gap-4 lg:col-span-1 lg:gap-7 sticky top-32">
+                    <div class="p-4 lg:p-7 bg-white transition-all sticky top-32 rounded-2xl z-10 shadow-sm hidden lg:block">
+                        <button id="full-page"
                             class="relative select-none flex-center transition-all w-full rounded-lg px-4 md:px-6 py-2 md:py-3 gap-2 text-sm lg:text-base bg-teal-600 hover:bg-teal-700 cursor-pointer text-white"><span
                                 class="transition-all">بزرگ نمایی</span>
                             <svg class="w-5 h-5">
@@ -318,15 +315,15 @@
                                 <div>
                                     <div class="flex-center flex-col gap-2 sm:flex-row sm:gap-4 lg:flex-col lg:gap-0">
                                         <div class="flex w-full flex-col items-center justify-center">
-                                            <a target="blank" href=""><img alt="پروفایل علی علیزاده" draggable="false"
+                                            <img id="creator-cover" draggable="false"
                                                     loading="lazy" width="120" height="120" decoding="async"
                                                     data-nimg="1"
                                                     class="aspect-square flex-none rounded-full object-cover h-14 w-14 select-none md:h-16 md:w-16 lg:h-16 lg:w-16 xl:h-20 xl:w-20"
-                                                    src=""></a>
+                                                    >
                                             <div
                                                 class="mt-3 flex-center gap-1 text-center text-sm font-bold md:text-base">
                                                 <p class="select-none transition-colors">
-                                                    <a target="_blank" href=""> علی علیزاده </a>
+                                                    <a id="creator"> علی علیزاده </a>
                                                 </p>
                                                 <svg class="w-5 h-5 text-teal-700">
                                                     <use xlink:href="#check-badge"></use>
@@ -454,6 +451,7 @@
 
     <div class="overlay fixed w-full h-full top-0 left-0 bg-black/40 z-30 transition-all invisible opacity-0"></div>
     <script type="module" src="js/style.js"></script>
+    <script type="module" src="js/blog.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 

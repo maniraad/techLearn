@@ -39,8 +39,8 @@ const showUserNameInNavbar = () => {
 
         const userInfos = getMe().then(data => {
             userLoginBtnIcon.classList.add("hidden");
-            userLoginBtn.setAttribute('href', 'login.html')
             userLoginBtn.innerHTML = data.name
+            data.role === "ADMIN" ? userLoginBtn.setAttribute('href', 'panel/main') : userLoginBtn.setAttribute('href', '')
         });
 
     } else {
@@ -48,6 +48,34 @@ const showUserNameInNavbar = () => {
         userLoginBtn.innerHTML = 'ورود یا ثبت نام'
     }
 };
+
+const showContentData = async () => {
+    const landingStatusCourse = document.querySelector('.course-status');
+    const landingStudents = document.querySelector('.student');
+    const landingBlogs = document.querySelector('.blogs');
+
+    const res = await fetch("http://localhost:4000/v1/infos/index", {
+        headers: {
+            "Content-Type": "application/json"
+        }
+    })
+    const data = await res.json()
+
+    makeCounter(data.coursesCount, landingStatusCourse, 'دوره آموزشی');
+    makeCounter(data.usersCount, landingStudents, 'دانشجو');
+    makeCounter(data.totalTime, landingBlogs, 'دقیقه دوره ی اموزشی');
+
+    function makeCounter(max, elemCounter, elemName) {
+        let counter = 0;
+        const interval = setInterval(() => {
+            elemCounter.innerHTML = `${counter}  ${elemName} `
+            counter++
+            if (counter === max) {
+                clearInterval(interval)
+            }
+        }, 12);
+    };
+}
 
 const getAndShowAllCourses = async (coursesCount) => {
 
@@ -114,6 +142,19 @@ const getAndShowAllCourses = async (coursesCount) => {
     return courses
 };
 
+const getAndShowAllArticles = async () => {
+
+    const articleContainer = document.querySelector('#article-container');
+
+    const res = await fetch(`http://localhost:4000/v1/articles`);
+
+    const articles = await res.json();
+
+    insertArticleBoxHtmlTemplate(articles,articleContainer)
+
+    return articles
+};
+
 const getAndShowPreSellCourses = async () => {
 
     const preSellCoursesContainer = document.querySelector('#presell-courses-wrapper');
@@ -173,42 +214,9 @@ const getAndShowArticles = async () => {
 
     const articles = await res.json();
 
-    articles.slice(0, 4).forEach(article => {
-        articlesContainer.insertAdjacentHTML('beforeend',
-            `
-                    <div class="flex sm:block gap-x-2.5 group p-2.5 md:pb-2 bg-white shadow-sm rounded-2xl">
-                        <div
-                            class=" sm:mb-4 shrink-0 rounded-2xl rounded-bl-4xl overflow-hidden w-[130px] h-[130px] sm:w-auto sm:h-auto">
-                            <img src="images/blogs/Figma-breack-point-plugin.png" alt=""
-                                class="h-full sm:h-auto object-cover">
-                        </div>
-                        <div class="sm:flex items-start justify-between w-full">
-                            <a href="#"
-                                class="font-EstedadMedium md:font-Estedad ml-1.5 sm:ml-0 text-sm md:text-lg mt-2.5 sm:mt-0 line-clamp-2 leading-7 max-w-[193px] text-zinc-700">
-                                ${article.title}</a>
-                            <div class="hidden sm:flex items-center gap-x-5">
-                                <span class="block w-px h-[61px] bg-gray-100 "></span>
-                                <div class="flex flex-col ml-[18px] -mt-1 text-left text-teal-600 text-sm">
-                                    <span class="font-EstedadBold text-2xl">21</span>
-                                    <span class="">مرداد</span>
-                                    <span class="">1402</span>
-                                </div>
-                            </div>
-                            <div
-                                class="flex sm:hidden justify-between items-end border-t border-t-gray-100 pt-[18px] mt-5">
-                                <span class="text-xs text-teal-600">21 مرداد 1402</span>
-                                <a href="#"
-                                    class="flex items-center gap-x-1 ml-1.5 font-EstedadMedium text-xs h-5 rounded-md pr-2.5 pl-2 text-teal-600 bg-teal-400/20">
-                                    مطالعه
-                                    <svg class="w-3.5 h-3.5">
-                                        <use href="#arrow-left-mini"></use>
-                                    </svg>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-        `)
-    });
+    insertArticleBoxHtmlTemplate(articles.slice(0, 4),articlesContainer)
+
+    return articles
 };
 
 const getAndShowMenus = async () => {
@@ -320,6 +328,35 @@ const insertCourseBoxHtmlTemplate = (courses, parentElement) => {
         `
         )
     });
+};
+
+const insertArticleBoxHtmlTemplate = (articles, parentElement) => {
+    parentElement.innerHTML = "";
+
+    articles.forEach(article => {
+
+        parentElement.insertAdjacentHTML('beforeend',
+            `
+                        <div class="flex sm:block gap-x-2.5 group p-2.5 md:pb-2 bg-white shadow-sm rounded-2xl">
+                            <div class=" sm:mb-4 shrink-0 rounded-2xl rounded-bl-4xl overflow-hidden w-[130px] h-[130px] sm:w-auto sm:h-auto">
+                                <img src=http://localhost:4000/courses/covers/${article.cover} class="h-full sm:h-auto object-cover">
+                            </div>
+                            <div class="flex flex-col sm:flex-row items-start justify-between w-full">
+                                <a href="blog.html?name=${article.shortName}" class="w-full font-EstedadMedium md:font-Estedad text-sm md:text-lg mt-2.5 sm:mt-0 line-clamp-1 text-zinc-700 ">
+                                    ${article.title} </a>
+                                <div class="flex sm:hidden items-end w-full border-t border-t-gray-100 pt-[18px] mt-5">
+                                    <a href="#" class="inline-flex items-center gap-x-1 ml-1.5 font-EstedadMedium text-xs h-5 rounded-md pr-2.5 pl-2 text-teal-600 bg-teal-400/20">
+                                        مطالعه
+                                        <svg class="w-3.5 h-3.5">
+                                            <use href="#arrow-left-mini"></use> 
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+        `
+        )
+        });
 };
 
 const coursesSorting = (array, filterMethod) => {
@@ -447,7 +484,7 @@ const getCourseDetails = () => {
                                     Authorization: `Bearer ${getToken()}`,
                                     "Content-Type": "application/json"
                                 },
-                                body: JSON.stringify({ price: 0 })
+                                body: JSON.stringify({ price: course.price })
                             }).then(res => {
                                 Toast.fire({
                                     icon: "success",
@@ -461,7 +498,7 @@ const getCourseDetails = () => {
                                     icon: "error",
                                     title: "مشکلی رخ داده است",
                                     text: "لطفا بعدا امتحان کنید !",
-                                  });
+                                });
                             })
                         }
                     })
@@ -648,6 +685,52 @@ const getCourseDetails = () => {
         });
 };
 
+const getArticleDetails = () => {
+
+    // Select Dom Elements
+    const $ = document;
+    const title = $.querySelector('#title');
+    const date = $.querySelector('#date');
+    const cover = $.querySelector('#cover');
+    const articleWrapper = $.querySelector('#article-wrapper');
+    const breadcrumbCategory = $.querySelector('#breadcrumb-category');
+    const creator = $.querySelector('#creator');
+    const creatorCover = $.querySelector('#creator-cover');
+    const fullPageButton = $.querySelector('#full-page');
+    const aside = $.querySelector('.aside');
+    const closeFullPageButton = $.querySelector('#close-full-page');
+
+    const articleShortName = getUrlParam("name");
+
+    fetch(`http://localhost:4000/v1/articles/${articleShortName}`, {
+        method: "GET",
+        headers: {
+            Authorization: `Bearer ${getToken()}`
+        }
+    }).then(res => res.json())
+        .then(article => {
+            console.log(article);
+            title.innerHTML = article.title
+            date.innerHTML = new Date(article.createdAt).toLocaleString("fa-IR").slice(0, 10).split(",", 1)
+            creator.innerHTML = article.creator.name
+            creatorCover.setAttribute("src", `http://localhost:4000/${article.creator.profile}`)
+            cover.setAttribute("src", `http://localhost:4000/courses/covers/${article.cover}`)
+            articleWrapper.insertAdjacentHTML("beforeend", `${article.body}`)
+            breadcrumbCategory.innerHTML = article.title
+        });
+
+    fullPageButton.addEventListener("click", () => {
+        articleWrapper.classList.add('!col-span-4');
+        aside.classList.add('!hide');
+        closeFullPageButton.classList.add('!top-11')
+    });
+    closeFullPageButton.addEventListener("click", () => {
+        articleWrapper.classList.remove('!col-span-4');
+        aside.classList.remove('!hide');
+        closeFullPageButton.classList.remove('!top-11')
+    })
+};
+
 const getSessionDetails = async () => {
 
     const videoElem = document.querySelector('video')
@@ -735,4 +818,4 @@ const submitComments = async () => {
     });
 };
 
-export { showUserNameInNavbar, headerResponsive, getAndShowAllCourses, getAndShowPreSellCourses, getAndShowArticles, getAndShowMenus, getAndShowCategoryCourses, insertCourseBoxHtmlTemplate, coursesSorting, observerScroll, handleGroupingAndSortingBox, getCourseDetails, getSessionDetails, submitContactUsMassage, globalSearch, submitComments };
+export { showUserNameInNavbar, headerResponsive, getAndShowAllCourses, getAndShowPreSellCourses, getAndShowArticles, getAndShowMenus, getAndShowCategoryCourses, insertCourseBoxHtmlTemplate, insertArticleBoxHtmlTemplate, coursesSorting, observerScroll, handleGroupingAndSortingBox, getCourseDetails, getSessionDetails, submitContactUsMassage, globalSearch, submitComments, showContentData, getAndShowAllArticles, getArticleDetails };
