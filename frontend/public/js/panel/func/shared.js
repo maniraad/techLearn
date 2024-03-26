@@ -522,6 +522,11 @@ const createNewUser = async () => {
     })
     .then(() => {
       getAllUsers();
+      nameInput.value = ''
+      usernameInput.value = ''
+      emailInput.value = ''
+      phoneInput.value = ''
+      passwordInput.value = ''
     });
 };
 
@@ -770,6 +775,9 @@ const createNewCategory = async () => {
       text: "لطفا بعدا امتحان کنید !",
     });
   }
+
+  titleInputElem.value = ''
+  destinationInputElem.value = ''
 };
 
 const removeCategory = async (categoryID) => {
