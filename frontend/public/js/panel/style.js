@@ -24,6 +24,7 @@ window.addEventListener('load', () => {
     })
     // Protect Cms Route
     getAdminInfos().then(admin => {
+        console.log(admin.notifications);
         // Show Admin Name
         adminNameElems.forEach(adminNameElem => {
             adminNameElem.innerHTML = admin.name

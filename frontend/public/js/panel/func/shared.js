@@ -27,13 +27,6 @@ const insertNotificationHTMLTemplate = (notifications) => {
       `<span class="notification-alarm inline-block absolute -top-0.5 -left-0.5 bg-red-500 w-2 h-2 rounded-full"></span>`
     );
 
-    notificationsWrapperElem.insertAdjacentHTML(
-      "afterend",
-      `
-        <div class="text-center border-t">
-            <a href="#" class="block py-2.5 text-sm hover:text-blue-500 transition-all">مشاهده همه</a>
-        </div>`
-    );
 
     notifications.forEach((notification, index) => {
       notificationHeaderElem.innerHTML = `شما ${index + 1} اعلان جدید دارید.`;
@@ -446,6 +439,43 @@ const getAllUsers = async () => {
             </tr>`
     );
   });
+};
+
+const getRecentlyUser = async () => {
+  const usersWrapper = document.querySelector("tbody");
+  usersWrapper.innerHTML = "";
+  const res = await fetch(`http://localhost:4000/v1/infos/p-admin`, {
+    headers: {
+      Authorization: `Bearer ${getToken()}`,
+    },
+  });
+  const users = await res.json();
+
+  users.lastUsers.forEach((user, index) => {
+    console.log(user);
+    usersWrapper.insertAdjacentHTML("beforeend", `
+                            <tr class="bg-white border-b odd:bg-white  even:bg-gray-100">
+                                <th scope="row"
+                                    class="px-6 py-4 font-EstedadMedium text-gray-900 whitespace-nowrap text-xs text-nowrap sm:text-sm md:text-base">
+                                    ${index + 1}
+                                </th>
+                                <td class="px-6 py-4 text-xs text-nowrap sm:text-sm md:text-base">
+                                    ${user.name}
+                                </td>
+                                <td class="px-6 py-4 text-xs text-nowrap sm:text-sm md:text-base">
+                                    ${user.username}
+                                </td>
+                                <td class="px-6 py-4 text-xs text-nowrap sm:text-sm md:text-base">
+                                    ${user.phone}
+                                </td>
+                                <td class="px-6 py-4 text-xs text-nowrap sm:text-sm md:text-base">
+                                    ${user.email}
+                                </td>
+                                <td class="px-6 py-4 text-xs text-nowrap sm:text-sm md:text-base">
+                                    ${user.createdAt.slice(0,10)}
+                                </td>
+                            </tr>`)
+  })
 };
 
 const createNewUser = async () => {
@@ -1552,6 +1582,7 @@ export {
 
   // Export Functions Users
   getAllUsers,
+  getRecentlyUser,
   createNewUser,
   removeUser,
   banUser,
