@@ -428,7 +428,7 @@ const getAllUsers = async () => {
                 <button onclick="changeRole('${user._id}')" type="button" class="focus:outline-none text-white bg-yellow-500 hover:bg-yellow-600 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-xs px-3 py-2 me-2 mb-2">تغییر نقش			</button>
                 </td>
                 <td class="px-6 py-4 text-nowrap">
-                <button type="button" class="focus:outline-none text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-xs px-3 py-2 me-2 mb-2">ویرایش	</button>
+                <button onclick="editUser('${user._id}')" type="button" class="focus:outline-none text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-xs px-3 py-2 me-2 mb-2">ویرایش	</button>
                 </td>
                 <td class="px-6 py-4">
                 <button onclick="removeUser('${user._id}')" type="button" class="focus:outline-none text-xs text-white bg-red-600 hover:bg-red-700 focus:ring-4 focus:ring-red-300 font-medium rounded-lg px-3 py-2 me-2 mb-2">حذف</button>
@@ -638,6 +638,62 @@ const changeRole = async (userID) => {
   const result = await res.json()
   console.log(res);
   console.log(result);
+};
+
+const editUser = async (userID) => {
+
+  let editUserInfos = {}
+
+  const { value: formValues } = await Swal.fire({
+    title: "Multiple inputs",
+    html: `
+    <input id="swal-input1" class="swal2-input" placeholder="username" type="text">
+    <input id="swal-input2" class="swal2-input" placeholder="name" type="text">
+    <input id="swal-input3" class="swal2-input" placeholder="email" type="email">
+    <input id="swal-input4" class="swal2-input" placeholder="password" type="password">
+    <input id="swal-input5" class="swal2-input" placeholder="phone" type="text">
+  `,
+    focusConfirm: false,
+    preConfirm: () => {
+      const username = document.getElementById("swal-input1").value
+      const name = document.getElementById("swal-input2").value
+      const email = document.getElementById("swal-input3").value
+      const password = document.getElementById("swal-input4").value
+      const phone = document.getElementById("swal-input5").value
+
+      editUserInfos = {
+        username,
+        name,
+        email,
+        password,
+        phone
+      }
+      return editUserInfos
+    }
+  });
+
+  const res = await fetch(`http://localhost:4000/v1/users/${userID}`, {
+    method: "PUT",
+    headers: {
+      Authorization: `Bearer ${getToken()}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(editUserInfos)
+  })
+
+  if (res.ok) {
+    Toast.fire({
+      icon: "success",
+      title: " کاربر با موفقیت اپدیت شد ",
+    });
+    getAllUsers();
+  } else {
+    Toast.fire({
+      icon: "error",
+      title: "مشکلی رخ داده است",
+      text: "لطفا بعدا امتحان کنید !",
+    });
+  }
 };
 
 // Functions For Category
@@ -1586,6 +1642,7 @@ export {
   removeUser,
   banUser,
   changeRole,
+  editUser,
 
   // Export Functions Category
   getAllCategories,
