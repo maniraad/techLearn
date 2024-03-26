@@ -452,7 +452,6 @@ const getRecentlyUser = async () => {
   const users = await res.json();
 
   users.lastUsers.forEach((user, index) => {
-    console.log(user);
     usersWrapper.insertAdjacentHTML("beforeend", `
                             <tr class="bg-white border-b odd:bg-white  even:bg-gray-100">
                                 <th scope="row"
@@ -472,7 +471,7 @@ const getRecentlyUser = async () => {
                                     ${user.email}
                                 </td>
                                 <td class="px-6 py-4 text-xs text-nowrap sm:text-sm md:text-base">
-                                    ${user.createdAt.slice(0,10)}
+                                    ${new Date(user.createdAt).toLocaleString("fa-IR").slice(0, 10).split(",", 1)}
                                 </td>
                             </tr>`)
   })
@@ -790,7 +789,7 @@ const getAllMessages = async () => {
                     ${message.phone}
                 </td>
                 <td class="px-6 py-4 text-nowrap">
-                    ${message.createdAt.slice(0, 10)}
+                ${new Date(message.createdAt).toLocaleString("fa-IR").slice(0, 10).split(",", 1)}	
                 </td>
                 <td class="px-6 py-4 text-nowrap">
                 <button onclick="showContentBody('${message.body}')" type="button" class="focus:outline-none text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-xs px-3 py-2 me-2 mb-2">مشاهده	</button>
@@ -920,7 +919,7 @@ const getAllSessions = async () => {
                     ${session.title}
                 </td>
                 <td class="px-6 py-4 text-nowrap">
-                    ${session.createdAt.slice(0, 10)}
+                ${new Date(session.createdAt).toLocaleString("fa-IR").slice(0, 10).split(",", 1)}	
                 </td>
                 <td class="px-6 py-4 text-nowrap">
                     ${session.time}
@@ -1081,7 +1080,7 @@ const getAllArticles = async () => {
                     ${article.publish === 1 ? "منتشر شده" : "پیش نویس"}
                 </td>
                 <td class="px-6 py-4 text-nowrap">
-                    ${article.createdAt.slice(0, 10)}	
+                ${new Date(article.createdAt).toLocaleString("fa-IR").slice(0, 10).split(",", 1)}	
                 </td>
                 <td class="px-6 py-4 text-nowrap">
                     ${article.creator.name}		
@@ -1243,7 +1242,7 @@ const getAllComments = async () => {
                 ${comment.course}
             </td>
             <td class="px-6 py-4 text-nowrap">
-                ${comment.createdAt.slice(0, 10)}
+            ${new Date(comment.createdAt).toLocaleString("fa-IR").slice(0, 10).split(",", 1)}	
             </td>
             <td class="px-6 py-4 text-nowrap">
                 <button onclick="showCommentBody('${comment.body}')" type="button" class="focus:outline-none text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-xs px-3 py-2 me-2 mb-2">مشاهده	</button>
@@ -1469,7 +1468,7 @@ const getAllDiscount = async () => {
                 ${discount.uses}
             </td>
             <td class="px-6 py-4 text-nowrap">
-                ${discount.createdAt.slice(0, 10)}
+            ${new Date(discount.createdAt).toLocaleString("fa-IR").slice(0, 10).split(",", 1)}	
             </td>
             <td class="px-6 py-4 text-nowrap">
             <button onclick="removeDiscount('${discount._id}')" type="button" class="focus:outline-none text-white bg-red-600 hover:bg-red-700 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-xs px-3 py-2 me-2 mb-2">حذف</button>
