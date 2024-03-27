@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../style/app.css" rel="stylesheet">
+    <link rel="icon" href="../images/fav-icon.png">
+    <title> تک لرن | دوره </title>
+</head>
+
+<body dir="rtl" class="font-Estedad bg-gray-100">
+
+    <svg class="hidden">
+        <symbol id="menu-bars" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+        </symbol>
+        <symbol id="search" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+        </symbol>
+        <symbol id="chevron-down" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+        </symbol>
+        <symbol id="bell" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0" />
+        </symbol>
+        <symbol id="information-circle" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+            stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
+        </symbol>
+        <symbol id="x-circle" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                d="m9.75 9.75 4.5 4.5m0-4.5-4.5 4.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+        </symbol>
+        <symbol id="arrow-left-start-on-rectangle" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 9V5.25A2.25 2.25 0 0 1 10.5 3h6a2.25 2.25 0 0 1 2.25 2.25v13.5A2.25 2.25 0 0 1 16.5 21h-6a2.25 2.25 0 0 1-2.25-2.25V15m-3 0-3-3m0 0 3-3m-3 3H15" />
+          </symbol>
+          <symbol id="user" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+          </symbol>
+          
+    </svg>
+
+    <!-- Header -->
+    <header class="bg-neutral-50 shadow-md fixed top-0 left-0 w-full z-50">
+        <div class="container-2">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <!-- Header Logo -->
+                <div class="flex-center w-full md:w-auto py-2.5 md:py-0 md:h-28 mx-6 lg:mx-14 border-b md:border-none">
+                    <a href="../index.html">
+                        <img src="../images/logo/Logo.png" alt="Logo">
+                    </a>
+                </div>
+                <!-- Header Details -->
+                <div class="w-full md:w-auto py-2.5 md:py-0 flex flex-wrap justify-between items-center grow z-50">
+                    <!-- Sidebar Header Toggle & Searchbar -->
+                    <div class="flex flex-wrap items-center gap-x-4">
+                        <!--Sidebar Header Toggle-->
+                        <div class="menu-btn cursor-pointer">
+                            <svg class="w-7 md:w-9 h-7 md:h-9 transition-all">
+                                <use href="#menu-bars"></use>
+                            </svg>
+                        </div>
+                        <!--Header Searchbar-->
+                        <div class="relative group hidden lg:block z-50" id="searchbox">
+                            <form class="hidden xl:block" action="" method="get">
+                                <label class="relative h-14 block transition-all">
+                                    <input id="search-input"
+                                        class="rounded-full text-slate-500 placeholder:text-slate-500 w-48 focus:w-64 h-full border border-transparent hover:border-gray-200 focus:border-gray-300 outline-none focus:text-zinc-700  bg-gray-100 text-base placeholder:text-lg pl-14 pr-5 block transition-all"
+                                        name="s" type="text" placeholder="جستجو">
+                                    <button id="search-btn"
+                                        class="absolute left-5 top-0 bottom-0 w-7 h-7 my-auto text-slate-500"
+                                        type="submit" role="button">
+                                        <svg class="w-7 h-7">
+                                            <use xlink:href="#search"></use>
+                                        </svg>
+                                    </button>
+                                </label>
+                            </form>
+                            <!-- SearchBar Mobile -->
+                            <div class="xl:hidden">
+                                <div
+                                    class="searchbox flex-center w-14 h-14 rounded-full bg-gray-100 transition-colors cursor-pointer">
+                                    <svg class="w-6 h-6 text-slate-500">
+                                        <use xlink:href="#search"></use>
+                                    </svg>
+                                </div>
+                                <!-- When Click Box Showing -->
+                                <div class="absolute -left-24 top-full pt-4 z-10 transition-all hide"
+                                    id="searchbox-dropdown">
+                                    <form action="" method="get">
+                                        <label class="relative block w-64">
+                                            <input
+                                                class="w-full h-16 pr-7 pl-10 text-lg bg-white placeholder:text-slate-500 text-zinc-700 outline-none rounded-2xl"
+                                                type="text" name="s" placeholder="جستجو در بین دوره ها">
+                                            <button
+                                                class="absolute left-0 top-0 bottom-0 w-12 h-full my-auto text-slate-500"
+                                                type="submit" role="button">
+                                                <svg class="ml-2 w-6 h-6">
+                                                    <use xlink:href="#search"></use>
+                                                </svg>
+                                            </button>
+                                        </label>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Header Profile -->
+                    <div class=" ml-4 flex items-center gap-x-2.5 md:gap-x-5">
+                        <!-- Profile Details -->
+                        <div class="relative cursor-pointer">
+                            <span class="relative flex items-center gap-x-1.5 md:gap-x-3 z-50 profile">
+                                <span class="flex items-center gap-x-1.5">
+                                    <svg class=" profile-icon w-4 h-4 transition-all duration-300">
+                                        <use href="#chevron-down"></use>
+                                    </svg>
+                                    <span class="admin-name hidden md:inline-block"></span>
+                                </span>
+                                <span>
+                                    <img
+                                        class="admin-img object-cover w-10 h-10 md:w-12 md:h-12 rounded-full inline-block cursor-pointer">
+                                </span>
+                            </span>
+                            <div
+                                class="profile-menu absolute invisible opacity-0 -top-14 left-0 mt-4 flex w-60 flex-col rounded-lg border bg-white shadow-sm duration-300 transition-all">
+                                <div class="p-5 border-b">
+                                    <h5 class="text-base mb-2 font-EstedadMedium text-zinc-900"><a class="admin-name " href="#"> </a></h5>
+                                    <a class="admin-email block text-sm text-slate-600" href="#">mailnam@mail.com</a>
+                                </div>
+                                <ul class="flex flex-col gap-5 border-b px-6 py-7">
+                                    <li>
+                                        <a href=""
+                                            class="flex items-center gap-3.5 text-sm font-medium duration-300 ease-in-out hover:text-primary lg:text-base">
+                                            <svg class="w-5 md:w-6 h-5 md:h-6">
+                                                <use xlink:href="#user"></use>
+                                            </svg>
+                                            پروفایل من 
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href=""
+                                            class="flex items-center gap-3.5 text-sm font-medium duration-300 ease-in-out hover:text-primary lg:text-base">
+                                            <svg class="w-5 md:w-6 h-5 md:h-6">
+                                                <use xlink:href="#bell"></use>
+                                            </svg>
+                                            پروفایل من 
+                                        </a>
+                                    </li>
+                                </ul>
+                                <button id="logout-btn"
+                                    class="flex items-center gap-3.5 px-6 py-4 text-sm font-EstedadMedium duration-300 ease-in-out hover:text-red-600 lg:text-base">
+                                    <svg class="w-5 md:w-6 h-5 md:h-6">
+                                        <use xlink:href="#arrow-left-start-on-rectangle"></use>
+                                    </svg>
+                                    خروج
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sidebar -->
+    <aside
+        class="bg-neutral-50 h-screen w-40 md:w-52 lg:w-64 py-8 fixed top-24 md:top-20 -right-64 shadow-sm z-40 transition-all">
+        <nav>
+            <ul class="text-zinc-800 h-screen child:text-sm child:md:text-base px-2 py-5 md:p-8">
+                <li class="side-bar">
+                    <a class="py-2.5 pr-6 block transition-all side-bar--active" href="main.html">حساب کاربری</a>
+                </li>
+                <li class="side-bar">
+                    <a class="py-2.5 pr-6 block transition-all" href="courses.html">دوره های خریداری شده</a>
+                </li>
+                <li class="side-bar">
+                    <a class="py-2.5 pr-6 block transition-all" href="menus.html">منو ها</a>
+                </li>
+                <li class="side-bar">
+                    <a class="py-2.5 pr-6 block transition-all" href="menus.html">تیکت های پشتیبانی</a>
+                </li>
+                <li class="side-bar">
+                    <a class="py-2.5 pr-6 block transition-all" href="menus.html">تیکت های پشتیبانی</a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main id="" class="mr-0 mt-28 py-9 px-14 transition-all">
+        <div class="container">
+
+
+            <div class="bg-white transition-all rounded-2xl p-4 lg:p-7 mt-2 lg:mt-3.5">
+
+                <div class="bg-white transition-all rounded-2xl relative">
+                    <div>
+                        <div
+                            class="h-40 md:h-52 w-full object-cover object-center bg-gray-200 rounded-t-2xl transition-all">
+                        </div>
+                        <div class="flex absolute top-4 left-4 lg:top-7 lg:left-7" dir="ltr">
+                            <div
+                                class="bg-white shadow-sm relative w-8 h-8 md:w-10 md:h-10 overflow-hidden transition-all flex items-center rounded-full select-none hover:w-full cursor-pointer">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor"
+                                    class="w-4 h-4 md:w-5 md:h-5 absolute top-1/2 -translate-y-1/2 left-2 md:left-2.5">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L6.832 19.82a4.5 4.5 0 01-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 011.13-1.897L16.863 4.487zm0 0L19.5 7.125">
+                                    </path>
+                                </svg>
+                                <p
+                                    class="whitespace-nowrap text-ellipsis overflow-hidden w-fit text-xs sm:text-sm pr-2 pl-8 md:pr-2.5 md:pl-10">
+                                    ویرایش عکس زمینه</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="px-4 lg:px-7 flex justify-between items-center gap-4 select-none">
+                        <div class="relative z-1 -mt-16 md:-mt-22">
+                            <img draggable="false" loading="lazy" width="150" height="150" decoding="async"
+                                data-nimg="1"
+                                class="aspect-square flex-none rounded-full object-cover duration-500 opacity-100 inline-block h-32 w-32 border-3 border-solid border-white bg-gray-200 shadow-lg transition-all dark:border-cnDarkBlue-27 dark:bg-cnDarkBlue-25 dark:shadow-cnDarkBlue-10/20 md:h-44 md:w-44 lg:h-44 lg:w-44">
+                            <div
+                                class="absolute inset-0 flex-center h-32 w-32 rounded-full bg-white/30 backdrop-blur-sm transition-all md:h-44 md:w-44 invisible opacity-0">
+
+                            </div>
+                        </div>
+                        <button
+                            class="logout-btn flex-center select-none gap-1 text-sm transition-all md:text-base text-red-500 hover:text-red-700">
+                            <svg class="w-5 md:w-6 h-5 md:h-6">
+                                <use xlink:href="#arrow-left-start-on-rectangle"></use>
+                            </svg>
+                            <span>خروج</span>
+                        </button>
+                    </div>
+                    <div class="px-4 lg:px-7 mt-4 lg:mt-6 pb-4 lg:pb-7">
+                        <div>
+                            <div class="flex justify-start items-center gap-1">
+                                <p dir="ltr"
+                                    class="text-ellipsis overflow-hidden w-fit text-lg md:text-xl lg:text-2xl transition-all cursor-pointer">
+                                    @maniraad-7718</p>
+                            </div>
+                            <h1
+                                class="font-bold text-ellipsis overflow-hidden w-fit text-xl md:text-2xl lg:text-3xl  transition-all cursor-pointer mt-1 lg:mt-2.5">
+                                maniraad</h1>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div>
+                    <div class="w-full grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-7">
+                        <div>
+                            <div class="">
+                                <label for="nameInput"
+                                    class="w-fit mb-3 mr-3 text-sm lg:text-base transition-all inline-block font-bold">نام
+                                    و نام خانوادگی
+                                    <span class="text-xs font-light text-red-500"> (ضروری)</span>
+                                </label>
+                                <div class="w-full">
+                                    <input id="nameInput"
+                                        class="bg-gray-100 placeholder:text-gray-400 placeholder:text-right placeholder:select-none py-2 px-3 text-base md:text-lg border border-solid border-transparent focus:border-blue-500 rounded-lg outline-none transition-all w-full "
+                                        type="text" value="maniraad">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-full grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-7">
+                        <div>
+                            <div class="">
+                                <label for="nameInput"
+                                    class="w-fit mb-3 mr-3 text-sm lg:text-base transition-all inline-block font-bold">نام
+                                    و نام خانوادگی
+                                    <span class="text-xs font-light text-red-500"> (ضروری)</span>
+                                </label>
+                                <div class="w-full">
+                                    <input id="nameInput"
+                                        class="bg-gray-100 placeholder:text-gray-400 placeholder:text-right placeholder:select-none py-2 px-3 text-base md:text-lg border border-solid border-transparent focus:border-blue-500 rounded-lg outline-none transition-all w-full "
+                                        type="text" value="maniraad">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-full grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-7">
+                        <div>
+                            <div class="">
+                                <label for="nameInput"
+                                    class="w-fit mb-3 mr-3 text-sm lg:text-base transition-all inline-block font-bold">نام
+                                    و نام خانوادگی
+                                    <span class="text-xs font-light text-red-500"> (ضروری)</span>
+                                </label>
+                                <div class="w-full">
+                                    <input id="nameInput"
+                                        class="bg-gray-100 placeholder:text-gray-400 placeholder:text-right placeholder:select-none py-2 px-3 text-base md:text-lg border border-solid border-transparent focus:border-blue-500 rounded-lg outline-none transition-all w-full "
+                                        type="text" value="maniraad">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-4 flex w-full select-none justify-end lg:mt-7">
+                        <button type="button" class="text-teal-700 hover:text-white border border-teal-600 hover:bg-teal-600 focus:ring-4 focus:outline-none focus:ring-teal-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">ذخیره تغییرات</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <div class="overlay fixed w-full h-full top-0 left-0 bg-black/40 z-30 transition-all invisible opacity-0"></div>
+    <script type="module" src="../js/UPanel/style.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+
+</html>
