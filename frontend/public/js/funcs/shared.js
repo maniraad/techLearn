@@ -31,21 +31,19 @@ const headerResponsive = () => {
 const showUserNameInNavbar = () => {
 
     const userLoginBtn = document.querySelector('#user-login-btn');
-    const userLoginBtnIcon = document.querySelector('#user-login-btn-icon');
+    const userBtn = document.querySelector('#user-btn');
 
     const isUserLogin = isLogin()
 
     if (isUserLogin) {
 
         const userInfos = getMe().then(data => {
-            userLoginBtnIcon.classList.add("hidden");
-            userLoginBtn.innerHTML = data.name
-            data.role === "ADMIN" ? userLoginBtn.setAttribute('href', 'panel/main') : userLoginBtn.setAttribute('href', '')
+            data.role === "ADMIN" ? userBtn.setAttribute('href', 'panel/main') : userBtn.setAttribute('href', 'my-account')
+            userBtn.classList.add('!flex-center')
         });
 
     } else {
-        userLoginBtn.setAttribute('href', 'login.html')
-        userLoginBtn.innerHTML = 'ورود یا ثبت نام'
+        userLoginBtn.classList.add('!flex-center')
     }
 };
 

@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../style/app.css" rel="stylesheet">
+    <link rel="icon" href="../images/fav-icon.png">
+    <title> تک لرن | دوره </title>
+</head>
+
+<body dir="rtl" class="font-Estedad bg-gray-100">
+
+    <svg class="hidden">
+        <symbol id="menu-bars" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+        </symbol>
+        <symbol id="search" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+        </symbol>
+        <symbol id="chevron-down" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+        </symbol>
+        <symbol id="bell" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0" />
+        </symbol>
+        <symbol id="information-circle" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+            stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
+        </symbol>
+        <symbol id="x-circle" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                d="m9.75 9.75 4.5 4.5m0-4.5-4.5 4.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+        </symbol>
+        <symbol id="arrow-left-start-on-rectangle" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+            stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                d="M8.25 9V5.25A2.25 2.25 0 0 1 10.5 3h6a2.25 2.25 0 0 1 2.25 2.25v13.5A2.25 2.25 0 0 1 16.5 21h-6a2.25 2.25 0 0 1-2.25-2.25V15m-3 0-3-3m0 0 3-3m-3 3H15" />
+        </symbol>
+        <symbol id="user" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+        </symbol>
+
+    </svg>
+
+    <!-- Header -->
+    <header class="bg-neutral-50 shadow-md fixed top-0 left-0 w-full z-50">
+        <div class="container-2">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <!-- Header Logo -->
+                <div class="flex-center w-full md:w-auto py-2.5 md:py-0 md:h-28 mx-6 lg:mx-14 border-b md:border-none">
+                    <a href="../index.html">
+                        <img src="../images/logo/Logo.png" alt="Logo">
+                    </a>
+                </div>
+                <!-- Header Details -->
+                <div class="w-full md:w-auto py-2.5 md:py-0 flex flex-wrap justify-between items-center grow z-50">
+                    <!-- Sidebar Header Toggle & Searchbar -->
+                    <div class="flex flex-wrap items-center gap-x-4">
+                        <!--Sidebar Header Toggle-->
+                        <div class="menu-btn cursor-pointer">
+                            <svg class="w-7 md:w-9 h-7 md:h-9 transition-all">
+                                <use href="#menu-bars"></use>
+                            </svg>
+                        </div>
+                        <!--Header Searchbar-->
+                        <div class="relative group hidden lg:block z-50" id="searchbox">
+                            <form class="hidden xl:block" action="" method="get">
+                                <label class="relative h-14 block transition-all">
+                                    <input id="search-input"
+                                        class="rounded-full text-slate-500 placeholder:text-slate-500 w-48 focus:w-64 h-full border border-transparent hover:border-gray-200 focus:border-gray-300 outline-none focus:text-zinc-700  bg-gray-100 text-base placeholder:text-lg pl-14 pr-5 block transition-all"
+                                        name="s" type="text" placeholder="جستجو">
+                                    <button id="search-btn"
+                                        class="absolute left-5 top-0 bottom-0 w-7 h-7 my-auto text-slate-500"
+                                        type="submit" role="button">
+                                        <svg class="w-7 h-7">
+                                            <use xlink:href="#search"></use>
+                                        </svg>
+                                    </button>
+                                </label>
+                            </form>
+                            <!-- SearchBar Mobile -->
+                            <div class="xl:hidden">
+                                <div
+                                    class="searchbox flex-center w-14 h-14 rounded-full bg-gray-100 transition-colors cursor-pointer">
+                                    <svg class="w-6 h-6 text-slate-500">
+                                        <use xlink:href="#search"></use>
+                                    </svg>
+                                </div>
+                                <!-- When Click Box Showing -->
+                                <div class="absolute -left-24 top-full pt-4 z-10 transition-all hide"
+                                    id="searchbox-dropdown">
+                                    <form action="" method="get">
+                                        <label class="relative block w-64">
+                                            <input
+                                                class="w-full h-16 pr-7 pl-10 text-lg bg-white placeholder:text-slate-500 text-zinc-700 outline-none rounded-2xl"
+                                                type="text" name="s" placeholder="جستجو در بین دوره ها">
+                                            <button
+                                                class="absolute left-0 top-0 bottom-0 w-12 h-full my-auto text-slate-500"
+                                                type="submit" role="button">
+                                                <svg class="ml-2 w-6 h-6">
+                                                    <use xlink:href="#search"></use>
+                                                </svg>
+                                            </button>
+                                        </label>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Header Profile -->
+                    <div class=" ml-4 flex items-center gap-x-2.5 md:gap-x-5">
+                        <!-- Profile Details -->
+                        <div class="relative cursor-pointer">
+                            <span class="relative flex items-center gap-x-1.5 md:gap-x-3 z-50 profile">
+                                <span class="flex items-center gap-x-1.5">
+                                    <svg class=" profile-icon w-4 h-4 transition-all duration-300">
+                                        <use href="#chevron-down"></use>
+                                    </svg>
+                                    <span class="admin-name hidden md:inline-block"></span>
+                                </span>
+                                <span>
+                                    <img src="https://secure.gravatar.com/avatar/c37423a5808f5ab4a5347033b5e16221?s=96&d=mm&r=g"
+                                        class="admin-img object-cover w-10 h-10 md:w-12 md:h-12 rounded-full inline-block cursor-pointer">
+                                </span>
+                            </span>
+                            <div
+                                class="profile-menu absolute invisible opacity-0 -top-14 left-0 mt-4 flex w-60 flex-col rounded-lg border bg-white shadow-sm duration-300 transition-all">
+                                <div class="p-5 border-b">
+                                    <h5 class="text-base mb-2 font-EstedadMedium text-zinc-900"><a class="admin-name "
+                                            href="#"> </a></h5>
+                                    <a class="admin-email block text-sm text-slate-600" href="#">mailnam@mail.com</a>
+                                </div>
+                                <ul class="flex flex-col gap-5 border-b px-6 py-7">
+                                    <li>
+                                        <a href=""
+                                            class="flex items-center gap-3.5 text-sm font-medium duration-300 ease-in-out hover:text-primary lg:text-base">
+                                            <svg class="w-5 md:w-6 h-5 md:h-6">
+                                                <use xlink:href="#user"></use>
+                                            </svg>
+                                            پروفایل من
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href=""
+                                            class="flex items-center gap-3.5 text-sm font-medium duration-300 ease-in-out hover:text-primary lg:text-base">
+                                            <svg class="w-5 md:w-6 h-5 md:h-6">
+                                                <use xlink:href="#bell"></use>
+                                            </svg>
+                                            پروفایل من
+                                        </a>
+                                    </li>
+                                </ul>
+                                <button id="logout-btn"
+                                    class="flex items-center gap-3.5 px-6 py-4 text-sm font-EstedadMedium duration-300 ease-in-out hover:text-red-600 lg:text-base">
+                                    <svg class="w-5 md:w-6 h-5 md:h-6">
+                                        <use xlink:href="#arrow-left-start-on-rectangle"></use>
+                                    </svg>
+                                    خروج
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sidebar -->
+    <aside
+        class="bg-neutral-50 h-screen w-40 md:w-52 lg:w-64 py-8 fixed top-24 md:top-20 -right-64 shadow-sm z-40 transition-all">
+        <nav>
+            <ul class="text-zinc-800 h-screen space-y-4 child:text-sm child:md:text-base px-2 py-5 md:p-8">
+                <li class="side-bar">
+                    <a class="py-2.5 pr-6 block transition-all side-bar--active" href="main.html">حساب کاربری</a>
+                </li>
+                <li class="side-bar">
+                    <a class="py-2.5 pr-6 block transition-all" href="courses.html">دوره های من</a>
+                </li>
+                <li class="side-bar">
+                    <a class="py-2.5 pr-6 block transition-all" href="menus.html">منو ها</a>
+                </li>
+                <li class="side-bar">
+                    <a class="py-2.5 pr-6 block transition-all" href="menus.html">تیکت ها</a>
+                </li>
+                <li class="side-bar">
+                    <button
+                        class="logout-btn flex-center py-2.5 pr-6 block select-none gap-1 text-sm transition-all md:text-base text-red-500 hover:text-red-700">
+                        <svg class="w-5 md:w-6 h-5 md:h-6">
+                            <use xlink:href="#arrow-left-start-on-rectangle"></use>
+                        </svg>
+                        <span>خروج</span>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main id="" class="mr-0 mt-28 py-9 px-14 transition-all">
+        <div class="container">
+            <div class="transition-all rounded-2xl p-4 lg:p-7 mt-2 lg:mt-3.5">
+                
+                <h2 class="hidden md:flex items-center gap-x-4 font-EstedadMedium text-2xl text-zinc-700 mb-8">
+                    <span class="w-1 h-7 bg-yellow-500 block shrink-0 rounded-md"></span>
+                    دوره های ثبت نام شده:
+                </h2>
+
+                <div id="course-container"
+                    class="grid grid-rows-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-items-center gap-5">
+
+                    <div
+                        class="inline-flex flex-col items-center gap-y-4 py-3 px-4 bg-white max-w-[340px] rounded-3xl shadow-sm">
+
+                        <div class="">
+                            <img
+                                src="http://localhost:4000/courses/covers/d334cdbfdec0025b8c850744062e147d2ad13598df164aba59e55cd364c5e991.png">
+                        </div>
+                        <!-- Box Body -->
+                        <div class="flex flex-col justify-center items-start self-baseline gap-y-4">
+                            <!-- Topic -->
+                            <a href="course.html?name=Tailwind-css"
+                                class="text-2xl tracking-tighter text-right font-EstedadMedium overflow-hidden line-clamp-1">
+                                آموزش جامع و پروژه محور Tailwind css
+                            </a>
+                            <!-- Teacher & Time -->
+                            <div class="flex flex-wrap text-sm">
+                                <div class="flex-center gap-x-1 py-1 px-2">
+                                    <svg class="w-4 h-4">
+                                        <use href="#user"></use>
+                                    </svg>
+                                    <a href="#"> مانی راد </a>
+                                </div>
+                                <div class="flex-center gap-x-1 py-1 px-2">
+                                    <svg class="w-4 h-4">
+                                        <use href="#clock"></use>
+                                    </svg>
+                                    <span>۲۰:۴۳</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between w-full border-t pt-4">
+                            <!-- Users -->
+                            <span class="flex items-center gap-x-0.5 text-slate-500 text-sm">
+                                <svg class="w-5 h-5">
+                                    <use href="#users"></use>
+                                </svg>
+                                0
+                            </span>
+                            <!-- Price -->
+                            <div class="self-end text-xl text-right font-EstedadeMedium tracking-tighter">
+                                780,000 <span class="text-base">تومان</span>
+                            </div>
+                        </div>
+                        <!-- Button -->
+                        <a href="course.html?name=Tailwind-css"
+                            class="self-stretch py-3 text-white text-center font-EstedadMedium bg-teal-600 hover:bg-teal-700 rounded-2xl delay-100 transition-all">
+                            مشاهده و ثبت نام </a>
+                    </div>
+
+                    <div
+                        class="inline-flex flex-col items-center gap-y-4 py-3 px-4 bg-white max-w-[340px] rounded-3xl shadow-sm">
+
+                        <div class="">
+                            <img
+                                src="http://localhost:4000/courses/covers/749df1c7107130fda8152338e98793d91e5a5fb3d27b63b9f622d1ba71abc82f.png">
+                        </div>
+                        <!-- Box Body -->
+                        <div class="flex flex-col justify-center items-start self-baseline gap-y-4">
+                            <!-- Topic -->
+                            <a href="course.html?name=PHP"
+                                class="text-2xl tracking-tighter text-right font-EstedadMedium overflow-hidden line-clamp-1">
+                                آموزش جامع PHP
+                            </a>
+                            <!-- Teacher & Time -->
+                            <div class="flex flex-wrap text-sm">
+                                <div class="flex-center gap-x-1 py-1 px-2">
+                                    <svg class="w-4 h-4">
+                                        <use href="#user"></use>
+                                    </svg>
+                                    <a href="#"> مانی راد </a>
+                                </div>
+                                <div class="flex-center gap-x-1 py-1 px-2">
+                                    <svg class="w-4 h-4">
+                                        <use href="#clock"></use>
+                                    </svg>
+                                    <span>۲۰:۴۳</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between w-full border-t pt-4">
+                            <!-- Users -->
+                            <span class="flex items-center gap-x-0.5 text-slate-500 text-sm">
+                                <svg class="w-5 h-5">
+                                    <use href="#users"></use>
+                                </svg>
+                                0
+                            </span>
+                            <!-- Price -->
+                            <div class="self-end text-xl text-right font-EstedadeMedium tracking-tighter">
+                                970,000 <span class="text-base">تومان</span>
+                            </div>
+                        </div>
+                        <!-- Button -->
+                        <a href="course.html?name=PHP"
+                            class="self-stretch py-3 text-white text-center font-EstedadMedium bg-teal-600 hover:bg-teal-700 rounded-2xl delay-100 transition-all">
+                            مشاهده و ثبت نام </a>
+                    </div>
+
+                    <div
+                        class="inline-flex flex-col items-center gap-y-4 py-3 px-4 bg-white max-w-[340px] rounded-3xl shadow-sm">
+
+                        <div class="">
+                            <img
+                                src="http://localhost:4000/courses/covers/96f93064fc5f7d24d98c02e7614442098930f2cd7e3816ec249ae398219c0414.png">
+                        </div>
+                        <!-- Box Body -->
+                        <div class="flex flex-col justify-center items-start self-baseline gap-y-4">
+                            <!-- Topic -->
+                            <a href="course.html?name=laravel"
+                                class="text-2xl tracking-tighter text-right font-EstedadMedium overflow-hidden line-clamp-1">
+                                دوره جامع لاراول
+                            </a>
+                            <!-- Teacher & Time -->
+                            <div class="flex flex-wrap text-sm">
+                                <div class="flex-center gap-x-1 py-1 px-2">
+                                    <svg class="w-4 h-4">
+                                        <use href="#user"></use>
+                                    </svg>
+                                    <a href="#"> مانی راد </a>
+                                </div>
+                                <div class="flex-center gap-x-1 py-1 px-2">
+                                    <svg class="w-4 h-4">
+                                        <use href="#clock"></use>
+                                    </svg>
+                                    <span>۲۰:۴۳</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between w-full border-t pt-4">
+                            <!-- Users -->
+                            <span class="flex items-center gap-x-0.5 text-slate-500 text-sm">
+                                <svg class="w-5 h-5">
+                                    <use href="#users"></use>
+                                </svg>
+                                0
+                            </span>
+                            <!-- Price -->
+                            <div class="self-end text-xl text-right font-EstedadeMedium tracking-tighter">
+                                3,100,000 <span class="text-base">تومان</span>
+                            </div>
+                        </div>
+                        <!-- Button -->
+                        <a href="course.html?name=laravel"
+                            class="self-stretch py-3 text-white text-center font-EstedadMedium bg-teal-600 hover:bg-teal-700 rounded-2xl delay-100 transition-all">
+                            مشاهده و ثبت نام </a>
+                    </div>
+
+                    <div
+                        class="inline-flex flex-col items-center gap-y-4 py-3 px-4 bg-white max-w-[340px] rounded-3xl shadow-sm">
+
+                        <div class="">
+                            <img
+                                src="http://localhost:4000/courses/covers/ff2daab5edb705363986b551950cecb3934dc3bc9d139983cdcbab50cedb59fa.png">
+                        </div>
+                        <!-- Box Body -->
+                        <div class="flex flex-col justify-center items-start self-baseline gap-y-4">
+                            <!-- Topic -->
+                            <a href="course.html?name=js"
+                                class="text-2xl tracking-tighter text-right font-EstedadMedium overflow-hidden line-clamp-1">
+                                آموزش جاوا اسکریپت رایگان مقدماتی تا پیشرفته + مینی پروژه
+                            </a>
+                            <!-- Teacher & Time -->
+                            <div class="flex flex-wrap text-sm">
+                                <div class="flex-center gap-x-1 py-1 px-2">
+                                    <svg class="w-4 h-4">
+                                        <use href="#user"></use>
+                                    </svg>
+                                    <a href="#"> مانی راد </a>
+                                </div>
+                                <div class="flex-center gap-x-1 py-1 px-2">
+                                    <svg class="w-4 h-4">
+                                        <use href="#clock"></use>
+                                    </svg>
+                                    <span>۲۰:۴۳</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between w-full border-t pt-4">
+                            <!-- Users -->
+                            <span class="flex items-center gap-x-0.5 text-slate-500 text-sm">
+                                <svg class="w-5 h-5">
+                                    <use href="#users"></use>
+                                </svg>
+                                0
+                            </span>
+                            <!-- Price -->
+                            <div class="self-end text-xl text-right font-EstedadeMedium tracking-tighter">
+                                رایگان
+                            </div>
+                        </div>
+                        <!-- Button -->
+                        <a href="course.html?name=js"
+                            class="self-stretch py-3 text-white text-center font-EstedadMedium bg-teal-600 hover:bg-teal-700 rounded-2xl delay-100 transition-all">
+                            مشاهده و ثبت نام </a>
+                    </div>
+
+                    <div
+                        class="inline-flex flex-col items-center gap-y-4 py-3 px-4 bg-white max-w-[340px] rounded-3xl shadow-sm">
+
+                        <div class="">
+                            <img
+                                src="http://localhost:4000/courses/covers/3d6c7a7167792d2c708e3012fab40f815c238d867a712863ed5a20f283fc4980.png">
+                        </div>
+                        <!-- Box Body -->
+                        <div class="flex flex-col justify-center items-start self-baseline gap-y-4">
+                            <!-- Topic -->
+                            <a href="course.html?name=C-#"
+                                class="text-2xl tracking-tighter text-right font-EstedadMedium overflow-hidden line-clamp-1">
+                                آموزش سی شارپ رایگان مقدماتی تا پیشرفته
+                            </a>
+                            <!-- Teacher & Time -->
+                            <div class="flex flex-wrap text-sm">
+                                <div class="flex-center gap-x-1 py-1 px-2">
+                                    <svg class="w-4 h-4">
+                                        <use href="#user"></use>
+                                    </svg>
+                                    <a href="#"> مانی راد </a>
+                                </div>
+                                <div class="flex-center gap-x-1 py-1 px-2">
+                                    <svg class="w-4 h-4">
+                                        <use href="#clock"></use>
+                                    </svg>
+                                    <span>۲۰:۴۳</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between w-full border-t pt-4">
+                            <!-- Users -->
+                            <span class="flex items-center gap-x-0.5 text-slate-500 text-sm">
+                                <svg class="w-5 h-5">
+                                    <use href="#users"></use>
+                                </svg>
+                                0
+                            </span>
+                            <!-- Price -->
+                            <div class="self-end text-xl text-right font-EstedadeMedium tracking-tighter">
+                                رایگان
+                            </div>
+                        </div>
+                        <!-- Button -->
+                        <a href="course.html?name=C-#"
+                            class="self-stretch py-3 text-white text-center font-EstedadMedium bg-teal-600 hover:bg-teal-700 rounded-2xl delay-100 transition-all">
+                            مشاهده و ثبت نام </a>
+                    </div>
+
+                    <div
+                        class="inline-flex flex-col items-center gap-y-4 py-3 px-4 bg-white max-w-[340px] rounded-3xl shadow-sm">
+
+                        <div class="">
+                            <img
+                                src="http://localhost:4000/courses/covers/bf3df18c7f55642518da9c3632398c6aa66433bc858aa81dcd0dccae631e8c14.png">
+                        </div>
+                        <!-- Box Body -->
+                        <div class="flex flex-col justify-center items-start self-baseline gap-y-4">
+                            <!-- Topic -->
+                            <a href="course.html?name=Go-Lang"
+                                class="text-2xl tracking-tighter text-right font-EstedadMedium overflow-hidden line-clamp-1">
+                                دوره پروژه محور Go برای بازار کار
+                            </a>
+                            <!-- Teacher & Time -->
+                            <div class="flex flex-wrap text-sm">
+                                <div class="flex-center gap-x-1 py-1 px-2">
+                                    <svg class="w-4 h-4">
+                                        <use href="#user"></use>
+                                    </svg>
+                                    <a href="#"> مانی راد </a>
+                                </div>
+                                <div class="flex-center gap-x-1 py-1 px-2">
+                                    <svg class="w-4 h-4">
+                                        <use href="#clock"></use>
+                                    </svg>
+                                    <span>۲۰:۴۳</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between w-full border-t pt-4">
+                            <!-- Users -->
+                            <span class="flex items-center gap-x-0.5 text-slate-500 text-sm">
+                                <svg class="w-5 h-5">
+                                    <use href="#users"></use>
+                                </svg>
+                                0
+                            </span>
+                            <!-- Price -->
+                            <div class="self-end text-xl text-right font-EstedadeMedium tracking-tighter">
+                                1,190,000 <span class="text-base">تومان</span>
+                            </div>
+                        </div>
+                        <!-- Button -->
+                        <a href="course.html?name=Go-Lang"
+                            class="self-stretch py-3 text-white text-center font-EstedadMedium bg-teal-600 hover:bg-teal-700 rounded-2xl delay-100 transition-all">
+                            مشاهده و ثبت نام </a>
+                    </div>
+
+                    <div
+                        class="inline-flex flex-col items-center gap-y-4 py-3 px-4 bg-white max-w-[340px] rounded-3xl shadow-sm">
+
+                        <div class="">
+                            <img
+                                src="http://localhost:4000/courses/covers/90cf88dbd715c4eef0e5f05a77b0f37e19ff27f67d60a547e711c2a01bc81a72.png">
+                        </div>
+                        <!-- Box Body -->
+                        <div class="flex flex-col justify-center items-start self-baseline gap-y-4">
+                            <!-- Topic -->
+                            <a href="course.html?name=bootstrap"
+                                class="text-2xl tracking-tighter text-right font-EstedadMedium overflow-hidden line-clamp-1">
+                                دوره پروژه محور بوت استرپ
+                            </a>
+                            <!-- Teacher & Time -->
+                            <div class="flex flex-wrap text-sm">
+                                <div class="flex-center gap-x-1 py-1 px-2">
+                                    <svg class="w-4 h-4">
+                                        <use href="#user"></use>
+                                    </svg>
+                                    <a href="#"> مانی راد </a>
+                                </div>
+                                <div class="flex-center gap-x-1 py-1 px-2">
+                                    <svg class="w-4 h-4">
+                                        <use href="#clock"></use>
+                                    </svg>
+                                    <span>۲۰:۴۳</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between w-full border-t pt-4">
+                            <!-- Users -->
+                            <span class="flex items-center gap-x-0.5 text-slate-500 text-sm">
+                                <svg class="w-5 h-5">
+                                    <use href="#users"></use>
+                                </svg>
+                                0
+                            </span>
+                            <!-- Price -->
+                            <div class="self-end text-xl text-right font-EstedadeMedium tracking-tighter">
+                                200,000 <span class="text-base">تومان</span>
+                            </div>
+                        </div>
+                        <!-- Button -->
+                        <a href="course.html?name=bootstrap"
+                            class="self-stretch py-3 text-white text-center font-EstedadMedium bg-teal-600 hover:bg-teal-700 rounded-2xl delay-100 transition-all">
+                            مشاهده و ثبت نام </a>
+                    </div>
+
+                    <div
+                        class="inline-flex flex-col items-center gap-y-4 py-3 px-4 bg-white max-w-[340px] rounded-3xl shadow-sm">
+
+                        <div class="">
+                            <img
+                                src="http://localhost:4000/courses/covers/a7b48ad3f6f5534a135933b68bbae7ae680956194d17c7753db13d042410934e.png">
+                        </div>
+                        <!-- Box Body -->
+                        <div class="flex flex-col justify-center items-start self-baseline gap-y-4">
+                            <!-- Topic -->
+                            <a href="course.html?name=node-js"
+                                class="text-2xl tracking-tighter text-right font-EstedadMedium overflow-hidden line-clamp-1">
+                                node-js
+                            </a>
+                            <!-- Teacher & Time -->
+                            <div class="flex flex-wrap text-sm">
+                                <div class="flex-center gap-x-1 py-1 px-2">
+                                    <svg class="w-4 h-4">
+                                        <use href="#user"></use>
+                                    </svg>
+                                    <a href="#"> مانی راد </a>
+                                </div>
+                                <div class="flex-center gap-x-1 py-1 px-2">
+                                    <svg class="w-4 h-4">
+                                        <use href="#clock"></use>
+                                    </svg>
+                                    <span>۲۰:۴۳</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between w-full border-t pt-4">
+                            <!-- Users -->
+                            <span class="flex items-center gap-x-0.5 text-slate-500 text-sm">
+                                <svg class="w-5 h-5">
+                                    <use href="#users"></use>
+                                </svg>
+                                0
+                            </span>
+                            <!-- Price -->
+                            <div class="self-end text-xl text-right font-EstedadeMedium tracking-tighter">
+                                2,900,000 <span class="text-base">تومان</span>
+                            </div>
+                        </div>
+                        <!-- Button -->
+                        <a href="course.html?name=node-js"
+                            class="self-stretch py-3 text-white text-center font-EstedadMedium bg-teal-600 hover:bg-teal-700 rounded-2xl delay-100 transition-all">
+                            مشاهده و ثبت نام </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <div class="overlay fixed w-full h-full top-0 left-0 bg-black/40 z-30 transition-all invisible opacity-0"></div>
+    <script type="module" src="../js/UPanel/style.js"></script>
+    <script type="module" src="../js/UPanel/courses.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+
+</html>

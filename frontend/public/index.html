@@ -100,7 +100,7 @@
 
 
             <!-- SearchBar & Cart & LogIn -->
-            <div class="flex gap-x-4 md:gap-x-8">
+            <div class="flex items-center gap-x-4 md:gap-x-8">
                 <!-- SearchBar -->
                 <div class="relative group hidden lg:block z-50" id="searchbox">
                     <form class="hidden xl:block" action="" method="get">
@@ -145,16 +145,18 @@
                 </div>
 
                 <!-- LogIn Btn -->
-                <div
-                    class="hidden md:flex-center gap-x-2 font-EstedadMedium h-14 px-4 lg:px-6 bg-teal-600 hover:bg-teal-700 text-white rounded-2xl transition-all">
-                    <svg id="user-login-btn-icon" class="w-6 h-6">
+                <div id="user-login-btn"
+                    class="hidden  gap-x-2 font-EstedadMedium h-14 px-4 lg:px-6 bg-teal-600 hover:bg-teal-700 text-white rounded-2xl transition-all">
+                    <svg class="w-6 h-6">
                         <use xlink:href="#arrow-right-rectangle"></use>
                     </svg>
-                    <a id="user-login-btn">
+                    <a href="login.html">
+                        ورود یا ثبت نام
                     </a>
+                
                 </div>
                 <!-- LogIn Icon Btn -->
-                <a href="#" class="md:hidden flex-center w-12 h-12 rounded-full bg-gray-100 text-slate-500">
+                <a href="#" id="user-btn" class="hidden w-12 md:w-14 h-12 md:h-14 rounded-full bg-gray-100 text-slate-500">
                     <svg class="w-6 h-6">
                         <use xlink:href="#user"></use>
                     </svg>
