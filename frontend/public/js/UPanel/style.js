@@ -13,7 +13,7 @@ window.addEventListener('load', () => {
     const adminNameElems = $.querySelectorAll('.admin-name');
     const adminImageElem = $.querySelector('.admin-img');
     const adminEmailElem = $.querySelector('.admin-email');
-    const logoutBtnElem = $.querySelector('.logout-btn');
+    const logoutBtnElems = $.querySelectorAll('.logout-btn');
 
     // Handle Menu Button
     menuButton.addEventListener('click', () => {
@@ -21,8 +21,11 @@ window.addEventListener('load', () => {
         mainElem.classList.toggle('md:!mr-64');
     });
 
-    // Handle Logout Admin
-    logoutBtnElem.addEventListener("click", () => {
-        logout()
-    })
+    // Handle Logout User
+    logoutBtnElems.forEach(logoutBtnElem => {
+        logoutBtnElem.addEventListener("click", () => {
+            logout();
+        });
+    });
+
 });
