@@ -33,36 +33,55 @@ const showUserNameInNavbar = () => {
     const userLoginBtn = document.querySelector('#user-login-btn');
     const userBtn = document.querySelector('#user-btn');
     const userProfileDropdown = document.querySelector('#user-profile-dropdown');
+    const userName = document.querySelector('#user-name');
+    const userProfileItemsWrapper = document.querySelector('#user-profile-items-wrapper');
     const overlay = document.querySelector('.overlay');
 
     const isUserLogin = isLogin()
 
     if (isUserLogin) {
-
         const userInfos = getMe().then(data => {
-            data.role === "ADMIN" ? userBtn.setAttribute('href', 'panel/main') : userBtn.setAttribute('href', 'my-account')
             userBtn.classList.add('!flex-center')
+            console.log(data);
+            userName.innerHTML = data.username
 
+            if (data.role === "ADMIN") {
+                userProfileItemsWrapper.insertAdjacentHTML("afterbegin",`
+                    <a href="./panel/main.html"
+                        class="flex items-center justify-between px-2.5 h-12 rounded-lg hover:text-white hover:bg-teal-600 transition-colors cursor-pointer">
+                        <span class="flex items-center gap-x-2">
+                            <svg class="w-6 h-6">
+                                <use xlink:href="#user-plus"></use>
+                            </svg>
+                            پنل مدیریت</span>
+                    </a>
+                `);
+            } else {
 
+            }
+
+            userBtn.addEventListener("click", () => {
+                userProfileDropdown.classList.toggle("!opacity-100");
+                userProfileDropdown.classList.toggle("!visible");
+                overlay.classList.toggle('invisible');
+                overlay.classList.toggle('opacity-0');
+            });
+
+            overlay.addEventListener("click", () => {
+                userProfileDropdown.classList.remove("!opacity-100");
+                userProfileDropdown.classList.remove("!visible");
+                overlay.classList.add('invisible');
+                overlay.classList.add('opacity-0');
+            });
         });
-        userBtn.addEventListener("click", () => {
-            console.log('s');
-            userProfileDropdown.classList.toggle("!opacity-100");
-            userProfileDropdown.classList.toggle("!visible");
-            overlay.classList.toggle('invisible');
-            overlay.classList.toggle('opacity-0');
-        })
-
-        overlay.addEventListener("click", () => {
-            userProfileDropdown.classList.remove("!opacity-100");
-            userProfileDropdown.classList.remove("!visible");
-            overlay.classList.add('invisible');
-            overlay.classList.add('opacity-0');
-        })
-
     } else {
         userLoginBtn.classList.add('!flex-center')
     }
+};
+
+const logout = () => {
+    localStorage.removeItem('user');
+    location.reload()
 };
 
 const showContentData = async () => {
@@ -76,7 +95,6 @@ const showContentData = async () => {
         }
     })
     const data = await res.json()
-
     makeCounter(data.coursesCount, landingStatusCourse, 'دوره آموزشی');
     makeCounter(data.usersCount, landingStudents, 'دانشجو');
     makeCounter(data.totalTime, landingBlogs, 'دقیقه دوره ی اموزشی');
@@ -822,4 +840,4 @@ const submitComments = async () => {
     });
 };
 
-export { showUserNameInNavbar, headerResponsive, getAndShowAllCourses, getAndShowPreSellCourses, getAndShowArticles, getAndShowMenus, getAndShowCategoryCourses, insertCourseBoxHtmlTemplate, insertArticleBoxHtmlTemplate, coursesSorting, observerScroll, handleGroupingAndSortingBox, getCourseDetails, getSessionDetails, submitContactUsMassage, globalSearch, submitComments, showContentData, getAndShowAllArticles, getArticleDetails };
+export { showUserNameInNavbar, logout, headerResponsive, getAndShowAllCourses, getAndShowPreSellCourses, getAndShowArticles, getAndShowMenus, getAndShowCategoryCourses, insertCourseBoxHtmlTemplate, insertArticleBoxHtmlTemplate, coursesSorting, observerScroll, handleGroupingAndSortingBox, getCourseDetails, getSessionDetails, submitContactUsMassage, globalSearch, submitComments, showContentData, getAndShowAllArticles, getArticleDetails };
