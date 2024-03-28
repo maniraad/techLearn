@@ -34,6 +34,7 @@ const showUserNameInNavbar = () => {
     const userBtn = document.querySelector('#user-btn');
     const userProfileDropdown = document.querySelector('#user-profile-dropdown');
     const userName = document.querySelector('#user-name');
+    const profile = document.querySelector('#profile');
     const userProfileItemsWrapper = document.querySelector('#user-profile-items-wrapper');
     const overlay = document.querySelector('.overlay');
 
@@ -46,7 +47,7 @@ const showUserNameInNavbar = () => {
             userName.innerHTML = data.username
 
             if (data.role === "ADMIN") {
-                userProfileItemsWrapper.insertAdjacentHTML("afterbegin",`
+                userProfileItemsWrapper.insertAdjacentHTML("afterbegin", `
                     <a href="./panel/main.html"
                         class="flex items-center justify-between px-2.5 h-12 rounded-lg hover:text-white hover:bg-teal-600 transition-colors cursor-pointer">
                         <span class="flex items-center gap-x-2">
@@ -56,8 +57,11 @@ const showUserNameInNavbar = () => {
                             پنل مدیریت</span>
                     </a>
                 `);
-            } else {
 
+
+                profile.setAttribute("src", `http://localhost:4000/${data.profile}`)
+            } else {
+                profile.setAttribute("src", "https://secure.gravatar.com/avatar/c37423a5808f5ab4a5347033b5e16221?s=96&d=mm&r=g")
             }
 
             userBtn.addEventListener("click", () => {
