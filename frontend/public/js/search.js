@@ -1,4 +1,4 @@
-import { insertCourseBoxHtmlTemplate, handleGroupingAndSortingBox, globalSearch } from "./funcs/shared.js";
+import { handleGroupingAndSortingBox, globalSearch } from "./funcs/shared.js";
 
 window.addEventListener("load", () => {
     handleGroupingAndSortingBox();
@@ -34,12 +34,6 @@ window.addEventListener("load", () => {
                                                 <use href="#user"></use>
                                             </svg>
                                             <a href="#"> ${course.creator.name} </a>
-                                        </div>
-                                        <div class="flex-center gap-x-1 py-1 px-2">
-                                            <svg class="w-4 h-4">
-                                                <use href="#clock"></use>
-                                            </svg>
-                                            <span>۲۰:۴۳</span>
                                         </div>
                                     </div>
                                 </div>

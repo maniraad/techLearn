@@ -125,12 +125,6 @@ const getAndShowAllCourses = async (coursesCount) => {
                                     </svg>
                                     <a href="#"> ${course.creator} </a>
                                 </div>
-                                <div class="flex-center gap-x-1 py-1 px-2">
-                                    <svg class="w-4 h-4">
-                                        <use href="#clock"></use>
-                                    </svg>
-                                    <span>۲۰:۴۳</span>
-                                </div>
                             </div>
                         </div>
                         <div class="flex items-center justify-between w-full border-t pt-4">
@@ -314,12 +308,6 @@ const insertCourseBoxHtmlTemplate = (courses, parentElement) => {
                                         <use href="#user"></use>
                                     </svg>
                                     <a href="#"> ${course.creator} </a>
-                                </div>
-                                <div class="flex-center gap-x-1 py-1 px-2">
-                                    <svg class="w-4 h-4">
-                                        <use href="#clock"></use>
-                                    </svg>
-                                    <span>۲۰:۴۳</span>
                                 </div>
                             </div>
                         </div>
