@@ -32,6 +32,8 @@ const showUserNameInNavbar = () => {
 
     const userLoginBtn = document.querySelector('#user-login-btn');
     const userBtn = document.querySelector('#user-btn');
+    const userProfileDropdown = document.querySelector('#user-profile-dropdown');
+    const overlay = document.querySelector('.overlay');
 
     const isUserLogin = isLogin()
 
@@ -40,7 +42,23 @@ const showUserNameInNavbar = () => {
         const userInfos = getMe().then(data => {
             data.role === "ADMIN" ? userBtn.setAttribute('href', 'panel/main') : userBtn.setAttribute('href', 'my-account')
             userBtn.classList.add('!flex-center')
+
+
         });
+        userBtn.addEventListener("click", () => {
+            console.log('s');
+            userProfileDropdown.classList.toggle("!opacity-100");
+            userProfileDropdown.classList.toggle("!visible");
+            overlay.classList.toggle('invisible');
+            overlay.classList.toggle('opacity-0');
+        })
+
+        overlay.addEventListener("click", () => {
+            userProfileDropdown.classList.remove("!opacity-100");
+            userProfileDropdown.classList.remove("!visible");
+            overlay.classList.add('invisible');
+            overlay.classList.add('opacity-0');
+        })
 
     } else {
         userLoginBtn.classList.add('!flex-center')
@@ -148,7 +166,7 @@ const getAndShowAllArticles = async () => {
 
     const articles = await res.json();
 
-    insertArticleBoxHtmlTemplate(articles,articleContainer)
+    insertArticleBoxHtmlTemplate(articles, articleContainer)
 
     return articles
 };
@@ -212,7 +230,7 @@ const getAndShowArticles = async () => {
 
     const articles = await res.json();
 
-    insertArticleBoxHtmlTemplate(articles.slice(0, 4),articlesContainer)
+    insertArticleBoxHtmlTemplate(articles.slice(0, 4), articlesContainer)
 
     return articles
 };
@@ -354,7 +372,7 @@ const insertArticleBoxHtmlTemplate = (articles, parentElement) => {
                         </div>
         `
         )
-        });
+    });
 };
 
 const coursesSorting = (array, filterMethod) => {
