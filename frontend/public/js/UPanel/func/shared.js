@@ -1,5 +1,13 @@
 import { Toast, getToken } from "../../funcs/utils.js";
 
+// Select Element From HTML
+const nameInput = document.querySelector('#nameInput');
+const userNameInput = document.querySelector('#userNameInput');
+const phoneInput = document.querySelector('#phoneInput');
+const emailInput = document.querySelector('#emailInput');
+const passwordInput = document.querySelector('#passwordInput');
+
+// Functions
 const getAndShowUseCourse = async () => {
 
     const courseContainerElem = document.querySelector("#course-container");
@@ -35,11 +43,6 @@ const getAndShowUseCourse = async () => {
 };
 
 const getAndShowUserInfos = async () => {
-    const nameInput = document.querySelector('#nameInput');
-    const userNameInput = document.querySelector('#userNameInput');
-    const phoneInput = document.querySelector('#phoneInput');
-    const emailInput = document.querySelector('#emailInput');
-    const passwordInput = document.querySelector('#passwordInput');
     const showUserName = document.querySelector('.show-userName');
 
     const res = await fetch(`http://localhost:4000/v1/auth/me`, {
@@ -50,14 +53,48 @@ const getAndShowUserInfos = async () => {
 
     const data = await res.json()
 
-    console.log(res);
-
     console.log(data);
     showUserName.innerHTML = data.username
-    nameInput.value = data.name 
+    nameInput.value = data.name
     userNameInput.value = data.username
     phoneInput.value = data.phone
     emailInput.value = data.email
 };
 
-export { getAndShowUseCourse, getAndShowUserInfos };
+const updateUserInfos = async () => {
+    const userNewInfos = {
+        name: nameInput.value.trim(),
+        username: userNameInput.value.trim(),
+        email: emailInput.value.trim(),
+        phone: phoneInput.value.trim(),
+        password: passwordInput.value.trim(),
+    };
+
+    const res = await fetch(`http://localhost:4000/v1/users`, {
+        method: "PUT",
+        headers: {
+            Authorization: `Bearer ${getToken()}`,
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(userNewInfos)
+    });
+
+    if (res.ok) {
+        Toast.fire({
+            icon: "success",
+            title: " تغییرات با موفقیت انجام شد",
+        });
+        
+        setInterval(() => {
+            location.reload();
+        }, 3000);
+    } else {
+        Toast.fire({
+            icon: "error",
+            title: "مشکلی رخ داده است",
+            text: "لطفا بعدا امتحان کنید !",
+        });
+    }
+};
+
+export { getAndShowUseCourse, getAndShowUserInfos, updateUserInfos };
