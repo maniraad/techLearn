@@ -40,13 +40,17 @@
             <path stroke-linecap="round" stroke-linejoin="round"
                 d="m9.75 9.75 4.5 4.5m0-4.5-4.5 4.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
         </symbol>
-        <symbol id="arrow-left-start-on-rectangle" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 9V5.25A2.25 2.25 0 0 1 10.5 3h6a2.25 2.25 0 0 1 2.25 2.25v13.5A2.25 2.25 0 0 1 16.5 21h-6a2.25 2.25 0 0 1-2.25-2.25V15m-3 0-3-3m0 0 3-3m-3 3H15" />
-          </symbol>
-          <symbol id="user" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
-          </symbol>
-          
+        <symbol id="arrow-left-start-on-rectangle" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+            stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                d="M8.25 9V5.25A2.25 2.25 0 0 1 10.5 3h6a2.25 2.25 0 0 1 2.25 2.25v13.5A2.25 2.25 0 0 1 16.5 21h-6a2.25 2.25 0 0 1-2.25-2.25V15m-3 0-3-3m0 0 3-3m-3 3H15" />
+        </symbol>
+        <symbol id="user" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+        </symbol>
+
     </svg>
 
     <!-- Header -->
@@ -152,7 +156,8 @@
                             <div
                                 class="profile-menu absolute invisible opacity-0 -top-14 left-0 mt-4 flex w-60 flex-col rounded-lg border bg-white shadow-sm duration-300 transition-all">
                                 <div class="p-5 border-b">
-                                    <h5 class="text-base mb-2 font-EstedadMedium text-zinc-900"><a class="admin-name " href="#"> </a></h5>
+                                    <h5 class="text-base mb-2 font-EstedadMedium text-zinc-900"><a class="admin-name "
+                                            href="#"> </a></h5>
                                     <a class="admin-email block text-sm text-slate-600" href="#">mailnam@mail.com</a>
                                 </div>
                                 <ul class="flex flex-col gap-5 border-b px-6 py-7">
@@ -162,7 +167,7 @@
                                             <svg class="w-5 md:w-6 h-5 md:h-6">
                                                 <use xlink:href="#user"></use>
                                             </svg>
-                                            پروفایل من 
+                                            پروفایل من
                                         </a>
                                     </li>
                                     <li>
@@ -171,7 +176,7 @@
                                             <svg class="w-5 md:w-6 h-5 md:h-6">
                                                 <use xlink:href="#bell"></use>
                                             </svg>
-                                            پروفایل من 
+                                            پروفایل من
                                         </a>
                                     </li>
                                 </ul>
@@ -233,7 +238,42 @@
     <main class="mr-0 mt-28 py-9 px-14 transition-all">
         <p class="admin-welcome-name block font-EstedadMedium text-lg py-3"></p>
 
-
+        <section class="flex items-center justify-center flex-wrap mt-6 -mx-3 mb-14">
+            <div class="h-[480px] px-3 mt-0 lg:flex-none">
+                <div
+                    class="border-black/12.5 shadow-soft-xl relative z-20 flex min-w-0 flex-col break-words rounded-2xl border-0 border-solid bg-white bg-clip-border">
+                    <div class="border-black/12.5 mb-0 rounded-t-2xl border-b-0 border-solid bg-white p-6 pb-0">
+                        <h6>Sales overview</h6>
+                        <p class="leading-normal text-sm">
+                            <i class="fa fa-arrow-up text-lime-500" aria-hidden="true"></i>
+                            <span class="font-semibold">4% more</span> in 2021
+                        </p>
+                    </div>
+                    <div class="flex-auto p-4">
+                        <div class="">
+                            <canvas id="pie-chart" class="!h-96"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="h-[480px] px-3 mt-0 lg:flex-none">
+                <div
+                    class="border-black/12.5 shadow-soft-xl relative z-20 flex min-w-0 flex-col break-words rounded-2xl border-0 border-solid bg-white bg-clip-border h-full">
+                    <div class="border-black/12.5 mb-0 rounded-t-2xl border-b-0 border-solid bg-white p-6 pb-0">
+                        <h6>Sales overview</h6>
+                        <p class="leading-normal text-sm">
+                            <i class="fa fa-arrow-up text-lime-500" aria-hidden="true"></i>
+                            <span class="font-semibold">4% more</span> in 2021
+                        </p>
+                    </div>
+                    <div class="flex-auto p-4">
+                        <div class="">
+                            <canvas id="linear-chart" height="300" width="885"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <section class="recently-user mb-8">
             <div class="container">
@@ -363,6 +403,7 @@
     <script type="module" src="../js/panel/style.js"></script>
     <script type="module" src="../js/panel/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </body>
 
 </html>
