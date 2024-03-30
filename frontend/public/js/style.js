@@ -1,4 +1,4 @@
-import { showUserNameInNavbar, headerResponsive, getAndShowMenus, logout } from "./funcs/shared.js";
+import { showUserNameInNavbar, go404Page, headerResponsive, getAndShowMenus, logout } from "./funcs/shared.js";
 
 window.addEventListener('load', () => {
     const globalSearchBtn = document.querySelector('#search-btn');
@@ -17,4 +17,5 @@ window.addEventListener('load', () => {
     showUserNameInNavbar();
     headerResponsive();
     getAndShowMenus();
+    go404Page();
 });

@@ -28,6 +28,23 @@ const headerResponsive = () => {
     });
 };
 
+const go404Page = () => {
+    const links = document.querySelectorAll('.check-link')
+    links.forEach(link => {
+        link.addEventListener("click", (event) => {
+            event.preventDefault()
+
+            const url = link.href
+
+            fetch(url).then(res=>{
+                if (!res.ok) {
+                    window.location.href = '404.html'
+                }
+            })
+        })
+    });
+}
+
 const showUserNameInNavbar = () => {
 
     const userLoginBtn = document.querySelector('#user-login-btn');
@@ -61,6 +78,17 @@ const showUserNameInNavbar = () => {
 
                 profile.setAttribute("src", `http://localhost:4000/${data.profile}`)
             } else {
+                userProfileItemsWrapper.insertAdjacentHTML("afterbegin", `
+                    <a href="./my-account/courses.html"
+                        class="flex items-center justify-between px-2.5 h-12 rounded-lg hover:text-white hover:bg-teal-600 transition-colors cursor-pointer">
+                        <span class="flex items-center gap-x-2">
+                            <svg class="w-6 h-6">
+                                <use xlink:href="#folder-open"></use>
+                            </svg>
+                            دوره های من 
+                        </span>
+                    </a>
+                `);
                 profile.setAttribute("src", "https://secure.gravatar.com/avatar/c37423a5808f5ab4a5347033b5e16221?s=96&d=mm&r=g")
             }
 
@@ -253,44 +281,59 @@ const getAndShowArticles = async () => {
 
 const getAndShowMenus = async () => {
 
-    const menusContainer = document.querySelector('#menus-wrapper');
+    const menusContainers = document.querySelectorAll('.menus-wrapper');
 
     const res = await fetch(`http://localhost:4000/v1/menus`);
 
     const menus = await res.json();
 
-
-    menus.forEach(menu => {
-        menusContainer.insertAdjacentHTML('beforeend',
-            `
-            <li class="relative group">
-                <a href="${menu.href}" class="flex items-center gap-x-1.5 h-full text-zinc-700">
+    menusContainers.forEach(menusContainer => {
+        menus.forEach(menu => {
+            menusContainer.insertAdjacentHTML('beforeend',
+                `
+            <li class="relative group lg:flex lg:items-center lg:justify-between">
+                <a href="${menu.href}" class="check-link flex items-center gap-x-1.5 h-full text-zinc-700">
                     ${menu.title}
                 </a>
                     ${menu.submenus.length !== 0 ?
-                `   
+                    `   
                     <svg class="w-4 h-4">
                         <use xlink:href="#chevron-down"></use>
                     </svg>
-
-                    <div class="invisible opacity-0 group-hover:visible group-hover:opacity-100 absolute right-0 top-full pt-1 xl:pt-4 transition-all z-10">
-                        <div class="flex flex-col gap-y-5 w-64 bg-white shadow-sm py-5 px-6 rounded-2xl text-base">
+                    <div class=" invisible opacity-0 lg:group-hover:visible lg:group-hover:opacity-100 absolute space-y-4 right-0 top-24 w-56 bg-white pt-1 xl:pt-4 border-t-[3px] border-t-teal-600 tracking-normal shadow-normal rounded-2xl  transition-all z-10">
+                        <div class="flex flex-col gap-y-5 w-56 bg-white shadow-sm py-5 px-6 rounded-2xl text-base">
                             ${menu.submenus.map((submenu) => (
-                    ` 
-                            <a href=category.html?cat=${submenu.href} class="overflow-hidden text-ellipsis whitespace-nowrap text-zinc-700 transition-all">
+                        ` 
+                            <a href=category.html?cat=${submenu.href} class="check-link overflow-hidden block text-ellipsis whitespace-nowrap text-zinc-700 hover:text-teal-600 transition-all">
                             ${submenu.title}
                             </a>
                           `
-                )).join('')}
+                    )).join('')}
                       `
-                : ''}
+                    : ''}
                         </div>
                     </div>
                 
             </li>         
         `
-        )
-    });
+            )
+            const links = document.querySelectorAll('.check-link')
+            links.forEach(link => {
+                link.addEventListener("click", (event) => {
+                    event.preventDefault()
+        
+                    const url = link.href
+        
+                    fetch(url).then(res=>{
+                        if (!res.ok) {
+                            window.location.href = '404.html'
+                        }
+                    })
+                })
+            });
+        });
+    })
+
 };
 
 const getAndShowCategoryCourses = async () => {
@@ -470,7 +513,6 @@ const getCourseDetails = () => {
     const courseDescription = $.querySelector('#description-course');
     const coursePrice = $.querySelector('#course-price');
     const courseStatus = $.querySelector('#course-status');
-    const courseSupport = $.querySelector('#support');
     const courseDate = $.querySelector('#date');
     const courseStudents = $.querySelector('#students');
     const courseCover = $.querySelector('#course-cover');
@@ -490,7 +532,6 @@ const getCourseDetails = () => {
             courseCategory.innerHTML = course.categoryID.title
             courseTitle.innerHTML = course.name
             courseDescription.innerHTML = course.description
-            courseSupport.innerHTML = course.support
             courseStudents.innerHTML = course.courseStudentsCount
             courseDate.innerHTML = course.updatedAt.slice(0, 10)
             coursePrice.innerHTML = course.price === 0 ? "رایگان" : course.price.toLocaleString() + "تومان"
@@ -552,7 +593,7 @@ const getCourseDetails = () => {
                                                     <img alt="" draggable="false" loading="lazy" width="120"
                                                         height="120" decoding="async" data-nimg="1"
                                                         class="aspect-square flex-none rounded-full object-cover transition-all duration-500 opacity-100 h-14 w-14 select-none md:h-16 md:w-16 lg:h-16 lg:w-16 xl:h-20 xl:w-20"
-                                                        src="http://localhost:4000/courses/covers/${course.creator.cover}">
+                                                        src="http://localhost:4000/${course.creator.profile}">
                                                 </a>
 
                                                 <div
@@ -844,4 +885,4 @@ const submitComments = async () => {
     });
 };
 
-export { showUserNameInNavbar, logout, headerResponsive, getAndShowAllCourses, getAndShowPreSellCourses, getAndShowArticles, getAndShowMenus, getAndShowCategoryCourses, insertCourseBoxHtmlTemplate, insertArticleBoxHtmlTemplate, coursesSorting, observerScroll, handleGroupingAndSortingBox, getCourseDetails, getSessionDetails, submitContactUsMassage, globalSearch, submitComments, showContentData, getAndShowAllArticles, getArticleDetails };
+export { showUserNameInNavbar, go404Page, logout, headerResponsive, getAndShowAllCourses, getAndShowPreSellCourses, getAndShowArticles, getAndShowMenus, getAndShowCategoryCourses, insertCourseBoxHtmlTemplate, insertArticleBoxHtmlTemplate, coursesSorting, observerScroll, handleGroupingAndSortingBox, getCourseDetails, getSessionDetails, submitContactUsMassage, globalSearch, submitComments, showContentData, getAndShowAllArticles, getArticleDetails };

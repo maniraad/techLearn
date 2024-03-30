@@ -834,8 +834,7 @@ const getAllMessages = async () => {
                 <td class="w-4 p-4">
                     <div class="flex items-center">
                         <svg class="w-5 md:w-6 h-5 md:h-6">
-                            <use xlink:href="${message.answer === 1 ? "#check" : "#x-circle"
-      }"></use>
+                            <use xlink:href="${message.answer === 1 ? "#check" : "#x-circle"}"></use>
                         </svg> 
                     </div>
                 </td>

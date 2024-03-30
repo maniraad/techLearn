@@ -10,7 +10,7 @@
     <title> تک لرن | صفحه اصلی </title>
 </head>
 
-<body dir="rtl" class="font-Estedad bg-gray-100">
+<body dir="rtl" class="font-Estedad bg-gray-100 overflow-x-hidden">
 
     <svg class="hidden">
         <symbol id="chevron-down" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
@@ -89,12 +89,27 @@
             stroke="currentColor" class="w-6 h-6">
             <path stroke-linecap="round" stroke-linejoin="round" d="M5.636 5.636a9 9 0 1 0 12.728 0M12 3v9" />
         </symbol>
-        <symbol id="user-plus" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M18 7.5v3m0 0v3m0-3h3m-3 0h-3m-2.25-4.125a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0ZM3 19.235v-.11a6.375 6.375 0 0 1 12.75 0v.109A12.318 12.318 0 0 1 9.374 21c-2.331 0-4.512-.645-6.374-1.766Z" />
-          </symbol>
-          
-    </svg>
+        <symbol id="user-plus" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                d="M18 7.5v3m0 0v3m0-3h3m-3 0h-3m-2.25-4.125a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0ZM3 19.235v-.11a6.375 6.375 0 0 1 12.75 0v.109A12.318 12.318 0 0 1 9.374 21c-2.331 0-4.512-.645-6.374-1.766Z" />
+        </symbol>
+        <symbol id="squares-2x2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                d="M3.75 6A2.25 2.25 0 0 1 6 3.75h2.25A2.25 2.25 0 0 1 10.5 6v2.25a2.25 2.25 0 0 1-2.25 2.25H6a2.25 2.25 0 0 1-2.25-2.25V6ZM3.75 15.75A2.25 2.25 0 0 1 6 13.5h2.25a2.25 2.25 0 0 1 2.25 2.25V18a2.25 2.25 0 0 1-2.25 2.25H6A2.25 2.25 0 0 1 3.75 18v-2.25ZM13.5 6a2.25 2.25 0 0 1 2.25-2.25H18A2.25 2.25 0 0 1 20.25 6v2.25A2.25 2.25 0 0 1 18 10.5h-2.25a2.25 2.25 0 0 1-2.25-2.25V6ZM13.5 15.75a2.25 2.25 0 0 1 2.25-2.25H18a2.25 2.25 0 0 1 2.25 2.25V18A2.25 2.25 0 0 1 18 20.25h-2.25A2.25 2.25 0 0 1 13.5 18v-2.25Z" />
+        </symbol>
+        <symbol id="sort" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                d="M3 4.5h14.25M3 9h9.75M3 13.5h9.75m4.5-4.5v12m0 0-3.75-3.75M17.25 21 21 17.25" />
+        </symbol>
+        <symbol id="chevron-left" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+        </symbol>
 
+    </svg>
 
     <header class="">
         <div
@@ -106,15 +121,15 @@
                 </svg>
             </span>
             <!-- NavBar -->
-            <nav class="flex items-center gap-x-7 xl:gap-x-16 text-base xl:text-lg">
+            <nav class="flex items-center gap-x-7 xl:gap-x-16 text-base xl:text-lg h-full">
 
                 <!-- Logo -->
-                <a href="index.html" class="">
+                <a href="index.html" class="check-link h-full flex-center">
                     <img src="images/logo/Logo.png" alt="Logo" class="">
                 </a>
                 <!-- NavBar Menu -->
-                <ul id="menus-wrapper"
-                    class="hidden lg:flex items-center gap-x-5  child:gap-x-1.5 child:flex child:items-center">
+                <ul
+                    class="menus-wrapper hidden lg:flex items-center gap-x-5 h-full child:h-full child:gap-x-1.5 child:flex child:items-center">
 
                 </ul>
 
@@ -145,7 +160,7 @@
                                 <use xlink:href="#search"></use>
                             </svg>
                         </div>
-                        <!-- When Click Box Showing -->
+                        <!-- When Clink Box Showing -->
                         <div class="absolute -left-24 top-full pt-4 z-10 transition-all hide" id="searchbox-dropdown">
                             <form action="" method="get">
                                 <label class="relative block w-64">
@@ -169,7 +184,7 @@
                     <svg class="w-5 md:w-6 h-5 md:h-6">
                         <use xlink:href="#arrow-right-rectangle"></use>
                     </svg>
-                    <a class="hidden lg:inline-block" href="login.html">
+                    <a class="hidden lg:inline-block check-link" href="login.html">
                         ورود یا ثبت نام
                     </a>
 
@@ -183,54 +198,29 @@
                             <use href="#user"></use>
                         </svg>
                     </button>
-                    <!-- When Click Box Showing -->
+                    <!-- When Clink Box Showing -->
                     <div class="absolute left-0 top-full pt-4 z-50 transition-all invisible opacity-0"
                         id="user-profile-dropdown">
-                        <div 
-                            class="w-[278px] bg-white border border-neutral-100 p-5 pb-3.5 rounded-xl">
+                        <div class="w-[278px] bg-white border border-neutral-100 p-5 pb-3.5 rounded-xl">
                             <!-- User Info -->
                             <div class="flex items-center border-b border-b-neutral-200 pb-5 mb-2">
                                 <a href="" class="shrink-0">
-                                    <img id="profile"
-                                        class="object-cover w-14 h-14 rounded-full inline-block" loading="lazy">
+                                    <img id="profile" class="object-cover w-14 h-14 rounded-full inline-block"
+                                        loading="lazy">
                                 </a>
                                 <div class="mr-3.5 flex flex-col gap-y-3 overflow-hidden">
                                     <span id="user-name" class="font-danaDemiBold inline-block truncate"></span>
                                 </div>
                             </div>
                             <!-- Dashboard Links -->
-                            <div id="user-profile-items-wrapper" class="">
-                                <a href="./my-account/account.html"
-                                    class="flex items-center justify-between px-2.5 h-12 rounded-lg hover:text-white hover:bg-teal-600 transition-colors cursor-pointer">
+                            <div id="user-profile-items-wrapper">
+                                <a href="./my-account/account.html" 
+                                    class="check-link flex items-center justify-between px-2.5 h-12 rounded-lg hover:text-white hover:bg-teal-600 transition-colors cursor-pointer">
                                     <span class="flex items-center gap-x-2">
                                         <svg class="w-6 h-6">
                                             <use xlink:href="#home"></use>
                                         </svg>
                                         پیشخوان </span>
-                                </a>
-                                <a href="./my-account/courses.html"
-                                    class="flex items-center justify-between px-2.5 h-12 rounded-lg hover:text-white hover:bg-teal-600 transition-colors cursor-pointer">
-                                    <span class="flex items-center gap-x-2">
-                                        <svg class="w-6 h-6">
-                                            <use xlink:href="#folder-open"></use>
-                                        </svg>
-                                        دوره های من </span>
-                                </a>
-                                <a
-                                    class="flex items-center justify-between px-2.5 h-12 rounded-lg hover:text-white hover:bg-teal-600 transition-colors cursor-pointer">
-                                    <span class="flex items-center gap-x-2">
-                                        <svg class="w-6 h-6">
-                                            <use xlink:href="#chat-bubble-left-right"></use>
-                                        </svg>
-                                        تیکت ها </span>
-                                </a>
-                                <a
-                                    class="flex items-center justify-between px-2.5 h-12 rounded-lg hover:text-white hover:bg-teal-600 transition-colors cursor-pointer">
-                                    <span class="flex items-center gap-x-2">
-                                        <svg class="w-6 h-6">
-                                            <use xlink:href="#user"></use>
-                                        </svg>
-                                        جزئیات حساب </span>
                                 </a>
                             </div>
                             <!-- Logout Link -->
@@ -277,8 +267,9 @@
                     </button>
                 </label>
             </form>
+
             <div class="mt-5">
-                <ul class="flex flex-col gap-5 w-full text-slate-500 text-lg">
+                <!-- <ul class="flex flex-col gap-5 w-full text-slate-500 text-lg">
                     <li class="relative">
                         <a href="#">
                             صفحه اصلی
@@ -302,6 +293,9 @@
                             درباره ما
                         </a>
                     </li>
+                </ul> -->
+                <ul
+                    class="menus-wrapper flex flex-col gap-5 w-full text-slate-500 text-lg child:h-full child:gap-x-1.5 child:flex child:items-center">
                 </ul>
             </div>
 
@@ -314,9 +308,10 @@
                 <div class="flex justify-between items-center flex-col-reverse md:flex-row gap-x-5 gap-y-10 mt-14">
                     <!-- Head Content -->
                     <div class="text-right">
-                        <h2 class="font-EstedadBold text-4xl sm:text-5xl lg:text-6xl xl:text-[64px]/[90px]">اینجا <span
-                                class="text-red-800">متخصص</span>
-                            میشی!</h2>
+                        <h2 class="font-EstedadBold text-4xl sm:text-5xl lg:text-6xl xl:text-[64px]/[90px]">اینجا
+                            <span class="text-red-800">متخصص</span>
+                            میشی!
+                        </h2>
                         <div class="flex items-center gap-x-8 my-10 font-EstedadMedium text-sm lg:text-base xl:text-lg">
                             <div class="flex flex-col gap-y-6 w-40 lg:w-48">
                                 <div class="flex items-center gap-x-2">
@@ -383,7 +378,7 @@
                             </div>
                         </div>
                         <a href="courses"
-                            class="inline-flex items-center justify-center gap-x-3 py-3 pl-4 pr-6 bg-teal-600 hover:bg-teal-700 text-white font-EstedadMedium rounded-2xl transition-all">
+                            class="check-link inline-flex items-center justify-center gap-x-3 py-3 pl-4 pr-6 bg-teal-600 hover:bg-teal-700 text-white font-EstedadMedium rounded-2xl transition-all">
                             شروع یادگیری
                             <svg class="w-4 h-4">
                                 <use href="#arrow-left"></use>
@@ -411,7 +406,7 @@
                 <div id="course-container"
                     class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 justify-items-center gap-5">
                 </div>
-                <a href="courses.html" class="section-btn">
+                <a href="courses.html" class="section-btn check-link">
                     مشاهده همه
                     <svg class="w-6 h-6">
                         <use href="#arrow-long-left"></use>
@@ -444,7 +439,8 @@
                         <img src="images/logo/svg/walletmoney.svg" alt="teacher">
                         <div class="flex-center flex-col gap-2 self-stretch text-center">
                             <h4 class="font-EstedadBold text-2xl font-bold"> تضمین بازگشت وجه </h4>
-                            <p class="font-EstedadMedium text-base font-normal leading-7"> اگر پس از خرید یکی از دوره ای
+                            <p class="font-EstedadMedium text-base font-normal leading-7"> اگر پس از خرید یکی از
+                                دوره ای
                                 تک‌لرن،‌
                                 از هر نظر از آن رضایت نداشتید، میتوانید ۱۰۰٪ وجه خود پس بگیرید. </p>
                         </div>
@@ -453,7 +449,8 @@
                         <img src="images/logo/svg/personalcard.svg" alt="teacher">
                         <div class="flex-center flex-col gap-2 self-stretch text-center">
                             <h4 class="font-EstedadBold text-2xl font-bold"> ارائه مدرک معتبر </h4>
-                            <p class="font-EstedadMedium text-base font-normal leading-7"> هرکدام از دوره های تک‌لرن،
+                            <p class="font-EstedadMedium text-base font-normal leading-7"> هرکدام از دوره های
+                                تک‌لرن،
                                 دارای مدرک
                                 معتبر هستند که پس از گذراندن آن، میتوانید آن را دریافت کنید. </p>
                         </div>
@@ -462,7 +459,8 @@
                         <img src="images/logo/svg/calendar.svg" alt="teacher">
                         <div class="flex-center flex-col gap-2 self-stretch text-center">
                             <h4 class="font-EstedadBold text-2xl font-bold"> دسترسی مادام العمر </h4>
-                            <p class="font-EstedadMedium text-base font-normal leading-7"> با یکبار خرید دوره در تک‌لرن،
+                            <p class="font-EstedadMedium text-base font-normal leading-7"> با یکبار خرید دوره در
+                                تک‌لرن،
                                 مادام
                                 العمر میتوانید آن را ببینید و آپدیت های آن را دریافت کنید. </p>
                         </div>
@@ -498,7 +496,7 @@
                 </div>
                 <div id="articles-wrapper" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
                 </div>
-                <a href="blogs.html" class="section-btn">
+                <a href="blogs.html" class="section-btn check-link">
                     مشاهده همه
                     <svg class="w-6 h-6">
                         <use href="#arrow-long-left"></use>
@@ -512,15 +510,17 @@
     <footer class="pt-8 w-full mt-36 bg-white">
         <div class="container">
             <div class="mb-12 md:mb-8 flex items-center justify-between">
-                <a href="#">
+                <a href="#" class="check-link">
                     <img src="images/logo/Logo.png" alt="Logo">
                 </a>
             </div>
             <div class="flex justify-between flex-wrap gap-y-5 md:gap-y-7 gap-x-8 pb-5 border-b">
                 <div class="flex flex-col items-center sm:items-start gap-y-5 m-auto md:m-[unset]">
                     <h4 class="font-EstedadBold text-xl font-semibold text-zinc-700">درباره تک‌لرن</h4>
-                    <p class="max-w-[405px] font-normal text-base xl:text-lg text-slate-500 leading-7"> با بیش از ۳ سال
-                        سابقه در این حوزه، تیم ما از متخصصینی تشکیل شده است که با استفاده از روش های جدید و به روز، به
+                    <p class="max-w-[405px] font-normal text-base xl:text-lg text-slate-500 leading-7"> با بیش از ۳
+                        سال
+                        سابقه در این حوزه، تیم ما از متخصصینی تشکیل شده است که با استفاده از روش های جدید و به روز،
+                        به
                         دانشجویان کمک می کنند تا به طور بهتری درک و تسلط بر مفاهیم و تکنیک های مورد نیاز خود را کسب
                         کنند. </p>
                 </div>
@@ -528,10 +528,10 @@
                     <h4 class="font-EstedadBold text-xl font-semibold text-zinc-700"> دسترسی سریع </h4>
                     <div
                         class="flex flex-col items-start gap-y-3 pr-3.5 font-normal text-base xl:text-lg text-slate-500 leading-7 child:footer-items">
-                        <a href="index.html"> صفحه اصلی </a>
-                        <a href="courses.html"> همه دوره ها </a>
-                        <a href="contact-us.html"> ارتباط با ما </a>
-                        <a href="#"> درباره ما </a>
+                        <a href="index.html" class="check-link"> صفحه اصلی </a>
+                        <a href="courses.html" class="check-link"> همه دوره ها </a>
+                        <a href="contact-us.html" class="check-link"> ارتباط با ما </a>
+                        <a href="about-us.html" class="check-link"> درباره ما </a>
                     </div>
                 </div>
                 <div class="flex flex-col items-center gap-y-5 m-auto md:m-[unset] min-w-40">
@@ -540,7 +540,7 @@
                         class="flex flex-col items-start gap-y-3 pr-3.5  font-normal text-base xl:text-lg text-slate-500 leading-7">
 
                         <div class="flex-center gap-x-3 cursor-pointer">
-                            <a href="#"> techLearn@ </a>
+                            <a href="#" class="check-link"> techLearn@ </a>
                             <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30"
                                 viewBox="0 0 48 48">
                                 <radialGradient id="yOrnnhliCrdS2gy~4tD8ma_Xy10Jcu1L2Su_gr1" cx="19.38" cy="42.035"
@@ -575,7 +575,7 @@
                             </svg>
                         </div>
                         <div class="flex-center gap-x-3 cursor-pointer">
-                            <a href="#"> techLearn@ </a>
+                            <a href="#" class="check-link"> techLearn@ </a>
                             <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30"
                                 viewBox="0 0 48 48">
                                 <linearGradient id="BiF7D16UlC0RZ_VqXJHnXa_oWiuH0jFiU0R_gr1" x1="9.858" x2="38.142"
@@ -610,11 +610,12 @@
     </footer>
 
     <div class="overlay fixed w-full h-full top-0 left-0 bg-black/40 z-20 transition-all invisible opacity-0"></div>
-
+    
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
-    <script type="module" src="js/style.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="module" src="js/style.js"></script>
     <script type="module" src="js/index.js"></script>
+    
     <script>
         var swiper = new Swiper(".mySwiper", {
             slidesPerView: 1,
@@ -649,33 +650,3 @@
 </body>
 
 </html>
-
-<!-- <div class="w-full flex flex-col items-start mt-4 sm:mt-8">
-                    <h4 class="hidden md:block font-EstedadBold text-lg text-zinc-700 mb-3">از
-                        جدید‌ترین تخفیف‌ها با‌خبر شوید</h4>
-                    <div class="w-full flex items-center">
-                        <form class="w-full flex">
-                            <label class="relative inline-block grow w-full">
-                                <div class="h-[50px] px-2 flex items-center bg-neutral-100 rounded-lg">
-                                    <div class="grow">
-                                        <input class="px-2 text-base w-full outline-none border-none bg-neutral-100"
-                                            type="email" name="email" placeholder="ایمیل شما">
-                                    </div>
-                                </div>
-                                <button
-                                    class="absolute left-2 top-1.5 bottom-1.5 bg-teal-600 px-5 flex-center rounded-md">
-                                    <svg class="rotate-180" xmlns="http://www.w3.org/2000/svg" width="18.504"
-                                        height="17.181" viewBox="0 0 18.504 17.181">
-                                        <g transform="translate(0 -16.021)">
-                                            <g transform="translate(0 16.02)">
-                                                <path
-                                                    d="M18.121,24.01.939,16.08a.664.664,0,0,0-.79.185.657.657,0,0,0-.016.812l5.65,7.534L.133,32.144a.661.661,0,0,0,.8,1L18.12,25.21a.661.661,0,0,0,0-1.2Z"
-                                                    transform="translate(0 -16.02)" fill="#fff" />
-                                            </g>
-                                        </g>
-                                    </svg>
-                                </button>
-                            </label>
-                        </form>
-                    </div>
-                </div> -->

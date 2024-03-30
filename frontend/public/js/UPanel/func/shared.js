@@ -10,6 +10,7 @@ const passwordInput = document.querySelector('#passwordInput');
 // Functions
 const getAndShowUseCourse = async () => {
 
+    const tableElem = document.querySelector("table");
     const courseContainerElem = document.querySelector("#course-container");
     courseContainerElem.innerHTML = "";
 
@@ -41,8 +42,7 @@ const getAndShowUseCourse = async () => {
             </tr> `)
         });
     }else{
-        console.log('s');
-        courseContainerElem.insertAdjacentHTML("beforeend", `
+        tableElem.insertAdjacentHTML("afterend", `
         <div class="my-4 flex-center w-full flex-col gap-4 lg:my-7 lg:gap-7 grid-flow-col">
             <div class="text-xs sm:text-sm md:text-base  flex-center flex-col gap-1 md:gap-2 text-black">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
