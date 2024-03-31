@@ -1,10 +1,15 @@
 import { getAdminInfos } from "./func/utils.js";
-import { getRecentlyUser } from "./func/shared.js";
+import { getRecentlyUser, showMainData } from "./func/shared.js";
 
 window.addEventListener('load', () => {
     // Select Element From Dom
     const adminWelcomeElem = document.querySelector('.admin-welcome-name');
-    getRecentlyUser()
+    const pieChart = document.getElementById('pie-chart');
+    const linearChart = document.getElementById('linear-chart');
+
+    getRecentlyUser();
+    showMainData();
+
     // Admin Info
     getAdminInfos().then(admin => {
         // Show Admin Name
@@ -12,16 +17,7 @@ window.addEventListener('load', () => {
 
     });
 
-
-
-
-
-
-
-
-    const pieChart = document.getElementById('pie-chart');
-    const linearChart = document.getElementById('linear-chart');
-
+    // Chart 
     new Chart(pieChart, {
         type: 'doughnut',
         data: {
@@ -84,30 +80,4 @@ window.addEventListener('load', () => {
             }
         },
     });
-
-    // const config = {
-    //     type: 'line',
-    //     data: data,
-    //     options: {
-    //       animations: {
-    //         radius: {
-    //           duration: 400,
-    //           easing: 'linear',
-    //           loop: (context) => context.active
-    //         }
-    //       },
-    //       hoverRadius: 12,
-    //       hoverBackgroundColor: 'yellow',
-    //       interaction: {
-    //         mode: 'nearest',
-    //         intersect: false,
-    //         axis: 'x'
-    //       },
-    //       plugins: {
-    //         tooltip: {
-    //           enabled: false
-    //         }
-    //       }
-    //     },
-    //   };
 });

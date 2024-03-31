@@ -82,6 +82,24 @@ const removeNotification = (notifications, notificationID) => {
   insertNotificationHTMLTemplate(filteredNotifications);
 };
 
+const showMainData = async () => {
+
+  const watchTimeElem = document.getElementById('watch-time')
+  const coursesElem = document.getElementById('courses')
+  const usersElem = document.getElementById('users')
+
+  const res = await fetch("http://localhost:4000/v1/infos/index", {
+    headers: {
+      "Content-Type": "application/json"
+    }
+  })
+  const data = await res.json()
+
+  watchTimeElem.innerHTML = data.totalTime
+  coursesElem.innerHTML = data.coursesCount
+  usersElem.innerHTML = data.usersCount
+}
+
 // Functions For Courses
 
 const getAllCourses = async () => {
@@ -1629,6 +1647,7 @@ const removeDiscount = async (discountID) => {
 export {
   insertNotificationHTMLTemplate,
   seenNotification,
+  showMainData,
 
   // Export Functions Courses
   getAllCourses,

@@ -117,12 +117,12 @@
             <nav class="flex items-center gap-x-7 xl:gap-x-16 text-base xl:text-lg h-full">
 
                 <!-- Logo -->
-                <a href="index.html" class="h-full flex-center">
+                <a href="index.html" class="check-link h-full flex-center">
                     <img src="images/logo/Logo.png" alt="Logo" class="">
                 </a>
                 <!-- NavBar Menu -->
-                <ul id="menus-wrapper"
-                    class="hidden lg:flex items-center gap-x-5 h-full child:h-full child:gap-x-1.5 child:flex child:items-center">
+                <ul
+                    class="menus-wrapper hidden lg:flex items-center gap-x-5 h-full child:h-full child:gap-x-1.5 child:flex child:items-center">
 
                 </ul>
 
@@ -153,7 +153,7 @@
                                 <use xlink:href="#search"></use>
                             </svg>
                         </div>
-                        <!-- When Click Box Showing -->
+                        <!-- When Clink Box Showing -->
                         <div class="absolute -left-24 top-full pt-4 z-10 transition-all hide" id="searchbox-dropdown">
                             <form action="" method="get">
                                 <label class="relative block w-64">
@@ -177,7 +177,7 @@
                     <svg class="w-5 md:w-6 h-5 md:h-6">
                         <use xlink:href="#arrow-right-rectangle"></use>
                     </svg>
-                    <a class="hidden lg:inline-block" href="login.html">
+                    <a class="hidden lg:inline-block check-link" href="login.html">
                         ورود یا ثبت نام
                     </a>
 
@@ -191,38 +191,29 @@
                             <use href="#user"></use>
                         </svg>
                     </button>
-                    <!-- When Click Box Showing -->
+                    <!-- When Clink Box Showing -->
                     <div class="absolute left-0 top-full pt-4 z-50 transition-all invisible opacity-0"
                         id="user-profile-dropdown">
-                        <div 
-                            class="w-[278px] bg-white border border-neutral-100 p-5 pb-3.5 rounded-xl">
+                        <div class="w-[278px] bg-white border border-neutral-100 p-5 pb-3.5 rounded-xl">
                             <!-- User Info -->
                             <div class="flex items-center border-b border-b-neutral-200 pb-5 mb-2">
                                 <a href="" class="shrink-0">
-                                    <img id="profile"
-                                        class="object-cover w-14 h-14 rounded-full inline-block" loading="lazy">
+                                    <img id="profile" class="object-cover w-14 h-14 rounded-full inline-block"
+                                        loading="lazy">
                                 </a>
                                 <div class="mr-3.5 flex flex-col gap-y-3 overflow-hidden">
                                     <span id="user-name" class="font-danaDemiBold inline-block truncate"></span>
                                 </div>
                             </div>
                             <!-- Dashboard Links -->
-                            <div id="user-profile-items-wrapper" class="">
-                                <a href="./my-account/account.html"
-                                    class="flex items-center justify-between px-2.5 h-12 rounded-lg hover:text-white hover:bg-teal-600 transition-colors cursor-pointer">
+                            <div id="user-profile-items-wrapper">
+                                <a href="./my-account/account.html" 
+                                    class="check-link flex items-center justify-between px-2.5 h-12 rounded-lg hover:text-white hover:bg-teal-600 transition-colors cursor-pointer">
                                     <span class="flex items-center gap-x-2">
                                         <svg class="w-6 h-6">
                                             <use xlink:href="#home"></use>
                                         </svg>
                                         پیشخوان </span>
-                                </a>
-                                <a href="./my-account/courses.html"
-                                    class="flex items-center justify-between px-2.5 h-12 rounded-lg hover:text-white hover:bg-teal-600 transition-colors cursor-pointer">
-                                    <span class="flex items-center gap-x-2">
-                                        <svg class="w-6 h-6">
-                                            <use xlink:href="#folder-open"></use>
-                                        </svg>
-                                        دوره های من </span>
                                 </a>
                             </div>
                             <!-- Logout Link -->
@@ -269,8 +260,9 @@
                     </button>
                 </label>
             </form>
+
             <div class="mt-5">
-                <ul class="flex flex-col gap-5 w-full text-slate-500 text-lg">
+                <!-- <ul class="flex flex-col gap-5 w-full text-slate-500 text-lg">
                     <li class="relative">
                         <a href="#">
                             صفحه اصلی
@@ -294,11 +286,14 @@
                             درباره ما
                         </a>
                     </li>
+                </ul> -->
+                <ul
+                    class="menus-wrapper flex flex-col gap-5 w-full text-slate-500 text-lg child:h-full child:gap-x-1.5 child:flex child:items-center">
                 </ul>
             </div>
 
         </div>
-    </header>  
+    </header> 
 
     <main id="posts-archive">
         <div class="container pt-28">

@@ -36,7 +36,7 @@ const go404Page = () => {
 
             const url = link.href
 
-            fetch(url).then(res=>{
+            fetch(url).then(res => {
                 if (!res.ok) {
                     window.location.href = '404.html'
                 }
@@ -316,16 +316,15 @@ const getAndShowMenus = async () => {
                 
             </li>         
         `
-            )
+            );
             const links = document.querySelectorAll('.check-link')
             links.forEach(link => {
                 link.addEventListener("click", (event) => {
-                    event.preventDefault()
-        
                     const url = link.href
-        
-                    fetch(url).then(res=>{
+
+                    fetch(url).then(res => {
                         if (!res.ok) {
+                            event.preventDefault()
                             window.location.href = '404.html'
                         }
                     })
