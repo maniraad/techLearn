@@ -231,13 +231,15 @@ const getAndShowPreSellCourses = async () => {
                                 class="inline-flex flex-col flex-grow items-center gap-y-4 py-3 px-4 bg-white max-w-[340px] rounded-3xl shadow-sm">
                                 <!-- Image -->
                                 <div class="">
-                                    <a href="#"><img src="images/courses/laravel.png" alt="Js-course" class=""></a>
+                                    <a href="course.html?name=${presellCourse.shortName}">
+                                    <img src=http://localhost:4000/courses/covers/${presellCourse.cover}>
+                                    </a>
                                 </div>
                                 <!-- Box Body -->
                                 <div class="flex flex-col justify-center items-start self-baseline gap-y-4">
                                     <!-- Topic -->
                                     <a href="course.html?name=${presellCourse.shortName}"
-                                        class="text-xl lg:text-2xl text-right font-EstedadMedium lg:font-bold overflow-hidden line-clamp-1">
+                                        class="text-2xl tracking-tighter text-right font-EstedadMedium overflow-hidden line-clamp-1">
                                           ${presellCourse.name} </a>
                                     <!-- Teacher & Time -->
                                     <div class="flex flex-wrap text-sm">
@@ -247,18 +249,12 @@ const getAndShowPreSellCourses = async () => {
                                             </svg>
                                             <a href="#">${presellCourse.creator}</a>
                                         </div>
-                                        <div class="flex-center gap-x-1 py-1 px-2">
-                                            <svg class="w-4 h-4">
-                                                <use href="#clock"></use>
-                                            </svg>
-                                            <span>۲۰:۴۳</span>
-                                        </div>
                                     </div>
                                 </div>
                                 <!-- Price -->
                                 <div
-                                    class="self-end text-lg md:text-xl lg:text-2xl text-right font-EstedadMedium font-bold">
-                                    ${presellCourse.price === 0 ? "رایگان" : presellCourse.price.toLocaleString() + "تومان"}
+                                    class="self-end text-xl text-right font-EstedadeMedium tracking-tighter">
+                                    ${presellCourse.price === 0 ? "رایگان" : presellCourse.price.toLocaleString() + ` <span class="text-base">تومان</span>`}
                                 </div>
                             </div>
                         </div>
