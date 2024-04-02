@@ -59,12 +59,13 @@ const showUserNameInNavbar = () => {
 
     if (isUserLogin) {
         const userInfos = getMe().then(data => {
-            userBtn.classList.add('!flex-center')
-            console.log(data);
-            userName.innerHTML = data.username
+            if (data) {
+                userBtn.classList.add('!flex-center')
+                console.log(data);
+                userName.innerHTML = data.username
 
-            if (data.role === "ADMIN") {
-                userProfileItemsWrapper.insertAdjacentHTML("afterbegin", `
+                if (data.role === "ADMIN") {
+                    userProfileItemsWrapper.insertAdjacentHTML("afterbegin", `
                     <a href="./panel/main.html"
                         class="flex items-center justify-between px-2.5 h-12 rounded-lg hover:text-white hover:bg-teal-600 transition-colors cursor-pointer">
                         <span class="flex items-center gap-x-2">
@@ -76,9 +77,9 @@ const showUserNameInNavbar = () => {
                 `);
 
 
-                profile.setAttribute("src", `http://localhost:4000/${data.profile}`)
-            } else {
-                userProfileItemsWrapper.insertAdjacentHTML("afterbegin", `
+                    profile.setAttribute("src", `http://localhost:4000/${data.profile}`)
+                } else {
+                    userProfileItemsWrapper.insertAdjacentHTML("afterbegin", `
                     <a href="./my-account/courses.html"
                         class="flex items-center justify-between px-2.5 h-12 rounded-lg hover:text-white hover:bg-teal-600 transition-colors cursor-pointer">
                         <span class="flex items-center gap-x-2">
@@ -89,22 +90,26 @@ const showUserNameInNavbar = () => {
                         </span>
                     </a>
                 `);
-                profile.setAttribute("src", "https://secure.gravatar.com/avatar/c37423a5808f5ab4a5347033b5e16221?s=96&d=mm&r=g")
+                    profile.setAttribute("src", "https://secure.gravatar.com/avatar/c37423a5808f5ab4a5347033b5e16221?s=96&d=mm&r=g")
+                }
+
+                userBtn.addEventListener("click", () => {
+                    userProfileDropdown.classList.toggle("!opacity-100");
+                    userProfileDropdown.classList.toggle("!visible");
+                    overlay.classList.toggle('invisible');
+                    overlay.classList.toggle('opacity-0');
+                });
+
+                overlay.addEventListener("click", () => {
+                    userProfileDropdown.classList.remove("!opacity-100");
+                    userProfileDropdown.classList.remove("!visible");
+                    overlay.classList.add('invisible');
+                    overlay.classList.add('opacity-0');
+                });
+            } else {
+                location.replace("login.html")
             }
 
-            userBtn.addEventListener("click", () => {
-                userProfileDropdown.classList.toggle("!opacity-100");
-                userProfileDropdown.classList.toggle("!visible");
-                overlay.classList.toggle('invisible');
-                overlay.classList.toggle('opacity-0');
-            });
-
-            overlay.addEventListener("click", () => {
-                userProfileDropdown.classList.remove("!opacity-100");
-                userProfileDropdown.classList.remove("!visible");
-                overlay.classList.add('invisible');
-                overlay.classList.add('opacity-0');
-            });
         });
     } else {
         userLoginBtn.classList.add('!flex-center')
