@@ -19,7 +19,7 @@ const getFromLocalStorage = (key) => {
 };
 
 const getToken = () => {
-    const userInfos = JSON.parse(localStorage.getItem("user")).token;
+    const userInfos = JSON.parse(localStorage.getItem("user"))?.token;
     return userInfos ? userInfos : null;
 };
 
