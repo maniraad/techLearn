@@ -1155,9 +1155,6 @@ const getAllArticles = async () => {
                     ${article.title}
                 </td>
                 <td class="px-6 py-4 text-nowrap">
-                    جامعه شناسی	
-                </td>
-                <td class="px-6 py-4 text-nowrap">
                     ${article.publish === 1 ? "منتشر شده" : "پیش نویس"}
                 </td>
                 <td class="px-6 py-4 text-nowrap">
