@@ -117,7 +117,7 @@
             <nav class="flex items-center gap-x-7 xl:gap-x-16 text-base xl:text-lg h-full">
 
                 <!-- Logo -->
-                <a href="index.html" class="check-link h-full flex-center">
+                <a href="index.html" class="h-full flex-center">
                     <img src="images/logo/Logo.png" alt="Logo" class="">
                 </a>
                 <!-- NavBar Menu -->
@@ -177,7 +177,7 @@
                     <svg class="w-5 md:w-6 h-5 md:h-6">
                         <use xlink:href="#arrow-right-rectangle"></use>
                     </svg>
-                    <a class="hidden lg:inline-block check-link" href="login.html">
+                    <a class="hidden lg:inline-block" href="login.html">
                         ورود یا ثبت نام
                     </a>
 
@@ -207,8 +207,8 @@
                             </div>
                             <!-- Dashboard Links -->
                             <div id="user-profile-items-wrapper">
-                                <a href="./my-account/account.html" 
-                                    class="check-link flex items-center justify-between px-2.5 h-12 rounded-lg hover:text-white hover:bg-teal-600 transition-colors cursor-pointer">
+                                <a href="./my-account/account.html"
+                                    class="flex items-center justify-between px-2.5 h-12 rounded-lg hover:text-white hover:bg-teal-600 transition-colors cursor-pointer">
                                     <span class="flex items-center gap-x-2">
                                         <svg class="w-6 h-6">
                                             <use xlink:href="#home"></use>
@@ -293,196 +293,7 @@
             </div>
 
         </div>
-    </header>    <header class="">
-        <div
-            class="flex items-center justify-between px-9 md:px-16 lg:px-4 2xl:px-12 bg-white h-20 md:h-28 fixed top-0 w-full z-30">
-            <!-- NavBar Icon -->
-            <span id="nav-bar-icon" class="lg:hidden">
-                <svg class="w-9 h-9">
-                    <use xlink:href="#bars-3"></use>
-                </svg>
-            </span>
-            <!-- NavBar -->
-            <nav class="flex items-center gap-x-7 xl:gap-x-16 text-base xl:text-lg h-full">
-
-                <!-- Logo -->
-                <a href="index.html" class="check-link h-full flex-center">
-                    <img src="images/logo/Logo.png" alt="Logo" class="">
-                </a>
-                <!-- NavBar Menu -->
-                <ul
-                    class="menus-wrapper hidden lg:flex items-center gap-x-5 h-full child:h-full child:gap-x-1.5 child:flex child:items-center">
-
-                </ul>
-
-            </nav>
-            <!-- SearchBar & Cart & LogIn -->
-            <div class="flex items-center gap-x-4 md:gap-x-8">
-                <!-- SearchBar -->
-                <div class="relative group hidden lg:block z-50" id="searchbox">
-                    <form class="hidden xl:block" action="" method="get">
-                        <label class="relative h-14 block transition-all">
-                            <input id="search-input"
-                                class="rounded-full text-slate-500 placeholder:text-slate-500 w-48 focus:w-64 h-full border border-transparent hover:border-gray-200 focus:border-gray-300 outline-none focus:text-zinc-700  bg-gray-100 text-base placeholder:text-lg pl-14 pr-5 block transition-all"
-                                name="s" type="text" placeholder="جستجو">
-                            <button id="search-btn"
-                                class="absolute left-5 top-0 bottom-0 w-7 h-7 my-auto text-slate-500" type="submit"
-                                role="button">
-                                <svg class="w-7 h-7">
-                                    <use xlink:href="#search"></use>
-                                </svg>
-                            </button>
-                        </label>
-                    </form>
-                    <!-- SearchBar Mobile -->
-                    <div class="xl:hidden">
-                        <div
-                            class="searchbox flex-center w-14 h-14 rounded-full bg-gray-100 transition-colors cursor-pointer">
-                            <svg class="w-6 h-6 text-slate-500">
-                                <use xlink:href="#search"></use>
-                            </svg>
-                        </div>
-                        <!-- When Clink Box Showing -->
-                        <div class="absolute -left-24 top-full pt-4 z-10 transition-all hide" id="searchbox-dropdown">
-                            <form action="" method="get">
-                                <label class="relative block w-64">
-                                    <input
-                                        class="w-full h-16 pr-7 pl-10 text-lg bg-white placeholder:text-slate-500 text-zinc-700 outline-none rounded-2xl"
-                                        type="text" name="s" placeholder="جستجو در بین دوره ها">
-                                    <button class="absolute left-0 top-0 bottom-0 w-12 h-full my-auto text-slate-500"
-                                        type="submit" role="button">
-                                        <svg class="ml-2 w-6 h-6">
-                                            <use xlink:href="#search"></use>
-                                        </svg>
-                                    </button>
-                                </label>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                <!-- LogIn Btn -->
-                <div id="user-login-btn"
-                    class="hidden gap-x-2 font-EstedadMedium h-11 sm:h-12 md:h-14 px-2.5 sm:px-3 md:px-4 lg:px-6 bg-teal-600 hover:bg-teal-700 text-white rounded-2xl transition-all">
-                    <svg class="w-5 md:w-6 h-5 md:h-6">
-                        <use xlink:href="#arrow-right-rectangle"></use>
-                    </svg>
-                    <a class="hidden lg:inline-block check-link" href="login.html">
-                        ورود یا ثبت نام
-                    </a>
-
-                </div>
-                <!-- LogIn Icon Btn -->
-                <div class="relative group" id="user-profile">
-                    <!-- User Picture -->
-                    <button type="button" id="user-btn"
-                        class="user-profile w-12 md:w-14 h-12 hidden md:h-14 rounded-full bg-gray-100 text-slate-500 z-50">
-                        <svg class="w-6 h-6">
-                            <use href="#user"></use>
-                        </svg>
-                    </button>
-                    <!-- When Clink Box Showing -->
-                    <div class="absolute left-0 top-full pt-4 z-50 transition-all invisible opacity-0"
-                        id="user-profile-dropdown">
-                        <div class="w-[278px] bg-white border border-neutral-100 p-5 pb-3.5 rounded-xl">
-                            <!-- User Info -->
-                            <div class="flex items-center border-b border-b-neutral-200 pb-5 mb-2">
-                                <a href="" class="shrink-0">
-                                    <img id="profile" class="object-cover w-14 h-14 rounded-full inline-block"
-                                        loading="lazy">
-                                </a>
-                                <div class="mr-3.5 flex flex-col gap-y-3 overflow-hidden">
-                                    <span id="user-name" class="font-danaDemiBold inline-block truncate"></span>
-                                </div>
-                            </div>
-                            <!-- Dashboard Links -->
-                            <div id="user-profile-items-wrapper">
-                                <a href="./my-account/account.html" 
-                                    class="check-link flex items-center justify-between px-2.5 h-12 rounded-lg hover:text-white hover:bg-teal-600 transition-colors cursor-pointer">
-                                    <span class="flex items-center gap-x-2">
-                                        <svg class="w-6 h-6">
-                                            <use xlink:href="#home"></use>
-                                        </svg>
-                                        پیشخوان </span>
-                                </a>
-                            </div>
-                            <!-- Logout Link -->
-                            <div class="mt-2 pt-2 border-t border-t-neutral-200">
-                                <a
-                                    class="logout flex items-center justify-between px-2.5 h-12 rounded-lg hover:text-white hover:bg-red-500 transition-colors cursor-pointer">
-                                    <span class="flex items-center gap-x-2">
-                                        <svg class="w-6 h-6">
-                                            <use href="#power"></use>
-                                        </svg>
-                                        خروج
-                                    </span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- NavBar Menu Mobile -->
-        <div
-            class="navigation lg:hidden bg-white w-64 h-screen overflow-y-auto fixed top-0 bottom-0 z-50 px-7 pb-16 transition-all -right-64">
-            <div class="flex items-center justify-between pb-5 mt-5 relative border-b border-b-gray-200">
-                <div class="flex items-center">
-                    <img src="images/logo/Logo.png" alt="logo">
-                </div>
-                <div class="navigation__close-btn flex items-center justify-center w-9 h-9">
-                    <svg class="w-7 h-7 text-slate-500">
-                        <use xlink:href="#x-mark"></use>
-                    </svg>
-                </div>
-            </div>
-
-            <form class="block mt-7" action="" method="get">
-                <label class="relative w-full h-12 block transition-all">
-                    <input
-                        class="rounded-xl bg-gray-100 text-slate-500 placeholder:text-slate-500 w-full h-full text-base pl-12 pr-5 block outline-none transition-all"
-                        name="s" type="text" placeholder="جستجو">
-                    <button class="absolute left-4 top-0 bottom-0 w-6 h-6 my-auto text-slate-500" type="submit"
-                        role="button">
-                        <svg class="w-6 h-6">
-                            <use xlink:href="#search"></use>
-                        </svg>
-                    </button>
-                </label>
-            </form>
-
-            <div class="mt-5">
-                <!-- <ul class="flex flex-col gap-5 w-full text-slate-500 text-lg">
-                    <li class="relative">
-                        <a href="#">
-                            صفحه اصلی
-                        </a>
-                    </li>
-                    <li class="relative">
-                        <a href="#" class="">
-                            همه دوره ها
-                        </a>
-                    </li>
-                    <li class="relative flex items-center justify-between">
-                        <a href="#" class="">
-                            مقالات
-                        </a>
-                        <svg class="w-4 h-4">
-                            <use xlink:href="#chevron-down"></use>
-                        </svg>
-                    </li>
-                    <li class="relative">
-                        <a href="#" class="">
-                            درباره ما
-                        </a>
-                    </li>
-                </ul> -->
-                <ul
-                    class="menus-wrapper flex flex-col gap-5 w-full text-slate-500 text-lg child:h-full child:gap-x-1.5 child:flex child:items-center">
-                </ul>
-            </div>
-
-        </div>
-    </header>
+    </header>    
 
     <main>
         <div class="container pt-28">
@@ -771,15 +582,17 @@
     <footer class="pt-8 w-full mt-36 bg-white">
         <div class="container">
             <div class="mb-12 md:mb-8 flex items-center justify-between">
-                <a href="#">
+                <a href="#" class="">
                     <img src="images/logo/Logo.png" alt="Logo">
                 </a>
             </div>
             <div class="flex justify-between flex-wrap gap-y-5 md:gap-y-7 gap-x-8 pb-5 border-b">
                 <div class="flex flex-col items-center sm:items-start gap-y-5 m-auto md:m-[unset]">
                     <h4 class="font-EstedadBold text-xl font-semibold text-zinc-700">درباره تک‌لرن</h4>
-                    <p class="max-w-[405px] font-normal text-base xl:text-lg text-slate-500 leading-7"> با بیش از ۳ سال
-                        سابقه در این حوزه، تیم ما از متخصصینی تشکیل شده است که با استفاده از روش های جدید و به روز، به
+                    <p class="max-w-[405px] font-normal text-base xl:text-lg text-slate-500 leading-7"> با بیش از ۳
+                        سال
+                        سابقه در این حوزه، تیم ما از متخصصینی تشکیل شده است که با استفاده از روش های جدید و به روز،
+                        به
                         دانشجویان کمک می کنند تا به طور بهتری درک و تسلط بر مفاهیم و تکنیک های مورد نیاز خود را کسب
                         کنند. </p>
                 </div>
@@ -787,10 +600,10 @@
                     <h4 class="font-EstedadBold text-xl font-semibold text-zinc-700"> دسترسی سریع </h4>
                     <div
                         class="flex flex-col items-start gap-y-3 pr-3.5 font-normal text-base xl:text-lg text-slate-500 leading-7 child:footer-items">
-                        <a href="index.html"> صفحه اصلی </a>
-                        <a href="courses.html"> همه دوره ها </a>
-                        <a href="contact-us.html"> ارتباط با ما </a>
-                        <a href="#"> درباره ما </a>
+                        <a href="index.html" class=""> صفحه اصلی </a>
+                        <a href="courses.html" class=""> همه دوره ها </a>
+                        <a href="contact-us.html" class=""> ارتباط با ما </a>
+                        <a href="about-us.html" class="check-link"> درباره ما </a>
                     </div>
                 </div>
                 <div class="flex flex-col items-center gap-y-5 m-auto md:m-[unset] min-w-40">
@@ -799,7 +612,7 @@
                         class="flex flex-col items-start gap-y-3 pr-3.5  font-normal text-base xl:text-lg text-slate-500 leading-7">
 
                         <div class="flex-center gap-x-3 cursor-pointer">
-                            <a href="#"> techLearn@ </a>
+                            <a href="#" class="check-link"> techLearn@ </a>
                             <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30"
                                 viewBox="0 0 48 48">
                                 <radialGradient id="yOrnnhliCrdS2gy~4tD8ma_Xy10Jcu1L2Su_gr1" cx="19.38" cy="42.035"
@@ -834,7 +647,7 @@
                             </svg>
                         </div>
                         <div class="flex-center gap-x-3 cursor-pointer">
-                            <a href="#"> techLearn@ </a>
+                            <a href="#" class="check-link"> techLearn@ </a>
                             <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30"
                                 viewBox="0 0 48 48">
                                 <linearGradient id="BiF7D16UlC0RZ_VqXJHnXa_oWiuH0jFiU0R_gr1" x1="9.858" x2="38.142"
