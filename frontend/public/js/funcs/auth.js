@@ -16,7 +16,7 @@ const register = () => {
     confirmPassword: passwordInput.value.trim(),
   };
 
-  fetch(`http://localhost:4000/v1/auth/register`, {
+  fetch(`https://techlearn-backend.liara.run/v1/auth/register`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -61,7 +61,7 @@ const login = () => {
     password: passwordInput.value.trim(),
   };
 
-  fetch(`http://localhost:4000/v1/auth/login`, {
+  fetch(`https://techlearn-backend.liara.run/v1/auth/login`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -99,7 +99,7 @@ const getMe = async () => {
     return false;
   }
 
-  const res = await fetch(`http://localhost:4000/v1/auth/me`, {
+  const res = await fetch(`https://techlearn-backend.liara.run/v1/auth/me`, {
     headers: {
       Authorization: `Bearer ${token}`
     },

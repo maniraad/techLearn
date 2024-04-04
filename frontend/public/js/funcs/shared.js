@@ -76,7 +76,7 @@ const showUserNameInNavbar = () => {
             `);
 
 
-                profile.setAttribute("src", `http://localhost:4000/${data.profile}`)
+                profile.setAttribute("src", `https://techlearn-backend.liara.run/courses/covers/${data.profile}`)
             } else {
                 userProfileItemsWrapper.insertAdjacentHTML("afterbegin", `
                 <a href="./my-account/courses.html"
@@ -121,12 +121,13 @@ const showContentData = async () => {
     const landingStudents = document.querySelector('.student');
     const landingBlogs = document.querySelector('.blogs');
 
-    const res = await fetch("http://localhost:4000/v1/infos/index", {
+    const res = await fetch("https://techlearn-backend.liara.run/v1/infos/index", {
         headers: {
             "Content-Type": "application/json"
         }
     })
     const data = await res.json()
+    console.log(data);
     makeCounter(data.coursesCount, landingStatusCourse, 'دوره آموزشی');
     makeCounter(data.usersCount, landingStudents, 'دانشجو');
     makeCounter(data.totalTime, landingBlogs, 'دقیقه دوره ی اموزشی');
@@ -147,7 +148,7 @@ const getAndShowAllCourses = async (coursesCount) => {
 
     const courseContainer = document.querySelector('#course-container');
 
-    const res = await fetch(`http://localhost:4000/v1/courses`);
+    const res = await fetch(`https://techlearn-backend.liara.run/v1/courses`);
 
     const courses = await res.json();
 
@@ -158,7 +159,7 @@ const getAndShowAllCourses = async (coursesCount) => {
                         class="inline-flex flex-col items-center gap-y-4 py-3 px-4 bg-white max-w-[340px] rounded-3xl shadow-sm">
 
                         <div class="">
-                            <img src=http://localhost:4000/courses/covers/${course.cover}>
+                            <img src=https://techlearn-backend.liara.run/courses/covers/${course.cover}>
                         </div>
                         <!-- Box Body -->
                         <div class="flex flex-col justify-center items-start self-baseline gap-y-4">
@@ -206,7 +207,7 @@ const getAndShowAllArticles = async () => {
 
     const articleContainer = document.querySelector('#article-container');
 
-    const res = await fetch(`http://localhost:4000/v1/articles`);
+    const res = await fetch(`https://techlearn-backend.liara.run/v1/articles`);
 
     const articles = await res.json();
 
@@ -219,7 +220,7 @@ const getAndShowPreSellCourses = async () => {
 
     const preSellCoursesContainer = document.querySelector('#presell-courses-wrapper');
 
-    const res = await fetch(`http://localhost:4000/v1/courses/presell`);
+    const res = await fetch(`https://techlearn-backend.liara.run/v1/courses/presell`);
 
     const presellCourses = await res.json();
 
@@ -232,7 +233,7 @@ const getAndShowPreSellCourses = async () => {
                                 <!-- Image -->
                                 <div class="">
                                     <a href="course.html?name=${presellCourse.shortName}">
-                                    <img src=http://localhost:4000/courses/covers/${presellCourse.cover}>
+                                    <img src=https://techlearn-backend.liara.run/courses/covers/${presellCourse.cover}>
                                     </a>
                                 </div>
                                 <!-- Box Body -->
@@ -266,7 +267,7 @@ const getAndShowArticles = async () => {
 
     const articlesContainer = document.querySelector('#articles-wrapper');
 
-    const res = await fetch(`http://localhost:4000/v1/articles`);
+    const res = await fetch(`https://techlearn-backend.liara.run/v1/articles`);
 
     const articles = await res.json();
 
@@ -279,7 +280,7 @@ const getAndShowMenus = async () => {
 
     const menusContainers = document.querySelectorAll('.menus-wrapper');
 
-    const res = await fetch(`http://localhost:4000/v1/menus`);
+    const res = await fetch(`https://techlearn-backend.liara.run/v1/menus`);
 
     const menus = await res.json();
 
@@ -334,7 +335,7 @@ const getAndShowMenus = async () => {
 const getAndShowCategoryCourses = async () => {
     const categoryName = getUrlParam("cat");
 
-    const res = await fetch(`http://localhost:4000/v1/courses/category/${categoryName}`);
+    const res = await fetch(`https://techlearn-backend.liara.run/v1/courses/category/${categoryName}`);
     const courses = await res.json();
 
     return courses
@@ -351,7 +352,7 @@ const insertCourseBoxHtmlTemplate = (courses, parentElement) => {
                         class="inline-flex flex-col items-center gap-y-4 py-3 px-4 bg-white max-w-[340px] rounded-3xl shadow-sm">
 
                         <div class="">
-                            <img src=http://localhost:4000/courses/covers/${course.cover
+                            <img src=https://techlearn-backend.liara.run/courses/covers/${course.cover
             }>
                         </div>
                         <!-- Box Body -->
@@ -403,7 +404,7 @@ const insertArticleBoxHtmlTemplate = (articles, parentElement) => {
             `
                         <div class="flex sm:block gap-x-2.5 group p-2.5 md:pb-2 bg-white shadow-sm rounded-2xl">
                             <div class=" sm:mb-4 shrink-0 rounded-2xl rounded-bl-4xl overflow-hidden w-[130px] h-[130px] sm:w-auto sm:h-auto">
-                                <img src=http://localhost:4000/courses/covers/${article.cover} class="h-full sm:h-auto object-cover">
+                                <img src=https://techlearn-backend.liara.run/courses/covers/${article.cover} class="h-full sm:h-auto object-cover">
                             </div>
                             <div class="flex flex-col sm:flex-row items-start justify-between w-full">
                                 <a href="blog.html?name=${article.shortName}" class="w-full font-EstedadMedium md:font-Estedad text-sm md:text-lg mt-2.5 sm:mt-0 line-clamp-1 text-zinc-700 ">
@@ -515,7 +516,7 @@ const getCourseDetails = () => {
 
     const courseShortName = getUrlParam("name");
 
-    fetch(`http://localhost:4000/v1/courses/${courseShortName}`, {
+    fetch(`https://techlearn-backend.liara.run/v1/courses/${courseShortName}`, {
         method: "GET",
         headers: {
             Authorization: `Bearer ${getToken()}`
@@ -523,7 +524,7 @@ const getCourseDetails = () => {
     }).then(res => res.json())
         .then(course => {
             console.log(course);
-            courseCover.setAttribute("src", `http://localhost:4000/courses/covers/${course.cover}`)
+            courseCover.setAttribute("src", `https://techlearn-backend.liara.run/courses/covers/${course.cover}`)
             courseCategory.innerHTML = course.categoryID.title
             courseTitle.innerHTML = course.name
             courseDescription.innerHTML = course.description
@@ -540,7 +541,7 @@ const getCourseDetails = () => {
 
                     courseRegisterButton.addEventListener("click", () => {
                         if (course.price == 0) {
-                            fetch(`http://localhost:4000/v1/courses/${course._id}/register`, {
+                            fetch(`https://techlearn-backend.liara.run/v1/courses/${course._id}/register`, {
                                 method: "POST",
                                 headers: {
                                     Authorization: `Bearer ${getToken()}`,
@@ -596,7 +597,7 @@ const getCourseDetails = () => {
                                                     <img alt="" draggable="false" loading="lazy" width="120"
                                                         height="120" decoding="async" data-nimg="1"
                                                         class="aspect-square flex-none rounded-full object-cover transition-all duration-500 opacity-100 h-14 w-14 select-none md:h-16 md:w-16 lg:h-16 lg:w-16 xl:h-20 xl:w-20"
-                                                        src="http://localhost:4000/${course.creator.profile}">
+                                                        src="https://techlearn-backend.liara.run/courses/covers/${course.creator.profile}">
                                                 </a>
 
                                                 <div
@@ -772,7 +773,7 @@ const getArticleDetails = () => {
 
     const articleShortName = getUrlParam("name");
 
-    fetch(`http://localhost:4000/v1/articles/${articleShortName}`, {
+    fetch(`https://techlearn-backend.liara.run/v1/articles/${articleShortName}`, {
         method: "GET",
         headers: {
             Authorization: `Bearer ${getToken()}`
@@ -783,8 +784,8 @@ const getArticleDetails = () => {
             title.innerHTML = article.title
             date.innerHTML = new Date(article.createdAt).toLocaleString("fa-IR").slice(0, 10).split(",", 1)
             creator.innerHTML = article.creator.name
-            creatorCover.setAttribute("src", `http://localhost:4000/${article.creator.profile}`)
-            cover.setAttribute("src", `http://localhost:4000/courses/covers/${article.cover}`)
+            creatorCover.setAttribute("src", `https://techlearn-backend.liara.run/courses/covers/${article.creator.profile}`)
+            cover.setAttribute("src", `https://techlearn-backend.liara.run/courses/covers/${article.cover}`)
             articleWrapper.insertAdjacentHTML("beforeend", `${article.body}`)
             breadcrumbCategory.innerHTML = article.title
         });
@@ -808,7 +809,7 @@ const getSessionDetails = async () => {
     const courseShortName = getUrlParam("name");
     const sessionID = getUrlParam("id");
 
-    const res = await fetch(`http://localhost:4000/v1/courses/${courseShortName}/${sessionID}`,
+    const res = await fetch(`https://techlearn-backend.liara.run/v1/courses/${courseShortName}/${sessionID}`,
         {
             headers: {
                 Authorization: `Bearer ${getToken()}`
@@ -816,7 +817,7 @@ const getSessionDetails = async () => {
         })
     const data = await res.json()
 
-    videoElem.setAttribute("src", `http://localhost:4000/courses/covers/${data.session.video}`)
+    videoElem.setAttribute("src", `https://techlearn-backend.liara.run/courses/covers/${data.session.video}`)
 };
 
 const submitContactUsMassage = async () => {
@@ -832,7 +833,7 @@ const submitContactUsMassage = async () => {
         body: bodyInputElem.value.trim()
     };
 
-    const res = await fetch(`http://localhost:4000/v1/contact`, {
+    const res = await fetch(`https://techlearn-backend.liara.run/v1/contact`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -861,7 +862,7 @@ const submitContactUsMassage = async () => {
 const globalSearch = async () => {
     const searchValue = getUrlParam('value');
 
-    const res = await fetch(`http://localhost:4000/v1/search/${searchValue}`);
+    const res = await fetch(`https://techlearn-backend.liara.run/v1/search/${searchValue}`);
     const result = await res.json();
 
     return result
@@ -878,7 +879,7 @@ const submitComments = async () => {
         score: 5
     };
 
-    const res = await fetch(`http://localhost:4000/v1/comments`, {
+    const res = await fetch(`https://techlearn-backend.liara.run/v1/comments`, {
         method: "POST",
         headers: {
             'Authorization': `Bearer ${getToken()}`,

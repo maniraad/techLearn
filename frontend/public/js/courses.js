@@ -11,7 +11,7 @@ window.addEventListener("load", () => {
         const coursesSearchInput = document.querySelector('#course-search-input');
         const courseContainer = document.querySelector('#course-container');
 
-        // Show Category Courses By user filtering method
+        // Show Sort Courses By user filtering method
         sortList.forEach(item => {
             item.addEventListener("click", event => {
 
@@ -25,10 +25,11 @@ window.addEventListener("load", () => {
             });
         });
 
-        // Show Grouping Courses By User Selection
+        // Show Category Courses By User Selection
         groupList.forEach(item => {
             item.addEventListener("click", event => {
                 let userSelectOption = event.target.dataset.key
+                console.log(event.target.dataset.key);
                 window.location.href = userSelectOption
             })
         });

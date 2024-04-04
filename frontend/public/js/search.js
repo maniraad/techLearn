@@ -18,7 +18,7 @@ window.addEventListener("load", () => {
                                 class="inline-flex flex-col items-center gap-y-4 py-3 px-4 bg-white max-w-[340px] rounded-3xl shadow-sm">
         
                                 <div class="">
-                                    <img src=http://localhost:4000/courses/covers/${course.cover}>
+                                    <img src=https://techlearn-backend.liara.run/courses/covers/${course.cover}>
                                 </div>
                                 <!-- Box Body -->
                                 <div class="flex flex-col justify-center items-start self-baseline gap-y-4">

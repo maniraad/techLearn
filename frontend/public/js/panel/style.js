@@ -29,7 +29,7 @@ window.addEventListener('load', () => {
             adminNameElem.innerHTML = admin.name
         })
         adminEmailElem.innerHTML = admin.email
-        adminImageElem.setAttribute('src', `http://localhost:4000/${admin.profile}`)
+        adminImageElem.setAttribute('src', `https://techlearn-backend.liara.run/courses/covers/${admin.profile}`)
 
         // Show Notifications
         insertNotificationHTMLTemplate(admin.notifications)

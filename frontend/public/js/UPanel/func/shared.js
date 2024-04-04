@@ -14,7 +14,7 @@ const getAndShowUseCourse = async () => {
     const courseContainerElem = document.querySelector("#course-container");
     courseContainerElem.innerHTML = "";
 
-    const res = await fetch(`http://localhost:4000/v1/users/courses`, {
+    const res = await fetch(`https://techlearn-backend.liara.run/v1/users/courses`, {
         headers: {
             Authorization: `Bearer ${getToken()}`
         }
@@ -64,7 +64,7 @@ const getAndShowUseCourse = async () => {
 const getAndShowUserInfos = async () => {
     const showUserName = document.querySelector('.show-userName');
 
-    const res = await fetch(`http://localhost:4000/v1/auth/me`, {
+    const res = await fetch(`https://techlearn-backend.liara.run/v1/auth/me`, {
         headers: {
             Authorization: `Bearer ${getToken()}`
         }
@@ -89,7 +89,7 @@ const updateUserInfos = async () => {
         password: passwordInput.value.trim(),
     };
 
-    const res = await fetch(`http://localhost:4000/v1/users`, {
+    const res = await fetch(`https://techlearn-backend.liara.run/v1/users`, {
         method: "PUT",
         headers: {
             Authorization: `Bearer ${getToken()}`,

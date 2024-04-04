@@ -12,6 +12,7 @@ window.addEventListener('load', () => {
 
     // Admin Info
     getAdminInfos().then(admin => {
+        console.log(admin);
         // Show Admin Name
         adminWelcomeElem.innerHTML = `خوش آمدید , ${admin.name}`
 

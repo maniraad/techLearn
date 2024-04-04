@@ -60,7 +60,7 @@ const insertNotificationHTMLTemplate = (notifications) => {
 
 const seenNotification = async (notifications, notificationID) => {
   const res = await fetch(
-    `http://localhost:4000/v1/notifications/see/${notificationID}`,
+    `https://techlearn-backend.liara.run/v1/notifications/see/${notificationID}`,
     {
       method: "PUT",
       headers: {
@@ -88,7 +88,7 @@ const showMainData = async () => {
   const coursesElem = document.getElementById('courses')
   const usersElem = document.getElementById('users')
 
-  const res = await fetch("http://localhost:4000/v1/infos/index", {
+  const res = await fetch("https://techlearn-backend.liara.run/v1/infos/index", {
     headers: {
       "Content-Type": "application/json"
     }
@@ -105,7 +105,7 @@ const showMainData = async () => {
 const getAllCourses = async () => {
   const coursesWrapper = document.querySelector("#courses-wrapper");
   coursesWrapper.innerHTML = "";
-  const res = await fetch(`http://localhost:4000/v1/courses`);
+  const res = await fetch(`https://techlearn-backend.liara.run/v1/courses`);
   const courses = await res.json();
 
   courses.forEach((course, index) => {
@@ -161,7 +161,7 @@ const prepareCreateCourseForm = async () => {
   const presellCourseElem = document.querySelector("#presell");
   const coverCourseElem = document.querySelector(".cover");
 
-  const res = await fetch(`http://localhost:4000/v1/category`);
+  const res = await fetch(`https://techlearn-backend.liara.run/v1/category`);
 
   const categories = await res.json();
 
@@ -205,7 +205,7 @@ const createNewCourse = async () => {
   formData.append("status", status);
   formData.append("cover", courseCover);
 
-  const res = await fetch(`http://localhost:4000/v1/courses`, {
+  const res = await fetch(`https://techlearn-backend.liara.run/v1/courses`, {
     method: "POST",
     headers: {
       Authorization: `Bearer ${getToken()}`,
@@ -240,7 +240,7 @@ const removeCourse = async (courseID) => {
     confirmButtonText: "بله",
   }).then(async (result) => {
     if (result.isConfirmed) {
-      const res = await fetch(`http://localhost:4000/v1/courses/${courseID}`, {
+      const res = await fetch(`https://techlearn-backend.liara.run/v1/courses/${courseID}`, {
         method: "DELETE",
         headers: {
           Authorization: `Bearer ${getToken()}`,
@@ -270,7 +270,7 @@ const removeCourse = async (courseID) => {
 const getAllMenus = async () => {
   const menusWrapper = document.querySelector("#menus-wrapper");
   menusWrapper.innerHTML = "";
-  const res = await fetch(`http://localhost:4000/v1/menus/all`);
+  const res = await fetch(`https://techlearn-backend.liara.run/v1/menus/all`);
   const menus = await res.json();
 
   menus.forEach((menu, index) => {
@@ -309,7 +309,7 @@ const getAllMenus = async () => {
 const prepareCreateMenuItem = async () => {
   const menuItemListElem = document.querySelector(".menu-item-list");
 
-  const res = await fetch(`http://localhost:4000/v1/menus`);
+  const res = await fetch(`https://techlearn-backend.liara.run/v1/menus`);
   const menuItems = await res.json();
 
   menuItems.forEach((menuItemList) =>
@@ -338,7 +338,7 @@ const createNewMenuItem = async () => {
     parent: parentMenuID,
   };
 
-  const res = await fetch(`http://localhost:4000/v1/menus`, {
+  const res = await fetch(`https://techlearn-backend.liara.run/v1/menus`, {
     method: "POST",
     headers: {
       Authorization: `Bearer ${getToken()}`,
@@ -374,7 +374,7 @@ const removeMenuItem = async (menuID) => {
     confirmButtonText: "بله",
   }).then(async (result) => {
     if (result.isConfirmed) {
-      const res = await fetch(`http://localhost:4000/v1/menus/${menuID}`, {
+      const res = await fetch(`https://techlearn-backend.liara.run/v1/menus/${menuID}`, {
         method: "DELETE",
         headers: {
           Authorization: `Bearer ${getToken()}`,
@@ -404,7 +404,7 @@ const removeMenuItem = async (menuID) => {
 const getAllUsers = async () => {
   const usersWrapper = document.querySelector("#users-wrapper");
   usersWrapper.innerHTML = "";
-  const res = await fetch(`http://localhost:4000/v1/users`, {
+  const res = await fetch(`https://techlearn-backend.liara.run/v1/users`, {
     headers: {
       Authorization: `Bearer ${getToken()}`,
     },
@@ -462,7 +462,7 @@ const getAllUsers = async () => {
 const getRecentlyUser = async () => {
   const usersWrapper = document.querySelector("tbody");
   usersWrapper.innerHTML = "";
-  const res = await fetch(`http://localhost:4000/v1/infos/p-admin`, {
+  const res = await fetch(`https://techlearn-backend.liara.run/v1/infos/p-admin`, {
     headers: {
       Authorization: `Bearer ${getToken()}`,
     },
@@ -511,7 +511,7 @@ const createNewUser = async () => {
     confirmPassword: passwordInput.value.trim(),
   };
 
-  fetch(`http://localhost:4000/v1/auth/register`, {
+  fetch(`https://techlearn-backend.liara.run/v1/auth/register`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -559,7 +559,7 @@ const removeUser = async (userID) => {
     confirmButtonText: "بله",
   }).then(async (result) => {
     if (result.isConfirmed) {
-      const res = await fetch(`http://localhost:4000/v1/users/${userID}`, {
+      const res = await fetch(`https://techlearn-backend.liara.run/v1/users/${userID}`, {
         method: "DELETE",
         headers: {
           Authorization: `Bearer ${getToken()}`,
@@ -595,7 +595,7 @@ const banUser = async (userID) => {
     confirmButtonText: "بله",
   }).then(async (result) => {
     if (result.isConfirmed) {
-      const res = await fetch(`http://localhost:4000/v1/users/ban/${userID}`, {
+      const res = await fetch(`https://techlearn-backend.liara.run/v1/users/ban/${userID}`, {
         method: "PUT",
         headers: {
           Authorization: `Bearer ${getToken()}`,
@@ -604,7 +604,7 @@ const banUser = async (userID) => {
 
       if (res.ok) {
         if (result.isConfirmed) {
-          const res = await fetch(`http://localhost:4000/v1/users/${userID}`, {
+          const res = await fetch(`https://techlearn-backend.liara.run/v1/users/${userID}`, {
             method: "DELETE",
             headers: {
               Authorization: `Bearer ${getToken()}`,
@@ -640,7 +640,7 @@ const changeRole = async (userID) => {
     inputOptions,
     inputValidator: (value) => {
       if (!value) {
-        return "You need to choose something!";
+        return "لطفا یکی از گزینه هارو انتخاب کنید!";
       }
     }
   });
@@ -650,7 +650,7 @@ const changeRole = async (userID) => {
     role: role,
   }
   console.log(userNewRoleInfo);
-  const res = await fetch(`http://localhost:4000/v1/users/role`, {
+  const res = await fetch(`https://techlearn-backend.liara.run/v1/users/role`, {
     method: "PUT",
     headers: {
       Authorization: `Bearer ${getToken()}`,
@@ -659,8 +659,7 @@ const changeRole = async (userID) => {
     body: JSON.stringify(userNewRoleInfo)
   })
   const result = await res.json()
-  console.log(res);
-  console.log(result);
+  getAllUsers()
 };
 
 const editUser = async (userID) => {
@@ -695,7 +694,7 @@ const editUser = async (userID) => {
     }
   });
 
-  const res = await fetch(`http://localhost:4000/v1/users/${userID}`, {
+  const res = await fetch(`https://techlearn-backend.liara.run/v1/users/${userID}`, {
     method: "PUT",
     headers: {
       Authorization: `Bearer ${getToken()}`,
@@ -724,7 +723,7 @@ const editUser = async (userID) => {
 const getAllCategories = async () => {
   const categoriesWrapper = document.querySelector("#categories-wrapper");
   categoriesWrapper.innerHTML = "";
-  const res = await fetch(`http://localhost:4000/v1/category`);
+  const res = await fetch(`https://techlearn-backend.liara.run/v1/category`);
   const categories = await res.json();
 
   categories.forEach((category, index) => {
@@ -770,7 +769,7 @@ const createNewCategory = async () => {
     name: destinationInputElem.value.trim(),
   };
 
-  const res = await fetch(`http://localhost:4000/v1/category`, {
+  const res = await fetch(`https://techlearn-backend.liara.run/v1/category`, {
     method: "POST",
     headers: {
       Authorization: `Bearer ${getToken()}`,
@@ -810,7 +809,7 @@ const removeCategory = async (categoryID) => {
   }).then(async (result) => {
     if (result.isConfirmed) {
       const res = await fetch(
-        `http://localhost:4000/v1/category/${categoryID}`,
+        `https://techlearn-backend.liara.run/v1/category/${categoryID}`,
         {
           method: "DELETE",
           headers: {
@@ -841,7 +840,7 @@ const removeCategory = async (categoryID) => {
 const getAllMessages = async () => {
   const messageWrapperElem = document.querySelector("#message-wrapper");
   messageWrapperElem.innerHTML = "";
-  const res = await fetch(`http://localhost:4000/v1/contact`);
+  const res = await fetch(`https://techlearn-backend.liara.run/v1/contact`);
   const messages = await res.json();
 
   messages.forEach((message, index) => {
@@ -910,7 +909,7 @@ const answerToContact = async (userEmail) => {
         answer: result.value,
       };
 
-      const res = await fetch(`http://localhost:4000/v1/contact/answer`, {
+      const res = await fetch(`https://techlearn-backend.liara.run/v1/contact/answer`, {
         method: "POST",
         headers: {
           Authorization: `Bearer ${getToken()}`,
@@ -948,7 +947,7 @@ const removeMessage = async (messageID) => {
     confirmButtonText: "بله",
   }).then(async (result) => {
     if (result.isConfirmed) {
-      const res = await fetch(`http://localhost:4000/v1/contact/${messageID}`, {
+      const res = await fetch(`https://techlearn-backend.liara.run/v1/contact/${messageID}`, {
         method: "DELETE",
         headers: {
           Authorization: `Bearer ${getToken()}`,
@@ -977,7 +976,7 @@ const removeMessage = async (messageID) => {
 const getAllSessions = async () => {
   const sessionsWrapperElem = document.querySelector("#sessions-wrapper");
   sessionsWrapperElem.innerHTML = "";
-  const res = await fetch(`http://localhost:4000/v1/courses/sessions`);
+  const res = await fetch(`https://techlearn-backend.liara.run/v1/courses/sessions`);
   const sessions = await res.json();
 
   sessions.forEach((session, index) => {
@@ -1025,7 +1024,7 @@ const prepareCreateSessionForm = async () => {
   const moneySessionElem = document.querySelector("#money");
   const videoSessionElem = document.querySelector(".video");
 
-  const res = await fetch(`http://localhost:4000/v1/courses`);
+  const res = await fetch(`https://techlearn-backend.liara.run/v1/courses`);
 
   const courses = await res.json();
 
@@ -1065,7 +1064,7 @@ const createNewSession = async () => {
   formData.append("free", isFree);
 
   const res = await fetch(
-    `http://localhost:4000/v1/courses/${courseID}/sessions`,
+    `https://techlearn-backend.liara.run/v1/courses/${courseID}/sessions`,
     {
       method: "POST",
       headers: {
@@ -1103,7 +1102,7 @@ const removeSession = async (sessionID) => {
   }).then(async (result) => {
     if (result.isConfirmed) {
       const res = await fetch(
-        `http://localhost:4000/v1/courses/sessions/${sessionID}`,
+        `https://techlearn-backend.liara.run/v1/courses/sessions/${sessionID}`,
         {
           method: "DELETE",
           headers: {
@@ -1134,7 +1133,7 @@ const removeSession = async (sessionID) => {
 const getAllArticles = async () => {
   const articleWrapperElem = document.querySelector("#article-wrapper");
   articleWrapperElem.innerHTML = "";
-  const res = await fetch(`http://localhost:4000/v1/articles`);
+  const res = await fetch(`https://techlearn-backend.liara.run/v1/articles`);
   const articles = await res.json();
 
   articles.forEach((article, index) => {
@@ -1191,7 +1190,7 @@ const prepareCreateArticleForm = async () => {
   );
   const coverarticleElem = document.querySelector(".cover");
 
-  const res = await fetch(`http://localhost:4000/v1/category`);
+  const res = await fetch(`https://techlearn-backend.liara.run/v1/category`);
 
   const categories = await res.json();
 
@@ -1226,7 +1225,7 @@ const createNewArticle = async () => {
   formData.append('categoryID', articleCategoryID);
   formData.append('cover', articleCover);
 
-  const res = await fetch(`http://localhost:4000/v1/articles`, {
+  const res = await fetch(`https://techlearn-backend.liara.run/v1/articles`, {
     method: "POST",
     headers: {
       Authorization: `Bearer ${getToken()}`
@@ -1262,7 +1261,7 @@ const removeArticle = async (articleID) => {
   }).then(async (result) => {
     if (result.isConfirmed) {
 
-      const res = await fetch(`http://localhost:4000/v1/articles/${articleID}`, {
+      const res = await fetch(`https://techlearn-backend.liara.run/v1/articles/${articleID}`, {
         method: "DELETE",
         headers: {
           Authorization: `Bearer ${getToken()}`
@@ -1291,7 +1290,7 @@ const removeArticle = async (articleID) => {
 const getAllComments = async () => {
   const commentsWrapperElem = document.querySelector("#comments-wrapper");
   commentsWrapperElem.innerHTML = "";
-  const res = await fetch(`http://localhost:4000/v1/comments`);
+  const res = await fetch(`https://techlearn-backend.liara.run/v1/comments`);
   const articles = await res.json();
 
   articles.forEach((comment, index) => {
@@ -1365,7 +1364,7 @@ const answerComment = async (commentID) => {
         body: result.value,
       };
 
-      const res = await fetch(`http://localhost:4000/v1/comments/answer/${commentID}`, {
+      const res = await fetch(`https://techlearn-backend.liara.run/v1/comments/answer/${commentID}`, {
         method: "POST",
         headers: {
           Authorization: `Bearer ${getToken()}`,
@@ -1404,7 +1403,7 @@ const acceptComment = async (commentID) => {
   }).then(async (result) => {
     if (result.isConfirmed) {
 
-      const res = await fetch(`http://localhost:4000/v1/comments/accept/${commentID}`, {
+      const res = await fetch(`https://techlearn-backend.liara.run/v1/comments/accept/${commentID}`, {
         method: "PUT",
         headers: {
           Authorization: `Bearer ${getToken()}`
@@ -1441,7 +1440,7 @@ const rejectComment = async (commentID) => {
   }).then(async (result) => {
     if (result.isConfirmed) {
 
-      const res = await fetch(`http://localhost:4000/v1/comments/reject/${commentID}`, {
+      const res = await fetch(`https://techlearn-backend.liara.run/v1/comments/reject/${commentID}`, {
         method: "PUT",
         headers: {
           Authorization: `Bearer ${getToken()}`
@@ -1478,7 +1477,7 @@ const removeComment = async (commentID) => {
   }).then(async (result) => {
     if (result.isConfirmed) {
 
-      const res = await fetch(`http://localhost:4000/v1/comments/${commentID}`, {
+      const res = await fetch(`https://techlearn-backend.liara.run/v1/comments/${commentID}`, {
         method: "DELETE",
         headers: {
           Authorization: `Bearer ${getToken()}`
@@ -1507,7 +1506,7 @@ const removeComment = async (commentID) => {
 const getAllDiscount = async () => {
   const discountWrapperElem = document.querySelector("#discount-wrapper");
   discountWrapperElem.innerHTML = "";
-  const res = await fetch(`http://localhost:4000/v1/offs`, {
+  const res = await fetch(`https://techlearn-backend.liara.run/v1/offs`, {
     headers: {
       Authorization: `Bearer ${getToken()}`
     }
@@ -1559,7 +1558,7 @@ const getAllDiscount = async () => {
 const prepareCreateDiscountForm = async () => {
   const courseListElem = document.querySelector(".course-item-list");
 
-  const res = await fetch(`http://localhost:4000/v1/courses`);
+  const res = await fetch(`https://techlearn-backend.liara.run/v1/courses`);
 
   const courses = await res.json();
   courses.forEach((course) => courseListElem.insertAdjacentHTML("beforeend", `<option value="${course._id}" class="text-gray-700">${course.name}</option>`));
@@ -1579,7 +1578,7 @@ const createNewDiscount = async () => {
     course: courseDiscountID,
   };
 
-  const res = await fetch(`http://localhost:4000/v1/offs`, {
+  const res = await fetch(`https://techlearn-backend.liara.run/v1/offs`, {
     method: "POST",
     headers: {
       Authorization: `Bearer ${getToken()}`,
@@ -1615,7 +1614,7 @@ const removeDiscount = async (discountID) => {
     confirmButtonText: "بله",
   }).then(async (result) => {
     if (result.isConfirmed) {
-      const res = await fetch(`http://localhost:4000/v1/offs/${discountID}`, {
+      const res = await fetch(`https://techlearn-backend.liara.run/v1/offs/${discountID}`, {
         method: "DELETE",
         headers: {
           Authorization: `Bearer ${getToken()}`,
