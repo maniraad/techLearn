@@ -89,7 +89,7 @@
     }
 
     .section-btn {
-        @apply flex-center gap-3 relative max-w-[174px] mx-auto mt-10 py-3 pr-6 pl-5 bg-transparent hover:bg-teal-600 border-2 border-teal-600 text-teal-800 hover:text-white rounded-2xl transition-all;
+        @apply flex-center gap-2 md:gap-3 text-sm md:text-base relative max-w-[174px] mx-auto mt-7 md:mt-10 py-2.5 md:py-3 pr-3 md:pr-6 md:pl-5 bg-transparent hover:bg-teal-600 border-2 border-teal-600 text-teal-800 hover:text-white rounded-2xl transition-all;
     }
 
     .footer-items {
