@@ -1,5 +1,4 @@
 import { showUserNameInNavbar, go404Page, headerResponsive, getAndShowMenus, logout } from "./funcs/shared.js";
-import { injectSpeedInsights } from '@vercel/speed-insights';import { injectSpeedInsights } from '@vercel/speed-insights';
 
 window.addEventListener('load', () => {
     const globalSearchBtn = document.querySelector('#search-btn');
@@ -20,5 +19,3 @@ window.addEventListener('load', () => {
     getAndShowMenus();
     go404Page();
 });
-
-injectSpeedInsights();
