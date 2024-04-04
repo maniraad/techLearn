@@ -6,42 +6,42 @@
     @font-face {
         font-family: "Estedad";
         src: local("Estedad"),
-            url("./fonts/Estedad/Estedad-Regular.woff2");
+            url("../fonts/Estedad/Estedad-Regular.woff2");
         font-display: swap;
     }
 
     @font-face {
         font-family: "EstedadBlack";
         src: local("EstedadBlack"),
-            url("./fonts/Estedad/Estedad-Black.woff2");
+            url("../fonts/Estedad/Estedad-Black.woff2");
         font-display: swap;
     }
 
     @font-face {
         font-family: "EstedadBold";
         src: local("EstedadBold"),
-            url("./fonts/Estedad/Estedad-Bold.woff2");
+            url("../fonts/Estedad/Estedad-Bold.woff2");
         font-display: swap;
     }
 
     @font-face {
         font-family: "EstedadMedium";
         src: local("EstedadMedium"),
-            url("./fonts/Estedad/Estedad-Medium.woff2");
+            url("../fonts/Estedad/Estedad-Medium.woff2");
         font-display: swap;
     }
 
     @font-face {
         font-family: "EstedadLight";
         src: local("EstedadLight"),
-            url("./fonts/Estedad/Estedad-Light.woff2");
+            url("../fonts/Estedad/Estedad-Light.woff2");
         font-display: swap;
     }
 
     @font-face {
         font-family: "EstedadThin";
         src: local("EstedadThin"),
-            url("./fonts/Estedad/Estedad-Thin.woff2");
+            url("../fonts/Estedad/Estedad-Thin.woff2");
         font-display: swap;
     }
 }
