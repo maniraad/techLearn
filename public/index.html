@@ -113,7 +113,7 @@
 
     <header class="">
         <div
-            class="flex items-center justify-between px-1 sm:px-5 md:px-14 lg:px-4 2xl:px-12 bg-white h-20 md:h-28 fixed top-0 w-full z-30">
+            class="flex items-center justify-between px-3 sm:px-5 md:px-14 lg:px-4 2xl:px-12 bg-white h-20 md:h-28 fixed top-0 w-full z-30">
             <!-- NavBar Icon -->
             <span id="nav-bar-icon" class="lg:hidden">
                 <svg class="w-9 h-9">
@@ -135,13 +135,13 @@
 
             </nav>
             <!-- SearchBar & Cart & LogIn -->
-            <div class="flex items-center gap-x-4 md:gap-x-8">
+            <div class="flex items-center">
                 <!-- SearchBar -->
-                <div class="relative group hidden lg:block z-50" id="searchbox">
-                    <form class="hidden xl:block" action="" method="get">
+                <div class="relative group hidden lg:block z-50 ml-4 xl:ml-8" id="searchbox">
+                    <form class="hidden md:block" action="" method="get">
                         <label class="relative h-14 block transition-all">
                             <input id="search-input"
-                                class="rounded-full text-slate-500 placeholder:text-slate-500 w-48 focus:w-64 h-full border border-transparent hover:border-gray-200 focus:border-gray-300 outline-none focus:text-zinc-700  bg-gray-100 text-base placeholder:text-lg pl-14 pr-5 block transition-all"
+                                class="rounded-full text-slate-500 placeholder:text-slate-500 w-40 xl:w-48 focus:w-48 xl:focus:w-64 h-full border border-transparent hover:border-gray-200 focus:border-gray-300 outline-none focus:text-zinc-700  bg-gray-100 text-base placeholder:text-lg pl-14 pr-5 block transition-all"
                                 name="s" type="text" placeholder="جستجو">
                             <button id="search-btn"
                                 class="absolute left-5 top-0 bottom-0 w-7 h-7 my-auto text-slate-500" type="submit"
@@ -152,35 +152,10 @@
                             </button>
                         </label>
                     </form>
-                    <!-- SearchBar Mobile -->
-                    <div class="xl:hidden">
-                        <div
-                            class="searchbox flex-center w-14 h-14 rounded-full bg-gray-100 transition-colors cursor-pointer">
-                            <svg class="w-6 h-6 text-slate-500">
-                                <use xlink:href="#search"></use>
-                            </svg>
-                        </div>
-                        <!-- When Clink Box Showing -->
-                        <div class="absolute -left-24 top-full pt-4 z-10 transition-all hide" id="searchbox-dropdown">
-                            <form action="" method="get">
-                                <label class="relative block w-64">
-                                    <input
-                                        class="w-full h-16 pr-7 pl-10 text-lg bg-white placeholder:text-slate-500 text-zinc-700 outline-none rounded-2xl"
-                                        type="text" name="s" placeholder="جستجو در بین دوره ها">
-                                    <button class="absolute left-0 top-0 bottom-0 w-12 h-full my-auto text-slate-500"
-                                        type="submit" role="button">
-                                        <svg class="ml-2 w-6 h-6">
-                                            <use xlink:href="#search"></use>
-                                        </svg>
-                                    </button>
-                                </label>
-                            </form>
-                        </div>
-                    </div>
                 </div>
                 <!-- LogIn Btn -->
                 <a href="login.html" id="user-login-btn"
-                    class="hidden gap-x-2 font-EstedadMedium h-11 sm:h-12 md:h-14 px-2.5 sm:px-3 md:px-4 lg:px-6 bg-teal-600 hover:bg-teal-700 text-white rounded-2xl transition-all">
+                    class="hidden gap-x-1.5 xl:gap-x-2 font-EstedadMedium h-11 sm:h-12 md:h-14 px-2.5 sm:px-3 md:px-4 lg:px-6 bg-teal-600 hover:bg-teal-700 text-white rounded-2xl transition-all">
                     <svg class="w-5 md:w-6 h-5 md:h-6">
                         <use xlink:href="#arrow-right-rectangle"></use>
                     </svg>
@@ -256,10 +231,10 @@
 
             <form class="block mt-7" action="" method="get">
                 <label class="relative w-full h-12 block transition-all">
-                    <input
+                    <input id="search-mobile-input"
                         class="rounded-xl bg-gray-100 text-slate-500 placeholder:text-slate-500 w-full h-full text-base pl-12 pr-5 block outline-none transition-all"
                         name="s" type="text" placeholder="جستجو">
-                    <button class="absolute left-4 top-0 bottom-0 w-6 h-6 my-auto text-slate-500" type="submit"
+                    <button id="search-mobile-btn" class="absolute left-4 top-0 bottom-0 w-6 h-6 my-auto text-slate-500" type="submit"
                         role="button">
                         <svg class="w-6 h-6">
                             <use xlink:href="#search"></use>

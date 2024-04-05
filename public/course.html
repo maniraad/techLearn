@@ -103,10 +103,9 @@
           
     </svg>
 
-
     <header class="">
         <div
-            class="flex items-center justify-between px-9 md:px-16 lg:px-4 2xl:px-12 bg-white h-20 md:h-28 fixed top-0 w-full z-30">
+            class="flex items-center justify-between px-3 sm:px-5 md:px-14 lg:px-4 2xl:px-12 bg-white h-20 md:h-28 fixed top-0 w-full z-30">
             <!-- NavBar Icon -->
             <span id="nav-bar-icon" class="lg:hidden">
                 <svg class="w-9 h-9">
@@ -128,13 +127,13 @@
 
             </nav>
             <!-- SearchBar & Cart & LogIn -->
-            <div class="flex items-center gap-x-4 md:gap-x-8">
+            <div class="flex items-center">
                 <!-- SearchBar -->
-                <div class="relative group hidden lg:block z-50" id="searchbox">
-                    <form class="hidden xl:block" action="" method="get">
+                <div class="relative group hidden lg:block z-50 ml-4 xl:ml-8" id="searchbox">
+                    <form class="hidden md:block" action="" method="get">
                         <label class="relative h-14 block transition-all">
                             <input id="search-input"
-                                class="rounded-full text-slate-500 placeholder:text-slate-500 w-48 focus:w-64 h-full border border-transparent hover:border-gray-200 focus:border-gray-300 outline-none focus:text-zinc-700  bg-gray-100 text-base placeholder:text-lg pl-14 pr-5 block transition-all"
+                                class="rounded-full text-slate-500 placeholder:text-slate-500 w-40 xl:w-48 focus:w-48 xl:focus:w-64 h-full border border-transparent hover:border-gray-200 focus:border-gray-300 outline-none focus:text-zinc-700  bg-gray-100 text-base placeholder:text-lg pl-14 pr-5 block transition-all"
                                 name="s" type="text" placeholder="جستجو">
                             <button id="search-btn"
                                 class="absolute left-5 top-0 bottom-0 w-7 h-7 my-auto text-slate-500" type="submit"
@@ -145,43 +144,18 @@
                             </button>
                         </label>
                     </form>
-                    <!-- SearchBar Mobile -->
-                    <div class="xl:hidden">
-                        <div
-                            class="searchbox flex-center w-14 h-14 rounded-full bg-gray-100 transition-colors cursor-pointer">
-                            <svg class="w-6 h-6 text-slate-500">
-                                <use xlink:href="#search"></use>
-                            </svg>
-                        </div>
-                        <!-- When Clink Box Showing -->
-                        <div class="absolute -left-24 top-full pt-4 z-10 transition-all hide" id="searchbox-dropdown">
-                            <form action="" method="get">
-                                <label class="relative block w-64">
-                                    <input
-                                        class="w-full h-16 pr-7 pl-10 text-lg bg-white placeholder:text-slate-500 text-zinc-700 outline-none rounded-2xl"
-                                        type="text" name="s" placeholder="جستجو در بین دوره ها">
-                                    <button class="absolute left-0 top-0 bottom-0 w-12 h-full my-auto text-slate-500"
-                                        type="submit" role="button">
-                                        <svg class="ml-2 w-6 h-6">
-                                            <use xlink:href="#search"></use>
-                                        </svg>
-                                    </button>
-                                </label>
-                            </form>
-                        </div>
-                    </div>
                 </div>
                 <!-- LogIn Btn -->
-                <div id="user-login-btn"
-                    class="hidden gap-x-2 font-EstedadMedium h-11 sm:h-12 md:h-14 px-2.5 sm:px-3 md:px-4 lg:px-6 bg-teal-600 hover:bg-teal-700 text-white rounded-2xl transition-all">
+                <a href="login.html" id="user-login-btn"
+                    class="hidden gap-x-1.5 xl:gap-x-2 font-EstedadMedium h-11 sm:h-12 md:h-14 px-2.5 sm:px-3 md:px-4 lg:px-6 bg-teal-600 hover:bg-teal-700 text-white rounded-2xl transition-all">
                     <svg class="w-5 md:w-6 h-5 md:h-6">
                         <use xlink:href="#arrow-right-rectangle"></use>
                     </svg>
-                    <a class="hidden lg:inline-block" href="login.html">
+                    <span class="hidden lg:inline-block">
                         ورود یا ثبت نام
-                    </a>
+                    </span>
 
-                </div>
+                </a>
                 <!-- LogIn Icon Btn -->
                 <div class="relative group" id="user-profile">
                     <!-- User Picture -->
@@ -249,10 +223,10 @@
 
             <form class="block mt-7" action="" method="get">
                 <label class="relative w-full h-12 block transition-all">
-                    <input
+                    <input id="search-mobile-input"
                         class="rounded-xl bg-gray-100 text-slate-500 placeholder:text-slate-500 w-full h-full text-base pl-12 pr-5 block outline-none transition-all"
                         name="s" type="text" placeholder="جستجو">
-                    <button class="absolute left-4 top-0 bottom-0 w-6 h-6 my-auto text-slate-500" type="submit"
+                    <button id="search-mobile-btn" class="absolute left-4 top-0 bottom-0 w-6 h-6 my-auto text-slate-500" type="submit"
                         role="button">
                         <svg class="w-6 h-6">
                             <use xlink:href="#search"></use>
@@ -293,7 +267,7 @@
             </div>
 
         </div>
-    </header>    
+    </header>
 
     <main>
         <div class="container pt-28">
@@ -371,7 +345,7 @@
 
                     <div class="w-full">
                         <div
-                            class="tittles flex-center py-3 px-8 bg-white text-zinc-700 font-EstedadMedium text-lg gap-x-14 rounded-xl">
+                            class="tittles flex-center py-3 px-8 bg-white text-zinc-700 font-EstedadMedium text-sm md:text-lg gap-x-14 rounded-xl">
                             <a href="#" data-section="description"
                                 class="menu__item hover:text-emerald-600 transition-all"> توضیحات
                             </a>
@@ -414,7 +388,7 @@
                             <div class="flex items-center justify-between flex-wrap mb-5">
                                 <div class="flex items-center gap-x-3.5">
                                     <span class="block w-2.5 h-10 bg-sky-500 rounded-sm"></span>
-                                    <h3 class="text-zinc-700 font-EstedadMedium text-2xl md:text-3xl">
+                                    <h3 class="text-zinc-700 font-EstedadMedium text-xl sm:text-2xl md:text-3xl">
                                         سرفصل های دوره</h3>
                                 </div>
                                 <!-- Course Time -->
@@ -431,31 +405,6 @@
                                         </svg>
                                     </div>
                                     <div class="courses-sessions-wrapper max-h-0">
-                                        <!-- <div
-                                            class="md:flex items-center gap-2.5 flex-wrap space-y-3.5 md:space-y-0 py-4 md:py-6 px-3.5 md:px-5 group">
-                                            <a href=""
-                                                class="flex items-center gap-x-1.5 md:gap-x-2.5 shrink-0 w-[85%] ">
-                                                <span
-                                                    class="flex items-center justify-center shrink-0 w-5 h-5 md:w-7 md:h-7 bg-white font-EstedadBold text-xs md:text-base text-zinc-700 group-hover:bg-teal-600 group-hover:text-white rounded-md transition-colors">1</span>
-                                                <h4
-                                                    class="text-zinc-700 group-hover:text-teal-600 text-sm md:text-lg transition-colors">
-                                                    معرفی دوره + بررسی اجمالی پروژه ها</h4>
-                                            </a>
-                                            <div class="flex items-center w-full justify-between">
-                                                <span
-                                                    class="inline-block h-[25px] leading-[25px] px-2.5 bg-gray-200 text-zinc-700 group-hover:bg-teal-600/10 group-hover:text-teal-700 text-xs rounded transition-colors">جلسه
-                                                    رایگان</span>
-                                                <div class="flex items-center gap-x-1.5 md:gap-x-2">
-                                                    <span class="text-slate-500 text-sm md:text-lg font-EstedadMedium">
-                                                        16:54 </span>
-                                                    <svg
-                                                        class="w-5 h-6 md:w-6 md:h-6 text-zinc-700 group-hover:text-teal-600 transition-colors">
-                                                        <use xlink:href="#lock-closed"></use>
-                                                    </svg>
-                                                </div>
-                                            </div>
-
-                                        </div> -->
                                     </div>
                                 </div>
                             </div>
@@ -464,22 +413,14 @@
                             <div class="p-4 lg:p-7 bg-white rounded-2xl">
 
                                 <div class="flex justify-between items-center gap-2">
-                                    <!-- <div class="flex-center w-fit gap-2">
-                                        <span class="flex">
-                                            <span class="rounded-full bg-teal-600 w-2 h-2"></span>
-                                        </span>
-                                        <h2 class="text-base md:text-lg xl:text-xl text-teal-600 font-EstedadBold">
-                                            دیدگاه ها و پرسش ها
-                                        </h2>
-                                    </div> -->
                                     <div class="flex items-center gap-x-3.5">
                                         <span class="block w-2.5 h-10 bg-rose-500 rounded-sm"></span>
-                                        <h3 class="text-zinc-700 font-EstedadMedium text-2xl md:text-3xl">
+                                        <h3 class="text-zinc-700 font-EstedadMedium text-xl sm:text-2xl md:text-3xl">
                                             دیدگاه ها و پرسش ها</h3>
                                     </div>
                                     <button id="add-comment"
                                         class="relative flex-center py-3 px-3.5 text-xs bg-teal-600 hover:ring-teal-600/35 hover:ring-4 text-white rounded-lg transition-all">
-                                        <span class="font-EstedadMedium text-sm">افزودن دیدگاه</span>
+                                        <span class="sm:font-EstedadMedium text-xs md:text-sm">افزودن دیدگاه</span>
                                     </button>
                                 </div>
 

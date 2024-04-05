@@ -3,6 +3,8 @@ import { showUserNameInNavbar, go404Page, headerResponsive, getAndShowMenus, log
 window.addEventListener('load', () => {
     const globalSearchBtn = document.querySelector('#search-btn');
     const globalSearchInput = document.querySelector('#search-input');
+    const globalMobileSearchInput = document.querySelector('#search-mobile-input');
+    const globalMobileSearchBtn = document.querySelector('#search-mobile-btn');
 
     const logoutBtn = document.querySelector('.logout');
     logoutBtn.addEventListener("click", () => {
@@ -13,6 +15,11 @@ window.addEventListener('load', () => {
         event.preventDefault();
         location.href = `search.html?value=${globalSearchInput.value.trim()}`;
     });
+
+    globalMobileSearchBtn.addEventListener("click", (event) => {
+        event.preventDefault();
+        location.href = `search.html?value=${globalMobileSearchInput.value.trim()}`;
+    })
 
     showUserNameInNavbar();
     headerResponsive();
