@@ -294,7 +294,7 @@ const getAndShowMenus = async () => {
                 </a>
                     ${menu.submenus.length !== 0 ?
                     `   
-                    <svg class="w-4 h-4">
+                    <svg class="hidden lg:block w-4 h-4">
                         <use xlink:href="#chevron-down"></use>
                     </svg>
                     <div class=" invisible opacity-0 lg:group-hover:visible lg:group-hover:opacity-100 absolute space-y-4 right-0 top-24 w-56 bg-white pt-1 xl:pt-4 border-t-[3px] border-t-teal-600 tracking-normal shadow-normal rounded-2xl  transition-all z-10">
@@ -509,6 +509,7 @@ const getCourseDetails = () => {
     const courseDescription = $.querySelector('#description-course');
     const coursePrice = $.querySelector('#course-price');
     const courseStatus = $.querySelector('#course-status');
+    const courseTimeElems = $.querySelectorAll('.course-time');
     const courseDate = $.querySelector('#date');
     const courseStudents = $.querySelector('#students');
     const courseCover = $.querySelector('#course-cover');
@@ -532,6 +533,10 @@ const getCourseDetails = () => {
             courseDate.innerHTML = course.updatedAt.slice(0, 10)
             coursePrice.innerHTML = course.price === 0 ? "رایگان" : course.price.toLocaleString() + "تومان"
 
+            courseTimeElems.forEach(courseTimeElem => {
+                courseTimeElem.length ? courseTimeElem.innerHTML = course.sessions[0].time + " دقیقه " : ''
+
+            });
             courseStatus.innerHTML = course.isComplete ? "تکمیل شده" : "در حال برگذاری"
             courseRegisterButtons.forEach(courseRegisterButton => {
                 courseRegisterButton.innerHTML = course.isUserRegisteredToThisCourse ? "دانشجوی دوره هستید" : "ثبت نام دوره"
