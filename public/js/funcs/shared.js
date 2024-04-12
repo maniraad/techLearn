@@ -587,6 +587,7 @@ const getCourseDetails = () => {
 
             breadcrumbCategory.innerHTML = course.categoryID.title
             breadcrumbCourse.innerHTML = course.name
+
             // Show Creator Course
             const sidebarWrapper = $.querySelector('.side-bar')
             sidebarWrapper.insertAdjacentHTML("beforeend",
@@ -892,6 +893,20 @@ const submitComments = async () => {
         },
         body: JSON.stringify(newCommentInfos)
     });
+
+    if (res.ok) {
+        Toast.fire({
+            icon: "success",
+            title: "  کامنت شما با موفقیت ثبت شد",
+            text: " لطفا منتظر تایید ادمین باشید ",
+        });
+    } else {
+        Toast.fire({
+            icon: "error",
+            title: "مشکلی رخ داده است",
+            text: "لطفا بعدا امتحان کنید !",
+          });
+    }
 };
 
 export { showUserNameInNavbar, go404Page, logout, headerResponsive, getAndShowAllCourses, getAndShowPreSellCourses, getAndShowArticles, getAndShowMenus, getAndShowCategoryCourses, insertCourseBoxHtmlTemplate, insertArticleBoxHtmlTemplate, coursesSorting, observerScroll, handleGroupingAndSortingBox, getCourseDetails, getSessionDetails, submitContactUsMassage, globalSearch, submitComments, showContentData, getAndShowAllArticles, getArticleDetails };

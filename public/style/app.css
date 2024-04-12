@@ -1504,10 +1504,6 @@ video {
   width: 392px;
 }
 
-.w-\[40rem\] {
-  width: 40rem;
-}
-
 .w-\[5px\] {
   width: 5px;
 }
@@ -1546,40 +1542,16 @@ video {
   max-width: 340px;
 }
 
+.max-w-\[350px\] {
+  max-width: 350px;
+}
+
 .max-w-\[405px\] {
   max-width: 405px;
 }
 
 .max-w-\[640px\] {
   max-width: 640px;
-}
-
-.max-w-0 {
-  max-width: 0px;
-}
-
-.max-w-96 {
-  max-width: 24rem;
-}
-
-.max-w-8 {
-  max-width: 2rem;
-}
-
-.max-w-80 {
-  max-width: 20rem;
-}
-
-.max-w-\[\] {
-  max-width: ;
-}
-
-.max-w-\[365px\] {
-  max-width: 365px;
-}
-
-.max-w-\[350px\] {
-  max-width: 350px;
 }
 
 .flex-auto {
@@ -1618,16 +1590,6 @@ video {
 
 .transform {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.animate-spin {
-  animation: spin 1s linear infinite;
 }
 
 .cursor-auto {
@@ -2194,10 +2156,6 @@ video {
 
 .fill-\[\#3C50E0\] {
   fill: #3C50E0;
-}
-
-.fill-zinc-700 {
-  fill: #3f3f46;
 }
 
 .object-cover {
@@ -3295,10 +3253,6 @@ video {
     width: 100%;
   }
 
-  .sm\:max-w-96 {
-    max-width: 24rem;
-  }
-
   .sm\:max-w-\[400px\] {
     max-width: 400px;
   }
@@ -3689,11 +3643,6 @@ video {
   .md\:py-6 {
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
-  }
-
-  .md\:py-9 {
-    padding-top: 2.25rem;
-    padding-bottom: 2.25rem;
   }
 
   .md\:pb-2 {
