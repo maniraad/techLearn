@@ -1,4 +1,5 @@
 import { Toast, getToken } from "../../funcs/utils.js";
+import { clearInput } from "./utils.js";
 
 let categoryID = -1;
 let courseID = -1;
@@ -219,6 +220,7 @@ const createNewCourse = async () => {
       title: " دوره با موفقیت اضافه شد ",
     });
 
+    clearInput(courseNameElem, coursePriceElem, courseShortnameElem, courseDescriptionElem)
     getAllCourses();
   } else {
     Toast.fire({
@@ -329,9 +331,6 @@ const createNewMenuItem = async () => {
   const titleInputElem = document.querySelector("#title");
   const hrefInputElem = document.querySelector("#href");
 
-  console.log(titleInputElem.value.trim());
-  console.log(hrefInputElem.value.trim());
-
   const newMenusInfos = {
     title: titleInputElem.value.trim(),
     href: hrefInputElem.value.trim(),
@@ -353,6 +352,7 @@ const createNewMenuItem = async () => {
       title: " ایتم با موفقیت اضافه شد ",
     });
 
+    clearInput(titleInputElem, hrefInputElem)
     getAllMenus();
   } else {
     Toast.fire({
@@ -540,11 +540,7 @@ const createNewUser = async () => {
     })
     .then(() => {
       getAllUsers();
-      nameInput.value = ''
-      usernameInput.value = ''
-      emailInput.value = ''
-      phoneInput.value = ''
-      passwordInput.value = ''
+      clearInput(nameInput, usernameInput, emailInput,phoneInput,passwordInput)
     });
 };
 
@@ -784,6 +780,7 @@ const createNewCategory = async () => {
       title: " ایتم با موفقیت اضافه شد ",
     });
 
+    clearInput(titleInputElem, destinationInputElem)
     getAllCategories();
   } else {
     Toast.fire({
@@ -792,9 +789,6 @@ const createNewCategory = async () => {
       text: "لطفا بعدا امتحان کنید !",
     });
   }
-
-  titleInputElem.value = ''
-  destinationInputElem.value = ''
 };
 
 const removeCategory = async (categoryID) => {
@@ -1080,6 +1074,7 @@ const createNewSession = async () => {
       title: " جلسه با موفقیت اضافه شد ",
     });
 
+    clearInput(sessionNameElem, sessionTimeElem)
     getAllSessions();
   } else {
     Toast.fire({
@@ -1239,6 +1234,7 @@ const createNewArticle = async () => {
       title: " مقاله با موفقیت اضافه شد ",
     });
 
+    clearInput(articleNameElem, articleDescriptionElem, articleShortnameElem)
     getAllArticles()
   } else {
     Toast.fire({
@@ -1593,6 +1589,7 @@ const createNewDiscount = async () => {
       title: " ایتم با موفقیت اضافه شد ",
     });
 
+    clearInput(codeInputElem, percentInputElem, maxInputElem)
     getAllDiscount();
   } else {
     Toast.fire({

@@ -15,4 +15,16 @@ const logout = () => {
     location.replace("../index.html");
 };
 
-export { getAdminInfos, logout }
+// const clearInput = () => {
+//     console.log(arguments);
+//     arguments.value = ''
+// }
+
+function clearInput() {  
+    const args = Array.from(arguments)
+    args.forEach(arg => {
+        arg.value = ''
+    });
+  }
+
+export { getAdminInfos, logout, clearInput }
