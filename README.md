@@ -20,23 +20,25 @@ Project is created with:
 
 ✨ SweetAlert2
 
-✨ Swiper
+✨ Swiper       
 
-<h2>• Features 💡 </h2>
+<h2>• Features Included💡: </h2>
 
 * User/Admin Registration and Login
-* Adding/Purchasing Courses
-* Adding Sessions to a Course
-* Adding/Purchasing Products
-* Adding/Reading Blog Posts
-* Rating Courses or Products
+* Adding Courses
+* Adding Sessions to a Course 
+* Adding Blog Posts
+* Adding/Edit/Remove/Ban Users from Admin Panel
 * Creating Menu Items and Submenus
-* Comment Submission, Pending Approval by Admin
-* Admin Response to Comments
-* Adding Discount Codes for a Course/Product
-* Adding Universal Discounts
+* Creating Categories
+* Comment Submission with Pending Approval by Admin Admin
+* Response to Comments
+* Adding Discount Codes for a Course
 * Sending Messages to Admin via Contact Form
-* Admin Response to User Message
+* Admin Responding to User Messages via Email
+* Editing User Profiles
+* Displaying Purchased Courses in User Panel
+* Registering in Courses
 
 ## • Project Demo 🎥
 ![Demo](./public/images/demo.png)
