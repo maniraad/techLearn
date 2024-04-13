@@ -25,18 +25,20 @@ Project is created with:
 <h2>• Features 💡 </h2>
 
 * User/Admin Registration and Login
-* Adding/Purchasing Courses
+* Adding Courses
 * Adding Sessions to a Course
-* Adding/Purchasing Products
-* Adding/Reading Blog Posts
-* Rating Courses or Products
+* Adding Blog Posts
+* Adding/Edit/Remove/Ban User From Admin Panel
 * Creating Menu Items and Submenus
+* Creating Category
 * Comment Submission, Pending Approval by Admin
 * Admin Response to Comments
-* Adding Discount Codes for a Course/Product
-* Adding Universal Discounts
+* Adding Discount Codes for a Course
 * Sending Messages to Admin via Contact Form
-* Admin Response to User Message
+* Admin Response to User Message With Email
+* Edit User Profile
+* Show Buyed Courses In User Panel
+* Register In Courses
 
 ## • Project Demo 🎥
 ![Demo](./public/images/demo.png)
