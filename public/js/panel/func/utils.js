@@ -15,11 +15,6 @@ const logout = () => {
     location.replace("../index.html");
 };
 
-// const clearInput = () => {
-//     console.log(arguments);
-//     arguments.value = ''
-// }
-
 function clearInput() {  
     const args = Array.from(arguments)
     args.forEach(arg => {

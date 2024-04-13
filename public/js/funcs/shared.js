@@ -56,39 +56,38 @@ const showUserNameInNavbar = () => {
     const overlay = document.querySelector('.overlay');
 
     const isUserLogin = isLogin()
-
-    if (isUserLogin) {
-        const userInfos = getMe().then(data => {
+    const userInfos = getMe().then(data => {
+        if (data) {
             userBtn.classList.add('!flex-center')
             console.log(data);
             userName.innerHTML = data.username
 
             if (data.role === "ADMIN") {
                 userProfileItemsWrapper.insertAdjacentHTML("afterbegin", `
-                <a href="./panel/main.html"
-                    class="flex items-center justify-between px-2.5 h-12 rounded-lg hover:text-white hover:bg-teal-600 transition-colors cursor-pointer">
-                    <span class="flex items-center gap-x-2">
-                        <svg class="w-6 h-6">
-                            <use xlink:href="#user-plus"></use>
-                        </svg>
-                        پنل مدیریت</span>
-                </a>
-            `);
+            <a href="./panel/main.html"
+                class="flex items-center justify-between px-2.5 h-12 rounded-lg hover:text-white hover:bg-teal-600 transition-colors cursor-pointer">
+                <span class="flex items-center gap-x-2">
+                    <svg class="w-6 h-6">
+                        <use xlink:href="#user-plus"></use>
+                    </svg>
+                    پنل مدیریت</span>
+            </a>
+        `);
 
 
                 profile.setAttribute("src", `https://techlearn-backend.liara.run/courses/covers/${data.profile}`)
             } else {
                 userProfileItemsWrapper.insertAdjacentHTML("afterbegin", `
-                <a href="./my-account/courses.html"
-                    class="flex items-center justify-between px-2.5 h-12 rounded-lg hover:text-white hover:bg-teal-600 transition-colors cursor-pointer">
-                    <span class="flex items-center gap-x-2">
-                        <svg class="w-6 h-6">
-                            <use xlink:href="#folder-open"></use>
-                        </svg>
-                        دوره های من 
-                    </span>
-                </a>
-            `);
+            <a href="./my-account/courses.html"
+                class="flex items-center justify-between px-2.5 h-12 rounded-lg hover:text-white hover:bg-teal-600 transition-colors cursor-pointer">
+                <span class="flex items-center gap-x-2">
+                    <svg class="w-6 h-6">
+                        <use xlink:href="#folder-open"></use>
+                    </svg>
+                    دوره های من 
+                </span>
+            </a>
+        `);
                 profile.setAttribute("src", "https://secure.gravatar.com/avatar/c37423a5808f5ab4a5347033b5e16221?s=96&d=mm&r=g")
             }
 
@@ -105,10 +104,10 @@ const showUserNameInNavbar = () => {
                 overlay.classList.add('invisible');
                 overlay.classList.add('opacity-0');
             });
-        });
-    } else {
-        userLoginBtn.classList.add('!flex-center')
-    }
+        } else {
+            userLoginBtn.classList.add('!flex-center')
+        }
+    });
 };
 
 const logout = () => {
@@ -509,7 +508,7 @@ const getCourseDetails = () => {
     const courseDescription = $.querySelector('#description-course');
     const coursePrice = $.querySelector('#course-price');
     const courseStatus = $.querySelector('#course-status');
-    const courseTimeElems = $.querySelectorAll('.course-time');
+    const courseTimeElem = $.querySelector('.course-time');
     const courseDate = $.querySelector('#date');
     const courseStudents = $.querySelector('#students');
     const courseCover = $.querySelector('#course-cover');
@@ -531,12 +530,10 @@ const getCourseDetails = () => {
             courseDescription.innerHTML = course.description
             courseStudents.innerHTML = course.courseStudentsCount
             courseDate.innerHTML = course.updatedAt.slice(0, 10)
-            coursePrice.innerHTML = course.price === 0 ? "رایگان" : course.price.toLocaleString() + "تومان"
+            coursePrice.innerHTML = course.price === 0 ? "رایگان" : course.price.toLocaleString() + "تومان";
 
-            courseTimeElems.forEach(courseTimeElem => {
-                courseTimeElem.length ? courseTimeElem.innerHTML = course.sessions[0].time + " دقیقه " : ''
+            course.sessions ? courseTimeElem.innerHTML = course.sessions[0].time + " دقیقه " : ''
 
-            });
             courseStatus.innerHTML = course.isComplete ? "تکمیل شده" : "در حال برگذاری"
             courseRegisterButtons.forEach(courseRegisterButton => {
                 courseRegisterButton.innerHTML = course.isUserRegisteredToThisCourse ? "دانشجوی دوره هستید" : "ثبت نام دوره"
@@ -905,7 +902,7 @@ const submitComments = async () => {
             icon: "error",
             title: "مشکلی رخ داده است",
             text: "لطفا بعدا امتحان کنید !",
-          });
+        });
     }
 };
 
