@@ -129,7 +129,7 @@ const showContentData = async () => {
     console.log(data);
     makeCounter(data.coursesCount, landingStatusCourse, 'دوره آموزشی');
     makeCounter(data.usersCount, landingStudents, 'دانشجو');
-    makeCounter(data.totalTime, landingBlogs, 'دقیقه دوره ی اموزشی');
+    makeCounter(data.totalTime, landingBlogs, 'دقیقه دوره ی آموزشی');
 
     function makeCounter(max, elemCounter, elemName) {
         let counter = 0;
@@ -532,7 +532,15 @@ const getCourseDetails = () => {
             courseDate.innerHTML = course.updatedAt.slice(0, 10)
             coursePrice.innerHTML = course.price === 0 ? "رایگان" : course.price.toLocaleString() + "تومان";
 
-            course.sessions ? courseTimeElem.innerHTML = course.sessions[0].time + " دقیقه " : ''
+            let totalTimes = course.sessions.reduce(function (prev, current) {
+                console.log(prev, current);
+                if (prev.time) {
+                    return +prev.time + +current.time
+                }
+                return +prev + +current.time
+            })
+
+            course.sessions ? courseTimeElem.innerHTML = totalTimes + " دقیقه " : ''
 
             courseStatus.innerHTML = course.isComplete ? "تکمیل شده" : "در حال برگذاری"
             courseRegisterButtons.forEach(courseRegisterButton => {
@@ -659,7 +667,7 @@ const getCourseDetails = () => {
                         </span>
                         <div class="flex items-start gap-x-1.5 md:gap-x-2">
                             <span class="text-slate-500 text-sm md:text-lg font-EstedadMedium">
-                            ${session.time}
+                            ${session.time } دقیقه
                             </span>
                             <svg
                                 class="w-5 h-6 md:w-6 md:h-6 text-zinc-700 group-hover:text-teal-600 transition-colors">
